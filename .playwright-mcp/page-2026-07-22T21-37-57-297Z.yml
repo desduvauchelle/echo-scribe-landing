@@ -1,0 +1,288 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Echo Scribe app icon" [ref=e5]
+        - text: Echo Scribe
+      - navigation [ref=e6]:
+        - link "Home" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "Blog" [ref=e8] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e9] [cursor=pointer]:
+          - /url: /contact
+        - button "Toggle theme" [ref=e10] [cursor=pointer]
+        - link "Download free" [ref=e13] [cursor=pointer]:
+          - /url: /#install
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - img "Echo Scribe logo" [ref=e22]
+        - generic [ref=e23]: Private AI for the workday
+        - heading [level=1] [ref=e25]:
+          - text: Capture everything.
+          - emphasis [ref=e26]: Understand what matters.
+        - paragraph [ref=e27]: Echo Scribe captures your conversations, thoughts, meetings, and screen recordings, then organizes them into searchable work context. See what is happening, decide what matters, and improve what happens next.
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - link "Start capturing for free" [ref=e30] [cursor=pointer]:
+            - /url: /#install
+          - link "See the workflow" [ref=e34] [cursor=pointer]:
+            - /url: "#how-it-works"
+        - generic [ref=e37]:
+          - generic [ref=e38]: Runs locally on your Mac
+          - generic [ref=e41]: No account or cloud backend
+          - generic [ref=e45]: Capture voice, meetings & screens
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: The work memory loop
+        - heading "You can’t manage what you can’t see." [level=2] [ref=e63]
+        - paragraph [ref=e64]: Important work is spread across conversations, half-formed thoughts, meetings, and recordings. Echo Scribe turns those moments into a living picture of your work, so progress and gaps do not stay invisible.
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - generic [ref=e67]: 01 / CAPTURE
+          - heading "Keep the moment" [level=3] [ref=e68]
+          - paragraph [ref=e69]: Speak naturally, record a meeting, or capture your screen without breaking your flow.
+        - generic [ref=e70]:
+          - generic [ref=e71]: 02 / ORGANIZE
+          - heading "Make it usable" [level=3] [ref=e72]
+          - paragraph [ref=e73]: Transcripts become notes, tasks, tags, projects, summaries, and searchable context.
+        - generic [ref=e74]:
+          - generic [ref=e75]: 03 / SEE
+          - heading "Find the signal" [level=3] [ref=e76]
+          - paragraph [ref=e77]: Understand what was decided, what is still open, and where a conversation or project stands.
+        - generic [ref=e78]:
+          - generic [ref=e79]: 04 / IMPROVE
+          - heading "Act with context" [level=3] [ref=e80]
+          - paragraph [ref=e81]: Follow up, ask your work memory, and use what you learn to run the next conversation better.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]: Capture Without Friction
+        - heading "Get ideas out of your head and into the work." [level=2] [ref=e87]
+        - paragraph [ref=e88]: Press a hotkey and speak wherever you are. Echo Scribe can put polished words at your cursor, or save a thought for later. Your voice becomes an input layer for every app and an organized record of what you meant to do.
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]: "1"
+            - generic [ref=e92]:
+              - strong [ref=e93]: Speak in the moment
+              - text: Dictate into Slack, Gmail, Notes, VS Code, or any other app.
+          - generic [ref=e94]:
+            - generic [ref=e95]: "2"
+            - generic [ref=e96]:
+              - strong [ref=e97]: Let local AI clean it up
+              - text: Filler words and rough phrasing do not have to survive the first draft.
+          - generic [ref=e98]:
+            - generic [ref=e99]: "3"
+            - generic [ref=e100]:
+              - strong [ref=e101]: Keep moving
+              - text: Text appears at your cursor, or the thought is saved for organization later.
+      - img "Dictation demo showing text being transcribed into Slack" [ref=e103]:
+        - generic [ref=e104]: "Slack — #general"
+        - generic [ref=e109]: "Hey team, just a quick heads-up: the sprint review is moving to Thursday at 3 pm. Please update your calendars and let me know if that doesn't work."
+        - generic [ref=e111]:
+          - generic [ref=e118]: Listening…
+          - generic [ref=e119]: ⌃ Space
+    - generic [ref=e122]:
+      - generic [ref=e123]:
+        - generic [ref=e124]: Guided Templates
+        - heading "Run better conversations while they are happening." [level=2] [ref=e125]
+        - paragraph [ref=e126]: Important calls are hard to lead and even harder to remember. Start a guided template for a client call, interview, coaching session, discovery conversation, or team meeting. Echo Scribe keeps the goal in view, shows what to ask next, and tracks what has been covered.
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: "1"
+            - generic [ref=e130]:
+              - strong [ref=e131]: Choose the shape of the conversation
+              - text: Use a repeatable guide instead of rebuilding your preparation every time.
+          - generic [ref=e132]:
+            - generic [ref=e133]: "2"
+            - generic [ref=e134]:
+              - strong [ref=e135]: Stay oriented in real time
+              - text: See prompts, suggestions, and key points while you listen and speak.
+          - generic [ref=e136]:
+            - generic [ref=e137]: "3"
+            - generic [ref=e138]:
+              - strong [ref=e139]: Leave with a useful record
+              - text: The transcript, summary, decisions, and follow-up flow into your work memory.
+      - img "Guided client conversation template showing a live prompt and covered topics" [ref=e141]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: Client discovery · Northstar
+          - generic [ref=e144]: ● Live
+        - generic [ref=e145]:
+          - strong [ref=e146]: Suggested next question
+          - text: What would make this workflow feel successful three months from now?
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]: ✓
+            - generic [ref=e150]: Understand the current workflow
+          - generic [ref=e151]:
+            - generic [ref=e152]: ✓
+            - generic [ref=e153]: Identify the cost of the problem
+          - generic [ref=e154]:
+            - generic [ref=e155]: ○
+            - generic [ref=e156]: Define the desired outcome
+          - generic [ref=e157]:
+            - generic [ref=e158]: ○
+            - generic [ref=e159]: Agree on next steps
+    - generic [ref=e162]:
+      - generic [ref=e163]:
+        - generic [ref=e164]: Everything Becomes Context
+        - heading "Capture the work around the work." [level=2] [ref=e165]
+        - paragraph [ref=e166]: Meetings, voice notes, screen recordings, and passing thoughts all contain useful signals. Echo Scribe transcribes them, identifies what they are about, tags them, and routes them to the right project so your work does not disappear into disconnected files.
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - generic [ref=e169]: "1"
+            - generic [ref=e170]:
+              - strong [ref=e171]: Capture from wherever work happens
+              - text: Use voice, Zoom or meeting recording, or screen recording when the moment matters.
+          - generic [ref=e172]:
+            - generic [ref=e173]: "2"
+            - generic [ref=e174]:
+              - strong [ref=e175]: Let the system add structure
+              - text: Transcripts become notes, tasks, decisions, tags, and project context.
+          - generic [ref=e176]:
+            - generic [ref=e177]: "3"
+            - generic [ref=e178]:
+              - strong [ref=e179]: Find it when you need it
+              - text: Search your work memory, ask questions, and see the thread across sources.
+      - img "Example of captured notes being classified" [ref=e181]:
+        - generic [ref=e182]:
+          - generic [ref=e183]: Meeting
+          - generic [ref=e184]:
+            - paragraph [ref=e185]: Northstar wants weekly progress visibility before the next review
+            - generic [ref=e186]: Client discovery · tagged Northstar
+        - generic [ref=e187]:
+          - generic [ref=e188]: Screen
+          - generic [ref=e189]:
+            - paragraph [ref=e190]: Checkout drop-off begins after the pricing step
+            - generic [ref=e191]: Screen recording · tagged Growth
+        - generic [ref=e192]:
+          - generic [ref=e193]: Task
+          - generic [ref=e194]:
+            - paragraph [ref=e195]: Send a follow-up with the proposed weekly reporting workflow
+            - generic [ref=e196]: Created from meeting · just now
+    - generic [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]: A Clearer Operating Picture
+        - heading "Turn scattered moments into a status you can act on." [level=2] [ref=e202]
+        - paragraph [ref=e203]: Once the work is captured and organized, patterns become visible. See the decisions, open questions, commitments, and follow-ups that shape a project. Daily recaps, search, and local chat help you move from “what happened?” to “what should happen next?”
+        - generic [ref=e204]:
+          - generic [ref=e205]:
+            - generic [ref=e206]: "1"
+            - generic [ref=e207]:
+              - strong [ref=e208]: Trace the thread
+              - text: Bring together meetings, recordings, notes, and tasks by project.
+          - generic [ref=e209]:
+            - generic [ref=e210]: "2"
+            - generic [ref=e211]:
+              - strong [ref=e212]: Spot what is missing
+              - text: See unresolved questions and commitments before they become surprises.
+          - generic [ref=e213]:
+            - generic [ref=e214]: "3"
+            - generic [ref=e215]:
+              - strong [ref=e216]: Improve the next move
+              - text: Use the record to prepare, follow up, and run the next conversation better.
+      - img "Project status view showing decisions, open questions, and follow-up progress" [ref=e218]:
+        - generic [ref=e219]:
+          - strong [ref=e220]: Northstar · work status
+          - generic [ref=e221]: THIS WEEK
+        - generic [ref=e222]:
+          - generic [ref=e223]:
+            - strong [ref=e224]: "12"
+            - text: captured moments
+          - generic [ref=e225]:
+            - strong [ref=e226]: "4"
+            - text: open decisions
+          - generic [ref=e227]:
+            - strong [ref=e228]: "7"
+            - text: follow-ups
+        - generic [ref=e230]:
+          - generic [ref=e231]: Discovery coverage
+          - strong [ref=e232]: 82%
+        - generic [ref=e236]:
+          - generic [ref=e237]: Follow-up completed
+          - strong [ref=e238]: 64%
+        - generic [ref=e242]:
+          - generic [ref=e243]: Next gap to resolve
+          - strong [ref=e244]: Pricing workflow
+    - generic [ref=e248]:
+      - generic [ref=e249]:
+        - generic [ref=e250]: Privacy
+        - heading "Your work stays yours." [level=2] [ref=e251]
+        - paragraph [ref=e252]: No cloud backend. No account. No data sold. Dictation, recordings, transcripts, and project context stay under your control on your Mac.
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - heading "Quick dictation stays ephemeral" [level=3] [ref=e257]
+          - paragraph [ref=e258]: Short voice input is processed locally and can be discarded after transcription. You decide what becomes part of your work memory.
+        - generic [ref=e259]:
+          - heading "Works fully offline" [level=3] [ref=e264]
+          - paragraph [ref=e265]: Models download once, then run locally forever. After setup, Echo Scribe works with no internet connection at all.
+        - generic [ref=e266]:
+          - heading "No account required" [level=3] [ref=e271]
+          - paragraph [ref=e272]: There is no sign-up, no license key, no tracking ID. Nothing is phoned home. Install and it works.
+        - generic [ref=e273]:
+          - heading "Your data, your folder" [level=3] [ref=e278]
+          - paragraph [ref=e279]: Notes live in a SQLite file on your Mac. Export it, back it up, or delete it — full control, always.
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - heading "Latest from the Blog" [level=2] [ref=e283]
+        - link "View all →" [ref=e284] [cursor=pointer]:
+          - /url: /blog
+      - paragraph [ref=e285]: No posts yet. Check back soon!
+    - generic [ref=e288]:
+      - heading "Start building your work memory." [level=2] [ref=e289]
+      - paragraph [ref=e290]: Open Terminal and paste the line below. No Homebrew required.
+      - generic [ref=e291]:
+        - code [ref=e292]: curl -fsSL https://raw.githubusercontent.com/denisduvauchelle/echo-scribe/main/install.sh | bash
+        - button "Copy install command" [ref=e293] [cursor=pointer]: Copy
+      - generic [ref=e297]:
+        - generic [ref=e298]: macOS 14 or later
+        - generic [ref=e299]:
+          - generic [ref=e300]: ·
+          - text: Apple Silicon & Intel
+        - generic [ref=e301]:
+          - generic [ref=e302]: ·
+          - text: Run again to update
+        - generic [ref=e303]:
+          - generic [ref=e304]: ·
+          - text: ~2 GB for AI models (one-time download)
+  - contentinfo [ref=e305]:
+    - generic [ref=e306]:
+      - generic [ref=e307]:
+        - generic [ref=e308]:
+          - link [ref=e309] [cursor=pointer]:
+            - /url: /
+            - img "Echo Scribe" [ref=e310]
+            - text: Echo Scribe
+          - paragraph [ref=e311]: No tracking. No cloud. Your voice stays yours.
+        - generic [ref=e312]:
+          - heading "Navigation" [level=4] [ref=e313]
+          - navigation [ref=e314]:
+            - link "Home" [ref=e315] [cursor=pointer]:
+              - /url: /
+            - link "Blog" [ref=e316] [cursor=pointer]:
+              - /url: /blog
+            - link "Contact" [ref=e317] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=e318]:
+          - heading "Project" [level=4] [ref=e319]
+          - navigation [ref=e320]:
+            - link "GitHub" [ref=e321] [cursor=pointer]:
+              - /url: https://github.com/denisduvauchelle/echo-scribe
+            - link "Releases" [ref=e322] [cursor=pointer]:
+              - /url: https://github.com/denisduvauchelle/echo-scribe/releases
+            - link "Report an issue" [ref=e323] [cursor=pointer]:
+              - /url: https://github.com/denisduvauchelle/echo-scribe/issues
+        - generic [ref=e324]:
+          - heading "Legal" [level=4] [ref=e325]
+          - navigation [ref=e326]:
+            - link "Legal Notice" [ref=e327] [cursor=pointer]:
+              - /url: /legal
+            - link "Privacy Policy" [ref=e328] [cursor=pointer]:
+              - /url: /privacy
+            - link "Cookie Policy" [ref=e329] [cursor=pointer]:
+              - /url: /cookies
+      - generic [ref=e331]:
+        - paragraph [ref=e332]: © 2026 Echo Scribe. All rights reserved.
+        - paragraph [ref=e333]: Powered by Recursive Solutions
+  - button "Open Next.js Dev Tools" [ref=e339] [cursor=pointer]

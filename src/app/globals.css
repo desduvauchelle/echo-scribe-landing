@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+@source '../../node_modules/@growth-engine/sdk-client/components.js';
+/* Built-in themes disabled — the custom light/dark themes below fully replace them */
+@plugin 'daisyui' {
+	themes: false;
+}
+@plugin '@tailwindcss/typography';
+
+/* Echo Scribe palette — ported from the original landing page (desduvauchelle.github.io/echo-scribe) */
+@plugin 'daisyui/theme' {
+	name: 'light';
+	default: true;
+	color-scheme: light;
+	--color-base-100: #fbf6ea;
+	--color-base-200: #f2ead8;
+	--color-base-300: #e8dcc2;
+	--color-base-content: #203329;
+	--color-primary: #123b2d;
+	--color-primary-content: #f3faf5;
+	--color-secondary: #c7893c;
+	--color-secondary-content: #fffdf7;
+	--color-accent: #37a477;
+	--color-accent-content: #f3faf5;
+	--color-neutral: #1b4d3a;
+	--color-neutral-content: #f3faf5;
+	--color-info: #286b72;
+	--color-info-content: #e5f1f2;
+	--color-success: #178052;
+	--color-success-content: #e8f3eb;
+	--color-warning: #a96b1d;
+	--color-warning-content: #fff3de;
+	--color-error: #b3402e;
+	--color-error-content: #fdeae6;
+	--radius-selector: 0.5rem;
+	--radius-field: 0.5625rem;
+	--radius-box: 0.875rem;
+}
+
+@plugin 'daisyui/theme' {
+	name: 'dark';
+	color-scheme: dark;
+	--color-base-100: #0e1d16;
+	--color-base-200: #132a20;
+	--color-base-300: #1a3628;
+	--color-base-content: #e9f2ea;
+	--color-primary: #8fe0ba;
+	--color-primary-content: #0e2018;
+	--color-secondary: #d79a4b;
+	--color-secondary-content: #221503;
+	--color-accent: #37a477;
+	--color-accent-content: #f3faf5;
+	--color-neutral: #1b4d3a;
+	--color-neutral-content: #f3faf5;
+	--color-info: #7fc4cc;
+	--color-info-content: #0e2426;
+	--color-success: #5cc493;
+	--color-success-content: #0b2417;
+	--color-warning: #e0b26a;
+	--color-warning-content: #2a1c05;
+	--color-error: #e08b7b;
+	--color-error-content: #2b0f09;
+	--radius-selector: 0.5rem;
+	--radius-field: 0.5625rem;
+	--radius-box: 0.875rem;
+}
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/* Elevated card surface (original --bg-elevated), theme-reactive */
+:root {
+	--elevated: #fffdf7;
+}
+[data-theme='dark'] {
+	--elevated: #142519;
+}
+
+@theme inline {
+	--color-elevated: var(--elevated);
+	--font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+	--font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Landing-page animations (waveform bars, badge dot, caret) */
+@theme {
+	--animate-wave: wave 1.6s ease-in-out infinite;
+	--animate-wave-fast: wave 1s ease-in-out infinite;
+	--animate-pulse-dot: pulse-dot 2.5s ease-in-out infinite;
+	--animate-blink: blink 1.1s step-end infinite;
+}
+
+@keyframes wave {
+	0%,
+	100% {
+		transform: scaleY(1);
+	}
+	50% {
+		transform: scaleY(0.25);
+	}
+}
+
+@keyframes pulse-dot {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.4;
+		transform: scale(0.7);
+	}
+}
+
+@keyframes blink {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	@apply bg-base-100 text-base-content font-sans antialiased;
+}
