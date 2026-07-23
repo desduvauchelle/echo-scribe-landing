@@ -16,6 +16,16 @@ export const BLOG_BATCH_SIZE = 1000
 
 export const STATIC_PAGES = [
 	'',
+	'/features',
+	'/features/capture',
+	'/features/organize',
+	'/features/editor',
+	'/features/platform',
+	'/use-cases',
+	'/use-cases/consultants',
+	'/use-cases/sales-teams',
+	'/use-cases/founders',
+	'/use-cases/students',
 	'/blog',
 	'/blog/authors',
 	'/contact',
