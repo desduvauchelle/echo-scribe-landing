@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "pull-forms": "growth-engine-pull-forms",
-    "prepare": "husky"
+    "prepare": "husky",
+    "screenshots": "node tools/screenshots/render.mjs"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
@@ -40,6 +41,7 @@
     "eslint-config-next": "16.2.1",
     "husky": "9.1.7",
     "lint-staged": "16.4.0",
+    "playwright": "^1.61.1",
     "postcss": "8.5.3",
     "tailwindcss": "4.1.4",
     "typescript": "5.8.3",

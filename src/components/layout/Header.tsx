@@ -5,14 +5,24 @@ import { localizedPath } from '@/lib/i18n-utils'
 import { ThemeToggle } from './ThemeToggle'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MobileMenu } from './MobileMenu'
+import { NavDropdown } from './NavDropdown'
+import { NAV_GROUPS } from './nav.config'
 
 export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const NAV_LINKS = [
 		{ href: localizedPath('/', locale), label: dict['nav.home'] },
 		{ href: localizedPath('/blog', locale), label: dict['nav.blog'] },
 		{ href: localizedPath('/contact', locale), label: dict['nav.contact'] },
-		{ href: `${localizedPath('/', locale)}#install`, label: dict['nav.download'] },
 	]
+
+	const mobileGroups = NAV_GROUPS.map((group) => ({
+		label: dict[group.labelKey],
+		href: localizedPath(group.hubPath, locale),
+		items: group.itemKeys.map((item) => ({
+			href: localizedPath(item.path, locale),
+			label: dict[item.labelKey],
+		})),
+	}))
 
 	return (
 		<header className="navbar sticky top-0 z-50 border-b border-base-content/10 bg-base-100/85 backdrop-blur-xl">
@@ -24,15 +34,18 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 
 				{/* Desktop nav */}
 				<nav className="hidden items-center gap-6 md:flex">
-					{NAV_LINKS.slice(0, 3).map((link) => (
-						<Link
-							key={link.href}
-							href={link.href}
-							className="text-base-content/70 transition-colors hover:text-primary"
-						>
-							{link.label}
-						</Link>
+					<Link href={localizedPath('/', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.home']}
+					</Link>
+					{NAV_GROUPS.map((group) => (
+						<NavDropdown key={group.hubPath} group={group} dict={dict} locale={locale} />
 					))}
+					<Link href={localizedPath('/blog', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.blog']}
+					</Link>
+					<Link href={localizedPath('/contact', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.contact']}
+					</Link>
 					<LanguageSwitcher locale={locale} />
 					<ThemeToggle />
 					<Link href={`${localizedPath('/', locale)}#install`} className="btn btn-primary btn-sm gap-2 rounded-[9px] font-semibold">
@@ -46,7 +59,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 				</nav>
 
 				{/* Mobile nav — client component handles toggle state */}
-				<MobileMenu links={NAV_LINKS} locale={locale} />
+				<MobileMenu links={NAV_LINKS} groups={mobileGroups} locale={locale} />
 			</div>
 		</header>
 	)

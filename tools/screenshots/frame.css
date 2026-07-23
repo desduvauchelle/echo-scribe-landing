@@ -1,0 +1,30 @@
+:root {
+	--bg: #ffffff;
+	--panel: #f6f8f7;
+	--ink: #14231d;
+	--muted: #5b6b64;
+	--line: rgba(20, 35, 29, 0.1);
+	--accent: #1f7a54;
+	--accent-soft: rgba(31, 122, 84, 0.1);
+	--warning: #b8791f;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: transparent; padding: 24px; }
+#shot { width: 880px; border-radius: 18px; overflow: hidden; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 32px 80px rgba(18, 59, 45, 0.16); }
+.titlebar { display: flex; align-items: center; gap: 8px; padding: 13px 18px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot.r { background: #ff5f57; } .dot.y { background: #febc2e; } .dot.g { background: #28c840; }
+.titlebar .name { margin-left: 8px; font-size: 13px; color: var(--muted); }
+.body { padding: 22px 24px; color: var(--ink); }
+.row { display: flex; gap: 14px; }
+.sidebar { width: 210px; border-right: 1px solid var(--line); padding: 18px; background: var(--panel); }
+.sidebar .item { padding: 8px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); }
+.sidebar .item.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+.h { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+.sub { font-size: 13px; color: var(--muted); }
+.bubble { border-radius: 12px; padding: 12px 14px; font-size: 14px; line-height: 1.5; margin-bottom: 10px; max-width: 78%; }
+.bubble.user { background: var(--accent); color: #fff; margin-left: auto; }
+.bubble.ai { background: var(--panel); color: var(--ink); border: 1px solid var(--line); }
