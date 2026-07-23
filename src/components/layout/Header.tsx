@@ -13,8 +13,16 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 		{ href: localizedPath('/', locale), label: dict['nav.home'] },
 		{ href: localizedPath('/blog', locale), label: dict['nav.blog'] },
 		{ href: localizedPath('/contact', locale), label: dict['nav.contact'] },
-		{ href: `${localizedPath('/', locale)}#install`, label: dict['nav.download'] },
 	]
+
+	const mobileGroups = NAV_GROUPS.map((group) => ({
+		label: dict[group.labelKey],
+		href: localizedPath(group.hubPath, locale),
+		items: group.itemKeys.map((item) => ({
+			href: localizedPath(item.path, locale),
+			label: dict[item.labelKey],
+		})),
+	}))
 
 	return (
 		<header className="navbar sticky top-0 z-50 border-b border-base-content/10 bg-base-100/85 backdrop-blur-xl">
@@ -51,7 +59,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 				</nav>
 
 				{/* Mobile nav — client component handles toggle state */}
-				<MobileMenu links={NAV_LINKS} locale={locale} />
+				<MobileMenu links={NAV_LINKS} groups={mobileGroups} locale={locale} />
 			</div>
 		</header>
 	)

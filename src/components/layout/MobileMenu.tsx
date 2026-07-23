@@ -10,11 +10,19 @@ interface NavLink {
 	label: string
 }
 
+interface MobileGroup {
+	label: string
+	href: string
+	items: NavLink[]
+}
+
 export function MobileMenu({
 	links,
+	groups = [],
 	locale,
 }: {
 	links: NavLink[]
+	groups?: MobileGroup[]
 	locale: string
 }) {
 	const [menuOpen, setMenuOpen] = useState(false)
@@ -26,12 +34,7 @@ export function MobileMenu({
 				onClick={() => setMenuOpen(!menuOpen)}
 				aria-label="Toggle menu"
 			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					className="w-6 h-6 stroke-current"
-				>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6 stroke-current">
 					{menuOpen ? (
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
 					) : (
@@ -52,6 +55,29 @@ export function MobileMenu({
 							>
 								{link.label}
 							</Link>
+						))}
+						{groups.map((group) => (
+							<div key={group.href} className="border-t border-base-200 pt-2">
+								<Link
+									href={group.href}
+									className="block py-1 text-sm font-semibold text-base-content"
+									onClick={() => setMenuOpen(false)}
+								>
+									{group.label}
+								</Link>
+								<div className="flex flex-col gap-1 pl-3">
+									{group.items.map((item) => (
+										<Link
+											key={item.href}
+											href={item.href}
+											className="text-base-content/70 hover:text-primary transition-colors py-1 text-sm"
+											onClick={() => setMenuOpen(false)}
+										>
+											{item.label}
+										</Link>
+									))}
+								</div>
+							</div>
 						))}
 						<LanguageSwitcher locale={locale} />
 						<ThemeToggle />
