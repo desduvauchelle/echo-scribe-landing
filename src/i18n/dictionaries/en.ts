@@ -421,6 +421,8 @@ const en = {
 	// Blog
 	'blog.heading': 'Blog',
 	'blog.subtitle': 'Latest articles and insights',
+	'blog.meta.description':
+		'Private AI transcription, offline voice dictation, and local meeting assistant guides — capture and organize your work without sending data to the cloud.',
 	'blog.search.placeholder': 'Search posts...',
 	'blog.no.posts': 'No posts found',
 	'blog.clear.search': 'Clear search',
@@ -433,6 +435,8 @@ const en = {
 	// Authors
 	'authors.heading': 'Authors',
 	'authors.subtitle': 'Meet the writers behind our blog',
+	'authors.meta.description':
+		'Meet the writers behind Echo Scribe — the team sharing guides on private transcription, offline dictation, and local AI for your meetings and notes.',
 	'authors.empty': 'No authors yet',
 	'authors.posts.heading': 'Posts by {name}',
 	'authors.posts.empty': 'No posts yet from this author',
@@ -465,6 +469,8 @@ const en = {
 	// Contact
 	'contact.heading': 'Contact Us',
 	'contact.subtitle': "We'd love to hear from you",
+	'contact.meta.description':
+		'Get in touch with the Echo Scribe team. Questions about private, offline transcription and local AI note-taking on your Mac? We would love to hear from you.',
 	'contact.load.error': 'Failed to load contact information',
 	'contact.business.hours': 'Business Hours',
 	'contact.info': 'Contact Information',

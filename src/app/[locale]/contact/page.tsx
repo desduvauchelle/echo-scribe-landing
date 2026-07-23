@@ -22,7 +22,7 @@ export async function generateMetadata({
 		path: '/contact',
 		locale,
 		title: dict['contact.heading'],
-		description: dict['contact.subtitle'],
+		description: dict['contact.meta.description'],
 	})
 }
 
@@ -43,17 +43,17 @@ export default async function ContactPage({
 		<main className="container mx-auto px-4 py-12">
 			<ContactAnalytics />
 
-			<h1 className="text-4xl font-bold text-center mb-2">{dict['contact.heading']}</h1>
-			<p className="text-center text-base-content/60 mb-10">
-				{dict['contact.subtitle']}
-			</p>
-
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-				{/* Contact Form */}
+				{/* Contact Form — FormRenderer emits the page's single <h1> from
+				    form.name, so we localize it here instead of adding a second H1. */}
 				<div>
 					{form ? (
 						<FormRenderer
-							form={form}
+							form={{
+								...form,
+								name: dict['contact.heading'],
+								description: dict['contact.subtitle'],
+							}}
 							translations={{
 								defaultSubmitLabel: 'Send Message',
 							}}

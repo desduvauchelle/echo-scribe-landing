@@ -18,7 +18,7 @@ export async function generateMetadata({
 		path: '/blog/authors',
 		locale,
 		title: dict['authors.heading'],
-		description: dict['authors.subtitle'],
+		description: dict['authors.meta.description'],
 	})
 }
 

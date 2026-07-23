@@ -423,6 +423,8 @@ const fr: Dictionary = {
 	// Blog
 	'blog.heading': 'Blog',
 	'blog.subtitle': 'Derniers articles et analyses',
+	'blog.meta.description':
+		'Transcription IA privée, dictée vocale hors ligne et assistant de réunion local — capturez et organisez votre travail sans l’envoyer dans le cloud.',
 	'blog.search.placeholder': 'Rechercher des articles...',
 	'blog.no.posts': 'Aucun article trouvé',
 	'blog.clear.search': 'Effacer la recherche',
@@ -435,6 +437,8 @@ const fr: Dictionary = {
 	// Authors
 	'authors.heading': 'Auteurs',
 	'authors.subtitle': 'Découvrez les rédacteurs de notre blog',
+	'authors.meta.description':
+		'Découvrez les auteurs d’Echo Scribe — l’équipe qui partage des guides sur la transcription privée, la dictée hors ligne et l’IA locale pour vos réunions.',
 	'authors.empty': 'Aucun auteur pour le moment',
 	'authors.posts.heading': 'Articles de {name}',
 	'authors.posts.empty': 'Aucun article de cet auteur pour le moment',
@@ -467,6 +471,8 @@ const fr: Dictionary = {
 	// Contact
 	'contact.heading': 'Contactez-nous',
 	'contact.subtitle': 'Nous serions ravis de vous entendre',
+	'contact.meta.description':
+		'Contactez l’équipe Echo Scribe. Des questions sur la transcription privée hors ligne et la prise de notes IA locale sur Mac ? Écrivez-nous.',
 	'contact.load.error': 'Échec du chargement des informations de contact',
 	'contact.business.hours': 'Heures d’ouverture',
 	'contact.info': 'Coordonnées',
