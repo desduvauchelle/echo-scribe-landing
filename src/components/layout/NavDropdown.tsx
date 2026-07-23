@@ -15,13 +15,15 @@ export function NavDropdown({ group, dict, locale }: { group: NavGroup; dict: Di
 					<polyline points="6 9 12 15 18 9" />
 				</svg>
 			</Link>
-			<ul className="dropdown-content menu z-50 mt-2 w-60 rounded-box border border-base-content/10 bg-base-100 p-2 shadow-lg">
-				{group.itemKeys.map((item) => (
-					<li key={item.path}>
-						<Link href={localizedPath(item.path, locale)}>{dict[item.labelKey]}</Link>
-					</li>
-				))}
-			</ul>
+			<div className="dropdown-content z-50 pt-2">
+				<ul className="menu w-60 rounded-box border border-base-content/10 bg-base-100 p-2 shadow-lg">
+					{group.itemKeys.map((item) => (
+						<li key={item.path}>
+							<Link href={localizedPath(item.path, locale)}>{dict[item.labelKey]}</Link>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	)
 }

@@ -39,6 +39,13 @@ export function buildPageMetadata({
 	const languages = buildAlternates(path)
 	const fullTitle = brand ? `${title} | ${SITE_NAME}` : title
 
+	// Default share card is the generated `next/og` image at the app root
+	// (`src/app/opengraph-image.tsx`). Referenced explicitly — rather than relying
+	// on the file-convention cascade, which doesn't reach pages through the dynamic
+	// `[locale]` segment — and resolved against `metadataBase` so it stays on the
+	// single canonical host. A page may still pass its own `image` to override.
+	const ogImage = image ?? '/opengraph-image'
+
 	const languagesWithDefault = languages
 		? { ...languages, 'x-default': buildUrl(path, defaultLocale) }
 		: undefined
@@ -63,13 +70,14 @@ export function buildPageMetadata({
 			url: canonical,
 			siteName: SITE_NAME,
 			type,
-			...(image ? { images: [{ url: image }] } : {}),
+			images: [{ url: ogImage }],
 		},
 		twitter: {
-			card: image ? 'summary_large_image' : 'summary',
+			// Every page carries a large share image, so always use the large card.
+			card: 'summary_large_image',
 			title: fullTitle,
 			...(description ? { description } : {}),
-			...(image ? { images: [image] } : {}),
+			images: [ogImage],
 		},
 	}
 }
