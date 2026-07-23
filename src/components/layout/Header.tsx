@@ -5,6 +5,8 @@ import { localizedPath } from '@/lib/i18n-utils'
 import { ThemeToggle } from './ThemeToggle'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { MobileMenu } from './MobileMenu'
+import { NavDropdown } from './NavDropdown'
+import { NAV_GROUPS } from './nav.config'
 
 export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const NAV_LINKS = [
@@ -24,15 +26,18 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 
 				{/* Desktop nav */}
 				<nav className="hidden items-center gap-6 md:flex">
-					{NAV_LINKS.slice(0, 3).map((link) => (
-						<Link
-							key={link.href}
-							href={link.href}
-							className="text-base-content/70 transition-colors hover:text-primary"
-						>
-							{link.label}
-						</Link>
+					<Link href={localizedPath('/', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.home']}
+					</Link>
+					{NAV_GROUPS.map((group) => (
+						<NavDropdown key={group.hubPath} group={group} dict={dict} locale={locale} />
 					))}
+					<Link href={localizedPath('/blog', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.blog']}
+					</Link>
+					<Link href={localizedPath('/contact', locale)} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.contact']}
+					</Link>
 					<LanguageSwitcher locale={locale} />
 					<ThemeToggle />
 					<Link href={`${localizedPath('/', locale)}#install`} className="btn btn-primary btn-sm gap-2 rounded-[9px] font-semibold">
