@@ -4,11 +4,11 @@ import type { Shot } from './ScreenshotFrame'
 
 const S = '/screenshots'
 
-function shotFor(src: string, alt: string): Shot {
+export function shotFor(src: string, alt: string): Shot {
 	return { src: `${S}/${src}.png`, alt }
 }
 
-function slab(
+export function slab(
 	dict: Dictionary,
 	base: string,
 	shotSrc: string,
