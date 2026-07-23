@@ -6,17 +6,15 @@ const fr: Dictionary = {
 	'nav.blog': 'Blog',
 	'nav.contact': 'Contact',
 	'nav.features': 'Fonctionnalités',
-	'nav.usecases': 'Cas d\'usage',
+	'nav.usecases': 'Cas d’usage',
 	'nav.features.capture': 'Capture et enregistrement',
 	'nav.features.organize': 'Comprendre et organiser',
 	'nav.features.editor': 'Édition et export',
 	'nav.features.platform': 'Plateforme et système',
-	'nav.features.all': 'Toutes les fonctionnalités',
 	'nav.usecases.consultants': 'Pour les consultants',
 	'nav.usecases.sales': 'Pour les équipes commerciales',
 	'nav.usecases.founders': 'Pour les fondateurs',
 	'nav.usecases.students': 'Pour les étudiants et enseignants',
-	'nav.usecases.all': 'Tous les cas d\'usage',
 	'nav.download': 'Télécharger gratuitement',
 
 	// Hero
