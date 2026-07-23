@@ -3,6 +3,18 @@ const en = {
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
 	'nav.contact': 'Contact',
+	'nav.features': 'Features',
+	'nav.usecases': 'Use cases',
+	'nav.features.capture': 'Capture & Record',
+	'nav.features.organize': 'Understand & Organize',
+	'nav.features.editor': 'Editor & Export',
+	'nav.features.platform': 'Platform & System',
+	'nav.features.all': 'All features',
+	'nav.usecases.consultants': 'For Consultants',
+	'nav.usecases.sales': 'For Sales Teams',
+	'nav.usecases.founders': 'For Founders',
+	'nav.usecases.students': 'For Students & Educators',
+	'nav.usecases.all': 'All use cases',
 	'nav.download': 'Download free',
 
 	// Hero
