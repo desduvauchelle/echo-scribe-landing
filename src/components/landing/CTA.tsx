@@ -3,7 +3,7 @@ import { ScrollReveal } from './ScrollReveal'
 import { InstallBox } from './InstallBox'
 import { TrackedLink } from './TrackedLink'
 
-const WINDOWS_DOWNLOAD_URL = 'https://github.com/denisduvauchelle/echo-scribe/releases/latest'
+const WINDOWS_DOWNLOAD_URL = 'https://github.com/desduvauchelle/echo-scribe/releases/latest'
 
 export function CTA({ dict }: { dict: Dictionary }) {
 	const meta = [dict['cta.meta.macos'], dict['cta.meta.chips'], dict['cta.meta.update'], dict['cta.meta.models']]

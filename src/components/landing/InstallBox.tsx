@@ -4,7 +4,7 @@ import { useState } from 'react'
 import type { Dictionary } from '@/i18n'
 import { trackEvent } from '@/components/analytics/GoogleAnalytics'
 
-export const INSTALL_CMD = 'curl -fsSL https://raw.githubusercontent.com/denisduvauchelle/echo-scribe/main/install.sh | bash'
+export const INSTALL_CMD = 'curl -fsSL https://raw.githubusercontent.com/desduvauchelle/echo-scribe/main/install.sh | bash'
 
 export function InstallBox({ dict }: { dict: Dictionary }) {
 	const [copied, setCopied] = useState(false)
