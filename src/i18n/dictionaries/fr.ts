@@ -92,6 +92,7 @@ const fr: Dictionary = {
 	'features.status.step3.desc': 'Servez-vous de la trace pour préparer, relancer et mieux mener la conversation suivante.',
 
 	// Feature pages: hub
+	'features.hub.meta.title': 'Notes IA privées et enregistrement d’écran',
 	'features.hub.meta.desc': 'Tout ce qu’Echo Scribe capture, comprend et exporte — en privé et en local.',
 	'features.hub.eyebrow': 'Fonctionnalités',
 	'features.hub.title': 'Une seule app privée pour tout ce que vous dites, voyez et décidez.',
@@ -173,6 +174,7 @@ const fr: Dictionary = {
 	'shot.projects.alt': 'Vue des projets Echo Scribe avec les tâches groupées par projet',
 
 	// Feature pages: editor
+	'features.editor.meta.title': 'Éditeur vidéo : zoom auto et export MP4/GIF',
 	'features.editor.meta.desc': 'Éditez vos enregistrements d’écran avec zoom automatique et arrière-plans personnalisés, puis exportez en MP4, GIF ou vers Google Drive.',
 	'features.editor.eyebrow': 'Édition et export',
 	'features.editor.title': 'Transformez un enregistrement brut en quelque chose de présentable.',
@@ -263,6 +265,7 @@ const fr: Dictionary = {
 	'usecases.consultants.slab3.step3.desc': 'Chaque engagement est suivi.',
 
 	// Use-case pages: sales teams
+	'usecases.sales.meta.title': 'Notes IA de réunion pour équipes commerciales',
 	'usecases.sales.meta.desc': 'Les appels de découverte deviennent automatiquement des notes prêtes pour le CRM — consultables dans tout votre historique de deals.',
 	'usecases.sales.eyebrow': 'Pour les équipes commerciales',
 	'usecases.sales.title': 'Chaque appel de découverte, prêt pour le CRM avant la fin de votre café.',
@@ -296,6 +299,7 @@ const fr: Dictionary = {
 	'usecases.sales.slab3.step3.desc': 'Un trimestre d’appels, une seule recherche.',
 
 	// Use-case pages: founders
+	'usecases.founders.meta.title': 'Un second cerveau pour les fondateurs',
 	'usecases.founders.meta.desc': 'Enregistrez vos démos produit à l’écran, dictez vos idées en déplacement, et recevez un récapitulatif quotidien de tout ce qui s’est passé — pensé pour les fondateurs qui portent toutes les casquettes.',
 	'usecases.founders.eyebrow': 'Pour les fondateurs',
 	'usecases.founders.title': 'Vous êtes toute l’équipe. Echo Scribe est votre second cerveau.',
@@ -329,6 +333,7 @@ const fr: Dictionary = {
 	'usecases.founders.slab3.step3.desc': 'Impliquez un cofondateur ou un conseiller en quelques minutes.',
 
 	// Use-case pages: students
+	'usecases.students.meta.title': 'Notes de cours IA pour les étudiants',
 	'usecases.students.meta.desc': 'Capture des cours, transcriptions d’étude consultables et guides de révision organisés automatiquement — Echo Scribe, un partenaire d’étude qui ne rate jamais un mot.',
 	'usecases.students.eyebrow': 'Pour les étudiants et enseignants',
 	'usecases.students.title': 'Chaque cours, capturé, consultable et prêt à être révisé.',

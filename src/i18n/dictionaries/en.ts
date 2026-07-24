@@ -90,6 +90,7 @@ const en = {
 	'features.status.step3.desc': 'Use the record to prepare, follow up, and run the next conversation better.',
 
 	// Feature pages: hub
+	'features.hub.meta.title': 'Features: Private AI Notes & Screen Recording',
 	'features.hub.meta.desc': 'Everything Echo Scribe captures, understands, and exports — private and on-device.',
 	'features.hub.eyebrow': 'Features',
 	'features.hub.title': 'One private app for everything you say, see, and decide.',
@@ -171,6 +172,7 @@ const en = {
 	'shot.projects.alt': 'Echo Scribe projects view with tasks grouped by project',
 
 	// Feature pages: editor
+	'features.editor.meta.title': 'Screen Recording Editor: Auto-Zoom & Export',
 	'features.editor.meta.desc': 'Edit screen recordings with auto-zoom and custom backgrounds, then export to MP4, GIF, or Google Drive.',
 	'features.editor.eyebrow': 'Editor & Export',
 	'features.editor.title': 'Turn a raw recording into something worth sharing.',
@@ -261,6 +263,7 @@ const en = {
 	'usecases.consultants.slab3.step3.desc': 'Every commitment tracked.',
 
 	// Use-case pages: sales teams
+	'usecases.sales.meta.title': 'AI Meeting Notes for Sales Teams',
 	'usecases.sales.meta.desc': 'Discovery calls become CRM-ready notes automatically — searchable across your entire deal history.',
 	'usecases.sales.eyebrow': 'For Sales Teams',
 	'usecases.sales.title': 'Every discovery call, ready for the CRM before you finish your coffee.',
@@ -294,6 +297,7 @@ const en = {
 	'usecases.sales.slab3.step3.desc': 'A quarter of calls, one query.',
 
 	// Use-case pages: founders
+	'usecases.founders.meta.title': 'A Second Brain for Founders',
 	'usecases.founders.meta.desc': 'Screen-record product demos, dictate ideas on the move, and get a daily rollup of everything that happened — built for founders wearing every hat.',
 	'usecases.founders.eyebrow': 'For Founders',
 	'usecases.founders.title': 'You are the whole team. Echo Scribe is your second brain.',
@@ -327,6 +331,7 @@ const en = {
 	'usecases.founders.slab3.step3.desc': 'Loop in a co-founder or advisor in minutes.',
 
 	// Use-case pages: students
+	'usecases.students.meta.title': 'AI Lecture Notes for Students',
 	'usecases.students.meta.desc': 'Lecture capture, searchable study transcripts, and auto-organized study guides — Echo Scribe as a study partner that never misses a word.',
 	'usecases.students.eyebrow': 'For Students & Educators',
 	'usecases.students.title': 'Every lecture, captured, searchable, and ready to study from.',
