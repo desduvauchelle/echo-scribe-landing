@@ -1,11 +1,24 @@
 import type { Dictionary } from '@/i18n'
-import type { ProductPageProps, Slab } from './ProductPage'
+import type { Faq, ProductPageProps, Slab } from './ProductPage'
 import type { Shot } from './ScreenshotFrame'
 
 const S = '/screenshots'
 
 export function shotFor(src: string, alt: string): Shot {
 	return { src: `${S}/${src}.png`, alt }
+}
+
+// Pull N `${base}.intro{n}` paragraphs into the ProductPage intro prose block.
+export function introFor(dict: Dictionary, base: string, count: number): string[] {
+	return Array.from({ length: count }, (_, i) => dict[`${base}.intro${i + 1}` as keyof Dictionary])
+}
+
+// Pull N `${base}.faq{n}.q` / `.a` pairs into the ProductPage FAQ block (also FAQPage JSON-LD).
+export function faqsFor(dict: Dictionary, base: string, count: number): Faq[] {
+	return Array.from({ length: count }, (_, i) => ({
+		q: dict[`${base}.faq${i + 1}.q` as keyof Dictionary],
+		a: dict[`${base}.faq${i + 1}.a` as keyof Dictionary],
+	}))
 }
 
 export function slab(
@@ -40,6 +53,8 @@ export function buildCapturePage(dict: Dictionary, locale: string): ProductPageP
 			slab(dict, 'features.capture.slab2', 'screen-recorder', 'shot.screen-recorder.alt', { reverse: true, tinted: true }),
 			slab(dict, 'features.capture.slab3', 'dictation', 'shot.dictation.alt'),
 		],
+		intro: introFor(dict, 'features.capture', 2),
+		faqs: faqsFor(dict, 'features.capture', 3),
 		dict,
 		locale,
 	}
@@ -56,6 +71,8 @@ export function buildOrganizePage(dict: Dictionary, locale: string): ProductPage
 			slab(dict, 'features.organize.slab2', 'daily-summary', 'shot.daily-summary.alt', { reverse: true, tinted: true }),
 			slab(dict, 'features.organize.slab3', 'projects', 'shot.projects.alt'),
 		],
+		intro: introFor(dict, 'features.organize', 2),
+		faqs: faqsFor(dict, 'features.organize', 3),
 		dict,
 		locale,
 	}
@@ -71,6 +88,8 @@ export function buildEditorPage(dict: Dictionary, locale: string): ProductPagePr
 			slab(dict, 'features.editor.slab1', 'editor', 'shot.editor.alt'),
 			slab(dict, 'features.editor.slab2', 'export', 'shot.export.alt', { reverse: true, tinted: true }),
 		],
+		intro: introFor(dict, 'features.editor', 2),
+		faqs: faqsFor(dict, 'features.editor', 3),
 		dict,
 		locale,
 	}
@@ -96,6 +115,8 @@ export function buildPlatformPage(dict: Dictionary, locale: string): ProductPage
 				tinted: true,
 			},
 		],
+		intro: introFor(dict, 'features.platform', 2),
+		faqs: faqsFor(dict, 'features.platform', 3),
 		dict,
 		locale,
 	}
@@ -137,6 +158,8 @@ export function buildFeaturesHub(dict: Dictionary, locale: string): ProductPageP
 				tinted: true,
 			},
 		],
+		intro: introFor(dict, 'features.hub', 2),
+		faqs: faqsFor(dict, 'features.hub', 3),
 		dict,
 		locale,
 	}

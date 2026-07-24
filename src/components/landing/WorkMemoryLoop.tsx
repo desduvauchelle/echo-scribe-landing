@@ -1,5 +1,7 @@
+import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
+import { localizedPath } from '@/lib/i18n-utils'
 import { Eyebrow } from './Eyebrow'
 import { ScrollReveal } from './ScrollReveal'
 
@@ -11,7 +13,7 @@ const STEP_CLASSES = [
 	'border-t sm:border-t lg:border-t-0 sm:pl-6',
 ]
 
-export function WorkMemoryLoop({ dict }: { dict: Dictionary }) {
+export function WorkMemoryLoop({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const steps = [1, 2, 3, 4] as const
 
 	return (
@@ -23,6 +25,10 @@ export function WorkMemoryLoop({ dict }: { dict: Dictionary }) {
 						{dict['loop.title']}
 					</h2>
 					<p className="text-lg leading-[1.65] text-base-content/70">{dict['loop.subtitle']}</p>
+					<Link href={localizedPath('/loops', locale)} className="mt-6 inline-flex items-center gap-1.5 font-semibold text-primary hover:underline">
+						{dict['loop.learn.more']}
+						<span aria-hidden="true">→</span>
+					</Link>
 				</ScrollReveal>
 
 				<ScrollReveal y={30} stagger={0.1} className="grid grid-cols-1 border-y border-base-content/15 sm:grid-cols-2 lg:grid-cols-4">

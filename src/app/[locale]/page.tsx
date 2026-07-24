@@ -43,7 +43,7 @@ export default async function HomePage({
 	return (
 		<>
 			<Hero dict={dict} locale={locale} />
-			<WorkMemoryLoop dict={dict} />
+			<WorkMemoryLoop dict={dict} locale={locale} />
 			<Features dict={dict} />
 			<PrivacyGrid dict={dict} />
 

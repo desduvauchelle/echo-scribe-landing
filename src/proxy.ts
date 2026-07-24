@@ -9,6 +9,16 @@ import { defaultLocaleRedirectTarget } from './lib/i18n-utils'
 const SKIP_PREFIXES = ['/_next/', '/sitemap', '/opengraph-image', '/twitter-image']
 const SKIP_PATHS = ['/favicon.ico', '/sitemap.xml', '/robots.txt']
 
+// Permanent 301s for retired URLs that still receive traffic or sit in Google's
+// index. Keys are locale-agnostic bare paths; the default locale carries no
+// prefix so these match the crawled/bookmarked form directly. Add a new entry
+// whenever a page is removed rather than letting it 404.
+const PERMANENT_REDIRECTS: Record<string, string> = {
+	// Deleted blog post flagged in the SEO audit — send its residual link equity
+	// (and any lingering bookmarks) to the blog index.
+	'/blog/scale-service-business-without-hiring': '/blog',
+}
+
 function getLocaleFromHeaders(request: NextRequest): string {
 	const acceptLanguage = request.headers.get('accept-language')
 	if (!acceptLanguage) return defaultLocale
@@ -84,6 +94,16 @@ export function proxy(request: NextRequest) {
 		SKIP_PATHS.includes(pathname)
 	) {
 		return NextResponse.next()
+	}
+
+	// Retired-URL 301s — run before locale handling so the redirect fires on the
+	// bare default-locale path exactly as crawlers/bookmarks request it.
+	const redirectTarget = PERMANENT_REDIRECTS[pathname]
+	if (redirectTarget) {
+		const url = request.nextUrl.clone()
+		url.pathname = redirectTarget
+		url.search = ''
+		return NextResponse.redirect(url, 301)
 	}
 
 	const paramLocale = request.nextUrl.searchParams.get('lang')

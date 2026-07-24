@@ -1,6 +1,6 @@
 import type { Dictionary } from '@/i18n'
 import type { ProductPageProps } from './ProductPage'
-import { shotFor, slab } from './features.config'
+import { faqsFor, introFor, shotFor, slab } from './features.config'
 
 export function buildConsultantsPage(dict: Dictionary, locale: string): ProductPageProps {
 	return {
@@ -102,6 +102,8 @@ export function buildUseCasesHub(dict: Dictionary, locale: string): ProductPageP
 				tinted: true,
 			},
 		],
+		intro: introFor(dict, 'usecases.hub', 2),
+		faqs: faqsFor(dict, 'usecases.hub', 3),
 		dict,
 		locale,
 	}

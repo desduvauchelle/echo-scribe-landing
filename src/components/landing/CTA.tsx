@@ -3,7 +3,9 @@ import { ScrollReveal } from './ScrollReveal'
 import { InstallBox } from './InstallBox'
 import { TrackedLink } from './TrackedLink'
 
-const WINDOWS_DOWNLOAD_URL = 'https://github.com/desduvauchelle/echo-scribe/releases/latest'
+// Resolves to the latest release's Windows installer at request time (see
+// src/app/download/[platform]/route.ts) so the link never breaks on a new version.
+const WINDOWS_DOWNLOAD_URL = '/download/windows'
 
 export function CTA({ dict }: { dict: Dictionary }) {
 	const meta = [dict['cta.meta.macos'], dict['cta.meta.chips'], dict['cta.meta.update'], dict['cta.meta.models']]
@@ -21,8 +23,6 @@ export function CTA({ dict }: { dict: Dictionary }) {
 						<span>{dict['cta.windows.label']}</span>
 						<TrackedLink
 							href={WINDOWS_DOWNLOAD_URL}
-							target="_blank"
-							rel="noopener noreferrer"
 							eventName="cta_click"
 							eventParams={{ cta: 'download_windows' }}
 							className="btn btn-outline btn-sm gap-1.5 rounded-lg font-medium"

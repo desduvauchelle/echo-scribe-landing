@@ -16,6 +16,7 @@ export const BLOG_BATCH_SIZE = 1000
 
 export const STATIC_PAGES = [
 	'',
+	'/loops',
 	'/features',
 	'/features/capture',
 	'/features/organize',

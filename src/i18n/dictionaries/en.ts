@@ -44,6 +44,7 @@ const en = {
 	'loop.step4.label': '04 / IMPROVE',
 	'loop.step4.title': 'Act with context',
 	'loop.step4.desc': 'Follow up, ask your work memory, and use what you learn to run the next conversation better.',
+	'loop.learn.more': 'See how the loop works',
 
 	// Feature: transcription
 	'features.transcription.eyebrow': 'Capture Without Friction',
@@ -426,8 +427,8 @@ const en = {
 	'cta.windows.button': 'Download for Windows',
 
 	// Blog
-	'blog.heading': 'Blog',
-	'blog.subtitle': 'Latest articles and insights',
+	'blog.heading': 'Private AI Transcription & Productivity Guides',
+	'blog.subtitle': 'Local meeting notes, offline voice dictation, and second-brain workflows — no cloud required.',
 	'blog.meta.description':
 		'Private AI transcription, offline voice dictation, and local meeting assistant guides — capture and organize your work without sending data to the cloud.',
 	'blog.search.placeholder': 'Search posts...',
@@ -543,6 +544,152 @@ const en = {
 	'lang.ko': '한국어',
 	'lang.ar': 'العربية',
 	'lang.ru': 'Русский',
+
+	// Shared FAQ block (rendered on feature & use-case pages)
+	'faq.eyebrow': 'FAQ',
+	'faq.heading': 'Frequently asked questions',
+
+	// Features hub — long-form + FAQ
+	'features.hub.intro1':
+		'Echo Scribe is one private workspace for everything you say, see, and decide on your Mac. It records meetings and your screen, turns speech into clean text, and files the result into notes, tasks, and projects you can actually search — without a single byte leaving your machine.',
+	'features.hub.intro2':
+		'Because every model runs on-device, there are no per-seat cloud fees, no upload waits, and no vendor holding your transcripts. The features below fit together as one loop: capture the moment, organize it into knowledge, edit and export the parts worth sharing, and tune the platform to the way you work.',
+	'features.hub.faq1.q': 'Does Echo Scribe send my recordings to the cloud?',
+	'features.hub.faq1.a':
+		'No. Transcription, denoising, and summarization all run locally on your Mac using on-device models. Your audio, screen captures, and notes never leave the machine unless you explicitly export them.',
+	'features.hub.faq2.q': 'Do I need a subscription or an internet connection?',
+	'features.hub.faq2.a':
+		'Echo Scribe works fully offline once the ~2 GB of AI models are downloaded the first time you launch it. There is no account to create and no recurring cloud bill for the core capture-and-transcribe workflow.',
+	'features.hub.faq3.q': 'Which Macs are supported?',
+	'features.hub.faq3.a':
+		'Echo Scribe runs on macOS 14 or later on both Apple Silicon and Intel Macs. Apple Silicon gets the fastest local transcription, but Intel machines are fully supported.',
+
+	// Features · Capture — long-form + FAQ
+	'features.capture.intro1':
+		'Capture is where the loop starts. Echo Scribe detects when a meeting begins, records both system and microphone audio, and can grab your screen at the same time — so nothing said or shown gets lost to a scramble of manual notes.',
+	'features.capture.intro2':
+		'Push-to-talk dictation turns your voice into text anywhere on the Mac, and on-device RNNoise denoising cleans the audio before local Parakeet speech recognition transcribes it. Every step happens on your machine, which is why capture keeps working on a plane, in a secure office, or anywhere the Wi-Fi drops.',
+	'features.capture.faq1.q': 'How does automatic meeting detection work?',
+	'features.capture.faq1.a':
+		'Echo Scribe watches for active calls and starts recording when a meeting begins, capturing both sides of the conversation. It stops automatically when the room goes quiet, so you never leave a recording running by accident.',
+	'features.capture.faq2.q': 'Can I record system audio and my microphone together?',
+	'features.capture.faq2.a':
+		'Yes. Echo Scribe captures both the system output (everyone else on the call) and your microphone, so the transcript reflects the whole conversation rather than just your side.',
+	'features.capture.faq3.q': 'Is dictation accurate in noisy environments?',
+	'features.capture.faq3.a':
+		'Dictation runs audio through on-device RNNoise cleanup before transcription, so background hum and keyboard clatter are filtered out before the local speech model sees them, keeping transcripts crisp.',
+
+	// Features · Organize — long-form + FAQ
+	'features.organize.intro1':
+		'Raw transcripts are only useful once they are organized. Echo Scribe turns every recording into structured notes, tasks, tags, and projects, then makes the whole archive searchable so past decisions are one query away.',
+	'features.organize.intro2':
+		'Ask your work memory a question in plain language and get an answer grounded in what was actually said. Daily summaries roll up what happened, and projects keep related conversations, files, and follow-ups in one place — all indexed locally, never on someone else’s server.',
+	'features.organize.faq1.q': 'Can I search across all my past meetings and notes?',
+	'features.organize.faq1.a':
+		'Yes. Everything Echo Scribe captures is indexed on-device, so you can search across every transcript, note, and summary instantly — and ask questions in natural language rather than guessing keywords.',
+	'features.organize.faq2.q': 'How are tasks and action items created?',
+	'features.organize.faq2.a':
+		'Echo Scribe extracts action items and follow-ups from your transcripts, then lets you file them into projects so nothing decided in a meeting slips through the cracks.',
+	'features.organize.faq3.q': 'Does organizing my notes require an internet connection?',
+	'features.organize.faq3.a':
+		'No. Indexing, search, summaries, and the natural-language chat over your work memory all run locally, so your knowledge base stays private and available offline.',
+
+	// Features · Editor — long-form + FAQ
+	'features.editor.intro1':
+		'The editor is where a rough recording becomes something worth sharing. Trim and refine transcripts, clean up screen recordings, and shape the raw capture into a polished note, clip, or document.',
+	'features.editor.intro2':
+		'When it is ready, export to the formats you already use — no lock-in and no cloud round-trip. What you produce is yours to take anywhere, because it never left your Mac to begin with.',
+	'features.editor.faq1.q': 'Can I edit a transcript after it is recorded?',
+	'features.editor.faq1.a':
+		'Yes. The editor lets you correct, trim, and restructure transcripts and recordings so the final version reads cleanly before you share or export it.',
+	'features.editor.faq2.q': 'What formats can I export to?',
+	'features.editor.faq2.a':
+		'Echo Scribe exports your notes and recordings to standard formats you can drop into your existing tools, so there is no lock-in and nothing to re-create elsewhere.',
+	'features.editor.faq3.q': 'Are my edits stored in the cloud?',
+	'features.editor.faq3.a':
+		'No. Editing happens locally on your Mac, and exports are files you control. Nothing is uploaded unless you choose to send the exported file somewhere yourself.',
+
+	// Features · Platform — long-form + FAQ
+	'features.platform.intro1':
+		'Echo Scribe is built to disappear into your workflow. Settings let you tune hotkeys, models, capture behavior, and privacy controls, so the app matches the way you already work instead of forcing a new routine.',
+	'features.platform.intro2':
+		'Because the whole platform runs on-device, updates are a re-download rather than a migration, and your data model stays under your control. There is no admin console in someone else’s cloud deciding what you can keep.',
+	'features.platform.faq1.q': 'Can I customize hotkeys and capture behavior?',
+	'features.platform.faq1.a':
+		'Yes. The settings give you control over dictation hotkeys, which models run, how meetings are detected, and how recordings start and stop, so Echo Scribe fits your habits.',
+	'features.platform.faq2.q': 'How are updates and new models handled?',
+	'features.platform.faq2.a':
+		'Updates are downloaded and applied on your machine. AI models are fetched once (~2 GB) and reused offline afterward, so you are not re-downloading them for every session.',
+	'features.platform.faq3.q': 'What privacy controls does Echo Scribe offer?',
+	'features.platform.faq3.a':
+		'Because processing is local by default, privacy is the starting point rather than an add-on. You decide what gets captured, what is kept, and whether anything is ever exported off the device.',
+
+	// Use cases hub — long-form + FAQ
+	'usecases.hub.intro1':
+		'Echo Scribe adapts to the work you already do. Consultants keep client calls off the cloud, sales teams turn conversations into follow-ups, founders capture scattered thinking, and students build a searchable record of every lecture — all with the same local-first capture loop.',
+	'usecases.hub.intro2':
+		'The common thread is private, on-device memory: whatever your role, the meetings you sit in and the ideas you speak out loud become an organized, searchable base of knowledge you own. Explore the paths below to see how each fits a specific workflow.',
+	'usecases.hub.faq1.q': 'Who is Echo Scribe for?',
+	'usecases.hub.faq1.a':
+		'Anyone whose work runs through conversations and recordings — consultants, sales teams, founders, students, and knowledge workers — who wants those moments captured and organized without handing the data to a cloud service.',
+	'usecases.hub.faq2.q': 'Do I need a different setup for each use case?',
+	'usecases.hub.faq2.a':
+		'No. The same capture-organize-edit loop powers every use case. The workflows differ in emphasis — client confidentiality, follow-up speed, idea capture, study notes — but the underlying private, on-device engine is the same.',
+	'usecases.hub.faq3.q': 'Can teams use Echo Scribe, or is it just for individuals?',
+	'usecases.hub.faq3.a':
+		'Echo Scribe runs locally on each person’s Mac, so individuals get full value on their own, and teams get the same private capture without a shared cloud repository holding sensitive transcripts.',
+
+	// /loops — the work memory loop page
+	'loops.meta.title': 'The Work Memory Loop',
+	'loops.meta.desc':
+		'How Echo Scribe turns meetings, screens, and stray thoughts into a private, searchable memory of your work — capture, organize, see, improve.',
+	'loops.hero.eyebrow': 'The work memory loop',
+	'loops.hero.title': 'Your work, captured as a loop — not a pile of notes.',
+	'loops.hero.subtitle':
+		'Echo Scribe turns everything you say, record, and decide into a living picture of your work, entirely on your Mac. Here is the loop that makes it happen.',
+	'loops.intro1':
+		'Most tools capture fragments: a recording here, a note there, a task in another app. The gaps between them are where decisions get lost and follow-ups quietly die. The work memory loop closes those gaps by treating capture, organization, insight, and action as one continuous cycle rather than four disconnected chores.',
+	'loops.intro2':
+		'Every stage runs locally on your Mac — no cloud upload, no per-seat fee, no vendor holding your transcripts. The result is a private memory of your work that gets more useful the more you use it.',
+	'loops.step1.label': '01 / CAPTURE',
+	'loops.step1.title': 'Keep the moment',
+	'loops.step1.body':
+		'Speak naturally, record a meeting, or capture your screen without breaking your flow. Echo Scribe detects calls automatically, records both system and mic audio, and cleans it on-device before transcribing — so the raw material is always there when you need it.',
+	'loops.step2.label': '02 / ORGANIZE',
+	'loops.step2.title': 'Make it usable',
+	'loops.step2.body':
+		'Transcripts become notes, tasks, tags, projects, and searchable context. Instead of a folder of audio files you will never reopen, you get structured knowledge you can query in plain language — all indexed locally.',
+	'loops.step3.label': '03 / SEE',
+	'loops.step3.title': 'Find the signal',
+	'loops.step3.body':
+		'Understand what was decided, what is still open, and where a conversation or project stands. Daily summaries and search over your work memory surface the signal so progress and gaps stop hiding between meetings.',
+	'loops.step4.label': '04 / IMPROVE',
+	'loops.step4.title': 'Act with context',
+	'loops.step4.body':
+		'Follow up, ask your work memory, and use what you learned to run the next conversation better. Each loop feeds the next, so your context compounds instead of resetting every week.',
+	'loops.why.eyebrow': 'Why a loop',
+	'loops.why.title': 'You can’t manage what you can’t see.',
+	'loops.why.body1':
+		'Important work is spread across conversations, half-formed thoughts, meetings, and recordings. When those live in separate tools, no one has the full picture — and the cost shows up later as a dropped follow-up or a decision no one remembers making.',
+	'loops.why.body2':
+		'A loop keeps everything connected: what you captured is organized, what is organized is visible, and what is visible informs your next move. Because it all runs on-device, you get that continuity without trading away privacy or paying a recurring cloud bill.',
+	'loops.explore.eyebrow': 'See it in action',
+	'loops.explore.title': 'Explore each stage of the loop',
+	'loops.explore.capture.label': 'Capture & record',
+	'loops.explore.capture.desc': 'Auto-record meetings, capture your screen, and dictate anywhere.',
+	'loops.explore.organize.label': 'Organize & recall',
+	'loops.explore.organize.desc': 'Turn transcripts into searchable notes, tasks, and projects.',
+	'loops.explore.usecases.label': 'Use cases',
+	'loops.explore.usecases.desc': 'See how consultants, sales teams, founders, and students run the loop.',
+	'loops.faq1.q': 'What is the work memory loop?',
+	'loops.faq1.a':
+		'It is the cycle Echo Scribe runs your work through: capture what is said or shown, organize it into searchable knowledge, see what matters, and act with that context — then repeat. Each pass makes your private work memory more complete.',
+	'loops.faq2.q': 'Does the loop run in the cloud?',
+	'loops.faq2.a':
+		'No. Every stage — recording, denoising, transcription, indexing, search, and summaries — runs locally on your Mac. Your data stays on the device unless you deliberately export it.',
+	'loops.faq3.q': 'How is this different from a notes app or a transcription tool?',
+	'loops.faq3.a':
+		'A notes app stores what you type; a transcription tool gives you a wall of text. The work memory loop connects capture, organization, insight, and action, so recordings turn into knowledge you can use instead of files you never reopen.',
 } as const
 
 export default en

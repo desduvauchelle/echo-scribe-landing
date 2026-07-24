@@ -46,6 +46,7 @@ const fr: Dictionary = {
 	'loop.step4.label': '04 / AMÉLIORER',
 	'loop.step4.title': 'Agir avec du contexte',
 	'loop.step4.desc': 'Faites le suivi, interrogez votre mémoire de travail et servez-vous-en pour mieux mener la prochaine conversation.',
+	'loop.learn.more': 'Voir comment fonctionne la boucle',
 
 	// Feature: transcription
 	'features.transcription.eyebrow': 'Capturer sans friction',
@@ -428,8 +429,8 @@ const fr: Dictionary = {
 	'cta.windows.button': 'Télécharger pour Windows',
 
 	// Blog
-	'blog.heading': 'Blog',
-	'blog.subtitle': 'Derniers articles et analyses',
+	'blog.heading': 'Guides de transcription IA privée et de productivité',
+	'blog.subtitle': 'Notes de réunion locales, dictée vocale hors ligne et méthodes « second cerveau » — sans cloud.',
 	'blog.meta.description':
 		'Transcription IA privée, dictée vocale hors ligne et assistant de réunion local — capturez et organisez votre travail sans l’envoyer dans le cloud.',
 	'blog.search.placeholder': 'Rechercher des articles...',
@@ -545,6 +546,152 @@ const fr: Dictionary = {
 	'lang.ko': '한국어',
 	'lang.ar': 'العربية',
 	'lang.ru': 'Русский',
+
+	// Bloc FAQ partagé (affiché sur les pages Fonctionnalités et Cas d’usage)
+	'faq.eyebrow': 'FAQ',
+	'faq.heading': 'Questions fréquentes',
+
+	// Fonctionnalités — accueil : contenu long + FAQ
+	'features.hub.intro1':
+		'Echo Scribe est un espace de travail privé unique pour tout ce que vous dites, voyez et décidez sur votre Mac. Il enregistre vos réunions et votre écran, transforme la parole en texte clair et classe le résultat en notes, tâches et projets réellement consultables — sans qu’un seul octet ne quitte votre machine.',
+	'features.hub.intro2':
+		'Comme chaque modèle s’exécute sur l’appareil, il n’y a ni abonnement par siège, ni attente d’envoi, ni fournisseur qui détient vos transcriptions. Les fonctionnalités ci-dessous forment une boucle : capturer le moment, l’organiser en connaissances, éditer et exporter ce qui mérite d’être partagé, et régler la plateforme selon votre façon de travailler.',
+	'features.hub.faq1.q': 'Echo Scribe envoie-t-il mes enregistrements dans le cloud ?',
+	'features.hub.faq1.a':
+		'Non. La transcription, le débruitage et les résumés s’exécutent localement sur votre Mac avec des modèles embarqués. Votre audio, vos captures d’écran et vos notes ne quittent jamais la machine, sauf si vous les exportez explicitement.',
+	'features.hub.faq2.q': 'Faut-il un abonnement ou une connexion Internet ?',
+	'features.hub.faq2.a':
+		'Echo Scribe fonctionne entièrement hors ligne une fois les ~2 Go de modèles d’IA téléchargés au premier lancement. Aucun compte à créer et aucune facture cloud récurrente pour le flux principal de capture et de transcription.',
+	'features.hub.faq3.q': 'Quels Mac sont pris en charge ?',
+	'features.hub.faq3.a':
+		'Echo Scribe fonctionne sur macOS 14 ou version ultérieure, sur les Mac Apple Silicon et Intel. Apple Silicon offre la transcription locale la plus rapide, mais les machines Intel sont pleinement prises en charge.',
+
+	// Fonctionnalités · Capture : contenu long + FAQ
+	'features.capture.intro1':
+		'La capture, c’est le début de la boucle. Echo Scribe détecte le début d’une réunion, enregistre à la fois l’audio système et le microphone, et peut capturer votre écran en même temps — pour que rien de ce qui est dit ou montré ne se perde dans une prise de notes précipitée.',
+	'features.capture.intro2':
+		'La dictée « appuyer pour parler » transforme votre voix en texte partout sur le Mac, et le débruitage RNNoise embarqué nettoie l’audio avant que la reconnaissance vocale locale Parakeet ne le transcrive. Chaque étape se déroule sur votre machine, c’est pourquoi la capture continue de fonctionner dans un avion, dans un bureau sécurisé ou partout où le Wi-Fi lâche.',
+	'features.capture.faq1.q': 'Comment fonctionne la détection automatique des réunions ?',
+	'features.capture.faq1.a':
+		'Echo Scribe surveille les appels actifs et lance l’enregistrement au début d’une réunion, en captant les deux côtés de la conversation. Il s’arrête automatiquement quand le silence s’installe, vous ne laissez donc jamais un enregistrement tourner par accident.',
+	'features.capture.faq2.q': 'Puis-je enregistrer l’audio système et mon micro ensemble ?',
+	'features.capture.faq2.a':
+		'Oui. Echo Scribe capte à la fois la sortie système (les autres participants) et votre microphone, pour que la transcription reflète toute la conversation et pas seulement votre voix.',
+	'features.capture.faq3.q': 'La dictée est-elle précise dans un environnement bruyant ?',
+	'features.capture.faq3.a':
+		'La dictée fait passer l’audio par un nettoyage RNNoise embarqué avant la transcription : le brouhaha de fond et le bruit du clavier sont filtrés avant même que le modèle vocal local ne les traite, ce qui garde les transcriptions nettes.',
+
+	// Fonctionnalités · Organisation : contenu long + FAQ
+	'features.organize.intro1':
+		'Les transcriptions brutes ne servent qu’une fois organisées. Echo Scribe transforme chaque enregistrement en notes, tâches, étiquettes et projets structurés, puis rend toute l’archive consultable pour que les décisions passées soient à une recherche près.',
+	'features.organize.intro2':
+		'Posez une question à votre mémoire de travail en langage naturel et obtenez une réponse fondée sur ce qui a réellement été dit. Les résumés quotidiens synthétisent ce qui s’est passé, et les projets réunissent conversations, fichiers et suivis au même endroit — le tout indexé localement, jamais sur le serveur de quelqu’un d’autre.',
+	'features.organize.faq1.q': 'Puis-je effectuer une recherche dans toutes mes réunions et notes passées ?',
+	'features.organize.faq1.a':
+		'Oui. Tout ce qu’Echo Scribe capture est indexé sur l’appareil, vous pouvez donc chercher instantanément dans chaque transcription, note et résumé — et poser vos questions en langage naturel plutôt que de deviner des mots-clés.',
+	'features.organize.faq2.q': 'Comment les tâches et les points d’action sont-ils créés ?',
+	'features.organize.faq2.a':
+		'Echo Scribe extrait les points d’action et les suivis de vos transcriptions, puis vous permet de les classer dans des projets pour que rien de décidé en réunion ne passe à la trappe.',
+	'features.organize.faq3.q': 'Organiser mes notes nécessite-t-il une connexion Internet ?',
+	'features.organize.faq3.a':
+		'Non. L’indexation, la recherche, les résumés et la discussion en langage naturel avec votre mémoire de travail s’exécutent localement : votre base de connaissances reste privée et disponible hors ligne.',
+
+	// Fonctionnalités · Éditeur : contenu long + FAQ
+	'features.editor.intro1':
+		'L’éditeur, c’est là qu’un enregistrement brut devient quelque chose que l’on partage. Coupez et affinez les transcriptions, nettoyez les enregistrements d’écran et façonnez la capture brute en une note, un clip ou un document soigné.',
+	'features.editor.intro2':
+		'Quand c’est prêt, exportez vers les formats que vous utilisez déjà — sans verrouillage ni aller-retour dans le cloud. Ce que vous produisez vous appartient et vous suit partout, parce que rien n’a jamais quitté votre Mac.',
+	'features.editor.faq1.q': 'Puis-je modifier une transcription après l’enregistrement ?',
+	'features.editor.faq1.a':
+		'Oui. L’éditeur vous permet de corriger, couper et restructurer transcriptions et enregistrements pour que la version finale se lise proprement avant de la partager ou de l’exporter.',
+	'features.editor.faq2.q': 'Vers quels formats puis-je exporter ?',
+	'features.editor.faq2.a':
+		'Echo Scribe exporte vos notes et enregistrements vers des formats standard que vous intégrez à vos outils existants : aucun verrouillage et rien à recréer ailleurs.',
+	'features.editor.faq3.q': 'Mes modifications sont-elles stockées dans le cloud ?',
+	'features.editor.faq3.a':
+		'Non. L’édition se fait localement sur votre Mac, et les exports sont des fichiers que vous contrôlez. Rien n’est téléversé, sauf si vous choisissez vous-même d’envoyer le fichier exporté quelque part.',
+
+	// Fonctionnalités · Plateforme : contenu long + FAQ
+	'features.platform.intro1':
+		'Echo Scribe est conçu pour se fondre dans votre flux de travail. Les réglages permettent d’ajuster raccourcis, modèles, comportement de capture et contrôles de confidentialité, pour que l’app épouse votre façon de travailler au lieu d’imposer une nouvelle routine.',
+	'features.platform.intro2':
+		'Comme toute la plateforme s’exécute sur l’appareil, les mises à jour sont un simple re-téléchargement plutôt qu’une migration, et votre modèle de données reste sous votre contrôle. Aucune console d’administration dans le cloud de quelqu’un d’autre ne décide de ce que vous pouvez conserver.',
+	'features.platform.faq1.q': 'Puis-je personnaliser les raccourcis et le comportement de capture ?',
+	'features.platform.faq1.a':
+		'Oui. Les réglages vous donnent la main sur les raccourcis de dictée, les modèles utilisés, la détection des réunions et le démarrage/arrêt des enregistrements, pour qu’Echo Scribe s’adapte à vos habitudes.',
+	'features.platform.faq2.q': 'Comment sont gérés les mises à jour et les nouveaux modèles ?',
+	'features.platform.faq2.a':
+		'Les mises à jour sont téléchargées et appliquées sur votre machine. Les modèles d’IA sont récupérés une seule fois (~2 Go) puis réutilisés hors ligne, vous ne les re-téléchargez donc pas à chaque session.',
+	'features.platform.faq3.q': 'Quels contrôles de confidentialité Echo Scribe propose-t-il ?',
+	'features.platform.faq3.a':
+		'Comme le traitement est local par défaut, la confidentialité est le point de départ plutôt qu’une option. Vous décidez de ce qui est capturé, de ce qui est conservé et si quoi que ce soit est un jour exporté hors de l’appareil.',
+
+	// Cas d’usage — accueil : contenu long + FAQ
+	'usecases.hub.intro1':
+		'Echo Scribe s’adapte au travail que vous faites déjà. Les consultants gardent les appels clients hors du cloud, les équipes commerciales transforment les conversations en suivis, les fondateurs captent leurs idées éparses et les étudiants se constituent un historique consultable de chaque cours — le tout avec la même boucle de capture locale.',
+	'usecases.hub.intro2':
+		'Le fil conducteur est une mémoire privée, sur l’appareil : quel que soit votre rôle, les réunions auxquelles vous assistez et les idées que vous formulez à voix haute deviennent une base de connaissances organisée et consultable qui vous appartient. Explorez les parcours ci-dessous pour voir comment chacun s’adapte à un flux de travail précis.',
+	'usecases.hub.faq1.q': 'À qui s’adresse Echo Scribe ?',
+	'usecases.hub.faq1.a':
+		'À toute personne dont le travail passe par des conversations et des enregistrements — consultants, équipes commerciales, fondateurs, étudiants et travailleurs du savoir — qui veut capturer et organiser ces moments sans confier les données à un service cloud.',
+	'usecases.hub.faq2.q': 'Faut-il une configuration différente pour chaque cas d’usage ?',
+	'usecases.hub.faq2.a':
+		'Non. La même boucle capture-organisation-édition alimente chaque cas d’usage. Les flux diffèrent par l’accent mis — confidentialité client, rapidité de suivi, capture d’idées, notes de cours — mais le moteur privé, sur l’appareil, reste le même.',
+	'usecases.hub.faq3.q': 'Les équipes peuvent-elles utiliser Echo Scribe, ou est-ce réservé aux individus ?',
+	'usecases.hub.faq3.a':
+		'Echo Scribe s’exécute localement sur le Mac de chacun : les individus en tirent toute la valeur seuls, et les équipes bénéficient de la même capture privée sans dépôt cloud partagé contenant des transcriptions sensibles.',
+
+	// /loops — la page de la boucle de mémoire de travail
+	'loops.meta.title': 'La boucle de mémoire de travail',
+	'loops.meta.desc':
+		'Comment Echo Scribe transforme réunions, écrans et pensées éparses en une mémoire de travail privée et consultable — capturer, organiser, voir, améliorer.',
+	'loops.hero.eyebrow': 'La boucle de mémoire de travail',
+	'loops.hero.title': 'Votre travail, capturé comme une boucle — pas comme un tas de notes.',
+	'loops.hero.subtitle':
+		'Echo Scribe transforme tout ce que vous dites, enregistrez et décidez en une image vivante de votre travail, entièrement sur votre Mac. Voici la boucle qui rend cela possible.',
+	'loops.intro1':
+		'La plupart des outils captent des fragments : un enregistrement ici, une note là, une tâche dans une autre app. Les vides entre eux sont là où les décisions se perdent et où les suivis meurent en silence. La boucle de mémoire de travail comble ces vides en traitant capture, organisation, analyse et action comme un cycle continu plutôt que quatre corvées déconnectées.',
+	'loops.intro2':
+		'Chaque étape s’exécute localement sur votre Mac — aucun envoi vers le cloud, aucun abonnement par siège, aucun fournisseur qui détient vos transcriptions. Le résultat est une mémoire privée de votre travail qui devient plus utile à mesure que vous l’utilisez.',
+	'loops.step1.label': '01 / CAPTURER',
+	'loops.step1.title': 'Garder le moment',
+	'loops.step1.body':
+		'Parlez naturellement, enregistrez une réunion ou capturez votre écran sans casser votre élan. Echo Scribe détecte les appels automatiquement, enregistre l’audio système et micro, et le nettoie sur l’appareil avant de le transcrire — la matière brute est donc toujours là quand vous en avez besoin.',
+	'loops.step2.label': '02 / ORGANISER',
+	'loops.step2.title': 'La rendre utilisable',
+	'loops.step2.body':
+		'Les transcriptions deviennent notes, tâches, étiquettes, projets et contexte consultable. Au lieu d’un dossier de fichiers audio que vous ne rouvrirez jamais, vous obtenez des connaissances structurées que vous interrogez en langage naturel — le tout indexé localement.',
+	'loops.step3.label': '03 / VOIR',
+	'loops.step3.title': 'Trouver le signal',
+	'loops.step3.body':
+		'Comprenez ce qui a été décidé, ce qui reste ouvert et où en est une conversation ou un projet. Les résumés quotidiens et la recherche dans votre mémoire de travail font remonter le signal pour que progrès et lacunes cessent de se cacher entre les réunions.',
+	'loops.step4.label': '04 / AMÉLIORER',
+	'loops.step4.title': 'Agir avec du contexte',
+	'loops.step4.body':
+		'Faites vos suivis, interrogez votre mémoire de travail et utilisez ce que vous avez appris pour mieux mener la conversation suivante. Chaque boucle nourrit la suivante : votre contexte s’accumule au lieu de repartir de zéro chaque semaine.',
+	'loops.why.eyebrow': 'Pourquoi une boucle',
+	'loops.why.title': 'On ne peut pas gérer ce que l’on ne voit pas.',
+	'loops.why.body1':
+		'Le travail important est dispersé entre conversations, pensées à moitié formées, réunions et enregistrements. Quand tout cela vit dans des outils séparés, personne n’a la vue d’ensemble — et le coût apparaît plus tard sous la forme d’un suivi oublié ou d’une décision dont personne ne se souvient.',
+	'loops.why.body2':
+		'Une boucle garde tout connecté : ce que vous avez capturé est organisé, ce qui est organisé est visible, et ce qui est visible éclaire votre prochaine action. Comme tout s’exécute sur l’appareil, vous obtenez cette continuité sans sacrifier la confidentialité ni payer une facture cloud récurrente.',
+	'loops.explore.eyebrow': 'Voir en action',
+	'loops.explore.title': 'Explorez chaque étape de la boucle',
+	'loops.explore.capture.label': 'Capture et enregistrement',
+	'loops.explore.capture.desc': 'Enregistrez vos réunions, captez votre écran et dictez partout.',
+	'loops.explore.organize.label': 'Organisation et rappel',
+	'loops.explore.organize.desc': 'Transformez les transcriptions en notes, tâches et projets consultables.',
+	'loops.explore.usecases.label': 'Cas d’usage',
+	'loops.explore.usecases.desc': 'Découvrez comment consultants, commerciaux, fondateurs et étudiants font tourner la boucle.',
+	'loops.faq1.q': 'Qu’est-ce que la boucle de mémoire de travail ?',
+	'loops.faq1.a':
+		'C’est le cycle par lequel Echo Scribe fait passer votre travail : capturer ce qui est dit ou montré, l’organiser en connaissances consultables, voir ce qui compte et agir avec ce contexte — puis recommencer. Chaque passage rend votre mémoire de travail privée plus complète.',
+	'loops.faq2.q': 'La boucle s’exécute-t-elle dans le cloud ?',
+	'loops.faq2.a':
+		'Non. Chaque étape — enregistrement, débruitage, transcription, indexation, recherche et résumés — s’exécute localement sur votre Mac. Vos données restent sur l’appareil, sauf si vous les exportez délibérément.',
+	'loops.faq3.q': 'En quoi est-ce différent d’une app de notes ou d’un outil de transcription ?',
+	'loops.faq3.a':
+		'Une app de notes stocke ce que vous tapez ; un outil de transcription vous donne un mur de texte. La boucle de mémoire de travail relie capture, organisation, analyse et action, pour que les enregistrements deviennent des connaissances utilisables plutôt que des fichiers jamais rouverts.',
 }
 
 export default fr
