@@ -4,9 +4,10 @@ import { isMultiLang, supportedLocales, defaultLocale } from './i18n/config'
 import { defaultLocaleRedirectTarget } from './lib/i18n-utils'
 
 // `/opengraph-image` and `/twitter-image` are root-level `next/og` metadata
-// routes (no file extension, so the `pathname.includes('.')` guard misses them);
-// they must never be rewritten into the `[locale]` tree or they 404.
-const SKIP_PREFIXES = ['/_next/', '/sitemap', '/opengraph-image', '/twitter-image']
+// routes, and `/download` is a root-level route handler (src/app/download/
+// [platform]/route.ts) — none carry a file extension, so the `pathname.includes('.')`
+// guard misses them; they must never be rewritten into the `[locale]` tree or they 404.
+const SKIP_PREFIXES = ['/_next/', '/sitemap', '/opengraph-image', '/twitter-image', '/download']
 const SKIP_PATHS = ['/favicon.ico', '/sitemap.xml', '/robots.txt']
 
 // Permanent 301s for retired URLs that still receive traffic or sit in Google's
