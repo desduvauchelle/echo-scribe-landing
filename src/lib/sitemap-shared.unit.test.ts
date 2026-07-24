@@ -75,7 +75,7 @@ describe('sitemap-shared', () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
 			const urls = result.map((e) => e.url)
-			expect(urls).toContain('https://example.com')
+			expect(urls).toContain('https://example.com/')
 			expect(urls).toContain('https://example.com/blog')
 			expect(urls).toContain('https://example.com/blog/authors')
 			expect(urls).toContain('https://example.com/contact')
@@ -87,14 +87,14 @@ describe('sitemap-shared', () => {
 		it('homepage gets priority 1.0', async () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
-			const home = result.find((e) => e.url === 'https://example.com')
+			const home = result.find((e) => e.url === 'https://example.com/')
 			expect(home?.priority).toBe(1.0)
 		})
 
 		it('non-home pages get priority 0.7', async () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
-			const nonHome = result.filter((e) => e.url !== 'https://example.com')
+			const nonHome = result.filter((e) => e.url !== 'https://example.com/')
 			for (const entry of nonHome) {
 				expect(entry.priority).toBe(0.7)
 			}
@@ -115,8 +115,8 @@ describe('sitemap-shared', () => {
 				isMultiLang: true,
 			})
 			const result = buildStaticEntries()
-			const home = result.find((e) => e.url === 'https://example.com')
-			expect(home?.alternates?.en).toBe('https://example.com')
+			const home = result.find((e) => e.url === 'https://example.com/')
+			expect(home?.alternates?.en).toBe('https://example.com/')
 			expect(home?.alternates?.fr).toBe('https://example.com/fr')
 		})
 	})
