@@ -417,6 +417,8 @@ const en = {
 	'cta.meta.chips': 'Apple Silicon & Intel',
 	'cta.meta.update': 'Run again to update',
 	'cta.meta.models': '~2 GB for AI models (one-time download)',
+	'cta.windows.label': 'On Windows?',
+	'cta.windows.button': 'Download for Windows',
 
 	// Blog
 	'blog.heading': 'Blog',

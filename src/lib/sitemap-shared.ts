@@ -65,7 +65,12 @@ interface AuthorSitemapEntry {
 
 export function buildUrl(path: string, locale?: string): string {
 	if (!locale || locale === defaultLocale) {
-		return `${SITE_URL}${path}`
+		// The apex root is conventionally the trailing-slash form (`https://site.com/`),
+		// which is also what every internal link (`localizedPath('/', …)` → `/`) and the
+		// browser actually resolve to. Emit it here so the canonical + sitemap agree with
+		// the crawled URL and strict SEO crawlers stop reporting the slash/no-slash pair
+		// as duplicate titles. Interior paths and secondary-locale roots stay slashless.
+		return path === '' ? `${SITE_URL}/` : `${SITE_URL}${path}`
 	}
 	return `${SITE_URL}/${locale}${path}`
 }

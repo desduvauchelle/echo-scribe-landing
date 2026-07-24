@@ -419,6 +419,8 @@ const fr: Dictionary = {
 	'cta.meta.chips': 'Apple Silicon et Intel',
 	'cta.meta.update': 'Relancez pour mettre à jour',
 	'cta.meta.models': '~2 Go pour les modèles IA (téléchargement unique)',
+	'cta.windows.label': 'Sur Windows ?',
+	'cta.windows.button': 'Télécharger pour Windows',
 
 	// Blog
 	'blog.heading': 'Blog',

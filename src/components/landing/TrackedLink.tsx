@@ -8,18 +8,26 @@ export function TrackedLink({
 	href,
 	className,
 	eventName,
+	eventParams,
+	target,
+	rel,
 	children,
 }: {
 	href: string
 	className?: string
 	eventName: string
+	eventParams?: Record<string, string>
+	target?: string
+	rel?: string
 	children: ReactNode
 }) {
 	return (
 		<Link
 			href={href}
 			className={className}
-			onClick={() => trackEvent(eventName)}
+			target={target}
+			rel={rel}
+			onClick={() => trackEvent(eventName, eventParams)}
 		>
 			{children}
 		</Link>
