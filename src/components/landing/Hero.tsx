@@ -54,7 +54,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 							</em>
 						</h1>
 
-						<p className="mx-auto mb-11 max-w-[560px] text-[clamp(17px,2.2vw,21px)] leading-[1.65] text-base-content/70">
+						<p className="mx-auto mb-11 max-w-[600px] text-[clamp(17px,2.2vw,21px)] leading-[1.65] text-base-content/70">
 							{dict['hero.subtitle']}
 						</p>
 					</ScrollReveal>

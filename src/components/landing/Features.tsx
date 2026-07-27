@@ -3,9 +3,9 @@ import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
 import { Eyebrow } from './Eyebrow'
 import { ScrollReveal } from './ScrollReveal'
-import { TranscriptionDemo, MeetingDemo, CaptureDemo, StatusDemo } from './FeatureMockups'
+import { TranscriptionDemo, EchoDemo, MeetingDemo, ScreenDemo, CaptureDemo, StatusDemo } from './FeatureMockups'
 
-type SlabKey = 'transcription' | 'guided' | 'context' | 'status'
+type SlabKey = 'voice' | 'echo' | 'meetings' | 'screen' | 'memory' | 'insights'
 
 interface Slab {
 	id: string
@@ -16,10 +16,12 @@ interface Slab {
 }
 
 const SLABS: Slab[] = [
-	{ id: 'transcription', key: 'transcription', visual: (dict) => <TranscriptionDemo dict={dict} /> },
-	{ id: 'guided', key: 'guided', visual: (dict) => <MeetingDemo dict={dict} />, reverse: true, tinted: true },
-	{ id: 'capture', key: 'context', visual: (dict) => <CaptureDemo dict={dict} />, reverse: true },
-	{ id: 'status', key: 'status', visual: (dict) => <StatusDemo dict={dict} />, tinted: true },
+	{ id: 'voice', key: 'voice', visual: (dict) => <TranscriptionDemo dict={dict} /> },
+	{ id: 'echo', key: 'echo', visual: (dict) => <EchoDemo dict={dict} />, reverse: true, tinted: true },
+	{ id: 'meetings', key: 'meetings', visual: (dict) => <MeetingDemo dict={dict} /> },
+	{ id: 'screen', key: 'screen', visual: (dict) => <ScreenDemo dict={dict} />, reverse: true, tinted: true },
+	{ id: 'memory', key: 'memory', visual: (dict) => <CaptureDemo dict={dict} /> },
+	{ id: 'insights', key: 'insights', visual: (dict) => <StatusDemo dict={dict} />, reverse: true, tinted: true },
 ]
 
 export function Features({ dict }: { dict: Dictionary }) {

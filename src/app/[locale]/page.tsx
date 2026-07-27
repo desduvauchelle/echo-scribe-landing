@@ -9,6 +9,7 @@ import { buildPageMetadata } from '@/lib/seo'
 import { Hero } from '@/components/landing/Hero'
 import { WorkMemoryLoop } from '@/components/landing/WorkMemoryLoop'
 import { Features } from '@/components/landing/Features'
+import { UseCasesGrid } from '@/components/landing/UseCasesGrid'
 import { PrivacyGrid } from '@/components/landing/PrivacyGrid'
 import { CTA } from '@/components/landing/CTA'
 
@@ -45,6 +46,7 @@ export default async function HomePage({
 			<Hero dict={dict} locale={locale} />
 			<WorkMemoryLoop dict={dict} locale={locale} />
 			<Features dict={dict} />
+			<UseCasesGrid dict={dict} locale={locale} />
 			<PrivacyGrid dict={dict} />
 
 			<section className="py-20 bg-base-100 border-t border-base-content/10">

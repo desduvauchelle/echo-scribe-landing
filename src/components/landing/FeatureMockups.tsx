@@ -30,10 +30,44 @@ export function TranscriptionDemo({ dict }: { dict: Dictionary }) {
 						/>
 					))}
 				</div>
-				<span className="text-[13px] font-semibold text-success">{dict['demo.transcription.listening']}</span>
+				<span className="text-[13px] font-semibold text-success">{dict['demo.transcription.recording']}</span>
 				<span className="ml-auto rounded-[5px] border border-base-content/10 bg-base-100 px-2 py-0.5 font-mono text-[11px] text-base-content/50">
 					⌃ Space
 				</span>
+			</div>
+		</div>
+	)
+}
+
+export function EchoDemo({ dict }: { dict: Dictionary }) {
+	return (
+		<div
+			role="img"
+			aria-label={dict['demo.echo.aria']}
+			className="overflow-hidden rounded-3xl border border-base-content/18 bg-elevated shadow-[0_32px_80px_rgba(18,59,45,0.14)]"
+		>
+			<div className="flex items-center gap-2 border-b border-base-content/10 bg-base-200 px-4.5 py-3.5">
+				<div className="h-3 w-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
+				<div className="h-3 w-3 rounded-full bg-[#febc2e]" aria-hidden="true" />
+				<div className="h-3 w-3 rounded-full bg-[#28c840]" aria-hidden="true" />
+				<span className="ml-2 text-[13px] text-base-content/50">{dict['demo.echo.title']}</span>
+			</div>
+			<div className="p-6">
+				<div className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.09em] text-base-content/50">
+					{dict['demo.echo.said.label']}
+				</div>
+				<p className="mb-5 text-sm italic leading-[1.6] text-base-content/70">
+					<span className="font-bold not-italic text-success">{dict['demo.echo.said.trigger']}</span>
+					{dict['demo.echo.said.rest']}
+				</p>
+				<div className="mb-1.5 text-[10px] font-bold uppercase tracking-[0.09em] text-base-content/50">
+					{dict['demo.echo.got.label']}
+				</div>
+				<div className="text-sm leading-[1.7]">
+					<p>{dict['demo.echo.got.p1']}</p>
+					<p className="mt-2">{dict['demo.echo.got.p2']}</p>
+					<p className="mt-2">{dict['demo.echo.got.p3']}</p>
+				</div>
 			</div>
 		</div>
 	)
@@ -76,6 +110,35 @@ export function MeetingDemo({ dict }: { dict: Dictionary }) {
 	)
 }
 
+export function ScreenDemo({ dict }: { dict: Dictionary }) {
+	const cards = [
+		{ text: dict['demo.screen.card1.text'], time: dict['demo.screen.card1.time'] },
+		{ text: dict['demo.screen.card2.text'], time: dict['demo.screen.card2.time'] },
+		{ text: dict['demo.screen.card3.text'], time: dict['demo.screen.card3.time'], incoming: true },
+	]
+
+	return (
+		<div role="img" aria-label={dict['demo.screen.aria']} className="flex flex-col gap-3">
+			{cards.map((card) => (
+				<div
+					key={card.text}
+					className={`flex items-start gap-3.5 rounded-[14px] border px-5 py-4.5 shadow-[0_4px_20px_rgba(18,59,45,0.08)] ${
+						card.incoming ? 'border-accent/30 bg-accent/6' : 'border-base-content/10 bg-elevated'
+					}`}
+				>
+					<span className="shrink-0 rounded-full border border-secondary/30 bg-secondary/12 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.07em] text-warning">
+						{dict['demo.capture.tag.screen']}
+					</span>
+					<div>
+						<p className="text-sm leading-normal">{card.text}</p>
+						<div className="mt-1 text-xs text-base-content/50">{card.time}</div>
+					</div>
+				</div>
+			))}
+		</div>
+	)
+}
+
 export function CaptureDemo({ dict }: { dict: Dictionary }) {
 	const cards = [
 		{
@@ -85,7 +148,7 @@ export function CaptureDemo({ dict }: { dict: Dictionary }) {
 			time: dict['demo.capture.card1.time'],
 		},
 		{
-			tag: dict['demo.capture.tag.screen'],
+			tag: dict['demo.capture.tag.idea'],
 			tagClass: 'bg-secondary/12 text-warning border-secondary/30',
 			text: dict['demo.capture.card2.text'],
 			time: dict['demo.capture.card2.time'],
@@ -125,14 +188,14 @@ export function CaptureDemo({ dict }: { dict: Dictionary }) {
 
 export function StatusDemo({ dict }: { dict: Dictionary }) {
 	const metrics = [
-		{ value: '12', label: dict['demo.status.metric1'] },
-		{ value: '4', label: dict['demo.status.metric2'] },
-		{ value: '7', label: dict['demo.status.metric3'] },
+		{ value: '38', label: dict['demo.status.metric1'] },
+		{ value: '11', label: dict['demo.status.metric2'] },
+		{ value: '6', label: dict['demo.status.metric3'] },
 	]
 	const rows = [
-		{ label: dict['demo.status.row1'], value: '82%', width: '82%', orange: false },
-		{ label: dict['demo.status.row2'], value: '64%', width: '64%', orange: true },
-		{ label: dict['demo.status.row3'], value: dict['demo.status.row3.value'], width: '38%', orange: false },
+		{ label: dict['demo.status.row1'], value: '42%', width: '42%', orange: true },
+		{ label: dict['demo.status.row2'], value: '78%', width: '78%', orange: false },
+		{ label: dict['demo.status.row3'], value: dict['demo.status.row3.value'], width: '30%', orange: false },
 	]
 
 	return (
