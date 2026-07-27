@@ -6,6 +6,7 @@ import { localizedPath } from '@/lib/i18n-utils'
 import { Eyebrow } from '@/components/landing/Eyebrow'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
 import { CTA } from '@/components/landing/CTA'
+import { TrackedLink } from '@/components/analytics/TrackedLink'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params
@@ -52,7 +53,14 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 						<Eyebrow className="mb-5">{dict['loops.hero.eyebrow']}</Eyebrow>
 						<h1 className="mx-auto mb-5 max-w-[20ch] text-[clamp(32px,5vw,56px)] font-extrabold leading-[1.05] tracking-[-0.03em]">{dict['loops.hero.title']}</h1>
 						<p className="mx-auto mb-8 max-w-[54ch] text-[19px] leading-[1.6] text-base-content/70">{dict['loops.hero.subtitle']}</p>
-						<Link href="#install" className="btn btn-primary gap-2 rounded-[10px] font-semibold">{dict['nav.download']}</Link>
+						<TrackedLink
+							href="#install"
+							className="btn btn-primary gap-2 rounded-[10px] font-semibold"
+							eventName="install_cta_click"
+							eventParams={{ location: 'loops_hero' }}
+						>
+							{dict['nav.download']}
+						</TrackedLink>
 					</ScrollReveal>
 				</div>
 			</section>

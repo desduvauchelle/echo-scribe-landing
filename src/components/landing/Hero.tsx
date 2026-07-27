@@ -2,7 +2,7 @@ import Image from 'next/image'
 import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
 import { ScrollReveal } from './ScrollReveal'
-import { TrackedLink } from './TrackedLink'
+import { TrackedLink } from '@/components/analytics/TrackedLink'
 
 const DownloadIcon = ({ size = 17 }: { size?: number }) => (
 	<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -61,7 +61,12 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 
 					<ScrollReveal y={20} delay={0.15} start="top 95%">
 						<div className="mb-13 flex flex-wrap items-center justify-center gap-3.5">
-							<TrackedLink href={`${home}#install`} className="btn btn-primary btn-lg gap-2.5 rounded-[14px] px-7 font-bold" eventName="cta_click">
+							<TrackedLink
+								href={`${home}#install`}
+								className="btn btn-primary btn-lg gap-2.5 rounded-[14px] px-7 font-bold"
+								eventName="install_cta_click"
+								eventParams={{ location: 'hero' }}
+							>
 								<DownloadIcon />
 								{dict['hero.cta.primary']}
 							</TrackedLink>

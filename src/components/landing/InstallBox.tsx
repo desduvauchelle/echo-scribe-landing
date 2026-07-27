@@ -2,16 +2,17 @@
 
 import { useState } from 'react'
 import type { Dictionary } from '@/i18n'
-import { trackEvent } from '@/components/analytics/GoogleAnalytics'
+import { trackEvent, type EventLocation } from '@/components/analytics/GoogleAnalytics'
 
 export const INSTALL_CMD = 'curl -fsSL https://raw.githubusercontent.com/desduvauchelle/echo-scribe/main/install.sh | bash'
 
-export function InstallBox({ dict }: { dict: Dictionary }) {
+export function InstallBox({ dict, location = 'cta_section' }: { dict: Dictionary; location?: EventLocation }) {
 	const [copied, setCopied] = useState(false)
 
 	async function copy() {
 		await navigator.clipboard.writeText(INSTALL_CMD)
-		trackEvent('cta_click', { cta: 'install_copy' })
+		// The macOS install conversion — copying the command is as far as the site can take them.
+		trackEvent('install_copy', { method: 'curl', platform: 'macos', location })
 		setCopied(true)
 		setTimeout(() => setCopied(false), 2000)
 	}

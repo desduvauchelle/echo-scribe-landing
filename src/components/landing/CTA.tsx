@@ -1,7 +1,7 @@
 import type { Dictionary } from '@/i18n'
 import { ScrollReveal } from './ScrollReveal'
 import { InstallBox } from './InstallBox'
-import { TrackedLink } from './TrackedLink'
+import { TrackedLink } from '@/components/analytics/TrackedLink'
 
 // Resolves to the latest release's Windows installer at request time (see
 // src/app/download/[platform]/route.ts) so the link never breaks on a new version.
@@ -23,8 +23,9 @@ export function CTA({ dict }: { dict: Dictionary }) {
 						<span>{dict['cta.windows.label']}</span>
 						<TrackedLink
 							href={WINDOWS_DOWNLOAD_URL}
-							eventName="cta_click"
-							eventParams={{ cta: 'download_windows' }}
+							eventName="app_download"
+							eventParams={{ platform: 'windows', method: 'installer', location: 'cta_section' }}
+							prefetch={false}
 							className="btn btn-outline btn-sm gap-1.5 rounded-lg font-medium"
 						>
 							<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

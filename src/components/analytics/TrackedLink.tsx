@@ -11,6 +11,7 @@ export function TrackedLink({
 	eventParams,
 	target,
 	rel,
+	prefetch,
 	children,
 }: {
 	href: string
@@ -19,6 +20,7 @@ export function TrackedLink({
 	eventParams?: Record<string, string>
 	target?: string
 	rel?: string
+	prefetch?: boolean
 	children: ReactNode
 }) {
 	return (
@@ -27,6 +29,7 @@ export function TrackedLink({
 			className={className}
 			target={target}
 			rel={rel}
+			prefetch={prefetch}
 			onClick={() => trackEvent(eventName, eventParams)}
 		>
 			{children}

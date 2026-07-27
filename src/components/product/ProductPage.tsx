@@ -1,9 +1,9 @@
-import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
 import { Eyebrow } from '@/components/landing/Eyebrow'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
 import { CTA } from '@/components/landing/CTA'
+import { TrackedLink } from '@/components/analytics/TrackedLink'
 import { ScreenshotFrame, type Shot } from './ScreenshotFrame'
 
 export interface Slab {
@@ -60,9 +60,14 @@ export function ProductPage({ eyebrow, title, subtitle, hero, slabs, intro, faqs
 						<Eyebrow className="mb-5">{eyebrow}</Eyebrow>
 						<h1 className="mx-auto mb-5 max-w-[18ch] text-[clamp(32px,5vw,56px)] font-extrabold leading-[1.05] tracking-[-0.03em]">{title}</h1>
 						<p className="mx-auto mb-8 max-w-[52ch] text-[19px] leading-[1.6] text-base-content/70">{subtitle}</p>
-						<Link href="#install" className="btn btn-primary gap-2 rounded-[10px] font-semibold">
+						<TrackedLink
+							href="#install"
+							className="btn btn-primary gap-2 rounded-[10px] font-semibold"
+							eventName="install_cta_click"
+							eventParams={{ location: 'product_hero' }}
+						>
 							{dict['nav.download']}
-						</Link>
+						</TrackedLink>
 					</ScrollReveal>
 					{hero ? <div className="mt-14"><ScrollReveal y={30}><ScreenshotFrame shot={hero} /></ScrollReveal></div> : null}
 				</div>
