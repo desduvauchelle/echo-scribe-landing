@@ -32,6 +32,7 @@ export async function generateMetadata({
 		description: post.seoDesc,
 		image: post.heroImageUrl,
 		type: 'article',
+		brand: false,
 	})
 }
 

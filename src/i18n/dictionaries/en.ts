@@ -17,11 +17,11 @@ const en = {
 
 	// Hero
 	'hero.badge': 'Free · Private · On-device AI',
-	'hero.title': 'Echo Scribe — Voice to text for everything you do',
+	'hero.title': 'Echo Scribe — Private AI Voice Recorder & Voice to Text for Mac',
 	'hero.title.line1': 'Typing is overrated.',
 	'hero.title.line2': 'Just talk.',
 	'hero.subtitle': 'Echo Scribe is voice to text for your whole Mac. Press a hotkey, speak, and polished text appears wherever your cursor is. We spend our days prompting AI now, and prompts don’t need perfect wording. They need your thinking, fast. Speaking is the fastest way to get it out.',
-	'hero.meta.description': 'Free, private voice to text for your Mac. Dictate into any app, record meetings with live transcription and call guidance, capture screen walkthroughs, and turn it all into one searchable work memory. 100% on-device AI.',
+	'hero.meta.description': 'Record and transcribe meetings, voice notes, and dictation privately on your Mac. Search everything locally—no cloud backend or account required.',
 	'hero.cta.primary': 'Get voice to text free',
 	'hero.cta.secondary': 'See how it builds up',
 	'hero.meta.local': 'Runs locally on your Mac',

@@ -24,6 +24,7 @@ export async function generateMetadata({
 		title: author.name,
 		description: author.bio,
 		...(author.avatarUrl ? { image: author.avatarUrl } : {}),
+		brand: false,
 	})
 }
 

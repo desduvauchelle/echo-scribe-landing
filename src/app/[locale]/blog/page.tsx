@@ -21,6 +21,7 @@ export async function generateMetadata({
 		locale,
 		title: dict['blog.heading'],
 		description: dict['blog.meta.description'],
+		brand: false,
 	})
 }
 
