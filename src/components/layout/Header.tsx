@@ -13,7 +13,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const NAV_LINKS = [
 		{ href: localizedPath('/', locale), label: dict['nav.home'] },
 		{ href: localizedPath('/blog', locale), label: dict['nav.blog'] },
-		{ href: localizedPath('/contact', locale), label: dict['nav.contact'] },
+		{ href: `${localizedPath('/contact', locale)}#support`, label: dict['nav.support'] },
 	]
 
 	const mobileGroups = NAV_GROUPS.map((group) => ({
@@ -44,8 +44,10 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 					<Link href={localizedPath('/blog', locale)} className="text-base-content/70 transition-colors hover:text-primary">
 						{dict['nav.blog']}
 					</Link>
-					<Link href={localizedPath('/contact', locale)} className="text-base-content/70 transition-colors hover:text-primary">
-						{dict['nav.contact']}
+					{/* Anchored at #support: the page leads with the install command,
+					    but someone clicking "Support" wants the help section. */}
+					<Link href={`${localizedPath('/contact', locale)}#support`} className="text-base-content/70 transition-colors hover:text-primary">
+						{dict['nav.support']}
 					</Link>
 					<LanguageSwitcher locale={locale} />
 					<ThemeToggle />

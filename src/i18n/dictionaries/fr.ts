@@ -4,7 +4,7 @@ const fr: Dictionary = {
 	// Navigation
 	'nav.home': 'Accueil',
 	'nav.blog': 'Blog',
-	'nav.contact': 'Contact',
+	'nav.support': 'Assistance',
 	'nav.features': 'Fonctionnalités',
 	'nav.usecases': 'Cas d’usage',
 	'nav.features.capture': 'Capture et enregistrement',
@@ -506,6 +506,19 @@ const fr: Dictionary = {
 		'Découvrez les auteurs d’Echo Scribe — l’équipe qui partage des guides sur la transcription privée, la dictée hors ligne et l’IA locale pour vos réunions.',
 	'authors.detail.meta.description':
 		'Articles et guides de {name} sur la transcription privée, la dictée hors ligne et l’IA locale — sur le blog Echo Scribe.',
+	'authors.detail.eyebrow': 'Auteur',
+	'authors.detail.posts.count': '{count} articles',
+	'authors.detail.posts.count.one': '1 article',
+	'authors.detail.about.title': 'Ce dont parle {name}',
+	'authors.detail.about.body1':
+		'L’essentiel d’une journée de travail se dit, il ne se tape pas — en réunion, au téléphone, dans les idées à moitié formées qui vous viennent en quittant votre bureau. Presque rien n’en survit. {name} écrit sur la façon de combler ce vide.',
+	'authors.detail.about.body2':
+		'Attendez-vous à des guides pratiques plutôt qu’à des tribunes : dicter dans n’importe quelle app de votre Mac, enregistrer et transcrire une réunion sans la confier au serveur de quelqu’un d’autre, et ce que les modèles d’IA locale font désormais sur un portable là où il fallait le cloud.',
+	'authors.detail.explore.eyebrow': 'Le produit derrière le blog',
+	'authors.detail.explore.title':
+		'Echo Scribe — la dictée vocale gratuite et privée pour votre Mac',
+	'authors.detail.explore.body':
+		'Appuyez sur un raccourci, parlez, et un texte soigné atterrit là où se trouve votre curseur. Enregistrement, transcription et résumés tournent sur votre machine — sans compte, sans cloud.',
 	'authors.empty': 'Aucun auteur pour le moment',
 	'authors.posts.heading': 'Articles de {name}',
 	'authors.posts.empty': 'Aucun article de cet auteur pour le moment',
@@ -535,14 +548,29 @@ const fr: Dictionary = {
 	'footer.copyright': '© {year} Echo Scribe. Tous droits réservés.',
 	'footer.powered.by': 'Propulsé par Recursive Solutions',
 
-	// Contact
-	'contact.heading': 'Contactez-nous',
-	'contact.subtitle': 'Nous serions ravis de vous entendre',
-	'contact.meta.description':
-		'Contactez l’équipe Echo Scribe. Des questions sur la transcription privée hors ligne et la prise de notes IA locale sur Mac ? Écrivez-nous.',
-	'contact.load.error': 'Échec du chargement des informations de contact',
-	'contact.business.hours': 'Heures d’ouverture',
-	'contact.info': 'Coordonnées',
+	// ── Obtenir Echo Scribe / assistance (route : /contact) ─────────────
+	'support.eyebrow': 'Gratuit · Sans compte',
+	'support.heading': 'Obtenir Echo Scribe',
+	'support.subtitle':
+		'Une ligne dans le Terminal et c’est parti. Pas d’inscription, pas de clé de licence, aucun compte à créer — et chaque enregistrement reste sur votre Mac.',
+	'support.meta.description':
+		'Installez Echo Scribe gratuitement sur votre Mac avec une seule commande Terminal — sans compte, sans inscription. Version Windows, configuration requise et assistance.',
+	'support.help.eyebrow': 'Assistance',
+	'support.help.heading': 'Besoin d’aide ?',
+	'support.help.subtitle':
+		'Echo Scribe est développé au grand jour. Les bugs et les demandes de fonctionnalités vont directement dans le suivi public, où vous pouvez voir ce qui a déjà été signalé et ce qui est en cours.',
+	'support.help.issues.title': 'Signaler un bug ou proposer une fonctionnalité',
+	'support.help.issues.desc':
+		'Ouvrez un ticket sur GitHub. Indiquez votre version de macOS et ce que vous faisiez au moment du problème — la correction arrivera plus vite.',
+	'support.help.issues.cta': 'Ouvrir un ticket',
+	'support.help.releases.title': 'Voir les nouveautés',
+	'support.help.releases.desc':
+		'Chaque version détaille les nouveautés et les corrections. Relancez la commande d’installation pour passer à la dernière version.',
+	'support.help.releases.cta': 'Voir les versions',
+	'support.help.source.title': 'Lire le code source',
+	'support.help.source.desc':
+		'Le script d’installation et l’application sont publics. Regardez avant de lancer — avec un outil qui entend tout ce que vous dites, c’est bien le minimum.',
+	'support.help.source.cta': 'Parcourir le dépôt',
 
 	// Forms
 	'nav.forms': 'Formulaires',
@@ -565,18 +593,18 @@ const fr: Dictionary = {
 	'legal.section3.title': 'Avertissement',
 	'legal.section3.body': 'Ce site est fourni « tel quel » sans garantie d’aucune sorte, expresse ou implicite.',
 	'legal.section4.title': 'Contact',
-	'legal.section4.body': 'Si vous avez des questions concernant ces conditions, veuillez visiter notre page de contact.',
+	'legal.section4.body': 'Si vous avez des questions concernant ces conditions, veuillez consulter notre page Assistance.',
 
 	// Privacy Policy
 	'privacy.intro': 'Cette Politique de confidentialité décrit comment nous collectons, utilisons et partageons vos informations personnelles lorsque vous visitez ce site web.',
 	'privacy.section1.title': 'Informations que nous collectons',
-	'privacy.section1.body': 'Nous pouvons collecter des informations que vous fournissez directement, par exemple lorsque vous remplissez un formulaire de contact, ainsi que des données d’utilisation collectées automatiquement via des outils d’analyse.',
+	'privacy.section1.body': 'Nous collectons automatiquement des données d’utilisation via des outils d’analyse lorsque vous naviguez sur ce site. Si vous envoyez un formulaire publié sur ce site, nous recevons également les informations que vous y avez saisies. L’application Echo Scribe, elle, fonctionne sur votre propre machine et ne nous transmet ni vos enregistrements, ni vos transcriptions, ni vos notes.',
 	'privacy.section2.title': 'Comment nous utilisons vos informations',
 	'privacy.section2.body': 'Nous utilisons les informations collectées pour faire fonctionner et améliorer notre site, répondre à vos demandes et analyser la façon dont les visiteurs utilisent le site.',
 	'privacy.section3.title': 'Partage des données',
 	'privacy.section3.body': 'Nous ne vendons pas vos informations personnelles. Nous pouvons partager des informations avec des prestataires de services qui nous aident à exploiter le site.',
 	'privacy.section4.title': 'Vos droits',
-	'privacy.section4.body': 'Vous pouvez demander l’accès, la correction ou la suppression de vos données personnelles en nous contactant via notre page de contact.',
+	'privacy.section4.body': 'Vous pouvez à tout moment demander l’accès, la correction ou la suppression de vos données personnelles. Veuillez écrire à l’adresse publiée sur notre dépôt GitHub afin que votre demande reste privée, plutôt que d’ouvrir un ticket public.',
 
 	// Cookie Policy
 	'cookies.intro': 'Cette Politique de cookies explique comment nous utilisons les cookies et technologies similaires sur ce site web.',
@@ -590,7 +618,7 @@ const fr: Dictionary = {
 	'cookies.section3.title': 'Gérer les cookies',
 	'cookies.section3.body': 'Vous pouvez contrôler les cookies via les paramètres de votre navigateur. La désactivation des cookies peut affecter le fonctionnement de ce site.',
 	'cookies.section4.title': 'Contact',
-	'cookies.section4.body': 'Si vous avez des questions concernant notre utilisation des cookies, veuillez visiter notre page de contact.',
+	'cookies.section4.body': 'Si vous avez des questions concernant notre utilisation des cookies, veuillez consulter notre page Assistance.',
 
 	// Language names
 	'lang.en': 'English',

@@ -48,7 +48,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/[locale]/blog/[slug]/page.tsx` | Blog detail with `fetchBlog()` + `RelatedPosts` |
 | `src/app/[locale]/blog/authors/page.tsx` | Author index page |
 | `src/app/[locale]/blog/authors/[slug]/page.tsx` | Author detail with bio + their posts |
-| `src/app/[locale]/contact/page.tsx` | Contact form using `useForm('contact-form')` |
+| `src/app/[locale]/contact/page.tsx` | "Get Echo Scribe" — install command first, GitHub support second. **No form** (see Adoption path below) |
 | `src/app/[locale]/forms/[slug]/page.tsx` | Dynamic form page — renders any form by slug |
 | `src/app/[locale]/privacy/page.tsx` | Privacy policy |
 | `src/app/[locale]/legal/page.tsx` | Terms of service |
@@ -56,7 +56,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/components/landing/` | Hero, Features, CTA (with scroll reveal animations) |
 | `src/components/blog/` | BlogList, BlogCard, BlogContent, BlogSearch, RelatedPosts, AuthorByline, AuthorCard, AuthorChips |
 | `src/components/layout/` | Header, Footer, ThemeToggle, LanguageSwitcher |
-| `src/components/config/ConfigDisplay.tsx` | Business hours + contact info display |
+| `src/components/landing/InstallBox.tsx` | The curl install command + copy button. Fires `install_copy` — the site's primary conversion |
 | `src/components/analytics/GoogleAnalytics.tsx` | GA4 script loader + `trackEvent()` helper |
 | `src/hooks/useGsap.ts` | `useScrollReveal()` and `useGsap()` hooks, re-exports `gsap` |
 | `src/i18n/config.ts` | `defaultLocale`, `supportedLocales`, `isMultiLang` from env vars |
@@ -157,12 +157,23 @@ const dict = await getDictionary(locale)
 
 **Dictionary key convention:** flat dot-separated keys like `'blog.search.placeholder'`. All keys must exist in every dictionary (type-checked via `DictionaryKey` union from `en.ts`).
 
+## Adoption path (read before adding a form or a "contact us" CTA)
+
+**Echo Scribe is free, needs no account, and installs with one Terminal line. There is nothing to ask us for before using it — so the site has no contact form, by design.**
+
+The scaffold ships a generic "Contact Us" form (slug `contact-form`: name / email / message). It ran on `/contact` and took **0 submissions across 44 sessions**, because it does not match how anyone adopts this product. It was removed on 2026-08-03. `/contact` is now "Get Echo Scribe": the install command first, GitHub support second.
+
+**The conversion metric is `install_copy` and `app_download`, not form submissions.** Both carry a `location` param (`EventLocation` in `GoogleAnalytics.tsx`) so intent can be segmented by page. Mark both as key events in GA4. If you are ever asked why "conversions" are zero, check that the metric is not still pointed at `form_submit`.
+
+Before adding any form here, it must clear one bar: *what does the visitor get that the install command does not already give them?* "Get in touch", "request a demo", and "join the waitlist" all fail that bar for a free, instantly-installable app.
+
+**The form definition is server-authoritative and cannot be changed from this repo.** `submitForm()` re-fetches the form from Brain and validates against the *server's* field list, and `settings.successMessage` from the server overrides `translations.defaultSuccessMessage`. sdk-server exposes only `getFormBySlug`/`getActiveForms` — no create/update. Shrinking or relabelling a form's fields means editing it in the Brain admin UI; overriding `form.fields` in the `FormRenderer` prop changes only what renders, and submission will then fail validation against the untouched server schema.
+
+**Note:** `contact-form` still exists in Brain and is still reachable at `/forms/contact-form` (and listed on `/forms`). Deactivate it in Brain if you want it gone entirely.
+
 ## Forms
 
-A default "Contact Us" form (slug: `contact-form`) is seeded during onboarding. Two pages use it out of the box:
-
-- `/contact` — dedicated contact page with business info sidebar
-- `/forms/[slug]` — dynamic form page that renders any form by slug
+`/forms/[slug]` — dynamic form page that renders any form by slug. Kept as scaffold infrastructure; nothing links to it.
 
 **Usage pattern:**
 
@@ -228,10 +239,10 @@ GA4 via `NEXT_PUBLIC_GA_MEASUREMENT_ID` env var. No scripts loaded when unset.
 
 ```tsx
 import { trackEvent } from '@/components/analytics/GoogleAnalytics'
-trackEvent('form_submit', { form_slug: 'contact' })  // no-op when GA not configured
+trackEvent('install_copy', { method: 'curl', platform: 'macos', location: 'hero' })  // no-op when GA not configured
 ```
 
-Built-in events: `cta_click`, `contact_view`, `contact_form_submit`.
+Events: `install_copy` and `app_download` are the conversions — mark both as key events in GA4. `install_cta_click` and `cta_click` are intent only (they scroll to the install section). Every one takes a `location` param from the `EventLocation` union.
 
 ## Environment Variables
 

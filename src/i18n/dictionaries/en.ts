@@ -2,7 +2,7 @@ const en = {
 	// Navigation
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
-	'nav.contact': 'Contact',
+	'nav.support': 'Support',
 	'nav.features': 'Features',
 	'nav.usecases': 'Use cases',
 	'nav.features.capture': 'Capture & Record',
@@ -502,10 +502,28 @@ const en = {
 	'authors.subtitle': 'Meet the writers behind our blog',
 	'authors.meta.description':
 		'Meet the writers behind Echo Scribe — the team sharing guides on private transcription, offline dictation, and local AI for your meetings and notes.',
-	// Appended after an author's bio when the bio alone is too short to fill a
-	// search snippet — see `composeMetaDescription` in `src/lib/seo.ts`.
+	// ── Author detail page ──────────────────────────────────────────────
+	// A CMS bio is one or two lines — too thin to rank and it sells nothing. The
+	// rest of the page body lives here instead, templated on {name}. Keep this
+	// copy author-AGNOSTIC: it renders for every author, so it can only claim
+	// things true of anyone writing on this blog.
+	//
+	// Appended after the bio when the bio alone is too short to fill a search
+	// snippet — see `composeMetaDescription` in `src/lib/seo.ts`.
 	'authors.detail.meta.description':
 		'Posts and guides by {name} on private transcription, offline dictation, and local AI — from the Echo Scribe blog.',
+	'authors.detail.eyebrow': 'Author',
+	'authors.detail.posts.count': '{count} posts',
+	'authors.detail.posts.count.one': '1 post',
+	'authors.detail.about.title': 'What {name} writes about',
+	'authors.detail.about.body1':
+		'The useful part of a working day is spoken, not typed — in meetings, on calls, and in the half-formed thoughts you have walking away from your desk. Almost none of it survives. {name} writes about closing that gap.',
+	'authors.detail.about.body2':
+		'Expect practical guides rather than think-pieces: dictating into any app on your Mac, recording and transcribing a meeting without handing it to someone else’s server, and what on-device AI models can now do on a laptop that used to need the cloud.',
+	'authors.detail.explore.eyebrow': 'The product behind the blog',
+	'authors.detail.explore.title': 'Echo Scribe — free, private voice to text for your Mac',
+	'authors.detail.explore.body':
+		'Press a hotkey, speak, and polished text lands wherever your cursor is. Recording, transcription, and summaries all run on your own machine — no account, no cloud.',
 	'authors.empty': 'No authors yet',
 	'authors.posts.heading': 'Posts by {name}',
 	'authors.posts.empty': 'No posts yet from this author',
@@ -535,14 +553,32 @@ const en = {
 	'footer.copyright': '© {year} Echo Scribe. All rights reserved.',
 	'footer.powered.by': 'Powered by Recursive Solutions',
 
-	// Contact
-	'contact.heading': 'Contact Us',
-	'contact.subtitle': "We'd love to hear from you",
-	'contact.meta.description':
-		'Get in touch with the Echo Scribe team. Questions about private, offline transcription and local AI note-taking on your Mac? We would love to hear from you.',
-	'contact.load.error': 'Failed to load contact information',
-	'contact.business.hours': 'Business Hours',
-	'contact.info': 'Contact Information',
+	// ── Get Echo Scribe / support (route: /contact) ─────────────────────
+	// The app is free, needs no account, and installs with one Terminal line,
+	// so there is nothing to "get in touch" about before using it. This page is
+	// the adoption path: install command first, GitHub support second.
+	'support.eyebrow': 'Free · No account',
+	'support.heading': 'Get Echo Scribe',
+	'support.subtitle':
+		'One line in Terminal and you are running. No signup, no licence key, nothing to create an account for — and every recording stays on your Mac.',
+	'support.meta.description':
+		'Install Echo Scribe free on your Mac with a single Terminal command — no account, no signup. Windows build, system requirements, and support links.',
+	'support.help.eyebrow': 'Support',
+	'support.help.heading': 'Need a hand?',
+	'support.help.subtitle':
+		'Echo Scribe is built in the open. Bugs and feature requests go straight to the tracker, where you can see what has already been raised and what is being worked on.',
+	'support.help.issues.title': 'Report a bug or request a feature',
+	'support.help.issues.desc':
+		'Open an issue on GitHub. Include your macOS version and what you were doing when it went wrong — it gets fixed faster that way.',
+	'support.help.issues.cta': 'Open an issue',
+	'support.help.releases.title': 'See what changed',
+	'support.help.releases.desc':
+		'Every release lists what is new and what is fixed. Run the install command again to update to the latest version.',
+	'support.help.releases.cta': 'View releases',
+	'support.help.source.title': 'Read the source',
+	'support.help.source.desc':
+		'The install script and the app itself are public. Look before you run it — with a tool that hears everything you say, that is the point.',
+	'support.help.source.cta': 'Browse the repo',
 
 	// Forms
 	'nav.forms': 'Forms',
@@ -565,18 +601,18 @@ const en = {
 	'legal.section3.title': 'Disclaimer',
 	'legal.section3.body': 'This website is provided "as is" without warranties of any kind, either express or implied.',
 	'legal.section4.title': 'Contact',
-	'legal.section4.body': 'If you have questions about these terms, please visit our contact page.',
+	'legal.section4.body': 'If you have questions about these terms, please visit our Support page.',
 
 	// Privacy Policy
 	'privacy.intro': 'This Privacy Policy describes how we collect, use, and share your personal information when you visit this website.',
 	'privacy.section1.title': 'Information We Collect',
-	'privacy.section1.body': 'We may collect information you provide directly, such as when you fill out a contact form, as well as usage data collected automatically through analytics.',
+	'privacy.section1.body': 'We collect usage data automatically through analytics when you browse this website. If you submit a form published on this site, we also receive the information you entered. The Echo Scribe app itself runs on your own machine and does not send us your recordings, transcripts, or notes.',
 	'privacy.section2.title': 'How We Use Your Information',
 	'privacy.section2.body': 'We use the information we collect to operate and improve our website, respond to your inquiries, and analyze how visitors use the site.',
 	'privacy.section3.title': 'Data Sharing',
 	'privacy.section3.body': 'We do not sell your personal information. We may share information with service providers who help us operate the website.',
 	'privacy.section4.title': 'Your Rights',
-	'privacy.section4.body': 'You may request access to, correction of, or deletion of your personal data by contacting us through our contact page.',
+	'privacy.section4.body': 'You may request access to, correction of, or deletion of your personal data at any time. Please email the address published on our GitHub repository so that your request stays private, rather than opening a public issue.',
 
 	// Cookie Policy
 	'cookies.intro': 'This Cookie Policy explains how we use cookies and similar technologies on this website.',
@@ -590,7 +626,7 @@ const en = {
 	'cookies.section3.title': 'Managing Cookies',
 	'cookies.section3.body': 'You can control cookies through your browser settings. Disabling cookies may affect the functionality of this website.',
 	'cookies.section4.title': 'Contact',
-	'cookies.section4.body': 'If you have questions about our use of cookies, please visit our contact page.',
+	'cookies.section4.body': 'If you have questions about our use of cookies, please visit our Support page.',
 
 	// Language names
 	'lang.en': 'English',
