@@ -504,6 +504,8 @@ const fr: Dictionary = {
 	'authors.subtitle': 'Découvrez les rédacteurs de notre blog',
 	'authors.meta.description':
 		'Découvrez les auteurs d’Echo Scribe — l’équipe qui partage des guides sur la transcription privée, la dictée hors ligne et l’IA locale pour vos réunions.',
+	'authors.detail.meta.description':
+		'Articles et guides de {name} sur la transcription privée, la dictée hors ligne et l’IA locale — sur le blog Echo Scribe.',
 	'authors.empty': 'Aucun auteur pour le moment',
 	'authors.posts.heading': 'Articles de {name}',
 	'authors.posts.empty': 'Aucun article de cet auteur pour le moment',

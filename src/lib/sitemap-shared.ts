@@ -64,14 +64,35 @@ interface AuthorSitemapEntry {
 	updatedAt: string | null
 }
 
+/**
+ * Absolute URL for a locale-agnostic path. THE single source of truth for every
+ * absolute URL the site emits (canonical, OG, hreflang, sitemap, RSS).
+ *
+ * The site root is emitted SLASHLESS (`https://site.com`, not `.../`), and that
+ * is not a free choice — Next's metadata resolver hard-codes it. In
+ * `resolveAbsoluteUrlWithPathname` (next/dist/lib/metadata/resolvers/resolve-url.js)
+ * it does:
+ *
+ *     resolvedUrl = result.pathname === '/' && result.searchParams.size === 0
+ *       ? result.origin   // ← trailing slash dropped, unconditionally
+ *       : result.href
+ *
+ * so a `${SITE_URL}/` handed to `alternates.canonical` comes back out of the
+ * `<link rel="canonical">` as `${SITE_URL}` regardless. The only override is
+ * `trailingSlash: true` in next.config, which would 308 every already-indexed
+ * URL on the site (`/blog` → `/blog/`) — wildly disproportionate. So the sitemap
+ * matches what the canonical tag can actually emit, rather than the reverse:
+ * canonical, og:url, hreflang, sitemap and the RSS channel link are all the
+ * identical string. Slashless also matches the rest of the site, where
+ * `trailingSlash: false` 308-redirects `/blog/` → `/blog`.
+ *
+ * (`https://site.com` and `https://site.com/` are the same URL per RFC 3986 §6.2.3
+ * and cannot be told apart server-side — both serialize to `GET / HTTP/1.1` — so
+ * a redirect between them is impossible. Consistent canonicalization is the fix.)
+ */
 export function buildUrl(path: string, locale?: string): string {
 	if (!locale || locale === defaultLocale) {
-		// The apex root is conventionally the trailing-slash form (`https://site.com/`),
-		// which is also what every internal link (`localizedPath('/', …)` → `/`) and the
-		// browser actually resolve to. Emit it here so the canonical + sitemap agree with
-		// the crawled URL and strict SEO crawlers stop reporting the slash/no-slash pair
-		// as duplicate titles. Interior paths and secondary-locale roots stay slashless.
-		return path === '' ? `${SITE_URL}/` : `${SITE_URL}${path}`
+		return `${SITE_URL}${path}`
 	}
 	return `${SITE_URL}/${locale}${path}`
 }

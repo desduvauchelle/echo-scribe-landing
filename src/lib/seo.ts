@@ -4,6 +4,51 @@ import { SITE_URL, buildUrl, buildAlternates } from './sitemap-shared'
 
 export const SITE_NAME = 'Echo Scribe'
 
+/**
+ * Search-snippet bounds. Google renders roughly 160 characters of a
+ * description; much under 50 leaves most of the snippet unused (and trips the
+ * `meta_description_length` crawl warning), so a thin CMS field must be topped
+ * up rather than shipped as-is.
+ */
+export const META_DESCRIPTION_MIN = 50
+export const META_DESCRIPTION_MAX = 160
+
+/** Trim to `max` on a word boundary, ellipsing only when text is actually cut. */
+function clamp(text: string, max: number): string {
+	if (text.length <= max) return text
+	const clipped = text.slice(0, max - 1)
+	const lastSpace = clipped.lastIndexOf(' ')
+	const cut = lastSpace > 0 ? clipped.slice(0, lastSpace) : clipped
+	return `${cut.replace(/[\s,;:.—–-]+$/, '')}…`
+}
+
+/**
+ * Build a description that fills a search snippet: `parts` are appended in
+ * order until the result clears `META_DESCRIPTION_MIN`, then the whole thing is
+ * clamped to `META_DESCRIPTION_MAX`.
+ *
+ * Pass the most specific text first (a CMS bio or excerpt) and generic page
+ * context after it, so a well-written CMS field is used verbatim and only a
+ * thin one gets padded:
+ *
+ *   composeMetaDescription(author.bio, dict['authors.detail.meta.description'])
+ *
+ * Returns `undefined` when every part is empty, so callers can leave the
+ * description off entirely instead of emitting a blank tag.
+ */
+export function composeMetaDescription(
+	...parts: (string | null | undefined)[]
+): string | undefined {
+	let out = ''
+	for (const part of parts) {
+		const text = part?.replace(/\s+/g, ' ').trim()
+		if (!text) continue
+		out = out ? `${out} ${text}` : text
+		if (out.length >= META_DESCRIPTION_MIN) break
+	}
+	return out ? clamp(out, META_DESCRIPTION_MAX) : undefined
+}
+
 interface PageMetadataInput {
 	/** Path WITHOUT locale prefix, e.g. '' (home), '/blog', '/blog/my-post'. */
 	path: string

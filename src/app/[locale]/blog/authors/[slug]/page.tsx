@@ -6,7 +6,7 @@ import { BlogList } from '@growth-engine/sdk-client/components'
 import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { localePrefix, localizedPath } from '@/lib/i18n-utils'
-import { buildPageMetadata } from '@/lib/seo'
+import { buildPageMetadata, composeMetaDescription } from '@/lib/seo'
 
 export const revalidate = 300
 
@@ -18,11 +18,18 @@ export async function generateMetadata({
 	const { locale, slug } = await params
 	const author = await safeQuery(null, () => getBlogAuthor(getDb(), slug))
 	if (!author) return {}
+	const dict = await getDictionary(locale)
 	return buildPageMetadata({
 		path: `/blog/authors/${slug}`,
 		locale,
 		title: author.name,
-		description: author.bio,
+		// The bio is CMS-authored and often a single short line — too thin to fill
+		// a search snippet on its own — so it is topped up with the author-page
+		// blurb. A bio long enough to stand alone is used verbatim.
+		description: composeMetaDescription(
+			author.bio,
+			dict['authors.detail.meta.description'].replace('{name}', author.name),
+		),
 		...(author.avatarUrl ? { image: author.avatarUrl } : {}),
 		brand: false,
 	})

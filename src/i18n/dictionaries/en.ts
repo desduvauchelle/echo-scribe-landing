@@ -502,6 +502,10 @@ const en = {
 	'authors.subtitle': 'Meet the writers behind our blog',
 	'authors.meta.description':
 		'Meet the writers behind Echo Scribe — the team sharing guides on private transcription, offline dictation, and local AI for your meetings and notes.',
+	// Appended after an author's bio when the bio alone is too short to fill a
+	// search snippet — see `composeMetaDescription` in `src/lib/seo.ts`.
+	'authors.detail.meta.description':
+		'Posts and guides by {name} on private transcription, offline dictation, and local AI — from the Echo Scribe blog.',
 	'authors.empty': 'No authors yet',
 	'authors.posts.heading': 'Posts by {name}',
 	'authors.posts.empty': 'No posts yet from this author',

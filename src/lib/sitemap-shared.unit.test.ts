@@ -68,6 +68,38 @@ describe('sitemap-shared', () => {
 		})
 	})
 
+	// ─── buildUrl ────────────────────────────────────────────────────────
+
+	describe('buildUrl', () => {
+		// The site root must be emitted WITHOUT a trailing slash. Next's metadata
+		// resolver collapses any root URL to `origin` before writing
+		// `<link rel="canonical">`, so `${SITE_URL}/` here would silently disagree
+		// with the canonical tag — one signal saying `https://site.com/` and the
+		// other `https://site.com`, which is exactly the duplicate-homepage split
+		// this pins shut. See the `buildUrl` docblock.
+		it('emits the site root with NO trailing slash', async () => {
+			const { buildUrl } = await load()
+			expect(buildUrl('')).toBe('https://example.com')
+			expect(buildUrl('', 'en')).toBe('https://example.com')
+		})
+
+		it('emits interior paths with no trailing slash', async () => {
+			const { buildUrl } = await load()
+			expect(buildUrl('/blog', 'en')).toBe('https://example.com/blog')
+			expect(buildUrl('/blog/my-post', 'en')).toBe('https://example.com/blog/my-post')
+		})
+
+		it('prefixes secondary locales, root included', async () => {
+			const { buildUrl } = await load({
+				defaultLocale: 'en',
+				supportedLocales: ['en', 'fr'],
+				isMultiLang: true,
+			})
+			expect(buildUrl('', 'fr')).toBe('https://example.com/fr')
+			expect(buildUrl('/blog', 'fr')).toBe('https://example.com/fr/blog')
+		})
+	})
+
 	// ─── buildStaticEntries ──────────────────────────────────────────────
 
 	describe('buildStaticEntries', () => {
@@ -75,7 +107,7 @@ describe('sitemap-shared', () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
 			const urls = result.map((e) => e.url)
-			expect(urls).toContain('https://example.com/')
+			expect(urls).toContain('https://example.com')
 			expect(urls).toContain('https://example.com/blog')
 			expect(urls).toContain('https://example.com/blog/authors')
 			expect(urls).toContain('https://example.com/contact')
@@ -87,14 +119,14 @@ describe('sitemap-shared', () => {
 		it('homepage gets priority 1.0', async () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
-			const home = result.find((e) => e.url === 'https://example.com/')
+			const home = result.find((e) => e.url === 'https://example.com')
 			expect(home?.priority).toBe(1.0)
 		})
 
 		it('non-home pages get priority 0.7', async () => {
 			const { buildStaticEntries } = await load()
 			const result = buildStaticEntries()
-			const nonHome = result.filter((e) => e.url !== 'https://example.com/')
+			const nonHome = result.filter((e) => e.url !== 'https://example.com')
 			for (const entry of nonHome) {
 				expect(entry.priority).toBe(0.7)
 			}
@@ -115,8 +147,8 @@ describe('sitemap-shared', () => {
 				isMultiLang: true,
 			})
 			const result = buildStaticEntries()
-			const home = result.find((e) => e.url === 'https://example.com/')
-			expect(home?.alternates?.en).toBe('https://example.com/')
+			const home = result.find((e) => e.url === 'https://example.com')
+			expect(home?.alternates?.en).toBe('https://example.com')
 			expect(home?.alternates?.fr).toBe('https://example.com/fr')
 		})
 	})

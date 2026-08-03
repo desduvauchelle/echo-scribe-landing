@@ -32,6 +32,63 @@ describe('robots', () => {
 		expect(rules?.disallow).toContain('/api/')
 	})
 
+	describe('AI crawler group', () => {
+		async function loadAiGroup() {
+			const robots = await loadRobots()
+			const result = robots()
+			const rules = Array.isArray(result.rules) ? result.rules : [result.rules]
+			const group = rules.find((rule) => Array.isArray(rule?.userAgent))
+			return { group, rules }
+		}
+
+		it('explicitly allows the major AI crawlers', async () => {
+			const { group } = await loadAiGroup()
+			expect(group).toBeDefined()
+			const agents = group?.userAgent as string[]
+			// Retrieval/citation bots — these drive referral traffic.
+			expect(agents).toContain('OAI-SearchBot')
+			expect(agents).toContain('ChatGPT-User')
+			expect(agents).toContain('Claude-User')
+			expect(agents).toContain('PerplexityBot')
+			// Training/index bots.
+			expect(agents).toContain('GPTBot')
+			expect(agents).toContain('ClaudeBot')
+			// robots.txt-only tokens — no live user-agent exists to test against,
+			// so naming them here is the ONLY way to declare the posture.
+			expect(agents).toContain('Google-Extended')
+			expect(agents).toContain('Applebot-Extended')
+			expect(group?.allow).toBe('/')
+		})
+
+		it('mirrors the /api/ disallow into the AI group', async () => {
+			// robots.txt is most-specific-group-wins, not merge: a crawler named in
+			// the AI group ignores the `*` group entirely. If this disallow is ever
+			// dropped, every AI crawler silently gains access to /api/.
+			const { group } = await loadAiGroup()
+			expect(group?.disallow).toContain('/api/')
+		})
+
+		it('keeps the wildcard group so unnamed crawlers are still allowed', async () => {
+			const { rules } = await loadAiGroup()
+			const wildcard = rules.find((rule) => rule?.userAgent === '*')
+			expect(wildcard?.allow).toBe('/')
+			expect(wildcard?.disallow).toContain('/api/')
+		})
+
+		it('never disallows / for any group', async () => {
+			// Guards against a tightening edit that blocks the whole site.
+			const { rules } = await loadAiGroup()
+			for (const rule of rules) {
+				const disallow = Array.isArray(rule?.disallow)
+					? rule.disallow
+					: rule?.disallow
+						? [rule.disallow]
+						: []
+				expect(disallow).not.toContain('/')
+			}
+		})
+	})
+
 	it('includes sitemap URL pointing to /sitemap.xml', async () => {
 		process.env.SITE_URL = 'https://example.com'
 		delete process.env.VERCEL_PROJECT_PRODUCTION_URL
