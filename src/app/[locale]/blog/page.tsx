@@ -5,7 +5,10 @@ import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { localePrefix } from '@/lib/i18n-utils'
 import { buildPageMetadata } from '@/lib/seo'
+import { breadcrumbLd } from '@/lib/structured-data'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { AuthorChips } from '@/components/blog/AuthorChips'
+import { AllPostsIndex } from '@/components/blog/AllPostsIndex'
 
 export const revalidate = 60
 
@@ -40,6 +43,15 @@ export default async function BlogPage({
 
 	return (
 		<main className="container mx-auto px-4 py-12">
+			<JsonLd
+				data={breadcrumbLd(
+					[
+						{ name: dict['nav.home'], path: '' },
+						{ name: dict['nav.blog'], path: '/blog' },
+					],
+					locale,
+				)}
+			/>
 			<h1 className="text-4xl font-bold text-center mb-2">{dict['blog.heading']}</h1>
 			<p className="text-center text-base-content/60 mb-10">
 				{dict['blog.subtitle']}
@@ -61,6 +73,17 @@ export default async function BlogPage({
 					clearSearchLabel: dict['blog.clear.search'],
 					searchPlaceholder: dict['blog.search.placeholder'],
 				}}
+			/>
+
+			{/*
+			 * `BlogList` above paginates client-side, so only its first page is in
+			 * the HTML. This is the crawlable index of the rest — see AllPostsIndex.
+			 */}
+			<AllPostsIndex
+				posts={posts}
+				locale={locale}
+				heading={dict['blog.index.heading']}
+				description={dict['blog.index.description']}
 			/>
 		</main>
 	)

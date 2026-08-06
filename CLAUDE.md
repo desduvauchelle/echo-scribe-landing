@@ -45,7 +45,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/[locale]/layout.tsx` | Locale layout: passes `dict`/`locale` props to `Header`, `Footer` |
 | `src/app/[locale]/page.tsx` | Landing page (Hero, Features, CTA, latest blog posts) |
 | `src/app/[locale]/blog/page.tsx` | Blog listing with search + pagination |
-| `src/app/[locale]/blog/[slug]/page.tsx` | Blog detail with `fetchBlog()` + `RelatedPosts` |
+| `src/app/[locale]/blog/[slug]/page.tsx` | Blog detail with `getBlogPost()` + local `RelatedPosts` |
 | `src/app/[locale]/blog/authors/page.tsx` | Author index page |
 | `src/app/[locale]/blog/authors/[slug]/page.tsx` | Author detail with bio + their posts |
 | `src/app/[locale]/contact/page.tsx` | "Get Echo Scribe" — install command first, GitHub support second. **No form** (see Adoption path below) |
@@ -54,7 +54,8 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/[locale]/legal/page.tsx` | Terms of service |
 | `src/app/[locale]/cookies/page.tsx` | Cookie policy |
 | `src/components/landing/` | Hero, Features, CTA (with scroll reveal animations) |
-| `src/components/blog/` | BlogList, BlogCard, BlogContent, BlogSearch, RelatedPosts, AuthorByline, AuthorCard, AuthorChips |
+| `src/components/blog/` | RelatedPosts (local — replaces the SDK's), AllPostsIndex, AuthorByline, AuthorCard, AuthorChips. BlogList/BlogCard/BlogContent/BlogSearch come from the SDK |
+| `src/lib/related-posts.ts` | Which posts a post links out to — relevance plus a coverage cycle that prevents orphan pages |
 | `src/components/layout/` | Header, Footer, ThemeToggle, LanguageSwitcher |
 | `src/components/landing/InstallBox.tsx` | The curl install command + copy button. Fires `install_copy` — the site's primary conversion |
 | `src/components/analytics/GoogleAnalytics.tsx` | GA4 script loader + `trackEvent()` helper |
@@ -66,6 +67,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/lib/env.ts` | Runtime env var checker (logs missing vars on startup) |
 | `src/lib/i18n-utils.ts` | `formatDate(date, locale)`, `localizedPath(path, locale)` + `localePrefix(locale)` — the default-locale-is-bare URL rule for all internal links |
 | `src/lib/seo.ts` | `buildPageMetadata({ path, locale, title, … })` — self-referencing canonical + hreflang + OG/Twitter for every page's `generateMetadata` |
+| `src/lib/structured-data.ts` | `homeJsonLd` (Organization/WebSite/SoftwareApplication graph) + `breadcrumbLd` — page-level schema.org builders, all URLs via `buildUrl`. Rendered through `src/components/seo/JsonLd.tsx` |
 | `src/proxy.ts` | CORS protection for `/api/` + locale detection/routing + 301 redirect of default-locale-prefixed URLs (`/en/…` → `/…`) |
 | `src/generated/forms.ts` | Auto-generated form Zod schemas (via `pnpm pull-forms`) |
 | `src/app/globals.css` | Tailwind + DaisyUI + typography plugin imports |
@@ -198,8 +200,18 @@ Run `pnpm pull-forms` to generate typed Zod schemas in `src/generated/forms.ts` 
 - `fetchBlog(slug, locale?)` fetches a single post — use inside `useEffect`, not at component top level
 - `BlogList` handles client-side search filtering + pagination (9 posts per page)
 - `BlogContent` renders HTML via `dangerouslySetInnerHTML` with `prose prose-lg` classes
-- `RelatedPosts` shows up to 3 posts excluding the current one
+- `RelatedPosts` — the LOCAL one ([src/components/blog/RelatedPosts.tsx](src/components/blog/RelatedPosts.tsx)), not the SDK's. See "Internal linking" below before switching back.
+- `AllPostsIndex` renders every post as a plain link under the `/blog` grid — the crawlable half of the index
 - Blog detail page uses `useParams()` to get `slug` and `locale`
+
+### Internal linking (do not regress this)
+
+Two SDK components quietly starve the blog of internal links, and both are worked around rather than used as shipped:
+
+- **`RelatedPosts` from the SDK links the same three posts from every post** — it is `posts.filter(p => p.slug !== currentSlug).slice(0, 3)`. Measured at 31 posts: three posts held 90 of the 93 links and the other 26 held none, so a crawl reported nine posts as orphans (`orphan_page`) and one genuinely was. The local replacement reserves one of the three slots for the post's **successor in canonical order**, which threads a cycle through every post and makes an orphan structurally impossible; the other two rank on keyword/title overlap. Logic and tests: [src/lib/related-posts.ts](src/lib/related-posts.ts).
+- **`BlogList` paginates with `<button onClick={setPage}>`, not links.** There is no page-2 URL — `/blog?page=2` serves the same nine posts — so a crawler reading `/blog` sees nine of 31. `AllPostsIndex` below the grid is what makes the rest reachable.
+
+If you replace either component, re-check that every published post still has an inbound link from a server-rendered `<a>`. The unit tests cover the selection rule, not the wiring.
 
 ## Authors
 
@@ -292,12 +304,12 @@ The four required vars are server-only. Never prefix them with `NEXT_PUBLIC_`.
 
 **How the template keeps them aligned — never break these:**
 
-- **Links:** build every href with `localizedPath(path, locale)` ([src/lib/i18n-utils.ts](src/lib/i18n-utils.ts)). For SDK blog/form components (`BlogCard`, `BlogList`, `RelatedPosts`, `FormCard`), pass `localePrefix={localePrefix(locale)}`. Never hand-write `` `/${locale}/...` `` — a unit test ([src/lib/no-hardcoded-locale-links.unit.test.ts](src/lib/no-hardcoded-locale-links.unit.test.ts)) fails the build if you do.
+- **Links:** build every href with `localizedPath(path, locale)` ([src/lib/i18n-utils.ts](src/lib/i18n-utils.ts)). For SDK blog/form components (`BlogCard`, `BlogList`, `FormCard`), pass `localePrefix={localePrefix(locale)}`. The local `RelatedPosts` and `AllPostsIndex` derive it from `locale` themselves. Never hand-write `` `/${locale}/...` `` — a unit test ([src/lib/no-hardcoded-locale-links.unit.test.ts](src/lib/no-hardcoded-locale-links.unit.test.ts)) fails the build if you do.
 - **Canonical + title:** every page's `generateMetadata` returns `buildPageMetadata({ path, locale, title, description })` ([src/lib/seo.ts](src/lib/seo.ts)). It emits a self-referencing canonical (`buildUrl(path, locale)`), unique branded title, hreflang `alternates.languages` (+ `x-default`) in multi-lang mode, and OpenGraph/Twitter tags. The path is the **locale-agnostic** path (`''`, `/blog`, `/blog/${slug}`).
 - **Sitemap:** generated from the same `buildUrl` in [src/lib/sitemap-shared.ts](src/lib/sitemap-shared.ts) — already bare for the default locale. Add any new static route to `STATIC_PAGES`.
 - **Redirect:** [src/proxy.ts](src/proxy.ts) 301-redirects any default-locale-prefixed URL (`/en/...` → `/...`, `/en` → `/`) so the prefixed form can't become an indexable duplicate. Secondary locales (`/fr/...`) are served as-is.
 - **Host:** `SITE_URL` must be the single canonical host (pick www-or-apex, configure the apex→www 301 in Vercel domains). `metadataBase` in [src/app/layout.tsx](src/app/layout.tsx) makes all absolute asset/OG URLs use it.
-- **Structured data:** site-wide Organization/LocalBusiness JSON-LD is rendered in [src/app/[locale]/layout.tsx](src/app/[locale]/layout.tsx); blog posts get `BlogPosting` JSON-LD with a canonical `url` via `<BlogContent canonicalUrl={buildUrl(...)} />`.
+- **Structured data:** page-level schema.org lives in [src/lib/structured-data.ts](src/lib/structured-data.ts), rendered via `<JsonLd />` ([src/components/seo/JsonLd.tsx](src/components/seo/JsonLd.tsx)): the homepage emits an Organization/WebSite/SoftwareApplication graph (`homeJsonLd`), and use-case/blog/authors/contact pages emit `BreadcrumbList` (`breadcrumbLd`; use-case pages pass `breadcrumbs` through `ProductPageProps`). Every URL in every node goes through `buildUrl` so JSON-LD matches canonical/sitemap URL forms — locked by [src/lib/structured-data.unit.test.ts](src/lib/structured-data.unit.test.ts). Blog posts get `BlogPosting` JSON-LD via `<BlogContent canonicalUrl={buildUrl(...)} />`; features + /loops + the use-cases hub emit `FAQPage`. The `BusinessJsonLd` in [src/app/[locale]/layout.tsx](src/app/[locale]/layout.tsx) renders ONLY when the Brain business config has a `name` — it is currently empty, so it emits nothing (which is why the 2026-08 crawl flagged `missing_structured_data` despite the layout wiring). Never fabricate `aggregateRating`/`review` markup.
 - **Locale guard (do NOT remove):** the `[locale]` segment matches ANY first path segment, so bogus requests (`/rss.xml/legal`, `/index.iml/...` from bot probes or stale links on a prior site) would otherwise render a real page at HTTP 200 with a self-referencing canonical to the garbage URL — the GSC *"Duplicate without user-selected canonical"* bug. [src/app/[locale]/layout.tsx](src/app/[locale]/layout.tsx) calls `notFound()` for any segment that isn't a configured locale (`isSupportedLocale` in [src/i18n/config.ts](src/i18n/config.ts)), so phantom URLs return 404 and Google drops them. Covered by [src/i18n/config.unit.test.ts](src/i18n/config.unit.test.ts) + the scaffold integration test's bogus-segment 404 cases.
 - **RSS feed is `noindex`:** the blog feed at `/rss.xml` ([src/app/rss.xml/route.ts](src/app/rss.xml/route.ts)) is served with an `X-Robots-Tag: noindex` header so it (and any `/rss.xml/...` URLs crawlers derive from it) stays out of Google's index — feeds are for readers, not search. Pages advertise it via a site-wide `<link rel="alternate" type="application/rss+xml">` (added in `buildPageMetadata`'s `alternates.types`). If you ever add a second feed (Atom, per-locale), serve it `noindex` too.
 - **AI crawlers are explicitly allowed:** [src/app/robots.ts](src/app/robots.ts) emits two groups — the `*` group, and a named `AI_CRAWLERS` group (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, PerplexityBot, CCBot, …) that declares the allow-posture rather than leaving it incidental. Being cited by ChatGPT/Claude/Perplexity is a primary discovery channel for this product. `Google-Extended` and `Applebot-Extended` are robots.txt-**only** tokens with no live user-agent — naming them here is the only way to declare their posture, and you cannot test them with a request. **The footgun: robots.txt is most-specific-group-wins, NOT merge.** A crawler named in the AI group obeys *only* that group and ignores `*` entirely, which is why the AI group repeats `Disallow: /api/`. Drop that line and every AI crawler gains `/api/`. [src/app/robots.unit.test.ts](src/app/robots.unit.test.ts) locks this invariant.

@@ -7,13 +7,14 @@ import {
 	getBlogAuthorById,
 	getBusinessConfig,
 } from '@growth-engine/sdk-server'
-import { BlogContent, RelatedPosts } from '@growth-engine/sdk-client/components'
+import { BlogContent } from '@growth-engine/sdk-client/components'
 import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
-import { formatDate, localePrefix, localizedPath } from '@/lib/i18n-utils'
+import { formatDate, localizedPath } from '@/lib/i18n-utils'
 import { buildUrl } from '@/lib/sitemap-shared'
 import { buildPageMetadata } from '@/lib/seo'
 import { AuthorByline } from '@/components/blog/AuthorByline'
+import { RelatedPosts } from '@/components/blog/RelatedPosts'
 
 export const revalidate = 120
 
@@ -99,7 +100,6 @@ export default async function BlogPostPage({
 					posts={allPosts}
 					currentSlug={slug}
 					locale={locale}
-					localePrefix={localePrefix(locale)}
 					heading={dict['blog.related.posts']}
 				/>
 			</div>

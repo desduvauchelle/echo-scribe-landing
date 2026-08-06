@@ -13,6 +13,11 @@ export function buildConsultantsPage(dict: Dictionary, locale: string): ProductP
 			slab(dict, 'usecases.consultants.slab2', 'chat', 'shot.chat.alt', { reverse: true, tinted: true }),
 			slab(dict, 'usecases.consultants.slab3', 'meetings', 'shot.meetings.alt'),
 		],
+		breadcrumbs: [
+			{ name: dict['nav.home'], path: '' },
+			{ name: dict['nav.usecases'], path: '/use-cases' },
+			{ name: dict['nav.usecases.consultants'], path: '/use-cases/consultants' },
+		],
 		dict,
 		locale,
 	}
@@ -28,6 +33,11 @@ export function buildSalesPage(dict: Dictionary, locale: string): ProductPagePro
 			slab(dict, 'usecases.sales.slab1', 'meeting-hud', 'shot.meeting-hud.alt'),
 			slab(dict, 'usecases.sales.slab2', 'meetings', 'shot.meetings.alt', { reverse: true, tinted: true }),
 			slab(dict, 'usecases.sales.slab3', 'chat', 'shot.chat.alt'),
+		],
+		breadcrumbs: [
+			{ name: dict['nav.home'], path: '' },
+			{ name: dict['nav.usecases'], path: '/use-cases' },
+			{ name: dict['nav.usecases.sales'], path: '/use-cases/sales-teams' },
 		],
 		dict,
 		locale,
@@ -45,6 +55,11 @@ export function buildFoundersPage(dict: Dictionary, locale: string): ProductPage
 			slab(dict, 'usecases.founders.slab2', 'screen-recorder', 'shot.screen-recorder.alt', { reverse: true, tinted: true }),
 			slab(dict, 'usecases.founders.slab3', 'daily-summary', 'shot.daily-summary.alt'),
 		],
+		breadcrumbs: [
+			{ name: dict['nav.home'], path: '' },
+			{ name: dict['nav.usecases'], path: '/use-cases' },
+			{ name: dict['nav.usecases.founders'], path: '/use-cases/founders' },
+		],
 		dict,
 		locale,
 	}
@@ -60,6 +75,11 @@ export function buildStudentsPage(dict: Dictionary, locale: string): ProductPage
 			slab(dict, 'usecases.students.slab1', 'meeting-hud', 'shot.meeting-hud.alt'),
 			slab(dict, 'usecases.students.slab2', 'chat', 'shot.chat.alt', { reverse: true, tinted: true }),
 			slab(dict, 'usecases.students.slab3', 'projects', 'shot.projects.alt'),
+		],
+		breadcrumbs: [
+			{ name: dict['nav.home'], path: '' },
+			{ name: dict['nav.usecases'], path: '/use-cases' },
+			{ name: dict['nav.usecases.students'], path: '/use-cases/students' },
 		],
 		dict,
 		locale,
@@ -104,6 +124,10 @@ export function buildUseCasesHub(dict: Dictionary, locale: string): ProductPageP
 		],
 		intro: introFor(dict, 'usecases.hub', 2),
 		faqs: faqsFor(dict, 'usecases.hub', 3),
+		breadcrumbs: [
+			{ name: dict['nav.home'], path: '' },
+			{ name: dict['nav.usecases'], path: '/use-cases' },
+		],
 		dict,
 		locale,
 	}

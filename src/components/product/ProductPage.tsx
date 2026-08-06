@@ -1,5 +1,7 @@
 import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
+import { breadcrumbLd, type Crumb } from '@/lib/structured-data'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { Eyebrow } from '@/components/landing/Eyebrow'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
 import { CTA } from '@/components/landing/CTA'
@@ -31,26 +33,28 @@ export interface ProductPageProps {
 	intro?: string[]
 	/** Optional FAQ block rendered before the CTA. Emits FAQPage JSON-LD. */
 	faqs?: Faq[]
+	/** Optional trail (Home → … → this page) emitted as BreadcrumbList JSON-LD. */
+	breadcrumbs?: Crumb[]
 	dict: Dictionary
 	locale: string
 }
 
-export function ProductPage({ eyebrow, title, subtitle, hero, slabs, intro, faqs, dict, locale }: ProductPageProps) {
+export function ProductPage({ eyebrow, title, subtitle, hero, slabs, intro, faqs, breadcrumbs, dict, locale }: ProductPageProps) {
 	return (
 		<>
+			{breadcrumbs && breadcrumbs.length > 0 ? (
+				<JsonLd data={breadcrumbLd(breadcrumbs, locale)} />
+			) : null}
 			{faqs && faqs.length > 0 ? (
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify({
-							'@context': 'https://schema.org',
-							'@type': 'FAQPage',
-							mainEntity: faqs.map((f) => ({
-								'@type': 'Question',
-								name: f.q,
-								acceptedAnswer: { '@type': 'Answer', text: f.a },
-							})),
-						}),
+				<JsonLd
+					data={{
+						'@context': 'https://schema.org',
+						'@type': 'FAQPage',
+						mainEntity: faqs.map((f) => ({
+							'@type': 'Question',
+							name: f.q,
+							acceptedAnswer: { '@type': 'Answer', text: f.a },
+						})),
 					}}
 				/>
 			) : null}

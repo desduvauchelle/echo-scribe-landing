@@ -3,6 +3,8 @@ import { getBlogAuthors } from '@growth-engine/sdk-server'
 import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { buildPageMetadata } from '@/lib/seo'
+import { breadcrumbLd } from '@/lib/structured-data'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { AuthorCard } from '@/components/blog/AuthorCard'
 
 export const revalidate = 300
@@ -34,6 +36,16 @@ export default async function AuthorsPage({
 
 	return (
 		<main className="container mx-auto px-4 py-12">
+			<JsonLd
+				data={breadcrumbLd(
+					[
+						{ name: dict['nav.home'], path: '' },
+						{ name: dict['nav.blog'], path: '/blog' },
+						{ name: dict['authors.heading'], path: '/blog/authors' },
+					],
+					locale,
+				)}
+			/>
 			<h1 className="text-4xl font-bold text-center mb-2">
 				{dict['authors.heading']}
 			</h1>

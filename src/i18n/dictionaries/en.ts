@@ -496,6 +496,9 @@ const en = {
 	'blog.post.not.found.description': "The post you're looking for doesn't exist.",
 	'blog.related.posts': 'Related Posts',
 	'blog.load.error': 'Failed to load posts: {error}',
+	'blog.index.heading': 'Every post',
+	'blog.index.description':
+		'The full archive — the grid above shows the most recent posts a page at a time.',
 
 	// Authors
 	'authors.heading': 'Authors',

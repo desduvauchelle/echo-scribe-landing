@@ -6,6 +6,8 @@ import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { localePrefix, localizedPath } from '@/lib/i18n-utils'
 import { buildPageMetadata } from '@/lib/seo'
+import { homeJsonLd } from '@/lib/structured-data'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { Hero } from '@/components/landing/Hero'
 import { WorkMemoryLoop } from '@/components/landing/WorkMemoryLoop'
 import { Features } from '@/components/landing/Features'
@@ -43,6 +45,9 @@ export default async function HomePage({
 
 	return (
 		<>
+			{/* Organization + WebSite + SoftwareApplication graph — the brand/product
+			    entity search and answer engines resolve this site to. */}
+			<JsonLd data={homeJsonLd(locale, dict)} />
 			<Hero dict={dict} locale={locale} />
 			<WorkMemoryLoop dict={dict} locale={locale} />
 			<Features dict={dict} />

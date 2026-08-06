@@ -498,6 +498,9 @@ const fr: Dictionary = {
 	'blog.post.not.found.description': "L'article que vous recherchez n'existe pas.",
 	'blog.related.posts': 'Articles similaires',
 	'blog.load.error': 'Échec du chargement des articles : {error}',
+	'blog.index.heading': 'Tous les articles',
+	'blog.index.description':
+		'Les archives complètes — la grille ci-dessus affiche les articles les plus récents, page par page.',
 
 	// Authors
 	'authors.heading': 'Auteurs',

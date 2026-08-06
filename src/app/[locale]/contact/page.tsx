@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { getDictionary } from '@/i18n'
 import type { Dictionary, DictionaryKey } from '@/i18n'
 import { buildPageMetadata } from '@/lib/seo'
+import { breadcrumbLd } from '@/lib/structured-data'
+import { JsonLd } from '@/components/seo/JsonLd'
 import { Eyebrow } from '@/components/landing/Eyebrow'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
 import { InstallBox } from '@/components/landing/InstallBox'
@@ -75,6 +77,15 @@ export default async function GetEchoScribePage({
 
 	return (
 		<main>
+			<JsonLd
+				data={breadcrumbLd(
+					[
+						{ name: dict['nav.home'], path: '' },
+						{ name: dict['support.heading'], path: '/contact' },
+					],
+					locale,
+				)}
+			/>
 			{/* Install — the actual conversion. Copying the command is as far as
 			    the site can take someone; `install_copy` fires on that click. */}
 			<section className="border-b border-base-content/10 bg-base-100 py-20 text-center">
