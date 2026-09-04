@@ -19,6 +19,9 @@ const GITHUB_URL = 'https://github.com/desduvauchelle/echo-scribe'
 /** Stable Organization node id that other nodes reference via `@id`. */
 const ORG_ID = `${SITE_URL}/#organization`
 
+/** Stable WebSite node id, so the site is one entity across pages. */
+const SITE_ID = `${SITE_URL}/#website`
+
 export interface Crumb {
 	/** Localized label for this step of the trail. */
 	name: string
@@ -53,7 +56,7 @@ export function breadcrumbLd(crumbs: Crumb[], locale: string) {
  * nodes.
  *
  * Only claims the site itself makes: free (price 0, "Download free"
- * everywhere), macOS + Windows (the two install paths on /contact). Do NOT add
+ * everywhere), macOS (the supported install path on /contact). Do NOT add
  * `aggregateRating`/`review` without real collected ratings — fabricated review
  * markup risks a Google manual action.
  */
@@ -66,22 +69,27 @@ export function homeJsonLd(locale: string, dict: Dictionary) {
 				'@id': ORG_ID,
 				name: SITE_NAME,
 				url: SITE_URL,
+				description: dict['home.meta.description'],
 				logo: `${SITE_URL}/icon.jpeg`,
 				sameAs: [GITHUB_URL],
 			},
 			{
 				'@type': 'WebSite',
+				'@id': SITE_ID,
 				name: SITE_NAME,
 				url: SITE_URL,
+				// Which language THIS rendering of the homepage is in — the hreflang
+				// set already tells engines the other renderings exist.
+				inLanguage: locale,
 				publisher: { '@id': ORG_ID },
 			},
 			{
 				'@type': 'SoftwareApplication',
 				name: SITE_NAME,
-				description: dict['hero.meta.description'],
+				description: dict['home.meta.description'],
 				url: buildUrl('', locale),
 				applicationCategory: 'BusinessApplication',
-				operatingSystem: 'macOS, Windows',
+				operatingSystem: 'macOS',
 				// The adoption page ("Get Echo Scribe"): install command + installers.
 				downloadUrl: buildUrl('/contact', locale),
 				offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },

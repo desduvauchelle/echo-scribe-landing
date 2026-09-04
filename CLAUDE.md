@@ -73,6 +73,8 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/globals.css` | Tailwind + DaisyUI + typography plugin imports |
 | `src/app/sitemap.xml/route.ts` | Sitemap index — points at `/sitemap/{id}.xml` shards |
 | `src/app/sitemap/[file]/route.ts` | Sitemap shards: id 0 = static pages, 1..N = blog batches, N+1 = authors |
+| `src/components/product/hub-links.unit.test.ts` | Fails the build if `/features` or `/use-cases` stops linking to a subpage, reuses one generic anchor label, or lets a hub slab's `desc` fall back to the subpage `subtitle` |
+| `src/lib/product-page-meta-title.unit.test.ts` | Fails the build if a `/features` or `/use-cases` page puts its H1 slogan in `<title>` instead of a `*.meta.title` key |
 | `src/lib/sitemap-shared.ts` | Sitemap builders, hreflang grouping, XML serializers (manual route handlers — do NOT add `src/app/sitemap.ts`; Next 16 + `[locale]` segment makes the metadata convention unreliable) |
 | `src/app/rss.xml/route.ts` | Blog RSS 2.0 feed. Served with `X-Robots-Tag: noindex` — feeds belong in readers, not the search index. The literal `rss.xml` segment wins over `[locale]`, so `/rss.xml` is the feed (not a phantom locale page). |
 | `src/lib/rss-shared.ts` | Pure RSS renderer (`renderRssFeed`) + `FeedPost` shape. Item links use the same `buildUrl('/blog/<slug>', defaultLocale)` as the sitemap/canonical. |
@@ -132,7 +134,7 @@ Locale routing uses a `[locale]` segment in all pages under `src/app/[locale]/`.
 ```tsx
 import { getDictionary } from '@/i18n'
 const dict = await getDictionary(locale)
-dict['hero.title']                                    // simple lookup
+dict['hero.title.line1']                              // simple lookup
 dict['blog.load.error'].replace('{error}', msg)       // with variable interpolation ({varName} syntax)
 ```
 
@@ -151,11 +153,14 @@ import { getDictionary } from '@/i18n'
 const dict = await getDictionary(locale)
 ```
 
+**Translated locales that ship today:** `en` (source) plus `fr`, `es`, `de`, `pt`, `it`, `nl`, `pl`. A dictionary file existing is not enough — a locale is only routable once it is listed in `ADDITIONAL_LANGUAGES`.
+
 **Adding a language:**
 
 1. Create `src/i18n/dictionaries/{code}.ts` exporting a `Dictionary` object with all keys from `en.ts`
-2. Add a `case '{code}':` to the switch in `src/i18n/index.ts` `getDictionary()`
+2. Add a `{code}: () => import('./dictionaries/{code}')` line to the `loaders` map in `src/i18n/index.ts`. Keep the specifier a string literal — a template literal would break bundler code-splitting. Anything not in the map falls back to English.
 3. Set env: `ADDITIONAL_LANGUAGES=fr,{code}`
+4. Add the endonym to `LOCALE_NAMES` in `src/components/layout/LanguageSwitcher.tsx` (that map, not the `lang.*` dictionary keys, is what the picker renders)
 
 **Dictionary key convention:** flat dot-separated keys like `'blog.search.placeholder'`. All keys must exist in every dictionary (type-checked via `DictionaryKey` union from `en.ts`).
 
@@ -314,4 +319,122 @@ The four required vars are server-only. Never prefix them with `NEXT_PUBLIC_`.
 - **RSS feed is `noindex`:** the blog feed at `/rss.xml` ([src/app/rss.xml/route.ts](src/app/rss.xml/route.ts)) is served with an `X-Robots-Tag: noindex` header so it (and any `/rss.xml/...` URLs crawlers derive from it) stays out of Google's index — feeds are for readers, not search. Pages advertise it via a site-wide `<link rel="alternate" type="application/rss+xml">` (added in `buildPageMetadata`'s `alternates.types`). If you ever add a second feed (Atom, per-locale), serve it `noindex` too.
 - **AI crawlers are explicitly allowed:** [src/app/robots.ts](src/app/robots.ts) emits two groups — the `*` group, and a named `AI_CRAWLERS` group (GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-User, PerplexityBot, CCBot, …) that declares the allow-posture rather than leaving it incidental. Being cited by ChatGPT/Claude/Perplexity is a primary discovery channel for this product. `Google-Extended` and `Applebot-Extended` are robots.txt-**only** tokens with no live user-agent — naming them here is the only way to declare their posture, and you cannot test them with a request. **The footgun: robots.txt is most-specific-group-wins, NOT merge.** A crawler named in the AI group obeys *only* that group and ignores `*` entirely, which is why the AI group repeats `Disallow: /api/`. Drop that line and every AI crawler gains `/api/`. [src/app/robots.unit.test.ts](src/app/robots.unit.test.ts) locks this invariant.
 
-**Checklist when adding a page:** ① links via `localizedPath` ② `generateMetadata` → `buildPageMetadata` with the locale-agnostic path ③ add to `STATIC_PAGES` if it's a static route ④ unique title/description. If it should NOT be indexed (demo/preview), add `robots: { index: false }` to its metadata.
+## Indexing: why pages sit in "Crawled – currently not indexed" (investigated 2026-08-30)
+
+Search Console showed **48 known pages, 12 indexed**, stuck at exactly 12 since 2026-08-14 — the
+homepage plus 18 others in *Crawled – currently not indexed*, and 15 in *Discovered – currently not
+indexed*. A full sweep of all 55 sitemap URLs was run to find the cause. **The technical layer is not
+the blocker — do not go looking for one again.** Verified live, every URL:
+
+| Checked | Result |
+|---|---|
+| HTTP status | 55/55 return 200 |
+| Canonical | 55/55 self-referencing, exact string match to the sitemap `<loc>` |
+| `noindex` / robots.txt | none anywhere; robots.txt allows all but `/api/` |
+| Server-rendered body | 1,300–2,400 words on every blog post; 186–1,711 on statics — nothing client-only |
+| Titles / descriptions | zero duplicates across all 55 |
+| `<h1>` | exactly one per page |
+| JSON-LD | present on 52/55 (only `/privacy`, `/legal`, `/cookies` have none, correctly) |
+| Internal links | `/blog` server-renders anchors to all 36 posts — no orphans |
+| TTFB | 0.22–0.40s |
+| Locale guard | `/bogus/legal` → 404; `/en/blog` → 301 `/blog` |
+
+**The two real causes, in order of weight:**
+
+1. **Host authority.** `echo-scribe.ai-juicing.com` is a young subdomain of a platform domain with
+   essentially no external inbound links. Google evaluates a subdomain largely on its own signals, and
+   with near-zero authority it applies a low indexing quota — it will crawl a page, judge it not worth
+   an index slot *yet*, and move on. That is precisely the "Crawled – currently not indexed" state, and
+   **no change in this repo can fix it.** It is fixed off-site: earn real inbound links, get the app
+   listed in Mac software directories/aggregators, and — the highest-leverage move — **serve the site
+   from its own apex domain** rather than a subdomain of a shared platform host.
+2. **Topical redundancy inside the blog.** Google indexes one representative from a redundant cluster.
+   There are at least three clusters competing with themselves, measured at 36 posts:
+   - **Granola ×4** — `granola-vs-echoscribe`, `granola-vs-echoscribe-ai-meeting-assistant`,
+     `echoscribe-free-alternative-to-granola`, `echoscribe-granola-alternative-privacy`
+   - **Wispr Flow ×4** — `wispr-flow-vs-echo-scribe`,
+     `wispr-flow-vs-echo-scribe-cloud-dictation-private-voice`,
+     `the-best-free-alternative-to-wispr-flow-for-mac-users`,
+     `5-wispr-flow-alternatives-for-every-kind-of-voice-worker`
+   - **local-vs-cloud ×2+** — `local-ai-meeting-assistant-vs-cloud`,
+     `local-vs-cloud-meeting-assistant-privacy`
+
+   The prose is NOT copy-pasted (8-gram Jaccard between any pair is ≤0.013 — they were written
+   independently), so this is *keyword cannibalization*, not duplicate content. The fix is editorial and
+   **lives in Brain/Turso, not in this repo** (see the blog-content note): merge each cluster into one
+   strong post and 301 the losers via `PERMANENT_REDIRECTS` in [src/proxy.ts](src/proxy.ts). Adding a
+   fifth post to any of these clusters makes the problem worse, not better.
+
+**What WAS fixed in the repo (2026-08-30), and why each mattered:**
+
+- **Five ProductPages shipped their H1 slogan as `<title>`.** `/features/capture` was literally
+  `<title>It all starts with your voice. | Echo Scribe</title>`; `/use-cases` was "Built for the way
+  you actually work."; `/blog/authors` was the bare word **"Authors"** with no brand at all (a
+  `brand: false` meant for the homepage). Five sibling pages already had a `*.meta.title` key written
+  for exactly this reason — the convention existed and half the section missed it. Titles that name no
+  product, platform, or query are a direct negative when Google is deciding whether a page earns an
+  index slot. Locked by [src/lib/product-page-meta-title.unit.test.ts](src/lib/product-page-meta-title.unit.test.ts).
+- **`/forms` and `/forms/contact-form` were fully indexable orphans.** 200, self-canonical, no
+  `noindex`, nothing linking to them, not in the sitemap — and `contact-form` is the very form retired
+  from `/contact` for taking 0 submissions in 44 sessions. Thin orphan URLs are the exact shape of
+  "Crawled – currently not indexed", and on a host this short of authority they spend crawl budget the
+  blog needs. Both now emit `robots: { index: false, follow: true }`.
+- **All 18 static sitemap entries had no `<lastmod>`.** Blog and author URLs carry a real one from the
+  CMS; the statics — the pages that sat longest in *Discovered – currently not indexed* — threw away the
+  one crawl-scheduling signal the site controls. Now supplied by the hand-maintained
+  `STATIC_PAGE_LASTMOD` map in [src/lib/sitemap-shared.ts](src/lib/sitemap-shared.ts). **Update a
+  page's date when you change its copy, headings, or metadata.** Never wire it to `new Date()` — a
+  sitemap whose `lastmod` is always "now" gets the field ignored site-wide.
+
+**Two known-open items, deliberately not changed:**
+
+- **Nothing on the site is ever cached.** Every HTML response is
+  `cache-control: private, no-cache, no-store` with `x-vercel-cache: MISS`, including the 18 static
+  marketing pages, because `[locale]/layout.tsx` hits Turso via `getBusinessConfig` on every render and
+  the layout sets no `revalidate`. It does not block indexing, but it makes every Googlebot fetch a
+  live DB round-trip. Worth fixing; needs a real production build to verify, which is why it was left.
+- **Thin static pages.** `/blog/authors` (107 words, one author), `/cookies` (186), `/legal` (194),
+  `/privacy` (236), `/contact` (273), and the four use-case pages (325–396) are all well under the
+  1,300+ the blog posts carry. Boilerplate legal pages going unindexed is normal and harmless; the
+  use-case pages going unindexed is not — they are the commercial pages and they need more substance.
+
+## Third-party SEO audits: what was verified false (2026-09-02)
+
+An external audit reported 11 issues on the Next.js pages. Most did not survive being checked
+against the code, and the same claims tend to recur — **measure before acting on any of them again:**
+
+| Claim | Reality |
+|---|---|
+| "No `<link rel=canonical>`; add one" | Every page has emitted a self-referencing canonical since `buildPageMetadata` — [src/lib/seo.ts](src/lib/seo.ts) |
+| "`/` and `/` are duplicates; add a trailing-slash 301" | `trailingSlash: false` is pinned in [next.config.ts](next.config.ts) and Next already 308s `/blog/` → `/blog`. A bare domain and a domain with `/` are the same URL (RFC 3986) |
+| "`/features/capture` repeats the homepage (~40%)" | **0.0%** 8-gram overlap |
+| "`/use-cases/consultants` and `/use-cases/sales-teams` repeat `/features/capture` (~60%)" | **0.0%** both |
+| "`/loops` restates the homepage" | **0.0%** |
+| "`/features` and `/use-cases` are card lists with no unique substance" | Both already carried ~2 intro paragraphs + 3 FAQs with `FAQPage` JSON-LD |
+| "Give `/contact` a contact form" | Contradicts a measured decision — see **Adoption path**. The form took 0 submissions in 44 sessions and was removed |
+
+No two pages on this site share meaningful prose. The thin-content problem here has never been
+duplication; it was **word count and internal linking**, which is what was actually fixed.
+
+**What the audit missed, and what was fixed instead:**
+
+- **The hubs linked to nothing.** `Slab` had no href, so `/features` and `/use-cases` — pages whose
+  entire job is to introduce the eight pages beneath them — contained zero body links to those pages;
+  their only internal link was the header dropdown. Each hub slab now carries `href` + a descriptive
+  `linkLabel` built from `product.slab.explore` (`'Explore {name}'`), so the anchor text names the
+  destination instead of repeating "Learn more" four times. Locked by
+  [src/components/product/hub-links.unit.test.ts](src/components/product/hub-links.unit.test.ts).
+- **Hub slabs duplicated their subpage's `subtitle` verbatim.** That was the only real duplication on
+  the site. Each now has its own `*.hubdesc` key; the test above fails if a slab `desc` ever equals a
+  `*.subtitle` again.
+- **The four use-case pages were the only ProductPages with no `intro` and no `faqs`** — which is
+  precisely why they measured thinnest (205–284 words). They now use the same `introFor`/`faqsFor`
+  helpers every `/features/*` page already used: 530–617 words each, plus `FAQPage` JSON-LD.
+- **`/contact` gained an install FAQ** (187 → 562 words) covering what the curl command does, system
+  requirements, the absence of a Homebrew formula, updating, and data location/removal. Substance that
+  serves adoption — not a form.
+
+**The metric to watch is the indexed count in GSC, not the crawl score.** The crawl score was already
+99/100 while 36 of 48 pages went unindexed — it measures the layer that was never broken.
+
+**Checklist when adding a page:** ① links via `localizedPath` ② `generateMetadata` → `buildPageMetadata` with the locale-agnostic path ③ add to `STATIC_PAGES` if it's a static route ④ unique title/description — and if the page's `*.title` key is an H1 slogan (every `ProductPage` under `/features` and `/use-cases` is), give it a separate `*.meta.title` key that names the product and the query, never the slogan. If it should NOT be indexed (demo/preview), add `robots: { index: false }` to its metadata.

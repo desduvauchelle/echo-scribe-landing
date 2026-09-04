@@ -4,6 +4,26 @@ export type { Dictionary, DictionaryKey }
 
 const cache = new Map<string, Dictionary>()
 
+/**
+ * One dynamic import per translated locale. The import specifiers are literal
+ * so the bundler can still statically resolve (and code-split) each dictionary
+ * — do NOT collapse these into `import(\`./dictionaries/${locale}\`)`.
+ *
+ * To add a language: create `dictionaries/{code}.ts` typed as `Dictionary`, add
+ * a line here, and set `ADDITIONAL_LANGUAGES={code}` (see the i18n section of
+ * CLAUDE.md). Anything not listed falls back to English.
+ */
+const loaders: Record<string, () => Promise<{ default: Dictionary }>> = {
+	en: () => import('./dictionaries/en'),
+	fr: () => import('./dictionaries/fr'),
+	es: () => import('./dictionaries/es'),
+	de: () => import('./dictionaries/de'),
+	pt: () => import('./dictionaries/pt'),
+	it: () => import('./dictionaries/it'),
+	nl: () => import('./dictionaries/nl'),
+	pl: () => import('./dictionaries/pl'),
+}
+
 export async function getDictionary(locale: string): Promise<Dictionary> {
 	const cached = cache.get(locale)
 	if (cached) return cached
@@ -11,18 +31,8 @@ export async function getDictionary(locale: string): Promise<Dictionary> {
 	let dict: Dictionary
 
 	try {
-		switch (locale) {
-			case 'fr': {
-				const mod = await import('./dictionaries/fr')
-				dict = mod.default
-				break
-			}
-			default: {
-				const mod = await import('./dictionaries/en')
-				dict = mod.default
-				break
-			}
-		}
+		const load = loaders[locale] ?? loaders.en
+		dict = (await load()).default
 	} catch {
 		const mod = await import('./dictionaries/en')
 		dict = mod.default

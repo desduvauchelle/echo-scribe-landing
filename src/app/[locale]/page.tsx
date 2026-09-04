@@ -1,3 +1,4 @@
+import { KeepAwake } from '@/components/landing/KeepAwake'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getBlogPosts } from '@growth-engine/sdk-server'
@@ -24,13 +25,21 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	// Homepage canonical is the (locale-aware) site root; title is the brand itself.
+	// Canonical is the (locale-aware) site root — `buildPageMetadata` emits it
+	// self-referencingly, so `/` never points anywhere but at itself.
+	//
+	// The title is branded like every other page (`… | Echo Scribe`) rather than
+	// being a hand-written brand string. The homepage previously used
+	// `brand: false` with the brand baked into each locale's value, which meant
+	// every translation re-invented the branding AND ran 59–72 chars — past
+	// Google's ~60-char cut in all eight languages, on the one page holding
+	// position ~5.6 with a 0% click-through rate. One short descriptive value
+	// plus the shared suffix keeps every locale inside the budget.
 	return buildPageMetadata({
 		path: '',
 		locale,
-		title: dict['hero.title'],
-		description: dict['hero.meta.description'],
-		brand: false,
+		title: dict['home.meta.title'],
+		description: dict['home.meta.description'],
 	})
 }
 
@@ -50,8 +59,9 @@ export default async function HomePage({
 			<JsonLd data={homeJsonLd(locale, dict)} />
 			<Hero dict={dict} locale={locale} />
 			<WorkMemoryLoop dict={dict} locale={locale} />
-			<Features dict={dict} />
+			<Features dict={dict} locale={locale} />
 			<UseCasesGrid dict={dict} locale={locale} />
+			<KeepAwake dict={dict} />
 			<PrivacyGrid dict={dict} />
 
 			<section className="py-20 bg-base-100 border-t border-base-content/10">

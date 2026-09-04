@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
 import { breadcrumbLd, type Crumb } from '@/lib/structured-data'
@@ -16,6 +18,15 @@ export interface Slab {
 	shot?: Shot
 	reverse?: boolean
 	tinted?: boolean
+	/**
+	 * Destination for a hub slab's "explore" link, already locale-prefixed via
+	 * `localizedPath`. A hub page exists to pass authority down to the pages it
+	 * introduces, so a hub slab MUST set this — without it the hub is a dead end
+	 * and its subpages get their only internal link from the header dropdown.
+	 */
+	href?: string
+	/** Descriptive anchor text for `href` (never a bare "Learn more"). */
+	linkLabel?: string
 }
 
 export interface Faq {
@@ -27,6 +38,7 @@ export interface ProductPageProps {
 	eyebrow: string
 	title: string
 	subtitle: string
+	children?: ReactNode
 	hero?: Shot
 	slabs: Slab[]
 	/** Optional prose paragraphs rendered under the hero — depth for SEO + context. */
@@ -39,7 +51,7 @@ export interface ProductPageProps {
 	locale: string
 }
 
-export function ProductPage({ eyebrow, title, subtitle, hero, slabs, intro, faqs, breadcrumbs, dict, locale }: ProductPageProps) {
+export function ProductPage({ children, eyebrow, title, subtitle, hero, slabs, intro, faqs, breadcrumbs, dict, locale }: ProductPageProps) {
 	return (
 		<>
 			{breadcrumbs && breadcrumbs.length > 0 ? (
@@ -110,12 +122,23 @@ export function ProductPage({ eyebrow, title, subtitle, hero, slabs, intro, faqs
 										))}
 									</div>
 								) : null}
+								{slab.href && slab.linkLabel ? (
+									<Link
+										href={slab.href}
+										className="mt-8 inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+									>
+										{slab.linkLabel}
+										<span aria-hidden="true">→</span>
+									</Link>
+								) : null}
 							</div>
 							<div>{slab.shot ? <ScreenshotFrame shot={slab.shot} /> : null}</div>
 						</ScrollReveal>
 					</div>
 				</section>
 			))}
+
+			{children}
 
 			{faqs && faqs.length > 0 ? (
 				<section className="border-t border-base-content/10 bg-base-200 py-24">

@@ -12,6 +12,7 @@ const LOCALE_NAMES: Record<string, string> = {
 	it: 'Italiano',
 	pt: 'Portugu\u00EAs',
 	nl: 'Nederlands',
+	pl: 'Polski',
 	ja: '\u65E5\u672C\u8A9E',
 	zh: '\u4E2D\u6587',
 	ko: '\uD55C\uAD6D\uC5B4',

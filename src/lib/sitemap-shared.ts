@@ -14,6 +14,41 @@ export const SITE_URL = (
 
 export const BLOG_BATCH_SIZE = 1000
 
+/**
+ * Date each static page's CONTENT last meaningfully changed, as `YYYY-MM-DD`.
+ *
+ * Every blog and author URL carries a real `<lastmod>` from the CMS, but the
+ * static pages had none at all — which threw away the one crawl-SCHEDULING
+ * signal this site controls, for exactly the pages that sat longest in Search
+ * Console's "Discovered – currently not indexed" (a page Google has queued but
+ * never fetched). Google only honours `lastmod` while it stays verifiably
+ * accurate, so this is a HAND-MAINTAINED map, not a build timestamp:
+ *
+ *   - Update a page's date when you change its copy, headings, or metadata —
+ *     the things that alter what Google would index. Not for CSS or refactors.
+ *   - A path absent from this map emits NO `<lastmod>`, which is correct and
+ *     preferable to inventing one. Adding a page to STATIC_PAGES does not
+ *     require adding it here.
+ *   - Never wire this to `new Date()`. A sitemap whose `lastmod` is always
+ *     "now" is the fastest way to get the field ignored site-wide.
+ */
+export const STATIC_PAGE_LASTMOD: Record<string, string> = {
+	'': '2026-09-03',
+	'/features': '2026-09-02',
+	'/features/capture': '2026-09-02',
+	'/features/organize': '2026-09-02',
+	'/features/editor': '2026-09-02',
+	'/features/platform': '2026-09-02',
+	'/use-cases': '2026-09-02',
+	'/use-cases/consultants': '2026-09-02',
+	'/use-cases/sales-teams': '2026-09-02',
+	'/use-cases/founders': '2026-09-02',
+	'/use-cases/students': '2026-09-02',
+	'/contact': '2026-09-02',
+	'/blog/authors': '2026-08-30',
+	'/loops': '2026-08-30',
+}
+
 export const STATIC_PAGES = [
 	'',
 	'/loops',
@@ -155,8 +190,12 @@ export function getBlogSitemapCount(total: number): number {
 export function buildStaticEntries(): SitemapEntry[] {
 	const entries: SitemapEntry[] = []
 	for (const page of STATIC_PAGES) {
+		const lastmod = STATIC_PAGE_LASTMOD[page]
 		entries.push({
 			url: buildUrl(page, defaultLocale),
+			// `T00:00:00Z` so the date-only map value parses as UTC rather than
+			// local time — otherwise a west-of-UTC build shifts every date back a day.
+			...(lastmod ? { lastModified: new Date(`${lastmod}T00:00:00Z`) } : {}),
 			changeFrequency: 'monthly',
 			priority: page === '' ? 1.0 : 0.7,
 			alternates: buildAlternates(page),

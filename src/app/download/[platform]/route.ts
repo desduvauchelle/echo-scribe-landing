@@ -18,12 +18,12 @@ type GithubAsset = { name: string; browser_download_url: string }
 
 // Match an asset filename to a platform, ignoring version/arch noise in the name.
 const PLATFORM_MATCHERS: Record<string, (name: string) => boolean> = {
-	windows: (name) => name.endsWith('.exe') || name.endsWith('.msi'),
 	mac: (name) => name.endsWith('.dmg') || name.endsWith('.tar.gz'),
 }
 
 export async function GET(_req: Request, { params }: { params: Promise<{ platform: string }> }) {
 	const { platform } = await params
+	if (platform === 'windows') return new NextResponse(null, { status: 404 })
 	const matcher = PLATFORM_MATCHERS[platform]
 	if (!matcher) return NextResponse.redirect(RELEASES_PAGE, 302)
 

@@ -27,7 +27,7 @@ describe('structured-data — URL alignment with canonical/sitemap', () => {
 		return import('./structured-data')
 	}
 
-	const dict = { 'hero.meta.description': 'Test description.' } as unknown as Dictionary
+	const dict = { 'home.meta.description': 'Test description.' } as unknown as Dictionary
 
 	it('breadcrumb items are BARE for the default locale (no /en/ segment)', async () => {
 		const { breadcrumbLd } = await load()

@@ -17,11 +17,14 @@ export async function generateMetadata({
 	const { locale } = await params
 	const dict = await getDictionary(locale)
 	return buildPageMetadata({
+		// NOT `authors.heading` — that is the on-page H1 ("Authors"), which as a
+		// <title> is a bare generic word with no brand and no topic. `brand: false`
+		// is for pages whose title already IS the brand (the homepage); this page
+		// needs both the topic and the suffix.
 		path: '/blog/authors',
 		locale,
-		title: dict['authors.heading'],
+		title: dict['authors.meta.title'],
 		description: dict['authors.meta.description'],
-		brand: false,
 	})
 }
 

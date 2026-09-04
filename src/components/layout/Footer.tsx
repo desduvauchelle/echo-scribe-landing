@@ -52,7 +52,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: string }) {
 
 				<div className="flex flex-col items-center justify-between gap-2 text-sm text-base-content/50 sm:flex-row">
 					<p>{dict['footer.copyright'].replace('{year}', String(year))}</p>
-					<p>{dict['footer.powered.by']}</p>
+					<a href="https://www.recursive-solutions.com" className="hover:text-primary hover:underline focus-visible:underline">{dict['footer.powered.by']}</a>
 				</div>
 			</div>
 		</footer>

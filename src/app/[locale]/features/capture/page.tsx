@@ -1,3 +1,4 @@
+import { KeepAwake } from '@/components/landing/KeepAwake'
 import type { Metadata } from 'next'
 import { getDictionary } from '@/i18n'
 import { buildPageMetadata } from '@/lib/seo'
@@ -7,11 +8,11 @@ import { buildCapturePage } from '@/components/product/features.config'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return buildPageMetadata({ path: '/features/capture', locale, title: dict['features.capture.title'], description: dict['features.capture.meta.desc'] })
+	return buildPageMetadata({ path: '/features/capture', locale, title: dict['features.capture.meta.title'], description: dict['features.capture.meta.desc'] })
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return <ProductPage {...buildCapturePage(dict, locale)} />
+	return <ProductPage {...buildCapturePage(dict, locale)}><KeepAwake dict={dict} /></ProductPage>
 }

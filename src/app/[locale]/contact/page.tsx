@@ -7,13 +7,8 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { Eyebrow } from '@/components/landing/Eyebrow'
 import { ScrollReveal } from '@/components/landing/ScrollReveal'
 import { InstallBox } from '@/components/landing/InstallBox'
-import { TrackedLink } from '@/components/analytics/TrackedLink'
 
 const GITHUB_URL = 'https://github.com/desduvauchelle/echo-scribe'
-
-// Resolves to the latest release's Windows installer at request time (see
-// src/app/download/[platform]/route.ts) so the link never breaks on a new version.
-const WINDOWS_DOWNLOAD_URL = '/download/windows'
 
 /**
  * Echo Scribe is free, needs no account, and installs with one Terminal line —
@@ -44,6 +39,17 @@ const HELP_LINKS: { href: string; title: DictionaryKey; desc: DictionaryKey; cta
 		cta: 'support.help.source.cta',
 	},
 ]
+
+/**
+ * Install/troubleshooting FAQ. `/contact` carries no form by design, which left
+ * it the thinnest page on the site — this is the substance that belongs on an
+ * adoption page: what the command does, what it needs, and how to undo it.
+ * Also emits FAQPage JSON-LD.
+ */
+const INSTALL_FAQS: { q: DictionaryKey; a: DictionaryKey }[] = [1, 2, 3, 4, 5, 6].map((n) => ({
+	q: `support.faq${n}.q` as DictionaryKey,
+	a: `support.faq${n}.a` as DictionaryKey,
+}))
 
 export async function generateMetadata({
 	params,
@@ -86,6 +92,17 @@ export default async function GetEchoScribePage({
 					locale,
 				)}
 			/>
+			<JsonLd
+				data={{
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: INSTALL_FAQS.map((f) => ({
+						'@type': 'Question',
+						name: dict[f.q],
+						acceptedAnswer: { '@type': 'Answer', text: dict[f.a] },
+					})),
+				}}
+			/>
 			{/* Install — the actual conversion. Copying the command is as far as
 			    the site can take someone; `install_copy` fires on that click. */}
 			<section className="border-b border-base-content/10 bg-base-100 py-20 text-center">
@@ -100,21 +117,6 @@ export default async function GetEchoScribePage({
 
 						<InstallBox dict={dict} location="contact_page" />
 
-						<div className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[13px] text-base-content/50">
-							<span>{dict['cta.windows.label']}</span>
-							<TrackedLink
-								href={WINDOWS_DOWNLOAD_URL}
-								eventName="app_download"
-								eventParams={{ platform: 'windows', method: 'installer', location: 'contact_page' }}
-								prefetch={false}
-								className="btn btn-outline btn-sm gap-1.5 rounded-lg font-medium"
-							>
-								<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-									<path d="M3 5.7 10.2 4.7v6.9H3V5.7Zm0 12.6 7.2 1v-6.8H3v5.8Zm8.1 1.1L21 20.8V12.5h-9.9v6.9Zm0-14.9v7h9.9V3.2l-9.9 1.3Z" />
-								</svg>
-								{dict['cta.windows.button']}
-							</TrackedLink>
-						</div>
 
 						<div className="mt-6 flex flex-wrap justify-center gap-x-5 gap-y-1 text-[13px] text-base-content/50">
 							{requirements.map((item, i) => (
@@ -160,6 +162,29 @@ export default async function GetEchoScribePage({
 								</div>
 							))}
 						</div>
+					</ScrollReveal>
+				</div>
+			</section>
+
+			{/* Install FAQ — the questions that otherwise become GitHub issues. */}
+			<section className="border-t border-base-content/10 bg-base-100 py-20">
+				<div className="container mx-auto max-w-[760px] px-6">
+					<ScrollReveal y={30}>
+						<Eyebrow className="mb-5">{dict['faq.eyebrow']}</Eyebrow>
+						<h2 className="mb-10 text-[clamp(24px,3vw,36px)] font-extrabold tracking-[-0.03em]">
+							{dict['support.faq.heading']}
+						</h2>
+					</ScrollReveal>
+					<ScrollReveal y={20} stagger={0.08} className="flex flex-col gap-3">
+						{INSTALL_FAQS.map((f) => (
+							<details key={f.q} className="group rounded-[12px] border border-base-content/10 bg-base-200 px-6 py-5">
+								<summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold marker:hidden">
+									{dict[f.q]}
+									<span className="text-primary transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+								</summary>
+								<p className="mt-3 text-[15px] leading-[1.7] text-base-content/70">{dict[f.a]}</p>
+							</details>
+						))}
 					</ScrollReveal>
 				</div>
 			</section>

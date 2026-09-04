@@ -7,7 +7,7 @@ import { buildPlatformPage } from '@/components/product/features.config'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return buildPageMetadata({ path: '/features/platform', locale, title: dict['features.platform.title'], description: dict['features.platform.meta.desc'] })
+	return buildPageMetadata({ path: '/features/platform', locale, title: dict['features.platform.meta.title'], description: dict['features.platform.meta.desc'] })
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

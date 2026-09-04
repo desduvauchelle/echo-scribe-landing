@@ -7,7 +7,7 @@ import { buildOrganizePage } from '@/components/product/features.config'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return buildPageMetadata({ path: '/features/organize', locale, title: dict['features.organize.title'], description: dict['features.organize.meta.desc'] })
+	return buildPageMetadata({ path: '/features/organize', locale, title: dict['features.organize.meta.title'], description: dict['features.organize.meta.desc'] })
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

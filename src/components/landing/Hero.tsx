@@ -103,6 +103,19 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 						</div>
 					</ScrollReveal>
 
+					<div className="mx-auto mt-12 max-w-[880px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
+						<iframe
+							src="https://www.youtube.com/embed/RVOeyxoYHV0?si=LLCA1b7lmMBJkK0L"
+							title="Echo Scribe — YouTube"
+							width={560}
+							height={315}
+							className="block aspect-video h-auto w-full border-0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							referrerPolicy="strict-origin-when-cross-origin"
+							allowFullScreen
+						/>
+					</div>
+
 					<div className="pt-10" aria-hidden="true">
 						<div className="flex h-11 items-end justify-center gap-[5px]">
 							{WAVE_DELAYS.map((delay, i) => (

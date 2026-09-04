@@ -7,7 +7,7 @@ import { buildConsultantsPage } from '@/components/product/usecases.config'
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return buildPageMetadata({ path: '/use-cases/consultants', locale, title: dict['usecases.consultants.title'], description: dict['usecases.consultants.meta.desc'] })
+	return buildPageMetadata({ path: '/use-cases/consultants', locale, title: dict['usecases.consultants.meta.title'], description: dict['usecases.consultants.meta.desc'] })
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

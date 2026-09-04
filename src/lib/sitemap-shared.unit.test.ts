@@ -132,6 +132,35 @@ describe('sitemap-shared', () => {
 			}
 		})
 
+		it('emits lastModified only for pages listed in STATIC_PAGE_LASTMOD', async () => {
+			const { buildStaticEntries, STATIC_PAGE_LASTMOD, SITE_URL } = await load()
+			for (const entry of buildStaticEntries()) {
+				const path = entry.url.slice(SITE_URL.length)
+				const expected = STATIC_PAGE_LASTMOD[path]
+				if (expected) {
+					// Date-only values must land on midnight UTC, not local midnight — a
+					// west-of-UTC build would otherwise publish the previous day.
+					expect(entry.lastModified?.toISOString()).toBe(`${expected}T00:00:00.000Z`)
+				} else {
+					expect(entry.lastModified).toBeUndefined()
+				}
+			}
+		})
+
+		it('dates every static page with a real, past, YYYY-MM-DD value', async () => {
+			// A `lastmod` in the future — or in a format Google cannot parse — is the
+			// signature of an auto-stamped date, and that is what makes Google stop
+			// trusting the field across the whole sitemap. Keep these hand-written.
+			const { STATIC_PAGE_LASTMOD, STATIC_PAGES } = await load()
+			const now = Date.now()
+			for (const [path, date] of Object.entries(STATIC_PAGE_LASTMOD)) {
+				expect(`${path}: ${date}`).toMatch(/: \d{4}-\d{2}-\d{2}$/)
+				expect(Date.parse(`${date}T00:00:00Z`)).toBeLessThanOrEqual(now)
+				// A dated path that is not in STATIC_PAGES never reaches the sitemap.
+				expect(`${path} listed: ${STATIC_PAGES.includes(path)}`).toBe(`${path} listed: true`)
+			}
+		})
+
 		it('omits alternates in single-lang mode', async () => {
 			const { buildStaticEntries } = await load({ isMultiLang: false })
 			const result = buildStaticEntries()

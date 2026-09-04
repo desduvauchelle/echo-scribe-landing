@@ -15,12 +15,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 	const { locale } = await params
 	const dict = await getDictionary(locale)
-	return buildPageMetadata({
-		path: '/forms',
-		locale,
-		title: dict['forms.heading'],
-		description: dict['forms.subtitle'],
-	})
+	return {
+		...buildPageMetadata({
+			path: '/forms',
+			locale,
+			title: dict['forms.heading'],
+			description: dict['forms.subtitle'],
+		}),
+		// Scaffold infrastructure: nothing links here, it is not in the sitemap, and
+		// `contact-form` — the one live form — was deliberately retired from /contact
+		// in Aug 2026 after 0 submissions in 44 sessions. Left reachable so a future
+		// form can be wired up quickly, but kept OUT of the index: an orphaned, thin,
+		// zero-inbound-link page is exactly what Google files under "Crawled –
+		// currently not indexed", and on a host with as little authority as this
+		// subdomain, every such URL spends crawl budget that the blog needs. `follow`
+		// stays on so any link equity passing through still flows.
+		robots: { index: false, follow: true },
+	}
 }
 
 export default async function FormsPage({

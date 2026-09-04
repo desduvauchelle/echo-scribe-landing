@@ -1,11 +1,22 @@
 import type { Dictionary } from '@/i18n'
+import { localizedPath } from '@/lib/i18n-utils'
 import type { Faq, ProductPageProps, Slab } from './ProductPage'
 import type { Shot } from './ScreenshotFrame'
 
 const S = '/screenshots'
 
+const RECORDED_SIZES: Record<string, readonly [number, number]> = {
+	'recorded/meeting-library': [868, 552],
+	'recorded/chat-answer': [660, 552],
+	'recorded/chat-workspace': [1100, 600],
+	'recorded/meeting-summary': [480, 470],
+	'recorded/coaching-feedback': [460, 376],
+	'recorded/recording-preview': [560, 428],
+}
+
 export function shotFor(src: string, alt: string): Shot {
-	return { src: `${S}/${src}.png`, alt }
+	const size = RECORDED_SIZES[src]
+	return { src: `${S}/${src}.png`, alt, ...(size ? { width: size[0], height: size[1] } : {}) }
 }
 
 // Pull N `${base}.intro{n}` paragraphs into the ProductPage intro prose block.
@@ -19,6 +30,32 @@ export function faqsFor(dict: Dictionary, base: string, count: number): Faq[] {
 		q: dict[`${base}.faq${i + 1}.q` as keyof Dictionary],
 		a: dict[`${base}.faq${i + 1}.a` as keyof Dictionary],
 	}))
+}
+
+/**
+ * A hub slab's link: locale-correct href plus DESCRIPTIVE anchor text.
+ *
+ * The label is built from `product.slab.explore` ('Explore {name}') so
+ * translations control word order, and `{name}` is the destination's own nav
+ * label — which keeps the anchor keyword-bearing ("Explore Capture & Record")
+ * instead of a repeated, equity-wasting "Learn more".
+ */
+export function hubLink(
+	dict: Dictionary,
+	path: string,
+	locale: string,
+	nameKey: keyof Dictionary,
+	opts: { verbatim?: boolean } = {},
+): { href: string; linkLabel: string } {
+	return {
+		href: localizedPath(path, locale),
+		// `verbatim` takes the key as the whole label. The use-case nav labels are
+		// already prepositional ('For Consultants'), so templating them yields
+		// "Explore For Consultants" — those pages supply a full sentence instead.
+		linkLabel: opts.verbatim
+			? dict[nameKey]
+			: dict['product.slab.explore'].replace('{name}', dict[nameKey]),
+	}
 }
 
 export function slab(
@@ -50,7 +87,7 @@ export function buildCapturePage(dict: Dictionary, locale: string): ProductPageP
 		hero: shotFor('dictation', dict['shot.dictation.alt']),
 		slabs: [
 			slab(dict, 'features.capture.slab3', 'dictation', 'shot.dictation.alt'),
-			slab(dict, 'features.capture.slab1', 'meeting-hud', 'shot.meeting-hud.alt', { reverse: true, tinted: true }),
+			slab(dict, 'features.capture.slab1', 'recorded/meeting-summary', 'shot.recorded.summary.alt', { reverse: true, tinted: true }),
 			slab(dict, 'features.capture.slab2', 'screen-recorder', 'shot.screen-recorder.alt'),
 		],
 		intro: introFor(dict, 'features.capture', 2),
@@ -65,9 +102,9 @@ export function buildOrganizePage(dict: Dictionary, locale: string): ProductPage
 		eyebrow: dict['features.organize.eyebrow'],
 		title: dict['features.organize.title'],
 		subtitle: dict['features.organize.subtitle'],
-		hero: shotFor('meetings', dict['shot.meetings.alt']),
+		hero: shotFor('recorded/meeting-library', dict['shot.recorded.library.alt']),
 		slabs: [
-			slab(dict, 'features.organize.slab1', 'chat', 'shot.chat.alt'),
+			slab(dict, 'features.organize.slab1', 'recorded/chat-answer', 'shot.recorded.answer.alt'),
 			slab(dict, 'features.organize.slab2', 'daily-summary', 'shot.daily-summary.alt', { reverse: true, tinted: true }),
 			slab(dict, 'features.organize.slab3', 'projects', 'shot.projects.alt'),
 		],
@@ -100,9 +137,9 @@ export function buildPlatformPage(dict: Dictionary, locale: string): ProductPage
 		eyebrow: dict['features.platform.eyebrow'],
 		title: dict['features.platform.title'],
 		subtitle: dict['features.platform.subtitle'],
-		hero: shotFor('settings', dict['shot.settings.alt']),
+		hero: shotFor('recorded/chat-workspace', dict['shot.recorded.answer.alt']),
 		slabs: [
-			slab(dict, 'features.platform.slab1', 'settings', 'shot.settings.alt'),
+			slab(dict, 'features.platform.slab1', 'recorded/chat-answer', 'shot.recorded.answer.alt'),
 			{
 				eyebrow: dict['features.platform.slab2.eyebrow'],
 				title: dict['features.platform.slab2.title'],
@@ -127,33 +164,37 @@ export function buildFeaturesHub(dict: Dictionary, locale: string): ProductPageP
 		eyebrow: dict['features.hub.eyebrow'],
 		title: dict['features.hub.title'],
 		subtitle: dict['features.hub.subtitle'],
-		hero: shotFor('dashboard', dict['shot.dashboard.alt']),
+		hero: shotFor('recorded/chat-workspace', dict['shot.recorded.answer.alt']),
 		slabs: [
 			{
 				eyebrow: dict['features.capture.eyebrow'],
 				title: dict['features.capture.title'],
-				desc: dict['features.capture.subtitle'],
-				shot: shotFor('meeting-hud', dict['shot.meeting-hud.alt']),
+				desc: dict['features.capture.hubdesc'],
+				shot: shotFor('recorded/meeting-library', dict['shot.recorded.library.alt']),
+				...hubLink(dict, '/features/capture', locale, 'nav.features.capture'),
 			},
 			{
 				eyebrow: dict['features.organize.eyebrow'],
 				title: dict['features.organize.title'],
-				desc: dict['features.organize.subtitle'],
+				desc: dict['features.organize.hubdesc'],
 				shot: shotFor('tasks', dict['shot.tasks.alt']),
+				...hubLink(dict, '/features/organize', locale, 'nav.features.organize'),
 				reverse: true,
 				tinted: true,
 			},
 			{
 				eyebrow: dict['features.editor.eyebrow'],
 				title: dict['features.editor.title'],
-				desc: dict['features.editor.subtitle'],
+				desc: dict['features.editor.hubdesc'],
 				shot: shotFor('editor', dict['shot.editor.alt']),
+				...hubLink(dict, '/features/editor', locale, 'nav.features.editor'),
 			},
 			{
 				eyebrow: dict['features.platform.eyebrow'],
 				title: dict['features.platform.title'],
-				desc: dict['features.platform.subtitle'],
-				shot: shotFor('settings', dict['shot.settings.alt']),
+				desc: dict['features.platform.hubdesc'],
+				shot: shotFor('recorded/chat-workspace', dict['shot.recorded.answer.alt']),
+				...hubLink(dict, '/features/platform', locale, 'nav.features.platform'),
 				reverse: true,
 				tinted: true,
 			},

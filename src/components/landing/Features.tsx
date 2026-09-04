@@ -1,9 +1,13 @@
 import type { ReactNode } from 'react'
+import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
+import { localizedPath } from '@/lib/i18n-utils'
 import { cn } from '@/lib/utils'
 import { Eyebrow } from './Eyebrow'
+import { ScreenshotFrame } from '@/components/product/ScreenshotFrame'
 import { ScrollReveal } from './ScrollReveal'
-import { TranscriptionDemo, EchoDemo, MeetingDemo, ScreenDemo, CaptureDemo, StatusDemo } from './FeatureMockups'
+import { TranscriptionDemo, EchoDemo, StatusDemo } from './FeatureMockups'
+import { shotFor } from '@/components/product/features.config'
 
 type SlabKey = 'voice' | 'echo' | 'meetings' | 'screen' | 'memory' | 'insights'
 
@@ -13,18 +17,50 @@ interface Slab {
 	visual: (dict: Dictionary) => ReactNode
 	reverse?: boolean
 	tinted?: boolean
+	/**
+	 * Contextual link from this slab down to the feature page that covers it in
+	 * depth. The homepage is the only page on this site Google reliably reads,
+	 * so it is the one place an internal link actually carries weight to
+	 * /features/*. Anchor text is the destination's own nav label, never
+	 * "learn more". Each destination is linked from exactly one slab.
+	 */
+	to?: { path: string; nameKey: keyof Dictionary }
 }
 
 const SLABS: Slab[] = [
-	{ id: 'voice', key: 'voice', visual: (dict) => <TranscriptionDemo dict={dict} /> },
-	{ id: 'echo', key: 'echo', visual: (dict) => <EchoDemo dict={dict} />, reverse: true, tinted: true },
-	{ id: 'meetings', key: 'meetings', visual: (dict) => <MeetingDemo dict={dict} /> },
-	{ id: 'screen', key: 'screen', visual: (dict) => <ScreenDemo dict={dict} />, reverse: true, tinted: true },
-	{ id: 'memory', key: 'memory', visual: (dict) => <CaptureDemo dict={dict} /> },
-	{ id: 'insights', key: 'insights', visual: (dict) => <StatusDemo dict={dict} />, reverse: true, tinted: true },
+	{
+		id: 'voice',
+		key: 'voice',
+		visual: (dict) => <TranscriptionDemo dict={dict} />,
+		to: { path: '/features/capture', nameKey: 'nav.features.capture' },
+	},
+	{
+		id: 'echo',
+		key: 'echo',
+		visual: (dict) => <EchoDemo dict={dict} />,
+		reverse: true,
+		tinted: true,
+		to: { path: '/features/editor', nameKey: 'nav.features.editor' },
+	},
+	{ id: 'meetings', key: 'meetings', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/coaching-feedback', dict['shot.recorded.feedback.alt'])} /> },
+	{ id: 'screen', key: 'screen', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/recording-preview', dict['shot.recorded.recording.alt'])} />, reverse: true, tinted: true },
+	{
+		id: 'memory',
+		key: 'memory',
+		visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/chat-answer', dict['shot.recorded.answer.alt'])} />,
+		to: { path: '/features/organize', nameKey: 'nav.features.organize' },
+	},
+	{
+		id: 'insights',
+		key: 'insights',
+		visual: (dict) => <StatusDemo dict={dict} />,
+		reverse: true,
+		tinted: true,
+		to: { path: '/features/platform', nameKey: 'nav.features.platform' },
+	},
 ]
 
-export function Features({ dict }: { dict: Dictionary }) {
+export function Features({ dict, locale }: { dict: Dictionary; locale: string }) {
 	return (
 		<>
 			{SLABS.map((slab) => (
@@ -57,6 +93,16 @@ export function Features({ dict }: { dict: Dictionary }) {
 										</div>
 									))}
 								</div>
+
+								{slab.to && (
+									<Link
+										href={localizedPath(slab.to.path, locale)}
+										className="mt-8 inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+									>
+										{dict['product.slab.explore'].replace('{name}', dict[slab.to.nameKey])}
+										<span aria-hidden="true">→</span>
+									</Link>
+								)}
 							</div>
 
 							<div>{slab.visual(dict)}</div>
@@ -64,6 +110,18 @@ export function Features({ dict }: { dict: Dictionary }) {
 					</div>
 				</section>
 			))}
+
+			<section className="border-t border-base-content/10 bg-base-100 py-12">
+				<div className="container mx-auto max-w-[1080px] px-6 text-center">
+					<Link
+						href={localizedPath('/features', locale)}
+						className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+					>
+						{dict['home.features.all']}
+						<span aria-hidden="true">→</span>
+					</Link>
+				</div>
+			</section>
 		</>
 	)
 }
