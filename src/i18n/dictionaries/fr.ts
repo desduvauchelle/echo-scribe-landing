@@ -4,7 +4,7 @@ const fr: Dictionary = {
 	'awake.title': 'Gardez votre ordinateur éveillé à la voix',
 	'awake.instruction': 'Appuyez sur votre raccourci de dictée habituel et dites :',
 	'awake.command': 'Echo, keep my computer awake for two hours.',
-	'awake.description': 'Echo Scribe reconnaît la commande et garde votre ordinateur éveillé pendant la durée demandée. Utilisez cette fonction pendant une longue commande ou le traitement d’une file de prompts IA.',
+	'awake.description': 'Tucky reconnaît la commande et garde votre ordinateur éveillé pendant la durée demandée. Utilisez cette fonction pendant une longue commande ou le traitement d’une file de prompts IA.',
 	'demo.transcription.shortcut': 'Votre raccourci',
 	'usecases.landing.card9.desc': 'Capturez une idée avec votre mot déclencheur, nommez le projet ou créez une tâche. Vérifiez le classement et cochez la tâche une fois terminée.',
 	'usecases.landing.card9.title': 'Notes vocales et petites tâches',
@@ -39,7 +39,7 @@ const fr: Dictionary = {
 	'hero.badge': 'Gratuit · Privé · IA locale',
 	'hero.title.line1': 'Taper, c’est surfait.',
 	'hero.title.line2': 'Parlez.',
-	'hero.subtitle': 'Echo Scribe, c’est la dictée vocale pour tout votre Mac. Appuyez sur un raccourci, parlez, et un texte soigné apparaît là où se trouve votre curseur. Nous passons nos journées à prompter l’IA, et un prompt n’a pas besoin d’une formulation parfaite. Il a besoin de votre pensée, vite. Parler est le moyen le plus rapide de la sortir.',
+	'hero.subtitle': 'Tucky, c’est la dictée vocale pour tout votre Mac. Appuyez sur un raccourci, parlez, et un texte soigné apparaît là où se trouve votre curseur. Nous passons nos journées à prompter l’IA, et un prompt n’a pas besoin d’une formulation parfaite. Il a besoin de votre pensée, vite. Parler est le moyen le plus rapide de la sortir.',
 	'hero.cta.primary': 'Obtenir la dictée vocale gratuite',
 	'hero.cta.secondary': 'Voir comment ça se construit',
 	'hero.meta.local': 'Fonctionne en local sur votre Mac',
@@ -49,7 +49,7 @@ const fr: Dictionary = {
 	// How it builds up (landing story strip)
 	'loop.eyebrow': 'Comment ça se construit',
 	'loop.title': 'Ça commence par la dictée vocale. Ça finit en mémoire de votre travail.',
-	'loop.subtitle': 'Chaque méthode de capture alimente la suivante. D’abord votre voix remplace le clavier. Puis vos réunions et enregistrements d’écran s’y ajoutent. Tout atterrit au même endroit, consultable — et une fois que tout y est, Echo Scribe peut vous dire ce qui s’est passé, ce qui compte et quoi faire ensuite.',
+	'loop.subtitle': 'Chaque méthode de capture alimente la suivante. D’abord votre voix remplace le clavier. Puis vos réunions et enregistrements d’écran s’y ajoutent. Tout atterrit au même endroit, consultable — et une fois que tout y est, Tucky peut vous dire ce qui s’est passé, ce qui compte et quoi faire ensuite.',
 	'loop.step1.label': '01 / PARLER',
 	'loop.step1.title': 'La dictée vocale, partout',
 	'loop.step1.desc': 'Appuyez sur un raccourci et parlez. Un texte propre atterrit dans n’importe quelle app : chats IA, e-mail, Slack, code.',
@@ -67,7 +67,7 @@ const fr: Dictionary = {
 	// Story slab 1: voice to text
 	'features.voice.eyebrow': 'Étape 1 · Dictée vocale',
 	'features.voice.title': 'Votre voix est le nouveau clavier.',
-	'features.voice.desc': 'La dictée vocale est le moyen le plus rapide de travailler avec l’IA. Pas besoin d’une formulation exacte pour prompter ChatGPT ou Claude — il faut sortir l’idée de votre tête. Appuyez sur un raccourci, parlez naturellement, et Echo Scribe place un texte propre et soigné à votre curseur, dans n’importe quelle app de votre Mac.',
+	'features.voice.desc': 'La dictée vocale est le moyen le plus rapide de travailler avec l’IA. Pas besoin d’une formulation exacte pour prompter ChatGPT ou Claude — il faut sortir l’idée de votre tête. Appuyez sur un raccourci, parlez naturellement, et Tucky place un texte propre et soigné à votre curseur, dans n’importe quelle app de votre Mac.',
 	'features.voice.step1.title': 'Appuyez sur le raccourci et parlez',
 	'features.voice.step1.desc': 'Dictez dans ChatGPT, Claude, Slack, Gmail, VS Code — partout où se trouve votre curseur.',
 	'features.voice.step2.title': 'L’IA locale nettoie',
@@ -89,7 +89,7 @@ const fr: Dictionary = {
 	// Story slab 3: meetings
 	'features.meetings.eyebrow': 'Étape 3 · Réunions',
 	'features.meetings.title': 'Transcription en direct et guidage d’appel, pendant que vous êtes en ligne.',
-	'features.meetings.desc': 'Echo Scribe remarque quand vous rejoignez un appel Zoom, Meet ou Teams et l’enregistre si vous le souhaitez. Vous obtenez une transcription en direct pendant l’appel. Définissez un modèle de ce qu’est un bon appel — de vente, de découverte, d’entretien — et Echo Scribe suit ce qui a été couvert et suggère la question suivante en temps réel. Aucune de vos idées ne se perd.',
+	'features.meetings.desc': 'Tucky remarque quand vous rejoignez un appel Zoom, Meet ou Teams et l’enregistre si vous le souhaitez. Vous obtenez une transcription en direct pendant l’appel. Définissez un modèle de ce qu’est un bon appel — de vente, de découverte, d’entretien — et Tucky suit ce qui a été couvert et suggère la question suivante en temps réel. Aucune de vos idées ne se perd.',
 	'features.meetings.step1.title': 'Enregistrez n’importe quelle réunion',
 	'features.meetings.step1.desc': 'Zoom, Google Meet et Teams sont détectés automatiquement. Vous choisissez par app : toujours enregistrer, demander d’abord, ou jamais.',
 	'features.meetings.step2.title': 'Faites-vous coacher en direct',
@@ -171,14 +171,14 @@ const fr: Dictionary = {
 	'features.capture.slab3.step2.desc': 'Dites « echo, transforme ça en liste » et l’IA met en forme pendant que vous parlez.',
 	'features.capture.slab3.step3.title': 'Audio propre, texte propre',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcrit localement en 25 langues. Ajoutez du vocabulaire personnalisé et activez corrections vocales, ponctuation et suppression des hésitations.',
-	'shot.meeting-hud.alt': 'Vue de réunion en direct Echo Scribe enregistrant un point produit',
-	'shot.screen-recorder.alt': 'Fenêtre de configuration de l’enregistreur d’écran Echo Scribe',
-	'shot.recorded.library.alt': 'Echo Scribe — Bibliothèque de réunions avec enregistrements récents et activité',
-	'shot.recorded.answer.alt': 'Echo Scribe — Réponse IA sur les réunions passées avec douze sources',
-	'shot.recorded.summary.alt': 'Echo Scribe — Résumé de réunion avec transcription, décisions et actions',
-	'shot.recorded.feedback.alt': 'Echo Scribe — Retour sur la réunion avec points abordés et manqués',
-	'shot.recorded.recording.alt': 'Echo Scribe — Aperçu vidéo avec commandes de montage et d’export',
-	'shot.dictation.alt': 'Pastille de dictée à la volée Echo Scribe',
+	'shot.meeting-hud.alt': 'Vue de réunion en direct Tucky enregistrant un point produit',
+	'shot.screen-recorder.alt': 'Fenêtre de configuration de l’enregistreur d’écran Tucky',
+	'shot.recorded.library.alt': 'Tucky — Bibliothèque de réunions avec enregistrements récents et activité',
+	'shot.recorded.answer.alt': 'Tucky — Réponse IA sur les réunions passées avec douze sources',
+	'shot.recorded.summary.alt': 'Tucky — Résumé de réunion avec transcription, décisions et actions',
+	'shot.recorded.feedback.alt': 'Tucky — Retour sur la réunion avec points abordés et manqués',
+	'shot.recorded.recording.alt': 'Tucky — Aperçu vidéo avec commandes de montage et d’export',
+	'shot.dictation.alt': 'Pastille de dictée à la volée Tucky',
 
 	// Feature pages: organize
 	'features.organize.meta.title': 'Rechercher et interroger vos réunions et vos notes',
@@ -214,12 +214,12 @@ const fr: Dictionary = {
 	'features.organize.slab3.step2.desc': 'Choisissez les projets ou activez les suggestions automatiques, puis vérifiez le résultat.',
 	'features.organize.slab3.step3.title': 'Notes et tâches vocales',
 	'features.organize.slab3.step3.desc': 'Utilisez votre mot déclencheur pour créer une note ou une tâche, indiquez le projet et retrouvez-la dans la bibliothèque.',
-	'shot.chat.alt': 'Interface de chat Echo Scribe répondant à une question tirée de l’historique des réunions',
-	'shot.daily-summary.alt': 'Récapitulatif quotidien Echo Scribe des réunions et tâches',
-	'shot.meetings.alt': 'Liste des réunions Echo Scribe organisée par projet',
-	'shot.dashboard.alt': 'Tableau de bord Echo Scribe avec l’activité récente et les suivis',
-	'shot.tasks.alt': 'Vue des tâches Echo Scribe avec les actions groupées par projet',
-	'shot.projects.alt': 'Vue des projets Echo Scribe avec les tâches groupées par projet',
+	'shot.chat.alt': 'Interface de chat Tucky répondant à une question tirée de l’historique des réunions',
+	'shot.daily-summary.alt': 'Récapitulatif quotidien Tucky des réunions et tâches',
+	'shot.meetings.alt': 'Liste des réunions Tucky organisée par projet',
+	'shot.dashboard.alt': 'Tableau de bord Tucky avec l’activité récente et les suivis',
+	'shot.tasks.alt': 'Vue des tâches Tucky avec les actions groupées par projet',
+	'shot.projects.alt': 'Vue des projets Tucky avec les tâches groupées par projet',
 
 	// Feature pages: editor
 	'features.editor.meta.title': 'Éditeur vidéo : zoom auto et export MP4/GIF',
@@ -246,8 +246,8 @@ const fr: Dictionary = {
 	'features.editor.slab2.step2.desc': 'Envoyez l’export directement vers Drive et partagez un lien.',
 	'features.editor.slab2.step3.title': 'Pas de réencodage ailleurs',
 	'features.editor.slab2.step3.desc': 'Exportez une fois, à la qualité voulue, et c’est terminé.',
-	'shot.editor.alt': 'Éditeur d’enregistrement Echo Scribe avec zoom automatique et timeline',
-	'shot.export.alt': 'Panneau d’export Echo Scribe avec options MP4, GIF et Google Drive',
+	'shot.editor.alt': 'Éditeur d’enregistrement Tucky avec zoom automatique et timeline',
+	'shot.export.alt': 'Panneau d’export Tucky avec options MP4, GIF et Google Drive',
 
 	// Feature pages: platform
 	'features.platform.meta.title': 'IA locale sur votre Mac : privée, hors ligne et rapide',
@@ -274,11 +274,11 @@ const fr: Dictionary = {
 	'features.platform.slab2.step2.desc': 'Pour les applications compatibles, choisissez toujours enregistrer, demander ou jamais.',
 	'features.platform.slab2.step3.title': 'Mises à jour automatiques',
 	'features.platform.slab2.step3.desc': 'Relancez la commande d’installation à tout moment pour mettre à jour — aucun téléchargement manuel.',
-	'shot.settings.alt': 'Réglages Echo Scribe montrant le modèle local et les permissions',
+	'shot.settings.alt': 'Réglages Tucky montrant le modèle local et les permissions',
 
 	// Use-case pages: hub
 	'usecases.hub.meta.title': 'Cas d’usage : consultants, ventes, fondateurs, étudiants',
-	'usecases.hub.meta.desc': 'Comment consultants, équipes commerciales, fondateurs et étudiants utilisent Echo Scribe.',
+	'usecases.hub.meta.desc': 'Comment consultants, équipes commerciales, fondateurs et étudiants utilisent Tucky.',
 	'usecases.hub.eyebrow': 'Cas d’usage',
 	'usecases.hub.title': 'Conçu pour la façon dont vous travaillez vraiment.',
 	'usecases.hub.subtitle': 'Choisissez votre univers — la dictée vocale pour prompter l’IA, le guidage d’appel pour la vente, les démonstrations d’écran pour les clients, et une seule mémoire consultable derrière tout ça.',
@@ -290,7 +290,7 @@ const fr: Dictionary = {
 	'usecases.consultants.title': 'Chaque appel client, enregistré et classé.',
 	'usecases.consultants.subtitle': 'Restez présent grâce à l’enregistrement et au guidage facultatif. Vérifiez résumé et projet avant de préparer le suivi client.',
 	'usecases.consultants.hubdesc': 'Des rendez-vous facturables capturés sans prise de notes, classés par client et consultables sur toutes vos missions.',
-	'usecases.consultants.explorelink': 'Voir comment les consultants utilisent Echo Scribe',
+	'usecases.consultants.explorelink': 'Voir comment les consultants utilisent Tucky',
 	'usecases.consultants.slab1.eyebrow': 'Le problème',
 	'usecases.consultants.slab1.title': 'Impossible de facturer et de prendre des notes en même temps.',
 	'usecases.consultants.slab1.desc': 'Enregistrez les deux côtés d’un appel compatible selon vos règles. Les guides facultatifs aident à suivre l’ordre du jour ; vérifiez les notes avec la transcription.',
@@ -318,7 +318,7 @@ const fr: Dictionary = {
 	'usecases.consultants.slab3.step2.desc': 'Choisissez les projets ou activez les suggestions automatiques, puis vérifiez le résultat.',
 	'usecases.consultants.slab3.step3.title': 'Suivez les prochaines étapes',
 	'usecases.consultants.slab3.step3.desc': 'Vérifiez décisions et actions, puis créez des tâches ou exportez les notes vers vos autres outils.',
-	'usecases.consultants.intro1': 'Le conseil se vend à l’heure : chaque minute passée à rédiger le compte rendu d’un appel est une minute non facturable. La parade habituelle — taper pendant que le client parle — vous coûte précisément ce pour quoi il vous paie, c’est-à-dire votre attention pleine et entière. Echo Scribe supprime ce compromis en faisant du compte rendu un sous-produit de la conversation plutôt qu’une tâche qui la suit.',
+	'usecases.consultants.intro1': 'Le conseil se vend à l’heure : chaque minute passée à rédiger le compte rendu d’un appel est une minute non facturable. La parade habituelle — taper pendant que le client parle — vous coûte précisément ce pour quoi il vous paie, c’est-à-dire votre attention pleine et entière. Tucky supprime ce compromis en faisant du compte rendu un sous-produit de la conversation plutôt qu’une tâche qui la suit.',
 	'usecases.consultants.intro2': 'Le second problème est la mémoire d’une mission à l’autre. Un point soulevé lors d’un appel il y a six semaines vaut de l’argent quand il ressurgit dans une proposition de cadrage, et ne vaut rien si vous ne le retrouvez pas. Comme chaque séance est transcrite et indexée localement, l’historique d’une mission devient interrogeable au lieu de rester une archive que l’on n’ouvre jamais.',
 	'usecases.consultants.faq1.q': 'Comment les données clients sont-elles stockées et partagées ?',
 	'usecases.consultants.faq1.a': 'La transcription et l’IA intégrée fonctionnent localement. Les exports, les envois Google Drive ou l’accès d’un outil IA externe via MCP peuvent partager du contenu hors de l’app. Les règles de cet outil s’appliquent alors.',
@@ -334,10 +334,10 @@ const fr: Dictionary = {
 	'usecases.sales.title': 'Guidez l’appel. Vérifiez et exportez les notes.',
 	'usecases.sales.subtitle': 'Utilisez des guides personnalisables pendant l’appel et un retour facultatif après. Vérifiez le résumé, puis exportez les notes vers votre processus commercial.',
 	'usecases.sales.hubdesc': 'Guides personnalisables, retour après l’appel et notes structurées à vérifier et exporter vers vos outils commerciaux.',
-	'usecases.sales.explorelink': 'Voir comment les équipes commerciales utilisent Echo Scribe',
+	'usecases.sales.explorelink': 'Voir comment les équipes commerciales utilisent Tucky',
 	'usecases.sales.slab1.eyebrow': 'Guidage d’appel en direct',
 	'usecases.sales.slab1.title': 'Faites-vous coacher pendant que le prospect parle encore.',
-	'usecases.sales.slab1.desc': 'Définissez un modèle de ce qu’un bon appel de découverte doit couvrir — qualification, douleur, budget, prochaines étapes. Echo Scribe suit la transcription en direct, coche ce qui a été couvert et suggère la question suivante en temps réel.',
+	'usecases.sales.slab1.desc': 'Définissez un modèle de ce qu’un bon appel de découverte doit couvrir — qualification, douleur, budget, prochaines étapes. Tucky suit la transcription en direct, coche ce qui a été couvert et suggère la question suivante en temps réel.',
 	'usecases.sales.slab1.step1.title': 'Votre playbook, en direct',
 	'usecases.sales.slab1.step1.desc': 'Décidez une fois ce qu’un bon appel doit couvrir.',
 	'usecases.sales.slab1.step2.title': 'Points couverts, cochés',
@@ -346,7 +346,7 @@ const fr: Dictionary = {
 	'usecases.sales.slab1.step3.desc': 'Utilisez les guides en direct pendant l’appel et les modèles facultatifs après. Les suggestions IA peuvent manquer de contexte.',
 	'usecases.sales.slab2.eyebrow': 'Le flux de travail',
 	'usecases.sales.slab2.title': 'Des notes déjà prêtes pour le CRM.',
-	'usecases.sales.slab2.desc': 'Echo Scribe ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
+	'usecases.sales.slab2.desc': 'Tucky ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
 	'usecases.sales.slab2.step1.title': 'Organisé par compte',
 	'usecases.sales.slab2.step1.desc': 'Choisissez les projets ou activez les suggestions automatiques, puis vérifiez le résultat.',
 	'usecases.sales.slab2.step2.title': 'Notes structurées',
@@ -363,11 +363,11 @@ const fr: Dictionary = {
 	'usecases.sales.slab3.step3.title': 'Rappel instantané',
 	'usecases.sales.slab3.step3.desc': 'Un trimestre d’appels, une seule recherche.',
 	'usecases.sales.intro1': 'Le coaching commercial arrive le plus souvent une fois l’affaire perdue. Un manager réécoute l’appel, repère la question de qualification qui n’a jamais été posée et livre son retour avec une semaine de retard sur ce qui aurait pu changer l’issue. L’accompagnement en direct ramène ce moment à l’intérieur de l’appel, quand le prospect est encore en ligne et que la question peut encore être posée.',
-	'usecases.sales.intro2': 'Echo Scribe ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
+	'usecases.sales.intro2': 'Tucky ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
 	'usecases.sales.faq1.q': 'Puis-je utiliser notre propre méthode de qualification ?',
-	'usecases.sales.faq1.a': 'La trame d’appel vous appartient. Que votre équipe travaille en MEDDIC, BANT, SPICED ou selon une méthode maison, vous définissez les points qu’un bon appel doit couvrir et Echo Scribe les suit sur la transcription en direct. On crée généralement des trames distinctes pour la découverte, la démonstration et le renouvellement.',
+	'usecases.sales.faq1.a': 'La trame d’appel vous appartient. Que votre équipe travaille en MEDDIC, BANT, SPICED ou selon une méthode maison, vous définissez les points qu’un bon appel doit couvrir et Tucky les suit sur la transcription en direct. On crée généralement des trames distinctes pour la découverte, la démonstration et le renouvellement.',
 	'usecases.sales.faq2.q': 'L’outil écrit-il automatiquement dans notre CRM ?',
-	'usecases.sales.faq2.a': 'Echo Scribe ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
+	'usecases.sales.faq2.a': 'Tucky ne met pas votre CRM à jour automatiquement. Vérifiez le résumé, puis copiez ou exportez les notes. Un outil IA distinct peut utiliser les fichiers exportés ou MCP pour les suivis que vous configurez.',
 	'usecases.sales.faq3.q': 'Un manager peut-il réécouter des appels sans accès au cloud ?',
 	'usecases.sales.faq3.a': 'Les enregistrements résident sur le Mac du commercial : il n’existe aucun espace partagé qu’un manager pourrait parcourir. La revue passe par l’export, par le commercial, de la transcription ou du résumé d’un appel précis. C’est un arbitrage assumé : rien n’est accessible de façon centralisée, y compris à votre propre entreprise.',
 
@@ -375,10 +375,10 @@ const fr: Dictionary = {
 	'usecases.founders.meta.title': 'Un second cerveau pour les fondateurs',
 	'usecases.founders.meta.desc': 'Dictez vos idées, créez notes et tâches vocales, enregistrez des démos et consultez votre historique avec une IA locale.',
 	'usecases.founders.eyebrow': 'Pour les fondateurs',
-	'usecases.founders.title': 'Vous êtes toute l’équipe. Echo Scribe est votre second cerveau.',
+	'usecases.founders.title': 'Vous êtes toute l’équipe. Tucky est votre second cerveau.',
 	'usecases.founders.subtitle': 'Dictez vos idées, créez notes et tâches vocales, enregistrez des démos et consultez votre historique avec une IA locale.',
 	'usecases.founders.hubdesc': 'Réfléchissez à voix haute entre deux réunions et gardez le contexte qu’une semaine chargée vous ferait perdre.',
-	'usecases.founders.explorelink': 'Voir comment les fondateurs utilisent Echo Scribe',
+	'usecases.founders.explorelink': 'Voir comment les fondateurs utilisent Tucky',
 	'usecases.founders.slab1.eyebrow': 'Le problème',
 	'usecases.founders.slab1.title': 'Les idées arrivent quand vous avez déjà les mains prises.',
 	'usecases.founders.slab1.desc': 'La dictée à la volée transforme une pensée fugace en texte propre à l’instant même — un prompt dans ChatGPT ou Cursor, une note, un e-mail — pas de carnet, pas de changement d’application.',
@@ -420,9 +420,9 @@ const fr: Dictionary = {
 	'usecases.students.meta.desc': 'Enregistrez les cours autorisés, générez des transcriptions et posez des questions sur les contenus sauvegardés sur votre Mac.',
 	'usecases.students.eyebrow': 'Pour les étudiants et enseignants',
 	'usecases.students.title': 'Chaque cours, capturé, consultable et prêt à être révisé.',
-	'usecases.students.subtitle': 'Echo Scribe enregistre le cours, répond aux questions à partir de vos propres notes, et garde chaque matière organisée sans classement manuel.',
+	'usecases.students.subtitle': 'Tucky enregistre le cours, répond aux questions à partir de vos propres notes, et garde chaque matière organisée sans classement manuel.',
 	'usecases.students.hubdesc': 'Cours et sessions de travail enregistrés, résumés et consultables avant même le début des révisions.',
-	'usecases.students.explorelink': 'Voir comment les étudiants utilisent Echo Scribe',
+	'usecases.students.explorelink': 'Voir comment les étudiants utilisent Tucky',
 	'usecases.students.slab1.eyebrow': 'Le problème',
 	'usecases.students.slab1.title': 'Impossible de tout noter et d’écouter en même temps.',
 	'usecases.students.slab1.desc': 'Pour les applications compatibles, utilisez vos règles d’enregistrement. En présentiel, lancez vous-même le microphone après autorisation. Vérifiez la transcription et attribuez le projet du cours.',
@@ -514,7 +514,7 @@ const fr: Dictionary = {
 	// Use cases (landing section)
 	'usecases.landing.eyebrow': 'Cas d’usage',
 	'usecases.landing.title': 'Là où ça s’insère dans votre journée.',
-	'usecases.landing.subtitle': 'Un seul outil, beaucoup de métiers. Voilà ce qu’Echo Scribe finit par faire pour les gens.',
+	'usecases.landing.subtitle': 'Un seul outil, beaucoup de métiers. Voilà ce qu’Tucky finit par faire pour les gens.',
 	'usecases.landing.card1.title': 'Prompter l’IA',
 	'usecases.landing.card1.desc': 'Dictez vos prompts dans ChatGPT, Claude ou Cursor. Une formulation brute suffit — c’est la vitesse qui compte.',
 	'usecases.landing.card2.title': 'Appels de vente et de découverte',
@@ -538,7 +538,7 @@ const fr: Dictionary = {
 	'privacy.landing.card2.title': 'Fonctionne entièrement hors ligne',
 	'privacy.landing.card2.desc': 'La transcription et l’IA locales fonctionnent hors ligne après téléchargement des modèles. Google Drive, les téléchargements, les mises à jour et les services IA externes nécessitent une connexion.',
 	'privacy.landing.card3.title': 'Aucun compte requis',
-	'privacy.landing.card3.desc': 'Les fonctions principales ne nécessitent aucun compte Echo Scribe. Le partage facultatif sur Google Drive nécessite la connexion à votre compte Google.',
+	'privacy.landing.card3.desc': 'Les fonctions principales ne nécessitent aucun compte Tucky. Le partage facultatif sur Google Drive nécessite la connexion à votre compte Google.',
 	'privacy.landing.card4.title': 'Vos données, votre dossier',
 	'privacy.landing.card4.desc': 'Les notes vivent dans un fichier SQLite sur votre Mac. Exportez-le, sauvegardez-le ou supprimez-le — contrôle total, toujours.',
 
@@ -577,9 +577,9 @@ const fr: Dictionary = {
 	'authors.subtitle': 'Découvrez les rédacteurs de notre blog',
 	'authors.meta.title': 'Auteurs du blog',
 	'authors.meta.description':
-		'Découvrez les auteurs d’Echo Scribe — l’équipe qui partage des guides sur la transcription privée, la dictée hors ligne et l’IA locale pour vos réunions.',
+		'Découvrez les auteurs d’Tucky — l’équipe qui partage des guides sur la transcription privée, la dictée hors ligne et l’IA locale pour vos réunions.',
 	'authors.detail.meta.description':
-		'Articles et guides de {name} sur la transcription privée, la dictée hors ligne et l’IA locale — sur le blog Echo Scribe.',
+		'Articles et guides de {name} sur la transcription privée, la dictée hors ligne et l’IA locale — sur le blog Tucky.',
 	'authors.detail.eyebrow': 'Auteur',
 	'authors.detail.posts.count': '{count} articles',
 	'authors.detail.posts.count.one': '1 article',
@@ -590,7 +590,7 @@ const fr: Dictionary = {
 		'Attendez-vous à des guides pratiques plutôt qu’à des tribunes : dicter dans n’importe quelle app de votre Mac, enregistrer et transcrire une réunion sans la confier au serveur de quelqu’un d’autre, et ce que les modèles d’IA locale font désormais sur un portable là où il fallait le cloud.',
 	'authors.detail.explore.eyebrow': 'Le produit derrière le blog',
 	'authors.detail.explore.title':
-		'Echo Scribe — la dictée vocale gratuite et privée pour votre Mac',
+		'Tucky — la dictée vocale gratuite et privée pour votre Mac',
 	'authors.detail.explore.body':
 		'Appuyez sur un raccourci, parlez, et un texte soigné atterrit là où se trouve votre curseur. Enregistrement, transcription et résumés tournent sur votre machine — sans compte, sans cloud.',
 	'authors.empty': 'Aucun auteur pour le moment',
@@ -620,20 +620,20 @@ const fr: Dictionary = {
 	'footer.privacy.policy': 'Politique de confidentialité',
 	'footer.cookie.policy': 'Politique de cookies',
 	'footer.legal.notice': 'Mentions légales',
-	'footer.copyright': '© {year} Echo Scribe. Tous droits réservés.',
+	'footer.copyright': '© {year} Tucky. Tous droits réservés.',
 	'footer.powered.by': 'Propulsé par Recursive Solutions',
 
-	// ── Obtenir Echo Scribe / assistance (route : /contact) ─────────────
+	// ── Obtenir Tucky / assistance (route : /contact) ─────────────
 	'support.eyebrow': 'Gratuit · Sans compte',
-	'support.heading': 'Obtenir Echo Scribe',
+	'support.heading': 'Obtenir Tucky',
 	'support.subtitle':
 		'Une ligne dans le Terminal et c’est parti. Pas d’inscription, pas de clé de licence, aucun compte à créer — et chaque enregistrement reste sur votre Mac.',
 	'support.meta.description':
-		'Installez Echo Scribe gratuitement sur votre Mac avec une seule commande Terminal — sans compte, sans inscription. Version Windows, configuration requise et assistance.',
+		'Installez Tucky gratuitement sur votre Mac avec une seule commande Terminal — sans compte, sans inscription. Version Windows, configuration requise et assistance.',
 	'support.help.eyebrow': 'Assistance',
 	'support.help.heading': 'Besoin d’aide ?',
 	'support.help.subtitle':
-		'Echo Scribe est développé au grand jour. Les bugs et les demandes de fonctionnalités vont directement dans le suivi public, où vous pouvez voir ce qui a déjà été signalé et ce qui est en cours.',
+		'Tucky est développé au grand jour. Les bugs et les demandes de fonctionnalités vont directement dans le suivi public, où vous pouvez voir ce qui a déjà été signalé et ce qui est en cours.',
 	'support.help.issues.title': 'Signaler un bug ou proposer une fonctionnalité',
 	'support.help.issues.desc':
 		'Ouvrez un ticket sur GitHub. Indiquez votre version de macOS et ce que vous faisiez au moment du problème — la correction arrivera plus vite.',
@@ -646,13 +646,13 @@ const fr: Dictionary = {
 	'support.help.source.desc':
 		'Le script d’installation et l’application sont publics. Regardez avant de lancer — avec un outil qui entend tout ce que vous dites, c’est bien le minimum.',
 	'support.help.source.cta': 'Parcourir le dépôt',
-	'support.faq.heading': 'Installer Echo Scribe',
+	'support.faq.heading': 'Installer Tucky',
 	'support.faq1.q': 'Que fait réellement la commande d’installation ?',
 	'support.faq1.a': 'La commande télécharge et exécute install.sh depuis le dépôt public, puis installe l’app dans Applications. Consultez le script avant de l’exécuter. Les modèles IA nécessitent de l’espace disque supplémentaire et une connexion.',
 	'support.faq2.q': 'Quels Mac sont pris en charge ?',
 	'support.faq2.a': 'L’installeur Mac actuel nécessite macOS 14 ou ultérieur et Apple Silicon. Il refuse les Mac Intel. Prévoyez plusieurs Go pour les modèles ; le total dépend des modèles de parole et de langage choisis.',
 	'support.faq3.q': 'Puis-je l’installer avec Homebrew ?',
-	'support.faq3.a': 'Non. Il n’existe pas de formule Homebrew et brew install echo-scribe ne trouvera rien : la commande Terminal de cette page est le seul mode d’installation pris en charge sur macOS. Si vous trouvez ailleurs un paquet se présentant comme Echo Scribe, il ne vient pas de nous.',
+	'support.faq3.a': 'Non. Il n’existe pas de formule Homebrew et brew install tucky ne trouvera rien : la commande Terminal de cette page est le seul mode d’installation pris en charge sur macOS. Si vous trouvez ailleurs un paquet se présentant comme Tucky, il ne vient pas de nous.',
 	'support.faq4.q': 'Comment passer à une nouvelle version ?',
 	'support.faq4.a': 'Relancez la même commande d’installation. Elle remplace l’application par la version actuelle et conserve vos enregistrements, transcriptions et réglages existants. La page des versions détaille ce qui a changé : elle mérite un coup d’œil avant la mise à jour.',
 	'support.faq5.q': 'Où sont stockées mes données et comment les supprimer ?',
@@ -729,10 +729,10 @@ const fr: Dictionary = {
 
 	// Fonctionnalités — accueil : contenu long + FAQ
 	'features.hub.intro1':
-		'Echo Scribe commence par la chose la plus simple : la dictée vocale, partout sur votre Mac. Appuyez sur un raccourci, parlez, et un texte propre atterrit à votre curseur — dans un chat IA, un e-mail, un document ou votre éditeur. Ensuite, ça se construit : les réunions sont enregistrées avec transcription en direct et guidage d’appel, les démonstrations d’écran capturent ce qui est plus simple à montrer qu’à expliquer, et tout atterrit dans une seule mémoire consultable.',
+		'Tucky commence par la chose la plus simple : la dictée vocale, partout sur votre Mac. Appuyez sur un raccourci, parlez, et un texte propre atterrit à votre curseur — dans un chat IA, un e-mail, un document ou votre éditeur. Ensuite, ça se construit : les réunions sont enregistrées avec transcription en direct et guidage d’appel, les démonstrations d’écran capturent ce qui est plus simple à montrer qu’à expliquer, et tout atterrit dans une seule mémoire consultable.',
 	'features.hub.intro2':
 		'Comme chaque modèle s’exécute sur l’appareil, il n’y a ni abonnement par siège, ni attente d’envoi, ni fournisseur qui détient vos transcriptions. Les fonctionnalités ci-dessous s’appuient les unes sur les autres : dites-le, capturez-le, retenez-le — puis laissez récaps, chat et revues transformer l’archive en réponses.',
-	'features.hub.faq1.q': 'Echo Scribe envoie-t-il mes enregistrements dans le cloud ?',
+	'features.hub.faq1.q': 'Tucky envoie-t-il mes enregistrements dans le cloud ?',
 	'features.hub.faq1.a': 'La transcription et l’IA intégrée fonctionnent localement. Les exports, les envois Google Drive ou l’accès d’un outil IA externe via MCP peuvent partager du contenu hors de l’app. Les règles de cet outil s’appliquent alors.',
 	'features.hub.faq2.q': 'Faut-il un abonnement ou une connexion Internet ?',
 	'features.hub.faq2.a': 'La transcription et l’IA locales fonctionnent hors ligne après téléchargement des modèles. Google Drive, les téléchargements, les mises à jour et les services IA externes nécessitent une connexion.',
@@ -741,14 +741,14 @@ const fr: Dictionary = {
 
 	// Fonctionnalités · Capture : contenu long + FAQ
 	'features.capture.intro1':
-		'La capture, c’est le début de l’histoire — et elle commence par votre voix. La dictée « appuyer pour parler » transforme la parole en texte propre partout sur le Mac, avec un mot déclencheur qui met en forme ce que vous dites sur commande : « echo, formate ça en e-mail ». Puis les réunions s’y ajoutent : Echo Scribe détecte le début d’un appel, enregistre l’audio système et le microphone, et fait défiler une transcription en direct avec guidage d’appel en option.',
+		'La capture, c’est le début de l’histoire — et elle commence par votre voix. La dictée « appuyer pour parler » transforme la parole en texte propre partout sur le Mac, avec un mot déclencheur qui met en forme ce que vous dites sur commande : « echo, formate ça en e-mail ». Puis les réunions s’y ajoutent : Tucky détecte le début d’un appel, enregistre l’audio système et le microphone, et fait défiler une transcription en direct avec guidage d’appel en option.',
 	'features.capture.intro2': 'Personnalisez raccourci, microphone, dictionnaire et corrections vocales. Votre mot déclencheur peut créer une note ou tâche, formater un e-mail ou une liste, ou lancer des actions compatibles comme ouvrir une app ou un site. Ces commandes utilisent le modèle de langage local distinct.',
 	'features.capture.faq1.q': 'Comment fonctionne la détection automatique des réunions ?',
 	'features.capture.faq1.a':
-		'Echo Scribe surveille les appels actifs et peut lancer l’enregistrement au début d’une réunion, en captant les deux côtés de la conversation. Vous décidez par app s’il enregistre toujours, demande d’abord ou n’enregistre jamais — et il s’arrête automatiquement quand le silence s’installe.',
+		'Tucky surveille les appels actifs et peut lancer l’enregistrement au début d’une réunion, en captant les deux côtés de la conversation. Vous décidez par app s’il enregistre toujours, demande d’abord ou n’enregistre jamais — et il s’arrête automatiquement quand le silence s’installe.',
 	'features.capture.faq2.q': 'Puis-je enregistrer l’audio système et mon micro ensemble ?',
 	'features.capture.faq2.a':
-		'Oui. Echo Scribe capte à la fois la sortie système (les autres participants) et votre microphone, pour que la transcription reflète toute la conversation et pas seulement votre voix.',
+		'Oui. Tucky capte à la fois la sortie système (les autres participants) et votre microphone, pour que la transcription reflète toute la conversation et pas seulement votre voix.',
 	'features.capture.faq3.q': 'La dictée est-elle précise dans un environnement bruyant ?',
 	'features.capture.faq3.a':
 		'La dictée fait passer l’audio par un nettoyage RNNoise embarqué avant la transcription : le brouhaha de fond et le bruit du clavier sont filtrés avant même que le modèle vocal local ne les traite, ce qui garde les transcriptions nettes.',
@@ -758,7 +758,7 @@ const fr: Dictionary = {
 	'features.organize.intro2': 'Interrogez votre historique et consultez les sources des réponses. Les récapitulatifs quotidiens facultatifs sont encore en amélioration. Pour analyser vos prompts ou méthodes, exportez les notes ou connectez un outil IA compatible via MCP ; cet outil effectue sa propre analyse.',
 	'features.organize.faq1.q': 'Puis-je effectuer une recherche dans toutes mes réunions et notes passées ?',
 	'features.organize.faq1.a':
-		'Oui. Tout ce qu’Echo Scribe capture est indexé sur l’appareil, vous pouvez donc chercher instantanément dans chaque transcription, note et résumé — et poser vos questions en langage naturel plutôt que de deviner des mots-clés.',
+		'Oui. Tout ce qu’Tucky capture est indexé sur l’appareil, vous pouvez donc chercher instantanément dans chaque transcription, note et résumé — et poser vos questions en langage naturel plutôt que de deviner des mots-clés.',
 	'features.organize.faq2.q': 'Comment les tâches et les points d’action sont-ils créés ?',
 	'features.organize.faq2.a': 'Créez une note ou une tâche à la voix en nommant le projet. Les résumés peuvent repérer des actions ; vérifiez-les avant de les transformer en tâches suivies. Cochez les tâches terminées dans la liste.',
 	'features.organize.faq3.q': 'Organiser mes notes nécessite-t-il une connexion Internet ?',
@@ -775,7 +775,7 @@ const fr: Dictionary = {
 		'Oui. L’éditeur vous permet de corriger, couper et restructurer transcriptions et enregistrements pour que la version finale se lise proprement avant de la partager ou de l’exporter.',
 	'features.editor.faq2.q': 'Vers quels formats puis-je exporter ?',
 	'features.editor.faq2.a':
-		'Echo Scribe exporte vos notes et enregistrements vers des formats standard que vous intégrez à vos outils existants : aucun verrouillage et rien à recréer ailleurs.',
+		'Tucky exporte vos notes et enregistrements vers des formats standard que vous intégrez à vos outils existants : aucun verrouillage et rien à recréer ailleurs.',
 	'features.editor.faq3.q': 'Mes modifications sont-elles stockées dans le cloud ?',
 	'features.editor.faq3.a':
 		'Non. L’édition se fait localement sur votre Mac, et les exports sont des fichiers que vous contrôlez. Rien n’est téléversé, sauf si vous choisissez vous-même d’envoyer le fichier exporté quelque part.',
@@ -786,36 +786,36 @@ const fr: Dictionary = {
 		'Comme toute la plateforme s’exécute sur l’appareil, les mises à jour sont un simple re-téléchargement plutôt qu’une migration, et votre modèle de données reste sous votre contrôle. Aucune console d’administration dans le cloud de quelqu’un d’autre ne décide de ce que vous pouvez conserver.',
 	'features.platform.faq1.q': 'Puis-je personnaliser les raccourcis et le comportement de capture ?',
 	'features.platform.faq1.a':
-		'Oui. Les réglages vous donnent la main sur les raccourcis de dictée, les modèles utilisés, la détection des réunions et le démarrage/arrêt des enregistrements, pour qu’Echo Scribe s’adapte à vos habitudes.',
+		'Oui. Les réglages vous donnent la main sur les raccourcis de dictée, les modèles utilisés, la détection des réunions et le démarrage/arrêt des enregistrements, pour qu’Tucky s’adapte à vos habitudes.',
 	'features.platform.faq2.q': 'Comment sont gérés les mises à jour et les nouveaux modèles ?',
 	'features.platform.faq2.a': 'Mettez l’app à jour avec la commande d’installation ou ses commandes de mise à jour. Les modèles téléchargés sont réutilisés localement. Leur taille dépend du choix, ce n’est pas un téléchargement fixe de 2 Go.',
-	'features.platform.faq3.q': 'Quels contrôles de confidentialité Echo Scribe propose-t-il ?',
+	'features.platform.faq3.q': 'Quels contrôles de confidentialité Tucky propose-t-il ?',
 	'features.platform.faq3.a':
 		'Comme le traitement est local par défaut, la confidentialité est le point de départ plutôt qu’une option. Vous décidez de ce qui est capturé, de ce qui est conservé et si quoi que ce soit est un jour exporté hors de l’appareil.',
 
 	// Cas d’usage — accueil : contenu long + FAQ
 	'usecases.hub.intro1':
-		'Echo Scribe s’adapte au travail que vous faites déjà. Les consultants gardent les appels clients hors du cloud, les équipes commerciales profitent du guidage d’appel en direct et de suivis instantanés, les fondateurs dictent leurs prompts à l’IA et enregistrent des démonstrations produit, et les étudiants se constituent un historique consultable de chaque cours — le tout avec la même boucle de capture locale.',
+		'Tucky s’adapte au travail que vous faites déjà. Les consultants gardent les appels clients hors du cloud, les équipes commerciales profitent du guidage d’appel en direct et de suivis instantanés, les fondateurs dictent leurs prompts à l’IA et enregistrent des démonstrations produit, et les étudiants se constituent un historique consultable de chaque cours — le tout avec la même boucle de capture locale.',
 	'usecases.hub.intro2':
 		'Le fil conducteur est une mémoire privée, sur l’appareil : quel que soit votre rôle, les réunions auxquelles vous assistez et les idées que vous formulez à voix haute deviennent une base de connaissances organisée et consultable qui vous appartient. Explorez les parcours ci-dessous pour voir comment chacun s’adapte à un flux de travail précis.',
-	'usecases.hub.faq1.q': 'À qui s’adresse Echo Scribe ?',
+	'usecases.hub.faq1.q': 'À qui s’adresse Tucky ?',
 	'usecases.hub.faq1.a':
 		'À toute personne dont le travail passe par des conversations et des enregistrements — consultants, équipes commerciales, fondateurs, étudiants et travailleurs du savoir — qui veut capturer et organiser ces moments sans confier les données à un service cloud.',
 	'usecases.hub.faq2.q': 'Faut-il une configuration différente pour chaque cas d’usage ?',
 	'usecases.hub.faq2.a':
 		'Non. La même boucle capture-organisation-édition alimente chaque cas d’usage. Les flux diffèrent par l’accent mis — confidentialité client, rapidité de suivi, capture d’idées, notes de cours — mais le moteur privé, sur l’appareil, reste le même.',
-	'usecases.hub.faq3.q': 'Les équipes peuvent-elles utiliser Echo Scribe, ou est-ce réservé aux individus ?',
+	'usecases.hub.faq3.q': 'Les équipes peuvent-elles utiliser Tucky, ou est-ce réservé aux individus ?',
 	'usecases.hub.faq3.a':
-		'Echo Scribe s’exécute localement sur le Mac de chacun : les individus en tirent toute la valeur seuls, et les équipes bénéficient de la même capture privée sans dépôt cloud partagé contenant des transcriptions sensibles.',
+		'Tucky s’exécute localement sur le Mac de chacun : les individus en tirent toute la valeur seuls, et les équipes bénéficient de la même capture privée sans dépôt cloud partagé contenant des transcriptions sensibles.',
 
 	// /loops — la page de la boucle de mémoire de travail
 	'loops.meta.title': 'La boucle de mémoire de travail : capturer et organiser',
 	'loops.meta.desc':
-		'Comment Echo Scribe transforme réunions, écrans et pensées éparses en une mémoire de travail privée et consultable — capturer, organiser, voir, améliorer.',
+		'Comment Tucky transforme réunions, écrans et pensées éparses en une mémoire de travail privée et consultable — capturer, organiser, voir, améliorer.',
 	'loops.hero.eyebrow': 'La boucle de mémoire de travail',
 	'loops.hero.title': 'Votre travail, capturé comme une boucle — pas comme un tas de notes.',
 	'loops.hero.subtitle':
-		'Echo Scribe transforme tout ce que vous dites, enregistrez et décidez en une image vivante de votre travail, entièrement sur votre Mac. Voici la boucle qui rend cela possible.',
+		'Tucky transforme tout ce que vous dites, enregistrez et décidez en une image vivante de votre travail, entièrement sur votre Mac. Voici la boucle qui rend cela possible.',
 	'loops.intro1':
 		'La plupart des outils captent des fragments : un enregistrement ici, une note là, une tâche dans une autre app. Les vides entre eux sont là où les décisions se perdent et où les suivis meurent en silence. La boucle de mémoire de travail comble ces vides en traitant capture, organisation, analyse et action comme un cycle continu plutôt que quatre corvées déconnectées.',
 	'loops.intro2':
@@ -823,7 +823,7 @@ const fr: Dictionary = {
 	'loops.step1.label': '01 / CAPTURER',
 	'loops.step1.title': 'Garder le moment',
 	'loops.step1.body':
-		'Parlez naturellement, enregistrez une réunion ou capturez votre écran sans casser votre élan. Echo Scribe détecte les appels automatiquement, enregistre l’audio système et micro, et le nettoie sur l’appareil avant de le transcrire — la matière brute est donc toujours là quand vous en avez besoin.',
+		'Parlez naturellement, enregistrez une réunion ou capturez votre écran sans casser votre élan. Tucky détecte les appels automatiquement, enregistre l’audio système et micro, et le nettoie sur l’appareil avant de le transcrire — la matière brute est donc toujours là quand vous en avez besoin.',
 	'loops.step2.label': '02 / ORGANISER',
 	'loops.step2.title': 'La rendre utilisable',
 	'loops.step2.body': 'Utilisez votre mot déclencheur pour créer une note ou une tâche, indiquez le projet et retrouvez-la dans la bibliothèque.',
@@ -850,7 +850,7 @@ const fr: Dictionary = {
 	'loops.explore.usecases.desc': 'Découvrez comment consultants, commerciaux, fondateurs et étudiants font tourner la boucle.',
 	'loops.faq1.q': 'Qu’est-ce que la boucle de mémoire de travail ?',
 	'loops.faq1.a':
-		'C’est le cycle par lequel Echo Scribe fait passer votre travail : capturer ce qui est dit ou montré, l’organiser en connaissances consultables, voir ce qui compte et agir avec ce contexte — puis recommencer. Chaque passage rend votre mémoire de travail privée plus complète.',
+		'C’est le cycle par lequel Tucky fait passer votre travail : capturer ce qui est dit ou montré, l’organiser en connaissances consultables, voir ce qui compte et agir avec ce contexte — puis recommencer. Chaque passage rend votre mémoire de travail privée plus complète.',
 	'loops.faq2.q': 'La boucle s’exécute-t-elle dans le cloud ?',
 	'loops.faq2.a': 'La transcription et l’IA intégrée fonctionnent localement. Les exports, les envois Google Drive ou l’accès d’un outil IA externe via MCP peuvent partager du contenu hors de l’app. Les règles de cet outil s’appliquent alors.',
 	'loops.faq3.q': 'En quoi est-ce différent d’une app de notes ou d’un outil de transcription ?',

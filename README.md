@@ -1,4 +1,4 @@
-# Echo Scribe
+# Tucky
 
 Built with [Growth Engine](https://github.com/recursive-solutions-ai).
 

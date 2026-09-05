@@ -77,7 +77,7 @@ describe('ProductPage metadata titles', () => {
 
 	it('keeps meta titles inside the ~60 char search-result budget', () => {
 		// Google truncates around 60 chars, and `buildPageMetadata` appends
-		// " | Echo Scribe" (14) to each of these, so the key itself gets ~46.
+		// " | Tucky" (14) to each of these, so the key itself gets ~46.
 		const tooLong: string[] = []
 		for (const file of files) {
 			const key = readFileSync(file, 'utf8').match(/title:\s*dict\['([^']+)'\]/)?.[1]

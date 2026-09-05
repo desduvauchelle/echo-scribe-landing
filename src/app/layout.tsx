@@ -16,11 +16,11 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jet
 export const metadata: Metadata = {
 	metadataBase: new URL(SITE_URL),
 	title: {
-		default: 'Echo Scribe',
-		template: '%s | Echo Scribe',
+		default: 'Tucky',
+		template: '%s | Tucky',
 	},
 	description: 'Private AI for capturing, organizing, and improving the work that happens in conversations.',
-	icons: { icon: '/icon.jpeg' },
+	icons: { icon: '/tucky.jpeg' },
 }
 
 export default async function RootLayout({

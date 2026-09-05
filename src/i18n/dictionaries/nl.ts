@@ -4,7 +4,7 @@ const nl: Dictionary = {
 	'awake.title': 'Houd je computer wakker met je stem',
 	'awake.instruction': 'Druk op je gebruikelijke dicteersneltoets en zeg:',
 	'awake.command': 'Echo, keep my computer awake for two hours.',
-	'awake.description': 'Echo Scribe herkent de opdracht en houdt je computer wakker voor de gevraagde duur. Gebruik dit terwijl een langdurige opdracht wordt uitgevoerd of een wachtrij met AI-prompts wordt verwerkt.',
+	'awake.description': 'Tucky herkent de opdracht en houdt je computer wakker voor de gevraagde duur. Gebruik dit terwijl een langdurige opdracht wordt uitgevoerd of een wachtrij met AI-prompts wordt verwerkt.',
 	'demo.transcription.shortcut': 'Je sneltoets',
 	'usecases.landing.card9.desc': 'Leg een idee vast met je activeringswoord, noem het project of maak een taak. Controleer het label en vink de taak af als die klaar is.',
 	'usecases.landing.card9.title': 'Spraaknotities en kleine taken',
@@ -39,7 +39,7 @@ const nl: Dictionary = {
 	'hero.badge': 'Gratis · Privé · AI op je apparaat',
 	'hero.title.line1': 'Typen wordt overschat.',
 	'hero.title.line2': 'Praat gewoon.',
-	'hero.subtitle': 'Echo Scribe is spraak naar tekst voor je hele Mac. Druk op een sneltoets, praat, en verzorgde tekst verschijnt precies waar je cursor staat. We besteden onze dagen inmiddels aan prompts schrijven voor AI, en een prompt hoeft niet perfect geformuleerd te zijn. Hij heeft je denkwerk nodig, snel. Praten is de snelste manier om dat eruit te krijgen.',
+	'hero.subtitle': 'Tucky is spraak naar tekst voor je hele Mac. Druk op een sneltoets, praat, en verzorgde tekst verschijnt precies waar je cursor staat. We besteden onze dagen inmiddels aan prompts schrijven voor AI, en een prompt hoeft niet perfect geformuleerd te zijn. Hij heeft je denkwerk nodig, snel. Praten is de snelste manier om dat eruit te krijgen.',
 	'hero.cta.primary': 'Gratis spraak naar tekst',
 	'hero.cta.secondary': 'Zie hoe het zich opbouwt',
 	'hero.meta.local': 'Draait lokaal op je Mac',
@@ -49,7 +49,7 @@ const nl: Dictionary = {
 	// How it builds up (landing story strip)
 	'loop.eyebrow': 'Hoe het zich opbouwt',
 	'loop.title': 'Het begint met spraak naar tekst. Het eindigt als het geheugen van je werk.',
-	'loop.subtitle': 'Elke manier van vastleggen voedt de volgende. Eerst vervangt je stem het toetsenbord. Daarna komen je vergaderingen en schermopnamen erbij. Alles belandt op één doorzoekbare plek — en als het er eenmaal allemaal staat, kan Echo Scribe je vertellen wat er gebeurd is, wat ertoe doet en wat je nu moet doen.',
+	'loop.subtitle': 'Elke manier van vastleggen voedt de volgende. Eerst vervangt je stem het toetsenbord. Daarna komen je vergaderingen en schermopnamen erbij. Alles belandt op één doorzoekbare plek — en als het er eenmaal allemaal staat, kan Tucky je vertellen wat er gebeurd is, wat ertoe doet en wat je nu moet doen.',
 	'loop.step1.label': '01 / SPREEK',
 	'loop.step1.title': 'Spraak naar tekst, overal',
 	'loop.step1.desc': 'Druk op een sneltoets en praat. Schone tekst belandt in elke app: AI-chats, e-mail, Slack, code.',
@@ -67,7 +67,7 @@ const nl: Dictionary = {
 	// Story slab 1: voice to text
 	'features.voice.eyebrow': 'Stap 1 · Spraak naar tekst',
 	'features.voice.title': 'Je stem is het nieuwe toetsenbord.',
-	'features.voice.desc': 'Spraak naar tekst is de snelste manier om met AI te werken. Je hebt geen exacte formulering nodig om ChatGPT of Claude iets te vragen — je moet het idee uit je hoofd krijgen. Druk op een sneltoets, praat gewoon, en Echo Scribe zet schone, verzorgde tekst bij je cursor, in elke app op je Mac.',
+	'features.voice.desc': 'Spraak naar tekst is de snelste manier om met AI te werken. Je hebt geen exacte formulering nodig om ChatGPT of Claude iets te vragen — je moet het idee uit je hoofd krijgen. Druk op een sneltoets, praat gewoon, en Tucky zet schone, verzorgde tekst bij je cursor, in elke app op je Mac.',
 	'features.voice.step1.title': 'Druk op de sneltoets en praat',
 	'features.voice.step1.desc': 'Dicteer in ChatGPT, Claude, Slack, Gmail, VS Code — overal waar je cursor staat.',
 	'features.voice.step2.title': 'Lokale AI ruimt op',
@@ -89,7 +89,7 @@ const nl: Dictionary = {
 	// Story slab 3: meetings
 	'features.meetings.eyebrow': 'Stap 3 · Vergaderingen',
 	'features.meetings.title': 'Live transcriptie en gespreksbegeleiding, terwijl je in gesprek bent.',
-	'features.meetings.desc': 'Echo Scribe merkt wanneer je een Zoom-, Meet- of Teams-gesprek binnenkomt en neemt het op als jij dat wilt. Je krijgt een live transcript terwijl het gesprek loopt. Stel een sjabloon in van hoe een goed gesprek eruitziet — een salesgesprek, een discovery, een interview — en Echo Scribe houdt bij wat er behandeld is en stelt in realtime de volgende vraag voor. Geen van je ideeën gaat verloren.',
+	'features.meetings.desc': 'Tucky merkt wanneer je een Zoom-, Meet- of Teams-gesprek binnenkomt en neemt het op als jij dat wilt. Je krijgt een live transcript terwijl het gesprek loopt. Stel een sjabloon in van hoe een goed gesprek eruitziet — een salesgesprek, een discovery, een interview — en Tucky houdt bij wat er behandeld is en stelt in realtime de volgende vraag voor. Geen van je ideeën gaat verloren.',
 	'features.meetings.step1.title': 'Neem elke vergadering op',
 	'features.meetings.step1.desc': 'Zoom, Google Meet en Teams worden automatisch herkend. Jij kiest per app: altijd opnemen, eerst vragen of nooit.',
 	'features.meetings.step2.title': 'Krijg live coaching',
@@ -171,14 +171,14 @@ const nl: Dictionary = {
 	'features.capture.slab3.step2.desc': 'Zeg “echo, maak hier een opsomming van” en de AI maakt het op terwijl je praat.',
 	'features.capture.slab3.step3.title': 'Schone audio erin, schone tekst eruit',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcribeert lokaal in 25 talen. Voeg eigen woorden toe en schakel gesproken correcties, leestekens en het verwijderen van stopwoorden in.',
-	'shot.meeting-hud.alt': 'Live vergaderweergave van Echo Scribe tijdens de opname van een productoverleg',
-	'shot.screen-recorder.alt': 'Instelvenster van de schermrecorder van Echo Scribe',
-	'shot.recorded.library.alt': 'Echo Scribe — Vergaderbibliotheek met recente opnamen en activiteit',
-	'shot.recorded.answer.alt': 'Echo Scribe — AI-antwoord over eerdere vergaderingen met twaalf bronnen',
-	'shot.recorded.summary.alt': 'Echo Scribe — Vergadersamenvatting met transcript, besluiten en actiepunten',
-	'shot.recorded.feedback.alt': 'Echo Scribe — Feedback op besproken en gemiste gesprekspunten',
-	'shot.recorded.recording.alt': 'Echo Scribe — Videovoorbeeld met bewerkings- en exportfuncties',
-	'shot.dictation.alt': 'Push-to-talk dicteerbalkje van Echo Scribe',
+	'shot.meeting-hud.alt': 'Live vergaderweergave van Tucky tijdens de opname van een productoverleg',
+	'shot.screen-recorder.alt': 'Instelvenster van de schermrecorder van Tucky',
+	'shot.recorded.library.alt': 'Tucky — Vergaderbibliotheek met recente opnamen en activiteit',
+	'shot.recorded.answer.alt': 'Tucky — AI-antwoord over eerdere vergaderingen met twaalf bronnen',
+	'shot.recorded.summary.alt': 'Tucky — Vergadersamenvatting met transcript, besluiten en actiepunten',
+	'shot.recorded.feedback.alt': 'Tucky — Feedback op besproken en gemiste gesprekspunten',
+	'shot.recorded.recording.alt': 'Tucky — Videovoorbeeld met bewerkings- en exportfuncties',
+	'shot.dictation.alt': 'Push-to-talk dicteerbalkje van Tucky',
 
 	// Feature pages: organize
 	'features.organize.meta.title': 'Doorzoek je vergaderingen en notities en chat ermee',
@@ -214,12 +214,12 @@ const nl: Dictionary = {
 	'features.organize.slab3.step2.desc': 'Kies zelf projectlabels of schakel automatische suggesties in en controleer het resultaat.',
 	'features.organize.slab3.step3.title': 'Spraaknotities en taken',
 	'features.organize.slab3.step3.desc': 'Gebruik je activeringswoord om een notitie of taak te maken, noem het project en vind die later in je bibliotheek.',
-	'shot.chat.alt': 'Chatinterface van Echo Scribe die een vraag beantwoordt uit de vergadergeschiedenis',
-	'shot.daily-summary.alt': 'Dagelijkse samenvatting van Echo Scribe met vergaderingen en taken',
-	'shot.meetings.alt': 'Vergaderlijst van Echo Scribe geordend per project',
-	'shot.dashboard.alt': 'Dashboard van Echo Scribe met recente activiteit en opvolgpunten',
-	'shot.tasks.alt': 'Takenweergave van Echo Scribe met actiepunten gegroepeerd per project',
-	'shot.projects.alt': 'Projectweergave van Echo Scribe met taken gegroepeerd per project',
+	'shot.chat.alt': 'Chatinterface van Tucky die een vraag beantwoordt uit de vergadergeschiedenis',
+	'shot.daily-summary.alt': 'Dagelijkse samenvatting van Tucky met vergaderingen en taken',
+	'shot.meetings.alt': 'Vergaderlijst van Tucky geordend per project',
+	'shot.dashboard.alt': 'Dashboard van Tucky met recente activiteit en opvolgpunten',
+	'shot.tasks.alt': 'Takenweergave van Tucky met actiepunten gegroepeerd per project',
+	'shot.projects.alt': 'Projectweergave van Tucky met taken gegroepeerd per project',
 
 	// Feature pages: editor
 	'features.editor.meta.title': 'Editor voor schermopnamen: auto-zoom & export',
@@ -246,8 +246,8 @@ const nl: Dictionary = {
 	'features.editor.slab2.step2.desc': 'Stuur de export direct naar Drive en deel een link.',
 	'features.editor.slab2.step3.title': 'Nergens anders opnieuw coderen',
 	'features.editor.slab2.step3.desc': 'Eén keer exporteren, in de kwaliteit die je nodig hebt, en klaar.',
-	'shot.editor.alt': 'Opname-editor van Echo Scribe met auto-zoom en tijdlijn',
-	'shot.export.alt': 'Exportpaneel van Echo Scribe met MP4-, GIF- en Google Drive-opties',
+	'shot.editor.alt': 'Opname-editor van Tucky met auto-zoom en tijdlijn',
+	'shot.export.alt': 'Exportpaneel van Tucky met MP4-, GIF- en Google Drive-opties',
 
 	// Feature pages: platform
 	'features.platform.meta.title': 'Lokale AI op je Mac: privé, offline en snel',
@@ -274,11 +274,11 @@ const nl: Dictionary = {
 	'features.platform.slab2.step2.desc': 'Kies voor ondersteunde vergaderapps altijd opnemen, eerst vragen of nooit.',
 	'features.platform.slab2.step3.title': 'Automatische updates',
 	'features.platform.slab2.step3.desc': 'Draai het installatiecommando wanneer je wilt opnieuw om bij te werken — geen handmatige downloads.',
-	'shot.settings.alt': 'Instellingen van Echo Scribe met het lokale model en de machtigingen',
+	'shot.settings.alt': 'Instellingen van Tucky met het lokale model en de machtigingen',
 
 	// Use-case pages: hub
 	'usecases.hub.meta.title': 'Toepassingen: consultants, sales, oprichters en studenten',
-	'usecases.hub.meta.desc': 'Hoe consultants, salesteams, oprichters en studenten Echo Scribe gebruiken.',
+	'usecases.hub.meta.desc': 'Hoe consultants, salesteams, oprichters en studenten Tucky gebruiken.',
 	'usecases.hub.eyebrow': 'Toepassingen',
 	'usecases.hub.title': 'Gebouwd voor hoe je echt werkt.',
 	'usecases.hub.subtitle': 'Kies je wereld — spraak naar tekst om AI te prompten, live gespreksbegeleiding voor sales, schermdoorlopen voor klanten en één doorzoekbaar geheugen achter dat alles.',
@@ -290,7 +290,7 @@ const nl: Dictionary = {
 	'usecases.consultants.title': 'Elk klantgesprek vastgelegd en op orde.',
 	'usecases.consultants.subtitle': 'Blijf betrokken bij klantgesprekken met opname en optionele begeleiding. Controleer samenvatting en projectlabel voordat je opvolging plant.',
 	'usecases.consultants.hubdesc': 'Declarabele gesprekken vastgelegd zonder aantekeningen, per klant gearchiveerd en doorzoekbaar over al je opdrachten.',
-	'usecases.consultants.explorelink': 'Zie hoe adviseurs Echo Scribe gebruiken',
+	'usecases.consultants.explorelink': 'Zie hoe adviseurs Tucky gebruiken',
 	'usecases.consultants.slab1.eyebrow': 'Het probleem',
 	'usecases.consultants.slab1.title': 'Je kunt niet declareren en tegelijk aantekeningen maken.',
 	'usecases.consultants.slab1.desc': 'Neem beide kanten van ondersteunde gesprekken op volgens je instellingen. Optionele leidraden helpen bij de agenda; controleer de notities aan de hand van het transcript.',
@@ -318,7 +318,7 @@ const nl: Dictionary = {
 	'usecases.consultants.slab3.step2.desc': 'Kies zelf projectlabels of schakel automatische suggesties in en controleer het resultaat.',
 	'usecases.consultants.slab3.step3.title': 'Vervolgstappen bijhouden',
 	'usecases.consultants.slab3.step3.desc': 'Controleer besluiten en actiepunten en maak taken of exporteer notities naar andere hulpmiddelen.',
-	'usecases.consultants.intro1': 'Advies wordt per uur verkocht, dus elke minuut die je aan het uitwerken van een gesprek besteedt, is een minuut die je niet kunt declareren. De gebruikelijke noodgreep — meetypen terwijl de klant praat — kost je precies datgene waarvoor hij betaalt: je volle aandacht in de kamer. Echo Scribe haalt die afweging weg door het verslag een bijproduct van het gesprek te maken in plaats van een taak die erop volgt.',
+	'usecases.consultants.intro1': 'Advies wordt per uur verkocht, dus elke minuut die je aan het uitwerken van een gesprek besteedt, is een minuut die je niet kunt declareren. De gebruikelijke noodgreep — meetypen terwijl de klant praat — kost je precies datgene waarvoor hij betaalt: je volle aandacht in de kamer. Tucky haalt die afweging weg door het verslag een bijproduct van het gesprek te maken in plaats van een taak die erop volgt.',
 	'usecases.consultants.intro2': 'Het tweede probleem is het geheugen tussen opdrachten. Een detail uit een gesprek van zes weken geleden is geld waard zodra het opduikt in een scopevoorstel, en niets waard als je het niet terugvindt. Doordat elke sessie lokaal wordt getranscribeerd en geïndexeerd, wordt de geschiedenis van een opdracht iets wat je kunt bevragen in plaats van een archief dat je nooit meer opent.',
 	'usecases.consultants.faq1.q': 'Hoe worden klantgegevens opgeslagen en gedeeld?',
 	'usecases.consultants.faq1.a': 'Transcriptie en ingebouwde AI werken lokaal. Exports, Google Drive of toegang via MCP voor externe AI kunnen inhoud buiten de app delen. Dan gelden de verwerkings- en opslagregels van dat hulpmiddel.',
@@ -334,10 +334,10 @@ const nl: Dictionary = {
 	'usecases.sales.title': 'Begeleid het gesprek. Controleer en exporteer notities.',
 	'usecases.sales.subtitle': 'Gebruik aanpasbare leidraden tijdens het gesprek en optionele feedback erna. Controleer de samenvatting en exporteer notities naar je verkoopworkflow.',
 	'usecases.sales.hubdesc': 'Aanpasbare gespreksleidraden, feedback na afloop en gestructureerde notities om te controleren en exporteren.',
-	'usecases.sales.explorelink': 'Zie hoe verkoopteams Echo Scribe gebruiken',
+	'usecases.sales.explorelink': 'Zie hoe verkoopteams Tucky gebruiken',
 	'usecases.sales.slab1.eyebrow': 'Live gespreksbegeleiding',
 	'usecases.sales.slab1.title': 'Word gecoacht terwijl de prospect nog praat.',
-	'usecases.sales.slab1.desc': 'Stel een sjabloon in van wat een sterk discoverygesprek behandelt — kwalificatie, pijn, budget, vervolgstappen. Echo Scribe volgt het live transcript, vinkt af wat behandeld is en stelt in realtime de volgende vraag voor.',
+	'usecases.sales.slab1.desc': 'Stel een sjabloon in van wat een sterk discoverygesprek behandelt — kwalificatie, pijn, budget, vervolgstappen. Tucky volgt het live transcript, vinkt af wat behandeld is en stelt in realtime de volgende vraag voor.',
 	'usecases.sales.slab1.step1.title': 'Jouw playbook, live',
 	'usecases.sales.slab1.step1.desc': 'Bepaal één keer wat een sterk gesprek behandelt.',
 	'usecases.sales.slab1.step2.title': 'Behandelde punten, afgevinkt',
@@ -346,7 +346,7 @@ const nl: Dictionary = {
 	'usecases.sales.slab1.step3.desc': 'Gebruik live leidraden tijdens gesprekken en optionele sjablonen voor terugblikken. AI-suggesties kunnen context missen.',
 	'usecases.sales.slab2.eyebrow': 'De workflow',
 	'usecases.sales.slab2.title': 'Notities die al CRM-klaar zijn.',
-	'usecases.sales.slab2.desc': 'Echo Scribe werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
+	'usecases.sales.slab2.desc': 'Tucky werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
 	'usecases.sales.slab2.step1.title': 'Geordend per account',
 	'usecases.sales.slab2.step1.desc': 'Kies zelf projectlabels of schakel automatische suggesties in en controleer het resultaat.',
 	'usecases.sales.slab2.step2.title': 'Gestructureerde notities',
@@ -363,11 +363,11 @@ const nl: Dictionary = {
 	'usecases.sales.slab3.step3.title': 'Direct paraat',
 	'usecases.sales.slab3.step3.desc': 'Een kwartaal aan gesprekken, één zoekopdracht.',
 	'usecases.sales.intro1': 'De meeste verkoopcoaching komt pas als de deal al verloren is. Een manager luistert het gesprek terug, ziet de kwalificatievraag die nooit is gesteld en geeft de terugkoppeling een week te laat om er nog iets aan te veranderen. Live begeleiding verplaatst dat moment naar binnen het gesprek, terwijl de prospect nog aan de lijn is en de vraag nog gesteld kan worden.',
-	'usecases.sales.intro2': 'Echo Scribe werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
+	'usecases.sales.intro2': 'Tucky werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
 	'usecases.sales.faq1.q': 'Kan ik ons eigen kwalificatiemodel gebruiken?',
-	'usecases.sales.faq1.a': 'Het gespreksdraaiboek bepaal je zelf. Werkt je team met MEDDIC, BANT, SPICED of iets eigens, dan leg je vast welke punten een goed gesprek moet raken en volgt Echo Scribe die op de live transcriptie. Aparte draaiboeken voor kennismakings-, demo- en verlengingsgesprekken zijn de gebruikelijke opzet.',
+	'usecases.sales.faq1.a': 'Het gespreksdraaiboek bepaal je zelf. Werkt je team met MEDDIC, BANT, SPICED of iets eigens, dan leg je vast welke punten een goed gesprek moet raken en volgt Tucky die op de live transcriptie. Aparte draaiboeken voor kennismakings-, demo- en verlengingsgesprekken zijn de gebruikelijke opzet.',
 	'usecases.sales.faq2.q': 'Schrijft het automatisch in ons CRM?',
-	'usecases.sales.faq2.a': 'Echo Scribe werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
+	'usecases.sales.faq2.a': 'Tucky werkt je CRM niet automatisch bij. Controleer de samenvatting en plak of exporteer de notities. Een apart AI-hulpmiddel kan exports of MCP gebruiken voor vervolgworkflows die je zelf instelt.',
 	'usecases.sales.faq3.q': 'Kunnen managers gesprekken terugkijken zonder cloudtoegang?',
 	'usecases.sales.faq3.a': 'Opnamen staan op de eigen Mac van de verkoper, dus er is geen gedeelde werkruimte die een manager kan doorbladeren. Terugkijken werkt doordat de verkoper de transcriptie of samenvatting van een specifiek gesprek exporteert. Dat is een bewuste afweging: niets is centraal toegankelijk, ook niet voor je eigen bedrijf.',
 
@@ -375,10 +375,10 @@ const nl: Dictionary = {
 	'usecases.founders.meta.title': 'Een tweede brein voor oprichters',
 	'usecases.founders.meta.desc': 'Dicteer ideeën, maak spraaknotities en taken, neem demo’s op en bekijk je werkgeschiedenis met lokale AI.',
 	'usecases.founders.eyebrow': 'Voor oprichters',
-	'usecases.founders.title': 'Jij bent het hele team. Echo Scribe is je tweede brein.',
+	'usecases.founders.title': 'Jij bent het hele team. Tucky is je tweede brein.',
 	'usecases.founders.subtitle': 'Dicteer ideeën, maak spraaknotities en taken, neem demo’s op en bekijk je werkgeschiedenis met lokale AI.',
 	'usecases.founders.hubdesc': 'Denk hardop tussen afspraken door en houd de context die een volle week je anders kost.',
-	'usecases.founders.explorelink': 'Zie hoe oprichters Echo Scribe gebruiken',
+	'usecases.founders.explorelink': 'Zie hoe oprichters Tucky gebruiken',
 	'usecases.founders.slab1.eyebrow': 'Het probleem',
 	'usecases.founders.slab1.title': 'Ideeën komen als je handen vol zitten.',
 	'usecases.founders.slab1.desc': 'Push-to-talk dicteren maakt van een vluchtige gedachte schone tekst op het moment dat hij opkomt — een prompt voor ChatGPT of Cursor, een notitie, een e-mail — zonder notitieboekje en zonder van app te wisselen.',
@@ -420,9 +420,9 @@ const nl: Dictionary = {
 	'usecases.students.meta.desc': 'Neem toegestane colleges op, maak transcripties en stel vragen over het materiaal op je Mac.',
 	'usecases.students.eyebrow': 'Voor studenten en docenten',
 	'usecases.students.title': 'Elk college vastgelegd, doorzoekbaar en klaar om uit te leren.',
-	'usecases.students.subtitle': 'Echo Scribe neemt het college op, beantwoordt vragen uit je eigen aantekeningen en houdt elk vak geordend zonder handmatig archiveren.',
+	'usecases.students.subtitle': 'Tucky neemt het college op, beantwoordt vragen uit je eigen aantekeningen en houdt elk vak geordend zonder handmatig archiveren.',
 	'usecases.students.hubdesc': 'Colleges en studiesessies opgenomen, samengevat en doorzoekbaar nog voordat het tentamenleren begint.',
-	'usecases.students.explorelink': 'Zie hoe studenten Echo Scribe gebruiken',
+	'usecases.students.explorelink': 'Zie hoe studenten Tucky gebruiken',
 	'usecases.students.slab1.eyebrow': 'Het probleem',
 	'usecases.students.slab1.title': 'Je kunt niet alles opschrijven en tegelijk luisteren.',
 	'usecases.students.slab1.desc': 'Gebruik opnameregels bij ondersteunde online apps. Start bij fysieke colleges zelf de microfoonopname nadat je toestemming hebt gekregen. Controleer het transcript en wijs het cursusproject toe.',
@@ -514,7 +514,7 @@ const nl: Dictionary = {
 	// Use cases (landing section)
 	'usecases.landing.eyebrow': 'Toepassingen',
 	'usecases.landing.title': 'Waar het in je dag past.',
-	'usecases.landing.subtitle': 'Eén tool, heel veel klussen. Dit is wat Echo Scribe uiteindelijk voor mensen doet.',
+	'usecases.landing.subtitle': 'Eén tool, heel veel klussen. Dit is wat Tucky uiteindelijk voor mensen doet.',
 	'usecases.landing.card1.title': 'AI prompten',
 	'usecases.landing.card1.desc': 'Praat je prompts in ChatGPT, Claude of Cursor. Ruwe formuleringen zijn prima — het gaat om snelheid.',
 	'usecases.landing.card2.title': 'Sales- en discoverygesprekken',
@@ -538,7 +538,7 @@ const nl: Dictionary = {
 	'privacy.landing.card2.title': 'Werkt volledig offline',
 	'privacy.landing.card2.desc': 'Transcriptie en lokale AI werken offline nadat de modellen zijn gedownload. Google Drive, downloads, updates en externe AI-diensten hebben een verbinding nodig.',
 	'privacy.landing.card3.title': 'Geen account nodig',
-	'privacy.landing.card3.desc': 'De kernfuncties hebben geen Echo Scribe-account nodig. Voor optioneel delen via Google Drive verbind je je Google-account.',
+	'privacy.landing.card3.desc': 'De kernfuncties hebben geen Tucky-account nodig. Voor optioneel delen via Google Drive verbind je je Google-account.',
 	'privacy.landing.card4.title': 'Jouw data, jouw map',
 	'privacy.landing.card4.desc': 'Notities staan in een SQLite-bestand op je Mac. Exporteer het, maak er een back-up van of verwijder het — altijd volledige controle.',
 
@@ -577,9 +577,9 @@ const nl: Dictionary = {
 	'authors.subtitle': 'Maak kennis met de schrijvers achter onze blog',
 	'authors.meta.title': 'Blogauteurs',
 	'authors.meta.description':
-		'Maak kennis met de schrijvers achter Echo Scribe — het team dat gidsen deelt over privétranscriptie, offline dicteren en lokale AI voor je vergaderingen en notities.',
+		'Maak kennis met de schrijvers achter Tucky — het team dat gidsen deelt over privétranscriptie, offline dicteren en lokale AI voor je vergaderingen en notities.',
 	'authors.detail.meta.description':
-		'Artikelen en gidsen van {name} over privétranscriptie, offline dicteren en lokale AI — van de blog van Echo Scribe.',
+		'Artikelen en gidsen van {name} over privétranscriptie, offline dicteren en lokale AI — van de blog van Tucky.',
 	'authors.detail.eyebrow': 'Auteur',
 	'authors.detail.posts.count': '{count} artikelen',
 	'authors.detail.posts.count.one': '1 artikel',
@@ -589,7 +589,7 @@ const nl: Dictionary = {
 	'authors.detail.about.body2':
 		'Verwacht praktische gidsen in plaats van beschouwingen: dicteren in elke app op je Mac, een vergadering opnemen en transcriberen zonder die aan de server van iemand anders te geven, en wat lokale AI-modellen tegenwoordig op een laptop kunnen waar vroeger de cloud voor nodig was.',
 	'authors.detail.explore.eyebrow': 'Het product achter de blog',
-	'authors.detail.explore.title': 'Echo Scribe — gratis, privé spraak naar tekst voor je Mac',
+	'authors.detail.explore.title': 'Tucky — gratis, privé spraak naar tekst voor je Mac',
 	'authors.detail.explore.body':
 		'Druk op een sneltoets, praat, en verzorgde tekst belandt waar je cursor staat. Opnemen, transcriberen en samenvatten gebeuren op je eigen machine — geen account, geen cloud.',
 	'authors.empty': 'Nog geen auteurs',
@@ -619,20 +619,20 @@ const nl: Dictionary = {
 	'footer.privacy.policy': 'Privacybeleid',
 	'footer.cookie.policy': 'Cookiebeleid',
 	'footer.legal.notice': 'Juridische kennisgeving',
-	'footer.copyright': '© {year} Echo Scribe. Alle rechten voorbehouden.',
+	'footer.copyright': '© {year} Tucky. Alle rechten voorbehouden.',
 	'footer.powered.by': 'Mogelijk gemaakt door Recursive Solutions',
 
-	// Get Echo Scribe / support (route: /contact)
+	// Get Tucky / support (route: /contact)
 	'support.eyebrow': 'Gratis · Geen account',
-	'support.heading': 'Haal Echo Scribe',
+	'support.heading': 'Haal Tucky',
 	'support.subtitle':
 		'Eén regel in Terminal en je draait. Geen aanmelding, geen licentiesleutel, niets waarvoor je een account hoeft aan te maken — en elke opname blijft op je Mac.',
 	'support.meta.description':
-		'Installeer Echo Scribe gratis op je Mac met één Terminal-commando — geen account, geen aanmelding. Windows-versie, systeemvereisten en supportlinks.',
+		'Installeer Tucky gratis op je Mac met één Terminal-commando — geen account, geen aanmelding. Windows-versie, systeemvereisten en supportlinks.',
 	'support.help.eyebrow': 'Support',
 	'support.help.heading': 'Hulp nodig?',
 	'support.help.subtitle':
-		'Echo Scribe wordt in de openbaarheid gebouwd. Bugs en functieverzoeken gaan rechtstreeks naar de tracker, waar je kunt zien wat er al gemeld is en waaraan gewerkt wordt.',
+		'Tucky wordt in de openbaarheid gebouwd. Bugs en functieverzoeken gaan rechtstreeks naar de tracker, waar je kunt zien wat er al gemeld is en waaraan gewerkt wordt.',
 	'support.help.issues.title': 'Meld een bug of vraag een functie aan',
 	'support.help.issues.desc':
 		'Open een issue op GitHub. Vermeld je macOS-versie en wat je deed toen het misging — zo is het sneller opgelost.',
@@ -645,13 +645,13 @@ const nl: Dictionary = {
 	'support.help.source.desc':
 		'Het installatiescript en de app zelf zijn openbaar. Kijk voordat je het draait — bij een tool die alles hoort wat je zegt, is dat precies het punt.',
 	'support.help.source.cta': 'Blader door de repo',
-	'support.faq.heading': 'Echo Scribe installeren',
+	'support.faq.heading': 'Tucky installeren',
 	'support.faq1.q': 'Wat doet de installatieopdracht eigenlijk?',
 	'support.faq1.a': 'De opdracht downloadt en voert install.sh uit het openbare repository uit en installeert de app in Programma’s. Bekijk het script eerst. AI-modellen vereisen extra opslagruimte en een internetverbinding.',
 	'support.faq2.q': 'Welke Macs worden ondersteund?',
 	'support.faq2.a': 'Het huidige installatieprogramma vereist macOS 14 of nieuwer en Apple Silicon. Intel-Macs worden geweigerd. Reserveer meerdere GB voor de gekozen spraak- en taalmodellen.',
 	'support.faq3.q': 'Kan ik het met Homebrew installeren?',
-	'support.faq3.a': 'Nee. Er is geen Homebrew-formule en brew install echo-scribe vindt niets — de Terminal-opdracht op deze pagina is de enige ondersteunde manier om op macOS te installeren. Kom je elders een pakket tegen dat zegt Echo Scribe te zijn, dan komt het niet van ons.',
+	'support.faq3.a': 'Nee. Er is geen Homebrew-formule en brew install tucky vindt niets — de Terminal-opdracht op deze pagina is de enige ondersteunde manier om op macOS te installeren. Kom je elders een pakket tegen dat zegt Tucky te zijn, dan komt het niet van ons.',
 	'support.faq4.q': 'Hoe werk ik bij naar een nieuwe versie?',
 	'support.faq4.a': 'Voer dezelfde installatieopdracht opnieuw uit. Die vervangt de app door de huidige versie en behoudt je bestaande opnamen, transcripties en instellingen. De releasepagina vermeldt wat er per versie is veranderd, dus een blik erop voor het bijwerken loont.',
 	'support.faq5.q': 'Waar staan mijn gegevens en hoe verwijder ik ze?',
@@ -728,10 +728,10 @@ const nl: Dictionary = {
 
 	// Features hub — long-form + FAQ
 	'features.hub.intro1':
-		'Echo Scribe begint bij het eenvoudigste: spraak naar tekst, overal op je Mac. Druk op een sneltoets, praat, en schone tekst belandt bij je cursor — in een AI-chat, een e-mail, een document of je editor. Van daaruit bouwt het zich op: vergaderingen worden opgenomen met een live transcript en gespreksbegeleiding, schermdoorlopen leggen vast wat makkelijker te laten zien dan uit te leggen is, en alles belandt in één doorzoekbaar geheugen.',
+		'Tucky begint bij het eenvoudigste: spraak naar tekst, overal op je Mac. Druk op een sneltoets, praat, en schone tekst belandt bij je cursor — in een AI-chat, een e-mail, een document of je editor. Van daaruit bouwt het zich op: vergaderingen worden opgenomen met een live transcript en gespreksbegeleiding, schermdoorlopen leggen vast wat makkelijker te laten zien dan uit te leggen is, en alles belandt in één doorzoekbaar geheugen.',
 	'features.hub.intro2':
 		'Omdat elk model op het apparaat draait, zijn er geen cloudkosten per gebruiker, geen wachttijden voor uploads en geen leverancier die je transcripten vasthoudt. De functies hieronder bouwen op elkaar voort: spreek het uit, leg het vast, onthoud het — en laat samenvattingen, chat en terugblikken het archief daarna in antwoorden veranderen.',
-	'features.hub.faq1.q': 'Stuurt Echo Scribe mijn opnamen naar de cloud?',
+	'features.hub.faq1.q': 'Stuurt Tucky mijn opnamen naar de cloud?',
 	'features.hub.faq1.a': 'Transcriptie en ingebouwde AI werken lokaal. Exports, Google Drive of toegang via MCP voor externe AI kunnen inhoud buiten de app delen. Dan gelden de verwerkings- en opslagregels van dat hulpmiddel.',
 	'features.hub.faq2.q': 'Heb ik een abonnement of internetverbinding nodig?',
 	'features.hub.faq2.a': 'Transcriptie en lokale AI werken offline nadat de modellen zijn gedownload. Google Drive, downloads, updates en externe AI-diensten hebben een verbinding nodig.',
@@ -740,14 +740,14 @@ const nl: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'Bij het vastleggen begint het verhaal — en het begint met je stem. Push-to-talk dicteren maakt overal op de Mac schone tekst van spraak, met een triggerwoord dat op commando opmaakt wat je zegt: “echo, maak hier een e-mail van”. Daarna komen vergaderingen erbij: Echo Scribe merkt wanneer een gesprek begint, neemt systeem- en microfoongeluid op, en laat een live transcript meelopen met optionele gespreksbegeleiding.',
+		'Bij het vastleggen begint het verhaal — en het begint met je stem. Push-to-talk dicteren maakt overal op de Mac schone tekst van spraak, met een triggerwoord dat op commando opmaakt wat je zegt: “echo, maak hier een e-mail van”. Daarna komen vergaderingen erbij: Tucky merkt wanneer een gesprek begint, neemt systeem- en microfoongeluid op, en laat een live transcript meelopen met optionele gespreksbegeleiding.',
 	'features.capture.intro2': 'Pas sneltoets, microfoon, woordenboek en gesproken correcties aan. Je activeringswoord kan notities of taken maken, e-mails of lijsten opmaken en ondersteunde acties uitvoeren, zoals apps of websites openen. Hiervoor wordt het aparte lokale taalmodel gebruikt.',
 	'features.capture.faq1.q': 'Hoe werkt de automatische vergaderherkenning?',
 	'features.capture.faq1.a':
-		'Echo Scribe let op actieve gesprekken en kan beginnen met opnemen zodra een vergadering start, waarbij beide kanten van het gesprek worden vastgelegd. Jij bepaalt per app of er altijd wordt opgenomen, eerst wordt gevraagd of nooit wordt opgenomen — en het stopt vanzelf als het stil wordt.',
+		'Tucky let op actieve gesprekken en kan beginnen met opnemen zodra een vergadering start, waarbij beide kanten van het gesprek worden vastgelegd. Jij bepaalt per app of er altijd wordt opgenomen, eerst wordt gevraagd of nooit wordt opgenomen — en het stopt vanzelf als het stil wordt.',
 	'features.capture.faq2.q': 'Kan ik systeemgeluid en mijn microfoon tegelijk opnemen?',
 	'features.capture.faq2.a':
-		'Ja. Echo Scribe legt zowel de systeemuitvoer (iedereen anders in het gesprek) als je microfoon vast, zodat het transcript het hele gesprek weergeeft en niet alleen jouw kant.',
+		'Ja. Tucky legt zowel de systeemuitvoer (iedereen anders in het gesprek) als je microfoon vast, zodat het transcript het hele gesprek weergeeft en niet alleen jouw kant.',
 	'features.capture.faq3.q': 'Is dicteren nauwkeurig in een rumoerige omgeving?',
 	'features.capture.faq3.a':
 		'Dicteren haalt de audio vóór transcriptie door een RNNoise-opschoning op het apparaat, zodat achtergrondgebrom en toetsenbordgeklik eruit gefilterd zijn voordat het lokale spraakmodel ze ziet. Zo blijven transcripten scherp.',
@@ -757,7 +757,7 @@ const nl: Dictionary = {
 	'features.organize.intro2': 'Stel vragen over je opgeslagen werk en bekijk de bronnen bij antwoorden. Optionele dagoverzichten worden nog verbeterd. Exporteer notities of verbind een compatibel AI-hulpmiddel via MCP voor diepere prompt- en workflowanalyses; dat hulpmiddel voert de analyse uit.',
 	'features.organize.faq1.q': 'Kan ik al mijn eerdere vergaderingen en notities doorzoeken?',
 	'features.organize.faq1.a':
-		'Ja. Alles wat Echo Scribe vastlegt wordt op het apparaat geïndexeerd, dus je kunt direct in elk transcript, elke notitie en elke samenvatting zoeken — en vragen stellen in natuurlijke taal in plaats van naar trefwoorden te gissen.',
+		'Ja. Alles wat Tucky vastlegt wordt op het apparaat geïndexeerd, dus je kunt direct in elk transcript, elke notitie en elke samenvatting zoeken — en vragen stellen in natuurlijke taal in plaats van naar trefwoorden te gissen.',
 	'features.organize.faq2.q': 'Hoe worden taken en actiepunten aangemaakt?',
 	'features.organize.faq2.a': 'Maak een notitie of taak met een spraakopdracht en noem het project. Samenvattingen kunnen actiepunten herkennen; controleer ze voordat je er taken van maakt. Vink afgeronde taken af in de lijst.',
 	'features.organize.faq3.q': 'Heb ik internet nodig om mijn notities te ordenen?',
@@ -774,7 +774,7 @@ const nl: Dictionary = {
 		'Ja. In de editor kun je transcripten en opnamen corrigeren, inkorten en herschikken zodat de eindversie prettig leest voordat je hem deelt of exporteert.',
 	'features.editor.faq2.q': 'Naar welke formaten kan ik exporteren?',
 	'features.editor.faq2.a':
-		'Echo Scribe exporteert je notities en opnamen naar standaardformaten die je zo in je bestaande tools kunt slepen, dus geen lock-in en niets wat je elders opnieuw moet maken.',
+		'Tucky exporteert je notities en opnamen naar standaardformaten die je zo in je bestaande tools kunt slepen, dus geen lock-in en niets wat je elders opnieuw moet maken.',
 	'features.editor.faq3.q': 'Worden mijn bewerkingen in de cloud opgeslagen?',
 	'features.editor.faq3.a':
 		'Nee. Bewerken gebeurt lokaal op je Mac, en exports zijn bestanden die jij beheert. Er wordt niets geüpload tenzij je het geëxporteerde bestand zelf ergens naartoe stuurt.',
@@ -785,36 +785,36 @@ const nl: Dictionary = {
 		'Omdat het hele platform op het apparaat draait, is bijwerken een nieuwe download in plaats van een migratie, en blijft je datamodel onder jouw beheer. Er is geen beheerconsole in de cloud van iemand anders die bepaalt wat jij mag bewaren.',
 	'features.platform.faq1.q': 'Kan ik sneltoetsen en opnamegedrag aanpassen?',
 	'features.platform.faq1.a':
-		'Ja. De instellingen geven je controle over dicteersneltoetsen, welke modellen draaien, hoe vergaderingen worden herkend en hoe opnamen starten en stoppen, zodat Echo Scribe bij je gewoontes past.',
+		'Ja. De instellingen geven je controle over dicteersneltoetsen, welke modellen draaien, hoe vergaderingen worden herkend en hoe opnamen starten en stoppen, zodat Tucky bij je gewoontes past.',
 	'features.platform.faq2.q': 'Hoe worden updates en nieuwe modellen afgehandeld?',
 	'features.platform.faq2.a': 'Werk de app bij met de installatieopdracht of de updatefuncties. Gedownloade modellen worden lokaal hergebruikt. De opslag hangt af van je keuze en is niet standaard 2 GB.',
-	'features.platform.faq3.q': 'Welke privacyopties biedt Echo Scribe?',
+	'features.platform.faq3.q': 'Welke privacyopties biedt Tucky?',
 	'features.platform.faq3.a':
 		'Omdat de verwerking standaard lokaal is, is privacy het uitgangspunt en geen extraatje. Jij bepaalt wat er wordt vastgelegd, wat er bewaard blijft en of er ooit iets van het apparaat af gaat.',
 
 	// Use cases hub — long-form + FAQ
 	'usecases.hub.intro1':
-		'Echo Scribe past zich aan het werk aan dat je al doet. Consultants houden klantgesprekken uit de cloud, salesteams krijgen live gespreksbegeleiding en directe opvolging, oprichters praten hun prompts de AI in en nemen productrondleidingen op, en studenten bouwen een doorzoekbaar verslag van elk college — allemaal met dezelfde lokaal-eerst opnamecyclus.',
+		'Tucky past zich aan het werk aan dat je al doet. Consultants houden klantgesprekken uit de cloud, salesteams krijgen live gespreksbegeleiding en directe opvolging, oprichters praten hun prompts de AI in en nemen productrondleidingen op, en studenten bouwen een doorzoekbaar verslag van elk college — allemaal met dezelfde lokaal-eerst opnamecyclus.',
 	'usecases.hub.intro2':
 		'De rode draad is een privégeheugen op je apparaat: wat je rol ook is, de vergaderingen waarin je zit en de ideeën die je hardop uitspreekt worden een geordende, doorzoekbare kennisbank die van jou is. Verken de routes hieronder om te zien hoe elk daarvan bij een specifieke workflow past.',
-	'usecases.hub.faq1.q': 'Voor wie is Echo Scribe?',
+	'usecases.hub.faq1.q': 'Voor wie is Tucky?',
 	'usecases.hub.faq1.a':
 		'Voor iedereen wiens werk via gesprekken en opnamen loopt — consultants, salesteams, oprichters, studenten en kenniswerkers — die die momenten wil vastleggen en ordenen zonder de data aan een clouddienst te geven.',
 	'usecases.hub.faq2.q': 'Heb ik voor elke toepassing een andere opzet nodig?',
 	'usecases.hub.faq2.a':
 		'Nee. Dezelfde cyclus van vastleggen, ordenen en bewerken drijft elke toepassing aan. De workflows verschillen in accent — vertrouwelijkheid van klanten, snelheid van opvolging, ideeën vastleggen, studieaantekeningen — maar de onderliggende privémotor op je apparaat is dezelfde.',
-	'usecases.hub.faq3.q': 'Kunnen teams Echo Scribe gebruiken, of is het alleen voor individuen?',
+	'usecases.hub.faq3.q': 'Kunnen teams Tucky gebruiken, of is het alleen voor individuen?',
 	'usecases.hub.faq3.a':
-		'Echo Scribe draait lokaal op de Mac van elke persoon, dus wie alleen werkt haalt er in zijn eentje al alles uit, en teams krijgen dezelfde privéopname zonder een gedeelde cloudopslag die gevoelige transcripten bewaart.',
+		'Tucky draait lokaal op de Mac van elke persoon, dus wie alleen werkt haalt er in zijn eentje al alles uit, en teams krijgen dezelfde privéopname zonder een gedeelde cloudopslag die gevoelige transcripten bewaart.',
 
 	// /loops — the work memory loop page
 	'loops.meta.title': 'De werkgeheugencyclus: vastleggen en ordenen',
 	'loops.meta.desc':
-		'Hoe Echo Scribe vergaderingen, schermen en losse gedachten omzet in een privé, doorzoekbaar geheugen van je werk — vastleggen, ordenen, zien, verbeteren.',
+		'Hoe Tucky vergaderingen, schermen en losse gedachten omzet in een privé, doorzoekbaar geheugen van je werk — vastleggen, ordenen, zien, verbeteren.',
 	'loops.hero.eyebrow': 'De werkgeheugencyclus',
 	'loops.hero.title': 'Je werk, vastgelegd als een cyclus — niet als een stapel notities.',
 	'loops.hero.subtitle':
-		'Echo Scribe maakt van alles wat je zegt, opneemt en besluit een levend beeld van je werk, volledig op je Mac. Dit is de cyclus die dat mogelijk maakt.',
+		'Tucky maakt van alles wat je zegt, opneemt en besluit een levend beeld van je werk, volledig op je Mac. Dit is de cyclus die dat mogelijk maakt.',
 	'loops.intro1':
 		'De meeste tools leggen fragmenten vast: hier een opname, daar een notitie, een taak in weer een andere app. In de gaten daartussen gaan besluiten verloren en sterven opvolgpunten in stilte. De werkgeheugencyclus dicht die gaten door vastleggen, ordenen, inzicht en actie als één doorlopende cyclus te behandelen in plaats van vier losstaande klusjes.',
 	'loops.intro2':
@@ -822,7 +822,7 @@ const nl: Dictionary = {
 	'loops.step1.label': '01 / VASTLEGGEN',
 	'loops.step1.title': 'Houd het moment vast',
 	'loops.step1.body':
-		'Praat gewoon, neem een vergadering op of leg je scherm vast zonder je ritme te breken. Echo Scribe herkent gesprekken automatisch, neemt systeem- en microfoongeluid op en schoont het op je apparaat op voordat het transcribeert — zo is het ruwe materiaal er altijd wanneer je het nodig hebt.',
+		'Praat gewoon, neem een vergadering op of leg je scherm vast zonder je ritme te breken. Tucky herkent gesprekken automatisch, neemt systeem- en microfoongeluid op en schoont het op je apparaat op voordat het transcribeert — zo is het ruwe materiaal er altijd wanneer je het nodig hebt.',
 	'loops.step2.label': '02 / ORDENEN',
 	'loops.step2.title': 'Maak het bruikbaar',
 	'loops.step2.body': 'Gebruik je activeringswoord om een notitie of taak te maken, noem het project en vind die later in je bibliotheek.',
@@ -849,7 +849,7 @@ const nl: Dictionary = {
 	'loops.explore.usecases.desc': 'Zie hoe consultants, salesteams, oprichters en studenten de cyclus draaien.',
 	'loops.faq1.q': 'Wat is de werkgeheugencyclus?',
 	'loops.faq1.a':
-		'Het is de cyclus waar Echo Scribe je werk doorheen haalt: vastleggen wat er gezegd of getoond wordt, het ordenen tot doorzoekbare kennis, zien wat ertoe doet, en met die context handelen — en dan weer opnieuw. Elke ronde maakt je privéwerkgeheugen completer.',
+		'Het is de cyclus waar Tucky je werk doorheen haalt: vastleggen wat er gezegd of getoond wordt, het ordenen tot doorzoekbare kennis, zien wat ertoe doet, en met die context handelen — en dan weer opnieuw. Elke ronde maakt je privéwerkgeheugen completer.',
 	'loops.faq2.q': 'Draait de cyclus in de cloud?',
 	'loops.faq2.a': 'Transcriptie en ingebouwde AI werken lokaal. Exports, Google Drive of toegang via MCP voor externe AI kunnen inhoud buiten de app delen. Dan gelden de verwerkings- en opslagregels van dat hulpmiddel.',
 	'loops.faq3.q': 'Hoe verschilt dit van een notitie-app of een transcriptietool?',

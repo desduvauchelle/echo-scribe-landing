@@ -48,7 +48,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/[locale]/blog/[slug]/page.tsx` | Blog detail with `getBlogPost()` + local `RelatedPosts` |
 | `src/app/[locale]/blog/authors/page.tsx` | Author index page |
 | `src/app/[locale]/blog/authors/[slug]/page.tsx` | Author detail with bio + their posts |
-| `src/app/[locale]/contact/page.tsx` | "Get Echo Scribe" — install command first, GitHub support second. **No form** (see Adoption path below) |
+| `src/app/[locale]/contact/page.tsx` | "Get Tucky" — install command first, GitHub support second. **No form** (see Adoption path below) |
 | `src/app/[locale]/forms/[slug]/page.tsx` | Dynamic form page — renders any form by slug |
 | `src/app/[locale]/privacy/page.tsx` | Privacy policy |
 | `src/app/[locale]/legal/page.tsx` | Terms of service |
@@ -166,9 +166,9 @@ const dict = await getDictionary(locale)
 
 ## Adoption path (read before adding a form or a "contact us" CTA)
 
-**Echo Scribe is free, needs no account, and installs with one Terminal line. There is nothing to ask us for before using it — so the site has no contact form, by design.**
+**Tucky is free, needs no account, and installs with one Terminal line. There is nothing to ask us for before using it — so the site has no contact form, by design.**
 
-The scaffold ships a generic "Contact Us" form (slug `contact-form`: name / email / message). It ran on `/contact` and took **0 submissions across 44 sessions**, because it does not match how anyone adopts this product. It was removed on 2026-08-03. `/contact` is now "Get Echo Scribe": the install command first, GitHub support second.
+The scaffold ships a generic "Contact Us" form (slug `contact-form`: name / email / message). It ran on `/contact` and took **0 submissions across 44 sessions**, because it does not match how anyone adopts this product. It was removed on 2026-08-03. `/contact` is now "Get Tucky": the install command first, GitHub support second.
 
 **The conversion metric is `install_copy` and `app_download`, not form submissions.** Both carry a `location` param (`EventLocation` in `GoogleAnalytics.tsx`) so intent can be segmented by page. Mark both as key events in GA4. If you are ever asked why "conversions" are zero, check that the metric is not still pointed at `form_submit`.
 
@@ -368,7 +368,7 @@ the blocker — do not go looking for one again.** Verified live, every URL:
 **What WAS fixed in the repo (2026-08-30), and why each mattered:**
 
 - **Five ProductPages shipped their H1 slogan as `<title>`.** `/features/capture` was literally
-  `<title>It all starts with your voice. | Echo Scribe</title>`; `/use-cases` was "Built for the way
+  `<title>It all starts with your voice. | Tucky</title>`; `/use-cases` was "Built for the way
   you actually work."; `/blog/authors` was the bare word **"Authors"** with no brand at all (a
   `brand: false` meant for the homepage). Five sibling pages already had a `*.meta.title` key written
   for exactly this reason — the convention existed and half the section missed it. Titles that name no

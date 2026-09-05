@@ -70,7 +70,7 @@ export function homeJsonLd(locale: string, dict: Dictionary) {
 				name: SITE_NAME,
 				url: SITE_URL,
 				description: dict['home.meta.description'],
-				logo: `${SITE_URL}/icon.jpeg`,
+				logo: `${SITE_URL}/tucky.jpeg`,
 				sameAs: [GITHUB_URL],
 			},
 			{
@@ -90,7 +90,7 @@ export function homeJsonLd(locale: string, dict: Dictionary) {
 				url: buildUrl('', locale),
 				applicationCategory: 'BusinessApplication',
 				operatingSystem: 'macOS',
-				// The adoption page ("Get Echo Scribe"): install command + installers.
+				// The adoption page ("Get Tucky"): install command + installers.
 				downloadUrl: buildUrl('/contact', locale),
 				offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 				publisher: { '@id': ORG_ID },

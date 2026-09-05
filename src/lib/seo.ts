@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { defaultLocale } from '@/i18n/config'
 import { SITE_URL, buildUrl, buildAlternates } from './sitemap-shared'
 
-export const SITE_NAME = 'Echo Scribe'
+export const SITE_NAME = 'Tucky'
 
 /**
  * Search-snippet bounds. Google renders roughly 160 characters of a

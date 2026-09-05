@@ -32,8 +32,8 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 					<ScrollReveal y={20} duration={0.7} start="top 95%">
 						<div className="mb-7 flex justify-center">
 							<Image
-								src="/icon.jpeg"
-								alt="Echo Scribe logo"
+								src="/tucky.jpeg"
+								alt="Tucky logo"
 								width={88}
 								height={88}
 								priority
@@ -106,7 +106,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 					<div className="mx-auto mt-12 max-w-[880px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
 						<iframe
 							src="https://www.youtube.com/embed/RVOeyxoYHV0?si=LLCA1b7lmMBJkK0L"
-							title="Echo Scribe — YouTube"
+							title="Tucky — YouTube"
 							width={560}
 							height={315}
 							className="block aspect-video h-auto w-full border-0"

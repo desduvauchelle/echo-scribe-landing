@@ -6,7 +6,7 @@
 }
 @plugin '@tailwindcss/typography';
 
-/* Echo Scribe palette — ported from the original landing page (desduvauchelle.github.io/echo-scribe) */
+/* Tucky palette — ported from the original landing page (desduvauchelle.github.io/echo-scribe) */
 @plugin 'daisyui/theme' {
 	name: 'light';
 	default: true;

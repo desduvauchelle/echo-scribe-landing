@@ -78,4 +78,14 @@ describe('translation dictionaries', () => {
 			}
 		}
 	})
+
+	it('uses Tucky throughout visible product copy', () => {
+		for (const [locale, dict] of Object.entries({ en: enDict, ...dicts })) {
+			for (const [key, value] of Object.entries(dict)) {
+				expect(`${locale} ${key}: ${/Echo[ -]?Scribe|EchoScribe/i.test(value) ? 'OLD BRAND' : 'Tucky'}`).toBe(
+					`${locale} ${key}: Tucky`,
+				)
+			}
+		}
+	})
 })

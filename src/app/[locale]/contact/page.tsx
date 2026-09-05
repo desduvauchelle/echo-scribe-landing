@@ -11,7 +11,7 @@ import { InstallBox } from '@/components/landing/InstallBox'
 const GITHUB_URL = 'https://github.com/desduvauchelle/echo-scribe'
 
 /**
- * Echo Scribe is free, needs no account, and installs with one Terminal line —
+ * Tucky is free, needs no account, and installs with one Terminal line —
  * so there is nothing to "get in touch" about before using it. This page is the
  * adoption path, not a contact form: install command first, support second.
  *
@@ -66,7 +66,7 @@ export async function generateMetadata({
 	})
 }
 
-export default async function GetEchoScribePage({
+export default async function GetTuckyPage({
 	params,
 }: {
 	params: Promise<{ locale: string }>

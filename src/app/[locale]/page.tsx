@@ -28,7 +28,7 @@ export async function generateMetadata({
 	// Canonical is the (locale-aware) site root — `buildPageMetadata` emits it
 	// self-referencingly, so `/` never points anywhere but at itself.
 	//
-	// The title is branded like every other page (`… | Echo Scribe`) rather than
+	// The title is branded like every other page (`… | Tucky`) rather than
 	// being a hand-written brand string. The homepage previously used
 	// `brand: false` with the brand baked into each locale's value, which meant
 	// every translation re-invented the branding AND ran 59–72 chars — past

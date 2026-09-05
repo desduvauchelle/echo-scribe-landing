@@ -14,8 +14,8 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: string }) {
 				<div className="grid grid-cols-1 gap-8 md:grid-cols-4">
 					<div>
 						<Link href={localizedPath('/', locale)} className="mb-2 flex items-center gap-2.5 font-bold">
-							<Image src="/icon.jpeg" alt="Echo Scribe" width={26} height={26} className="rounded-md" />
-							{'Echo Scribe'}
+							<Image src="/tucky.jpeg" alt="Tucky" width={26} height={26} className="rounded-md" />
+							{'Tucky'}
 						</Link>
 						<p className="text-sm text-base-content/60">{dict['footer.tagline']}</p>
 					</div>

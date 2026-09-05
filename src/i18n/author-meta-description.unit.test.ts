@@ -22,9 +22,9 @@ describe('author detail meta description', () => {
 		null,
 		'',
 		'Maker.',
-		'Founder of Echo Scribe.',
+		'Founder of Tucky.',
 		'Maker of small Mac tools and local AI things.',
-		'Denis builds Echo Scribe, a private voice-to-text app for the Mac, and writes about local AI, dictation, and getting thoughts out of your head faster than you can type them.',
+		'Denis builds Tucky, a private voice-to-text app for the Mac, and writes about local AI, dictation, and getting thoughts out of your head faster than you can type them.',
 	]
 
 	for (const [locale, dict] of Object.entries(dictionaries)) {

@@ -13,8 +13,8 @@ function GitHubLink() {
 	return (
 		<a
 			href="https://github.com/desduvauchelle/echo-scribe"
-			aria-label="Echo Scribe on GitHub"
-			title="Echo Scribe on GitHub"
+			aria-label="Tucky on GitHub"
+			title="Tucky on GitHub"
 			className="btn btn-ghost btn-square shrink-0 text-base-content/70 hover:text-primary"
 		>
 			<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -44,8 +44,8 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 		<header className="navbar sticky top-0 z-50 border-b border-base-content/10 bg-base-100/85 backdrop-blur-xl">
 			<div className="container mx-auto flex items-center justify-between px-4">
 				<Link href={localizedPath('/', locale)} className="flex items-center gap-2.5 text-[17px] font-bold tracking-[-0.02em]">
-					<Image src="/icon.jpeg" alt="Echo Scribe app icon" width={30} height={30} className="rounded-[7px]" />
-					{'Echo Scribe'}
+					<Image src="/tucky.jpeg" alt="Tucky app icon" width={30} height={30} className="rounded-[7px]" />
+					{'Tucky'}
 				</Link>
 
 				{/* Desktop nav */}

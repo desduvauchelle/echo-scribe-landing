@@ -92,10 +92,10 @@ describe('seo', () => {
 			const bare = buildPageMetadata({
 				path: '',
 				locale: 'en',
-				title: 'Echo Scribe — Voice to Text',
+				title: 'Tucky — Voice to Text',
 				brand: false,
 			})
-			expect(bare.title).toEqual({ absolute: 'Echo Scribe — Voice to Text' })
+			expect(bare.title).toEqual({ absolute: 'Tucky — Voice to Text' })
 		})
 
 		it('omits hreflang alternates in single-lang mode', async () => {
@@ -113,9 +113,9 @@ describe('seo', () => {
 	// are written for the page, not the SERP, so they hit both ends.
 
 	describe('composeMetaDescription', () => {
-		const BIO = 'Founder of Echo Scribe.'
+		const BIO = 'Founder of Tucky.'
 		const BLURB =
-			'Posts and guides by Denis Duvauchelle on private transcription, offline dictation, and local AI — from the Echo Scribe blog.'
+			'Posts and guides by Denis Duvauchelle on private transcription, offline dictation, and local AI — from the Tucky blog.'
 
 		it('tops a too-short bio up past the minimum, keeping the bio first', async () => {
 			const { composeMetaDescription, META_DESCRIPTION_MIN } = await load()
@@ -141,7 +141,7 @@ describe('seo', () => {
 		it('uses a bio that already fills the snippet verbatim', async () => {
 			const { composeMetaDescription } = await load()
 			const bio =
-				'Denis builds Echo Scribe, a private voice-to-text app for the Mac, and writes about local AI.'
+				'Denis builds Tucky, a private voice-to-text app for the Mac, and writes about local AI.'
 			expect(composeMetaDescription(bio, BLURB)).toBe(bio)
 		})
 

@@ -27,7 +27,7 @@ const WAVE_BARS = [16, 34, 52, 26, 44, 60, 30, 48, 22, 38, 56, 20]
 
 export default async function OpengraphImage() {
 	const glyphs =
-		'Echo Scribe Capture everything. Understand what matters. Private AI for the workday · Runs locally, no cloud backend 0123456789'
+		'Tucky Capture everything. Understand what matters. Private AI for the workday · Runs locally, no cloud backend 0123456789'
 	const [regular, bold, extrabold] = await Promise.all([
 		loadInter(400, glyphs),
 		loadInter(700, glyphs),
@@ -130,18 +130,19 @@ export default async function OpengraphImage() {
 						<div
 							style={{
 								display: 'flex',
-								alignItems: 'flex-end',
-								justifyContent: 'center',
-								gap: '5px',
+								position: 'relative',
 								width: '58px',
 								height: '58px',
 								borderRadius: '15px',
-								backgroundImage: 'linear-gradient(160deg, #37a477, #123b2d)',
+								backgroundColor: '#f4dfc5',
+								border: '1px solid rgba(255,255,255,0.35)',
 							}}
 						>
-							<div style={{ width: '6px', height: '18px', borderRadius: '3px', backgroundColor: '#eafaf1', marginBottom: '20px' }} />
-							<div style={{ width: '6px', height: '30px', borderRadius: '3px', backgroundColor: '#eafaf1', marginBottom: '20px' }} />
-							<div style={{ width: '6px', height: '14px', borderRadius: '3px', backgroundColor: '#eafaf1', marginBottom: '20px' }} />
+							<div style={{ position: 'absolute', left: '10px', top: '8px', width: '38px', height: '40px', borderRadius: '48% 48% 44% 44%', backgroundColor: '#a95124', border: '3px solid #3b271c' }} />
+							<div style={{ position: 'absolute', left: '24px', top: '8px', width: '10px', height: '27px', borderRadius: '0 0 8px 8px', backgroundColor: '#f4dfc5' }} />
+							<div style={{ position: 'absolute', left: '18px', top: '27px', width: '7px', height: '8px', borderRadius: '999px', backgroundColor: '#fff' }} />
+							<div style={{ position: 'absolute', right: '18px', top: '27px', width: '7px', height: '8px', borderRadius: '999px', backgroundColor: '#fff' }} />
+							<div style={{ position: 'absolute', left: '26px', top: '37px', width: '7px', height: '5px', borderRadius: '999px', backgroundColor: '#3b271c' }} />
 						</div>
 						<div style={{ display: 'flex', fontSize: '32px', fontWeight: 700, letterSpacing: '-0.5px' }}>
 							{SITE_NAME}

@@ -33,20 +33,23 @@ export const BLOG_BATCH_SIZE = 1000
  *     "now" is the fastest way to get the field ignored site-wide.
  */
 export const STATIC_PAGE_LASTMOD: Record<string, string> = {
-	'': '2026-09-03',
-	'/features': '2026-09-02',
-	'/features/capture': '2026-09-02',
-	'/features/organize': '2026-09-02',
-	'/features/editor': '2026-09-02',
-	'/features/platform': '2026-09-02',
-	'/use-cases': '2026-09-02',
-	'/use-cases/consultants': '2026-09-02',
-	'/use-cases/sales-teams': '2026-09-02',
-	'/use-cases/founders': '2026-09-02',
-	'/use-cases/students': '2026-09-02',
-	'/contact': '2026-09-02',
-	'/blog/authors': '2026-08-30',
-	'/loops': '2026-08-30',
+	'': '2026-09-04',
+	'/features': '2026-09-04',
+	'/features/capture': '2026-09-04',
+	'/features/organize': '2026-09-04',
+	'/features/editor': '2026-09-04',
+	'/features/platform': '2026-09-04',
+	'/use-cases': '2026-09-04',
+	'/use-cases/consultants': '2026-09-04',
+	'/use-cases/sales-teams': '2026-09-04',
+	'/use-cases/founders': '2026-09-04',
+	'/use-cases/students': '2026-09-04',
+	'/contact': '2026-09-04',
+	'/blog/authors': '2026-09-04',
+	'/loops': '2026-09-04',
+	'/privacy': '2026-09-04',
+	'/legal': '2026-09-04',
+	'/cookies': '2026-09-04',
 }
 
 export const STATIC_PAGES = [
