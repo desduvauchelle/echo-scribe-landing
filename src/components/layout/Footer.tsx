@@ -24,6 +24,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: string }) {
 						<h4 className="mb-2 font-semibold">{dict['footer.navigation']}</h4>
 						<nav className="flex flex-col gap-1">
 							<Link href={localizedPath('/', locale)} className="text-sm text-base-content/60 hover:text-primary">{dict['nav.home']}</Link>
+							<Link href={localizedPath('/compare', 'en')} className="text-sm text-base-content/60 hover:text-primary">{dict['nav.compare']}</Link>
 							<Link href={localizedPath('/blog', locale)} className="text-sm text-base-content/60 hover:text-primary">{dict['nav.blog']}</Link>
 							<Link href={`${localizedPath('/contact', locale)}#support`} className="text-sm text-base-content/60 hover:text-primary">{dict['nav.support']}</Link>
 						</nav>

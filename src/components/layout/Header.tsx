@@ -28,6 +28,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const NAV_LINKS = [
 		{ href: localizedPath('/', locale), label: dict['nav.home'] },
 		{ href: localizedPath('/blog', locale), label: dict['nav.blog'] },
+		{ href: localizedPath('/compare', 'en'), label: dict['nav.compare'] },
 		{ href: `${localizedPath('/contact', locale)}#support`, label: dict['nav.support'] },
 	]
 
@@ -49,7 +50,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 				</Link>
 
 				{/* Desktop nav */}
-				<nav className="hidden items-center gap-6 lg:flex">
+				<nav className="hidden items-center gap-4 xl:gap-6 lg:flex">
 					<Link href={localizedPath('/', locale)} className="text-base-content/70 transition-colors hover:text-primary">
 						{dict['nav.home']}
 					</Link>
@@ -59,6 +60,7 @@ export function Header({ dict, locale }: { dict: Dictionary; locale: string }) {
 					<Link href={localizedPath('/blog', locale)} className="text-base-content/70 transition-colors hover:text-primary">
 						{dict['nav.blog']}
 					</Link>
+					<Link href={localizedPath('/compare', 'en')} className="text-base-content/70 transition-colors hover:text-primary">{dict['nav.compare']}</Link>
 					{/* Anchored at #support: the page leads with the install command,
 					    but someone clicking "Support" wants the help section. */}
 					<Link href={`${localizedPath('/contact', locale)}#support`} className="text-base-content/70 transition-colors hover:text-primary">

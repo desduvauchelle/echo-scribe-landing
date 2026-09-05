@@ -14,6 +14,7 @@ const nl: Dictionary = {
 	'usecases.landing.card7.title': 'Ontwikkelaars en promptanalyse',
 	'usecases.additional.title': 'Meer doen met je vastgelegde werk',
 	// Navigation
+	'nav.compare': 'Vergelijken',
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
 	'nav.support': 'Support',

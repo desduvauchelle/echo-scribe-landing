@@ -12,6 +12,7 @@ const en = {
 	'usecases.landing.card7.title': 'Developers and AI prompt review',
 	'usecases.additional.title': 'More ways to use your captured work',
 	// Navigation
+	'nav.compare': 'Compare',
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
 	'nav.support': 'Support',

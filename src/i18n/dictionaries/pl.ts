@@ -14,6 +14,7 @@ const pl: Dictionary = {
 	'usecases.landing.card7.title': 'Programiści i analiza promptów',
 	'usecases.additional.title': 'Więcej zastosowań zapisanej pracy',
 	// Navigation
+	'nav.compare': 'Porównaj',
 	'nav.home': 'Start',
 	'nav.blog': 'Blog',
 	'nav.support': 'Pomoc',

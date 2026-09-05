@@ -14,6 +14,7 @@ const de: Dictionary = {
 	'usecases.landing.card7.title': 'Entwicklung und Prompt-Analyse',
 	'usecases.additional.title': 'Weitere Anwendungen für erfasste Arbeit',
 	// Navigation
+	'nav.compare': 'Vergleichen',
 	'nav.home': 'Start',
 	'nav.blog': 'Blog',
 	'nav.support': 'Support',

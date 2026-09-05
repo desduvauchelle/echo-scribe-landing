@@ -14,6 +14,7 @@ const es: Dictionary = {
 	'usecases.landing.card7.title': 'Desarrolladores y revisión de prompts',
 	'usecases.additional.title': 'Más usos para tu trabajo guardado',
 	// Navigation
+	'nav.compare': 'Comparar',
 	'nav.home': 'Inicio',
 	'nav.blog': 'Blog',
 	'nav.support': 'Soporte',

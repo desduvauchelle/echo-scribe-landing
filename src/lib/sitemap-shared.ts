@@ -1,3 +1,4 @@
+import { comparisonPaths, reviewedAt } from '@/components/compare/comparisons'
 import { defaultLocale, supportedLocales, isMultiLang } from '@/i18n/config'
 
 // Canonical host for every absolute URL the site emits (canonical tags,
@@ -33,6 +34,7 @@ export const BLOG_BATCH_SIZE = 1000
  *     "now" is the fastest way to get the field ignored site-wide.
  */
 export const STATIC_PAGE_LASTMOD: Record<string, string> = {
+	...Object.fromEntries(comparisonPaths.map((path) => [path, reviewedAt])),
 	'': '2026-09-04',
 	'/features': '2026-09-04',
 	'/features/capture': '2026-09-04',
@@ -53,6 +55,7 @@ export const STATIC_PAGE_LASTMOD: Record<string, string> = {
 }
 
 export const STATIC_PAGES = [
+	...comparisonPaths,
 	'',
 	'/loops',
 	'/features',
@@ -195,13 +198,13 @@ export function buildStaticEntries(): SitemapEntry[] {
 	for (const page of STATIC_PAGES) {
 		const lastmod = STATIC_PAGE_LASTMOD[page]
 		entries.push({
-			url: buildUrl(page, defaultLocale),
+			url: buildUrl(page, comparisonPaths.includes(page) ? 'en' : defaultLocale),
 			// `T00:00:00Z` so the date-only map value parses as UTC rather than
 			// local time — otherwise a west-of-UTC build shifts every date back a day.
 			...(lastmod ? { lastModified: new Date(`${lastmod}T00:00:00Z`) } : {}),
 			changeFrequency: 'monthly',
 			priority: page === '' ? 1.0 : 0.7,
-			alternates: buildAlternates(page),
+			alternates: comparisonPaths.includes(page) ? undefined : buildAlternates(page),
 		})
 	}
 	return entries
