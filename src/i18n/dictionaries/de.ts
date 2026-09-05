@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const de: Dictionary = {
 	'awake.title': 'Halte deinen Computer per Sprache wach',
 	'awake.instruction': 'Drücke dein gewohntes Diktierkürzel und sage:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky erkennt den Befehl und hält deinen Computer für die gewünschte Dauer wach. Nutze die Funktion, während ein länger laufender Befehl oder eine Warteschlange von KI-Prompts abgearbeitet wird.',
 	'demo.transcription.shortcut': 'Ihr Tastenkürzel',
 	'usecases.landing.card9.desc': 'Erfassen Sie Ideen mit Ihrem Aktivierungswort, nennen Sie das Projekt oder erstellen Sie eine Aufgabe. Prüfen Sie die Zuordnung und markieren Sie Erledigtes.',
@@ -14,6 +14,8 @@ const de: Dictionary = {
 	'usecases.landing.card7.title': 'Entwicklung und Prompt-Analyse',
 	'usecases.additional.title': 'Weitere Anwendungen für erfasste Arbeit',
 	// Navigation
+	'mascot.greet': 'Sag Tucky Hallo',
+	'mascot.hello': 'Hallo du!',
 	'nav.compare': 'Vergleichen',
 	'nav.home': 'Start',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const de: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Schritt 2 · Das Auslösewort',
-	'features.echo.title': 'Sag „echo“ und deine Worte formatieren sich selbst.',
-	'features.echo.desc': 'Beginne ein Diktat mit deinem Auslösewort, und die KI nimmt Anweisungen entgegen. Sag „echo, formatiere das als E-Mail“ und dein Gedankenstrom kommt als saubere E-Mail heraus, in deinem Ton. Formate, Fachbegriffe und das Auslösewort selbst sind vollständig anpassbar — und einfaches Diktat bleibt sofort da, weil die KI nur einspringt, wenn du sie rufst.',
+	'features.echo.title': 'Sag „Tucky“ und deine Worte formatieren sich selbst.',
+	'features.echo.desc': 'Beginne ein Diktat mit deinem Auslösewort, und die KI nimmt Anweisungen entgegen. Sag „Tucky, formatiere das als E-Mail“ und dein Gedankenstrom kommt als saubere E-Mail heraus, in deinem Ton. Formate, Fachbegriffe und das Auslösewort selbst sind vollständig anpassbar — und einfaches Diktat bleibt sofort da, weil die KI nur einspringt, wenn du sie rufst.',
 	'features.echo.step1.title': 'Gib ihr eine Anweisung',
-	'features.echo.step1.desc': '„Echo, formatiere das als E-Mail.“ „Echo, mach Stichpunkte daraus.“',
+	'features.echo.step1.desc': '„Tucky, formatiere das als E-Mail.“ „Tucky, mach Stichpunkte daraus.“',
 	'features.echo.step2.title': 'Behalte deinen Ton',
 	'features.echo.step2.desc': 'Das Ergebnis ist so geschrieben, wie du schreibst — nicht wie eine Vorlage.',
 	'features.echo.step3.title': 'Mach es zu deinem',
@@ -165,11 +167,11 @@ const de: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Ein Moment zum Sortieren, bevor es losgeht.',
 	'features.capture.slab3.eyebrow': 'Sprache-zu-Text',
 	'features.capture.slab3.title': 'Sprich — es tippt. Sauber.',
-	'features.capture.slab3.desc': 'Kurzbefehl halten, sprechen, loslassen — geschliffener Text erscheint an deinem Cursor, in jeder App. Sag zuerst dein Auslösewort — „echo, formatiere das als E-Mail“ — und was du sagst, kommt formatiert heraus, in deinem Ton.',
+	'features.capture.slab3.desc': 'Kurzbefehl halten, sprechen, loslassen — geschliffener Text erscheint an deinem Cursor, in jeder App. Sag zuerst dein Auslösewort — „Tucky, formatiere das als E-Mail“ — und was du sagst, kommt formatiert heraus, in deinem Ton.',
 	'features.capture.slab3.step1.title': 'Push-to-Talk',
 	'features.capture.slab3.step1.desc': 'Kurzbefehl halten, sprechen, loslassen.',
-	'features.capture.slab3.step2.title': 'Das Auslösewort „echo“',
-	'features.capture.slab3.step2.desc': 'Sag „echo, mach eine Stichpunktliste daraus“ und die KI formatiert, während du sprichst.',
+	'features.capture.slab3.step2.title': 'Das Auslösewort „Tucky“',
+	'features.capture.slab3.step2.desc': 'Sag „Tucky, mach eine Stichpunktliste daraus“ und die KI formatiert, während du sprichst.',
 	'features.capture.slab3.step3.title': 'Sauberes Audio rein, sauberer Text raus',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transkribiert lokal in 25 Sprachen. Ergänzen Sie eigenes Vokabular und aktivieren Sie gesprochene Korrekturen, Satzzeichen und Füllwortbereinigung.',
 	'shot.meeting-hud.alt': 'Tucky-Live-Meetingansicht bei der Aufnahme eines Produkt-Syncs',
@@ -468,7 +470,7 @@ const de: Dictionary = {
 	'demo.echo.aria': 'Intelligentes Diktat, das grob Gesprochenes in eine formatierte E-Mail verwandelt',
 	'demo.echo.title': 'Intelligentes Diktat',
 	'demo.echo.said.label': 'Du hast gesagt',
-	'demo.echo.said.trigger': '„Echo,',
+	'demo.echo.said.trigger': '„Tucky,',
 	'demo.echo.said.rest': ' formatiere das als E-Mail… hey Sarah kurz was, das Sprint Review ist auf Donnerstag 15 Uhr verschoben, kannst du den Kalender aktualisieren und nochmal prüfen, ob der Demo-Build läuft“',
 	'demo.echo.got.label': 'Du hast bekommen',
 	'demo.echo.got.p1': 'Hallo Sarah,',
@@ -741,7 +743,7 @@ const de: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'Bei der Aufnahme beginnt die Geschichte — und sie beginnt mit deiner Stimme. Push-to-Talk-Diktat macht überall auf dem Mac aus Sprache sauberen Text, mit einem Auslösewort, das auf Zuruf formatiert: „echo, formatiere das als E-Mail“. Dann kommen Meetings dazu: Tucky erkennt, wenn ein Call beginnt, nimmt System- und Mikrofonton auf und lässt ein Live-Transkript mit optionaler Gesprächsführung laufen.',
+		'Bei der Aufnahme beginnt die Geschichte — und sie beginnt mit deiner Stimme. Push-to-Talk-Diktat macht überall auf dem Mac aus Sprache sauberen Text, mit einem Auslösewort, das auf Zuruf formatiert: „Tucky, formatiere das als E-Mail“. Dann kommen Meetings dazu: Tucky erkennt, wenn ein Call beginnt, nimmt System- und Mikrofonton auf und lässt ein Live-Transkript mit optionaler Gesprächsführung laufen.',
 	'features.capture.intro2': 'Passen Sie Tastenkürzel, Mikrofon, Wörterbuch und gesprochene Korrekturen an. Das Aktivierungswort kann Notizen oder Aufgaben erstellen, E-Mails oder Listen formatieren und unterstützte Aktionen wie das Öffnen von Apps oder Websites ausführen. Dafür dient das separate lokale Sprachmodell.',
 	'features.capture.faq1.q': 'Wie funktioniert die automatische Meeting-Erkennung?',
 	'features.capture.faq1.a':

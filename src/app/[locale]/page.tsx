@@ -97,7 +97,7 @@ export default async function HomePage({
 				</div>
 			</section>
 
-			<CTA dict={dict} />
+			<CTA dict={dict} mascot />
 		</>
 	)
 }

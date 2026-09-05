@@ -1,0 +1,27 @@
+.mascot { width: 100%; position: relative; isolation: isolate; }
+.hello, .decorative { display: block; position: relative; width: 100%; aspect-ratio: 1; border-radius: 46% 54% 44% 56% / 54% 42% 58% 46%; background: #fbf6ea; }
+.hello { cursor: pointer; border: 1px solid #c7893c55; transition: border-radius 350ms ease, box-shadow 350ms ease; }
+.hello:hover { border-radius: 54% 46% 56% 44% / 42% 54% 46% 58%; box-shadow: 0 18px 50px #123b2d12; }
+.hello:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 7px; }
+.art { display: block; position: absolute; inset: 0; overflow: hidden; opacity: 0; mix-blend-mode: multiply; transform-origin: 50% 85%; border-radius: inherit; }
+.sheet { position: absolute; top: 50%; width: 300%; max-width: none; height: auto; transform: translateY(-50%); }
+.listen .sheet { left: 0; }
+.collect .sheet { left: -100%; }
+.wave .sheet { left: -200%; }
+.arrived { animation-duration: 650ms; animation-timing-function: cubic-bezier(.2,.8,.2,1); animation-fill-mode: both; animation-delay: var(--mascot-delay, 0ms); }
+.arrived.from-up { animation-name: arrive-up; }
+.arrived.from-left { animation-name: arrive-left; }
+.arrived.from-right { animation-name: arrive-right; }
+.arrived.float .sheet { animation: float 3.6s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; }
+.arrived.nod .sheet { animation: nod 4.4s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; transform-origin: 50% 75%; }
+.arrived.sway .sheet { animation: sway 4.8s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; transform-origin: 50% 80%; }
+.greet { animation: greeting 700ms ease-in-out both; }
+.hint { position: absolute; bottom: 2%; left: 50%; transform: translateX(-50%) rotate(-3deg); width: max-content; max-width: 90%; border: 1px solid #123b2d30; border-radius: 9px; padding: .5rem .7rem; background: #fffdf7; color: #123b2d; font-size: 12px; font-weight: 600; box-shadow: 2px 4px 0 #c7893c25; }
+@keyframes arrive-up { from { opacity: 0; transform: translateY(22px) rotate(-4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes arrive-left { from { opacity: 0; transform: translateX(-28px) rotate(-5deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }
+@keyframes arrive-right { from { opacity: 0; transform: translateX(28px) rotate(5deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }
+@keyframes float { 0%, 100% { transform: translateY(-50%); } 50% { transform: translateY(calc(-50% - 7px)); } }
+@keyframes nod { 0%, 82%, 100% { transform: translateY(-50%) rotate(0); } 88% { transform: translateY(-50%) rotate(3deg); } 94% { transform: translateY(-50%) rotate(-2deg); } }
+@keyframes sway { 0%, 100% { transform: translateY(-50%) rotate(-1deg); } 50% { transform: translateY(-50%) rotate(2deg); } }
+@keyframes greeting { 0%,100% { transform: rotate(0); } 25% { transform: translateY(-12px) rotate(-6deg); } 65% { transform: translateY(-5px) rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .art, .art .sheet { animation: none !important; opacity: 1; } .hello { transition: none; } }

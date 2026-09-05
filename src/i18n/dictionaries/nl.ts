@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const nl: Dictionary = {
 	'awake.title': 'Houd je computer wakker met je stem',
 	'awake.instruction': 'Druk op je gebruikelijke dicteersneltoets en zeg:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky herkent de opdracht en houdt je computer wakker voor de gevraagde duur. Gebruik dit terwijl een langdurige opdracht wordt uitgevoerd of een wachtrij met AI-prompts wordt verwerkt.',
 	'demo.transcription.shortcut': 'Je sneltoets',
 	'usecases.landing.card9.desc': 'Leg een idee vast met je activeringswoord, noem het project of maak een taak. Controleer het label en vink de taak af als die klaar is.',
@@ -14,6 +14,8 @@ const nl: Dictionary = {
 	'usecases.landing.card7.title': 'Ontwikkelaars en promptanalyse',
 	'usecases.additional.title': 'Meer doen met je vastgelegde werk',
 	// Navigation
+	'mascot.greet': 'Zeg hallo tegen Tucky',
+	'mascot.hello': 'Hallo daar!',
 	'nav.compare': 'Vergelijken',
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const nl: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Stap 2 · Het triggerwoord',
-	'features.echo.title': 'Zeg “echo” en je woorden maken zichzelf op.',
-	'features.echo.desc': 'Begin een dictaat met je triggerwoord en de AI neemt instructies aan. Zeg “echo, maak hier een e-mail van” en je gedachtestroom komt eruit als een nette e-mail, in jouw toon. Formats, terminologie en het triggerwoord zelf zijn volledig aanpasbaar — en gewoon dicteren blijft direct, want de AI springt alleen bij als je erom vraagt.',
+	'features.echo.title': 'Zeg “Tucky” en je woorden maken zichzelf op.',
+	'features.echo.desc': 'Begin een dictaat met je triggerwoord en de AI neemt instructies aan. Zeg “Tucky, maak hier een e-mail van” en je gedachtestroom komt eruit als een nette e-mail, in jouw toon. Formats, terminologie en het triggerwoord zelf zijn volledig aanpasbaar — en gewoon dicteren blijft direct, want de AI springt alleen bij als je erom vraagt.',
 	'features.echo.step1.title': 'Geef een instructie',
-	'features.echo.step1.desc': '“Echo, maak hier een e-mail van.” “Echo, zet dit in opsommingstekens.”',
+	'features.echo.step1.desc': '“Tucky, maak hier een e-mail van.” “Tucky, zet dit in opsommingstekens.”',
 	'features.echo.step2.title': 'Behoud je toon',
 	'features.echo.step2.desc': 'De uitkomst is geschreven zoals jij schrijft, niet als een sjabloon.',
 	'features.echo.step3.title': 'Maak het van jou',
@@ -165,11 +167,11 @@ const nl: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Even de tijd om klaar te zitten voor het loopt.',
 	'features.capture.slab3.eyebrow': 'Spraak naar tekst',
 	'features.capture.slab3.title': 'Spreek — het typt. Netjes.',
-	'features.capture.slab3.desc': 'Houd een sneltoets vast, praat, laat los — verzorgde tekst verschijnt bij je cursor, in elke app. Zeg eerst je triggerwoord — “echo, maak hier een e-mail van” — en wat je zegt komt opgemaakt terug, in jouw toon.',
+	'features.capture.slab3.desc': 'Houd een sneltoets vast, praat, laat los — verzorgde tekst verschijnt bij je cursor, in elke app. Zeg eerst je triggerwoord — “Tucky, maak hier een e-mail van” — en wat je zegt komt opgemaakt terug, in jouw toon.',
 	'features.capture.slab3.step1.title': 'Push-to-talk',
 	'features.capture.slab3.step1.desc': 'Houd een sneltoets vast, praat, laat los.',
-	'features.capture.slab3.step2.title': 'Het triggerwoord “echo”',
-	'features.capture.slab3.step2.desc': 'Zeg “echo, maak hier een opsomming van” en de AI maakt het op terwijl je praat.',
+	'features.capture.slab3.step2.title': 'Het triggerwoord “Tucky”',
+	'features.capture.slab3.step2.desc': 'Zeg “Tucky, maak hier een opsomming van” en de AI maakt het op terwijl je praat.',
 	'features.capture.slab3.step3.title': 'Schone audio erin, schone tekst eruit',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcribeert lokaal in 25 talen. Voeg eigen woorden toe en schakel gesproken correcties, leestekens en het verwijderen van stopwoorden in.',
 	'shot.meeting-hud.alt': 'Live vergaderweergave van Tucky tijdens de opname van een productoverleg',
@@ -468,7 +470,7 @@ const nl: Dictionary = {
 	'demo.echo.aria': 'Slim dicteren dat losse spraak omzet in een opgemaakte e-mail',
 	'demo.echo.title': 'Slim dicteren',
 	'demo.echo.said.label': 'Jij zei',
-	'demo.echo.said.trigger': '“Echo,',
+	'demo.echo.said.trigger': '“Tucky,',
 	'demo.echo.said.rest': ' maak hier een e-mail van… hé Sarah even snel, de sprintreview is verzet naar donderdag 15.00 uur, kun jij de agenda bijwerken en nog even checken of de demo-build werkt”',
 	'demo.echo.got.label': 'Jij kreeg',
 	'demo.echo.got.p1': 'Hoi Sarah,',
@@ -741,7 +743,7 @@ const nl: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'Bij het vastleggen begint het verhaal — en het begint met je stem. Push-to-talk dicteren maakt overal op de Mac schone tekst van spraak, met een triggerwoord dat op commando opmaakt wat je zegt: “echo, maak hier een e-mail van”. Daarna komen vergaderingen erbij: Tucky merkt wanneer een gesprek begint, neemt systeem- en microfoongeluid op, en laat een live transcript meelopen met optionele gespreksbegeleiding.',
+		'Bij het vastleggen begint het verhaal — en het begint met je stem. Push-to-talk dicteren maakt overal op de Mac schone tekst van spraak, met een triggerwoord dat op commando opmaakt wat je zegt: “Tucky, maak hier een e-mail van”. Daarna komen vergaderingen erbij: Tucky merkt wanneer een gesprek begint, neemt systeem- en microfoongeluid op, en laat een live transcript meelopen met optionele gespreksbegeleiding.',
 	'features.capture.intro2': 'Pas sneltoets, microfoon, woordenboek en gesproken correcties aan. Je activeringswoord kan notities of taken maken, e-mails of lijsten opmaken en ondersteunde acties uitvoeren, zoals apps of websites openen. Hiervoor wordt het aparte lokale taalmodel gebruikt.',
 	'features.capture.faq1.q': 'Hoe werkt de automatische vergaderherkenning?',
 	'features.capture.faq1.a':

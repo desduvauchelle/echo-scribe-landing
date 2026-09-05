@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const pt: Dictionary = {
 	'awake.title': 'Mantenha o computador ativo com a voz',
 	'awake.instruction': 'Prima o atalho de ditado habitual e diga:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'O Tucky reconhece o comando e mantém o computador ativo durante o tempo pedido. Use esta função enquanto termina um comando demorado ou é processada uma fila de prompts de IA.',
 	'demo.transcription.shortcut': 'Seu atalho',
 	'usecases.landing.card9.desc': 'Capture uma ideia com sua palavra de ativação, diga o projeto ou crie uma tarefa. Confira a etiqueta e marque a tarefa quando concluir.',
@@ -14,6 +14,8 @@ const pt: Dictionary = {
 	'usecases.landing.card7.title': 'Desenvolvedores e revisão de prompts',
 	'usecases.additional.title': 'Mais usos para seu trabalho registrado',
 	// Navigation
+	'mascot.greet': 'Diga olá ao Tucky',
+	'mascot.hello': 'Olá!',
 	'nav.compare': 'Comparar',
 	'nav.home': 'Início',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const pt: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Passo 2 · A palavra-chave',
-	'features.echo.title': 'Diga “echo” e suas palavras se formatam sozinhas.',
-	'features.echo.desc': 'Comece um ditado com sua palavra-chave e a IA aceita instruções. Diga “echo, formate isso como e-mail” e o seu fluxo de pensamento sai como um e-mail limpo, no seu tom. Formatos, terminologia e a própria palavra-chave são totalmente personalizáveis — e o ditado simples continua instantâneo, porque a IA só entra quando você chama.',
+	'features.echo.title': 'Diga “Tucky” e suas palavras se formatam sozinhas.',
+	'features.echo.desc': 'Comece um ditado com sua palavra-chave e a IA aceita instruções. Diga “Tucky, formate isso como e-mail” e o seu fluxo de pensamento sai como um e-mail limpo, no seu tom. Formatos, terminologia e a própria palavra-chave são totalmente personalizáveis — e o ditado simples continua instantâneo, porque a IA só entra quando você chama.',
 	'features.echo.step1.title': 'Dê uma instrução',
-	'features.echo.step1.desc': '“Echo, formate isso como e-mail.” “Echo, transforme isso em tópicos.”',
+	'features.echo.step1.desc': '“Tucky, formate isso como e-mail.” “Tucky, transforme isso em tópicos.”',
 	'features.echo.step2.title': 'Mantenha seu tom',
 	'features.echo.step2.desc': 'O resultado é escrito do jeito que você escreve, não como um modelo pronto.',
 	'features.echo.step3.title': 'Deixe do seu jeito',
@@ -165,11 +167,11 @@ const pt: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Um respiro para se ajeitar antes de começar.',
 	'features.capture.slab3.eyebrow': 'Voz para texto',
 	'features.capture.slab3.title': 'Fale — ele digita. Limpo.',
-	'features.capture.slab3.desc': 'Segure um atalho, fale, solte — o texto pronto aparece no seu cursor, em qualquer app. Diga primeiro sua palavra-chave — “echo, formate isso como e-mail” — e o que você falar sai formatado, no seu tom.',
+	'features.capture.slab3.desc': 'Segure um atalho, fale, solte — o texto pronto aparece no seu cursor, em qualquer app. Diga primeiro sua palavra-chave — “Tucky, formate isso como e-mail” — e o que você falar sai formatado, no seu tom.',
 	'features.capture.slab3.step1.title': 'Aperte e fale',
 	'features.capture.slab3.step1.desc': 'Segure um atalho, fale, solte.',
-	'features.capture.slab3.step2.title': 'A palavra-chave “echo”',
-	'features.capture.slab3.step2.desc': 'Diga “echo, faça uma lista com tópicos” e a IA formata enquanto você fala.',
+	'features.capture.slab3.step2.title': 'A palavra-chave “Tucky”',
+	'features.capture.slab3.step2.desc': 'Diga “Tucky, faça uma lista com tópicos” e a IA formata enquanto você fala.',
 	'features.capture.slab3.step3.title': 'Áudio limpo entra, texto limpo sai',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcreve localmente em 25 idiomas. Adicione vocabulário personalizado e ative correções faladas, pontuação e remoção de hesitações.',
 	'shot.meeting-hud.alt': 'Visão de reunião ao vivo do Tucky gravando um alinhamento de produto',
@@ -468,7 +470,7 @@ const pt: Dictionary = {
 	'demo.echo.aria': 'Ditado inteligente transformando uma fala solta em um e-mail formatado',
 	'demo.echo.title': 'Ditado inteligente',
 	'demo.echo.said.label': 'Você disse',
-	'demo.echo.said.trigger': '“Echo,',
+	'demo.echo.said.trigger': '“Tucky,',
 	'demo.echo.said.rest': ' formate isso como e-mail… oi Sarah uma rapidinha, a review de sprint mudou para quinta às 15h, você pode atualizar o calendário e conferir se a build da demo está funcionando”',
 	'demo.echo.got.label': 'Você recebeu',
 	'demo.echo.got.p1': 'Oi, Sarah,',
@@ -741,7 +743,7 @@ const pt: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'A captura é onde a história começa — e ela começa com a sua voz. O ditado aperte-e-fale transforma fala em texto limpo em qualquer lugar do Mac, com uma palavra-chave que formata o que você diz sob comando: “echo, formate isso como e-mail”. Depois entram as reuniões: o Tucky detecta quando uma chamada começa, grava o áudio do sistema e do microfone, e roda uma transcrição ao vivo com orientação opcional.',
+		'A captura é onde a história começa — e ela começa com a sua voz. O ditado aperte-e-fale transforma fala em texto limpo em qualquer lugar do Mac, com uma palavra-chave que formata o que você diz sob comando: “Tucky, formate isso como e-mail”. Depois entram as reuniões: o Tucky detecta quando uma chamada começa, grava o áudio do sistema e do microfone, e roda uma transcrição ao vivo com orientação opcional.',
 	'features.capture.intro2': 'Personalize atalho, microfone, dicionário e correções faladas. A palavra de ativação pode criar notas ou tarefas, formatar emails ou listas e executar ações compatíveis como abrir apps ou sites. Esses comandos usam o modelo de linguagem local separado.',
 	'features.capture.faq1.q': 'Como funciona a detecção automática de reuniões?',
 	'features.capture.faq1.a':

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { Mascot } from './Mascot'
 import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
 import { ScrollReveal } from './ScrollReveal'
@@ -20,47 +20,32 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 
 	return (
 		<>
-			<section className="relative overflow-hidden pt-24 pb-10 text-center">
-				{/* Soft radial glow behind the hero, as on the original page */}
-				<div
-					className="pointer-events-none absolute inset-0"
-					style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(55,164,119,0.10) 0%, transparent 70%)' }}
-					aria-hidden="true"
-				/>
+			<section className="relative overflow-hidden pt-12 pb-10 md:pt-20">
 
-				<div className="container relative mx-auto max-w-[1080px] px-6">
+				<div className="container relative mx-auto max-w-[1200px] px-6">
+					<div className="grid items-center gap-7 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
+					<div>
 					<ScrollReveal y={20} duration={0.7} start="top 95%">
-						<div className="mb-7 flex justify-center">
-							<Image
-								src="/tucky.jpeg"
-								alt="Tucky logo"
-								width={88}
-								height={88}
-								priority
-								className="rounded-[22px] shadow-[0_0_0_1px_rgba(18,59,45,0.12),0_24px_64px_rgba(18,59,45,0.20),0_0_80px_rgba(45,170,124,0.22)]"
-							/>
-						</div>
+						<div className="mb-7 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-primary">
 
-						<div className="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/8 px-4 py-1.5 text-[13px] font-medium text-primary">
-							<span className="h-[7px] w-[7px] animate-pulse-dot rounded-full bg-accent" aria-hidden="true" />
 							{dict['hero.badge']}
 						</div>
 
-						<h1 className="mb-6 text-[clamp(42px,6.5vw,82px)] font-extrabold leading-[1.05] tracking-[-0.04em]">
+						<h1 className="mb-6 text-[clamp(42px,6.2vw,78px)] font-extrabold leading-[1.05] tracking-[-0.04em]">
 							{dict['hero.title.line1']}
 							<br />
-							<em className="bg-gradient-to-br from-primary to-accent bg-clip-text not-italic text-transparent">
+							<em className="text-primary not-italic decoration-secondary/60 underline decoration-[5px] underline-offset-8">
 								{dict['hero.title.line2']}
 							</em>
 						</h1>
 
-						<p className="mx-auto mb-11 max-w-[600px] text-[clamp(17px,2.2vw,21px)] leading-[1.65] text-base-content/70">
+						<p className="mb-8 max-w-[600px] text-[clamp(17px,2.2vw,21px)] leading-[1.65] text-base-content/70">
 							{dict['hero.subtitle']}
 						</p>
 					</ScrollReveal>
 
 					<ScrollReveal y={20} delay={0.15} start="top 95%">
-						<div className="mb-13 flex flex-wrap items-center justify-center gap-3.5">
+						<div className="mb-7 flex flex-wrap items-center gap-3.5">
 							<TrackedLink
 								href={`${home}#install`}
 								className="btn btn-primary btn-lg gap-2.5 rounded-[14px] px-7 font-bold"
@@ -78,7 +63,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 							</a>
 						</div>
 
-						<div className="flex flex-wrap justify-center gap-6 text-[13px] text-base-content/50">
+						<div className="flex flex-wrap gap-x-5 gap-y-3 text-[13px] text-base-content/70">
 							<span className="flex items-center gap-1.5">
 								<svg className="text-primary" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
 									<rect x="2" y="3" width="20" height="14" rx="2" />
@@ -103,7 +88,11 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 						</div>
 					</ScrollReveal>
 
-					<div className="mx-auto mt-12 max-w-[880px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
+					</div>
+					<Mascot pose="listen" interactive dict={dict} className="order-first mx-auto max-w-[180px] sm:max-w-[260px] lg:order-last lg:max-w-none" />
+					</div>
+
+					<div className="mx-auto mt-16 max-w-[980px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
 						<iframe
 							src="https://www.youtube.com/embed/RVOeyxoYHV0?si=LLCA1b7lmMBJkK0L"
 							title="Tucky — YouTube"

@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const pl: Dictionary = {
 	'awake.title': 'Utrzymuj komputer w stanie aktywności głosem',
 	'awake.instruction': 'Naciśnij zwykły skrót dyktowania i powiedz:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky rozpoznaje polecenie i utrzymuje komputer w stanie aktywności przez wskazany czas. Używaj tej funkcji podczas wykonywania długiego polecenia lub przetwarzania kolejki promptów AI.',
 	'demo.transcription.shortcut': 'Twój skrót',
 	'usecases.landing.card9.desc': 'Zapisz pomysł słowem aktywującym, podaj projekt lub utwórz zadanie. Sprawdź etykietę i oznacz zadanie po ukończeniu.',
@@ -14,6 +14,8 @@ const pl: Dictionary = {
 	'usecases.landing.card7.title': 'Programiści i analiza promptów',
 	'usecases.additional.title': 'Więcej zastosowań zapisanej pracy',
 	// Navigation
+	'mascot.greet': 'Przywitaj się z Tuckym',
+	'mascot.hello': 'Cześć!',
 	'nav.compare': 'Porównaj',
 	'nav.home': 'Start',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const pl: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Krok 2 · Słowo wyzwalające',
-	'features.echo.title': 'Powiedz „echo”, a Twoje słowa same się sformatują.',
-	'features.echo.desc': 'Zacznij dyktowanie od swojego słowa wyzwalającego, a AI przyjmie instrukcje. Powiedz „echo, sformatuj to jako maila”, a strumień Twoich myśli wyjdzie jako czysty mail w Twoim tonie. Formaty, terminologia i samo słowo wyzwalające są w pełni konfigurowalne — a zwykłe dyktowanie pozostaje natychmiastowe, bo AI wkracza tylko wtedy, gdy ją wywołasz.',
+	'features.echo.title': 'Powiedz „Tucky”, a Twoje słowa same się sformatują.',
+	'features.echo.desc': 'Zacznij dyktowanie od swojego słowa wyzwalającego, a AI przyjmie instrukcje. Powiedz „Tucky, sformatuj to jako maila”, a strumień Twoich myśli wyjdzie jako czysty mail w Twoim tonie. Formaty, terminologia i samo słowo wyzwalające są w pełni konfigurowalne — a zwykłe dyktowanie pozostaje natychmiastowe, bo AI wkracza tylko wtedy, gdy ją wywołasz.',
 	'features.echo.step1.title': 'Daj jej instrukcję',
-	'features.echo.step1.desc': '„Echo, sformatuj to jako maila.” „Echo, zamień to na punkty.”',
+	'features.echo.step1.desc': '„Tucky, sformatuj to jako maila.” „Tucky, zamień to na punkty.”',
 	'features.echo.step2.title': 'Zachowaj swój ton',
 	'features.echo.step2.desc': 'Wynik jest napisany tak, jak piszesz Ty, a nie jak szablon.',
 	'features.echo.step3.title': 'Dostosuj do siebie',
@@ -165,11 +167,11 @@ const pl: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Chwila na przygotowanie, zanim ruszy nagranie.',
 	'features.capture.slab3.eyebrow': 'Mowa na tekst',
 	'features.capture.slab3.title': 'Mów — a on pisze. Czysto.',
-	'features.capture.slab3.desc': 'Przytrzymaj skrót, mów, puść — dopracowany tekst pojawia się przy kursorze, w każdej aplikacji. Zacznij od słowa wyzwalającego — „echo, sformatuj to jako maila” — a to, co powiesz, wyjdzie sformatowane, w Twoim tonie.',
+	'features.capture.slab3.desc': 'Przytrzymaj skrót, mów, puść — dopracowany tekst pojawia się przy kursorze, w każdej aplikacji. Zacznij od słowa wyzwalającego — „Tucky, sformatuj to jako maila” — a to, co powiesz, wyjdzie sformatowane, w Twoim tonie.',
 	'features.capture.slab3.step1.title': 'Naciśnij i mów',
 	'features.capture.slab3.step1.desc': 'Przytrzymaj skrót, mów, puść.',
-	'features.capture.slab3.step2.title': 'Słowo wyzwalające „echo”',
-	'features.capture.slab3.step2.desc': 'Powiedz „echo, zrób z tego listę punktów”, a AI sformatuje to, gdy mówisz.',
+	'features.capture.slab3.step2.title': 'Słowo wyzwalające „Tucky”',
+	'features.capture.slab3.step2.desc': 'Powiedz „Tucky, zrób z tego listę punktów”, a AI sformatuje to, gdy mówisz.',
 	'features.capture.slab3.step3.title': 'Czysty dźwięk na wejściu, czysty tekst na wyjściu',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transkrybuje lokalnie w 25 językach. Dodaj własne słownictwo i włącz korekty głosowe, interpunkcję oraz usuwanie wypełniaczy.',
 	'shot.meeting-hud.alt': 'Widok spotkania na żywo w Tucky podczas nagrywania synchronizacji produktowej',
@@ -468,7 +470,7 @@ const pl: Dictionary = {
 	'demo.echo.aria': 'Inteligentne dyktowanie zamieniające swobodną wypowiedź w sformatowanego maila',
 	'demo.echo.title': 'Inteligentne dyktowanie',
 	'demo.echo.said.label': 'Powiedziałeś',
-	'demo.echo.said.trigger': '„Echo,',
+	'demo.echo.said.trigger': '„Tucky,',
 	'demo.echo.said.rest': ' sformatuj to jako maila… cześć Sarah krótka sprawa, przegląd sprintu przenosi się na czwartek na 15:00, możesz zaktualizować kalendarz i sprawdzić, czy wersja demo działa”',
 	'demo.echo.got.label': 'Dostałeś',
 	'demo.echo.got.p1': 'Cześć Sarah,',
@@ -741,7 +743,7 @@ const pl: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'Rejestrowanie to początek całej historii — a zaczyna się od Twojego głosu. Dyktowanie „naciśnij i mów” zamienia mowę w czysty tekst wszędzie na Macu, ze słowem wyzwalającym, które formatuje wypowiedź na komendę: „echo, sformatuj to jako maila”. Potem dołączają spotkania: Tucky wykrywa początek rozmowy, nagrywa dźwięk systemowy i z mikrofonu oraz prowadzi transkrypcję na żywo z opcjonalnymi podpowiedziami.',
+		'Rejestrowanie to początek całej historii — a zaczyna się od Twojego głosu. Dyktowanie „naciśnij i mów” zamienia mowę w czysty tekst wszędzie na Macu, ze słowem wyzwalającym, które formatuje wypowiedź na komendę: „Tucky, sformatuj to jako maila”. Potem dołączają spotkania: Tucky wykrywa początek rozmowy, nagrywa dźwięk systemowy i z mikrofonu oraz prowadzi transkrypcję na żywo z opcjonalnymi podpowiedziami.',
 	'features.capture.intro2': 'Dostosuj skrót, mikrofon, słownik i korekty głosowe. Słowo aktywujące może tworzyć notatki lub zadania, formatować emaile i listy oraz wykonywać obsługiwane działania, jak otwieranie aplikacji lub stron. Te polecenia używają osobnego lokalnego modelu językowego.',
 	'features.capture.faq1.q': 'Jak działa automatyczne wykrywanie spotkań?',
 	'features.capture.faq1.a':

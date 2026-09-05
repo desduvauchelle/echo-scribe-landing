@@ -8,6 +8,7 @@ import { ScreenshotFrame } from '@/components/product/ScreenshotFrame'
 import { ScrollReveal } from './ScrollReveal'
 import { TranscriptionDemo, EchoDemo, StatusDemo } from './FeatureMockups'
 import { shotFor } from '@/components/product/features.config'
+import { Mascot } from './Mascot'
 
 type SlabKey = 'voice' | 'echo' | 'meetings' | 'screen' | 'memory' | 'insights'
 
@@ -17,6 +18,11 @@ interface Slab {
 	visual: (dict: Dictionary) => ReactNode
 	reverse?: boolean
 	tinted?: boolean
+	mascot: {
+		pose: 'listen' | 'collect' | 'wave'
+		entrance: 'left' | 'right'
+		motion: 'float' | 'nod' | 'sway'
+	}
 	/**
 	 * Contextual link from this slab down to the feature page that covers it in
 	 * depth. The homepage is the only page on this site Google reliably reads,
@@ -32,28 +38,32 @@ const SLABS: Slab[] = [
 		id: 'voice',
 		key: 'voice',
 		visual: (dict) => <TranscriptionDemo dict={dict} />,
+		mascot: { pose: 'listen', entrance: 'right', motion: 'nod' },
 		to: { path: '/features/capture', nameKey: 'nav.features.capture' },
 	},
 	{
 		id: 'echo',
 		key: 'echo',
 		visual: (dict) => <EchoDemo dict={dict} />,
+		mascot: { pose: 'wave', entrance: 'left', motion: 'sway' },
 		reverse: true,
 		tinted: true,
 		to: { path: '/features/editor', nameKey: 'nav.features.editor' },
 	},
-	{ id: 'meetings', key: 'meetings', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/coaching-feedback', dict['shot.recorded.feedback.alt'])} /> },
-	{ id: 'screen', key: 'screen', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/recording-preview', dict['shot.recorded.recording.alt'])} />, reverse: true, tinted: true },
+	{ id: 'meetings', key: 'meetings', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/coaching-feedback', dict['shot.recorded.feedback.alt'])} />, mascot: { pose: 'listen', entrance: 'right', motion: 'float' } },
+	{ id: 'screen', key: 'screen', visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/recording-preview', dict['shot.recorded.recording.alt'])} />, mascot: { pose: 'wave', entrance: 'left', motion: 'sway' }, reverse: true, tinted: true },
 	{
 		id: 'memory',
 		key: 'memory',
 		visual: (dict) => <ScreenshotFrame shot={shotFor('recorded/chat-answer', dict['shot.recorded.answer.alt'])} />,
+		mascot: { pose: 'collect', entrance: 'right', motion: 'nod' },
 		to: { path: '/features/organize', nameKey: 'nav.features.organize' },
 	},
 	{
 		id: 'insights',
 		key: 'insights',
 		visual: (dict) => <StatusDemo dict={dict} />,
+		mascot: { pose: 'wave', entrance: 'left', motion: 'float' },
 		reverse: true,
 		tinted: true,
 		to: { path: '/features/platform', nameKey: 'nav.features.platform' },
@@ -105,7 +115,16 @@ export function Features({ dict, locale }: { dict: Dictionary; locale: string })
 								)}
 							</div>
 
-							<div>{slab.visual(dict)}</div>
+							<div className="relative pt-14 sm:pt-16">
+								<Mascot
+									pose={slab.mascot.pose}
+									entrance={slab.mascot.entrance}
+									motion={slab.mascot.motion}
+									dict={dict}
+									className={cn('absolute top-0 z-10 max-w-24 sm:max-w-28 lg:max-w-32', slab.reverse ? 'left-4 -rotate-2' : 'right-4 rotate-2')}
+								/>
+								{slab.visual(dict)}
+							</div>
 						</ScrollReveal>
 					</div>
 				</section>

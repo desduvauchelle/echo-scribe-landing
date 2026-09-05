@@ -3,6 +3,7 @@ import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
 import { Eyebrow } from './Eyebrow'
 import { ScrollReveal } from './ScrollReveal'
+import { Mascot } from './Mascot'
 
 export function UseCasesGrid({ dict, locale }: { dict: Dictionary; locale: string }) {
 	const cards = [1, 2, 3, 4, 5, 6] as const
@@ -10,15 +11,18 @@ export function UseCasesGrid({ dict, locale }: { dict: Dictionary; locale: strin
 	return (
 		<section id="use-cases" className="scroll-mt-20 border-t border-base-content/10 bg-base-100 py-25">
 			<div className="container mx-auto max-w-[1080px] px-6">
-				<ScrollReveal y={30} className="mb-14 text-center">
-					<Eyebrow className="mb-5">{dict['usecases.landing.eyebrow']}</Eyebrow>
-					<h2 className="mb-4 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">
-						{dict['usecases.landing.title']}
-					</h2>
-					<p className="mx-auto max-w-[520px] text-lg leading-relaxed text-base-content/70">
-						{dict['usecases.landing.subtitle']}
-					</p>
-				</ScrollReveal>
+				<div className="mb-14 grid items-center gap-5 sm:grid-cols-[1fr_180px] lg:grid-cols-[1fr_220px]">
+					<ScrollReveal y={30}>
+						<Eyebrow className="mb-5">{dict['usecases.landing.eyebrow']}</Eyebrow>
+						<h2 className="mb-4 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">
+							{dict['usecases.landing.title']}
+						</h2>
+						<p className="max-w-[520px] text-lg leading-relaxed text-base-content/70">
+							{dict['usecases.landing.subtitle']}
+						</p>
+					</ScrollReveal>
+					<Mascot pose="wave" entrance="right" motion="sway" dict={dict} className="mx-auto max-w-36 sm:max-w-none" />
+				</div>
 
 				<ScrollReveal y={40} stagger={0.08} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 					{cards.map((n) => (

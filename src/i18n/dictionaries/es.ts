@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const es: Dictionary = {
 	'awake.title': 'Mantén tu ordenador despierto con la voz',
 	'awake.instruction': 'Pulsa tu atajo habitual de dictado y di:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky reconoce la orden y mantiene tu ordenador despierto durante el tiempo solicitado. Úsalo mientras termina un comando largo o se procesa una cola de prompts de IA.',
 	'demo.transcription.shortcut': 'Tu atajo',
 	'usecases.landing.card9.desc': 'Guarda una idea con tu palabra de activación, nombra el proyecto o crea una tarea. Revisa la etiqueta y marca la tarea al terminar.',
@@ -14,6 +14,8 @@ const es: Dictionary = {
 	'usecases.landing.card7.title': 'Desarrolladores y revisión de prompts',
 	'usecases.additional.title': 'Más usos para tu trabajo guardado',
 	// Navigation
+	'mascot.greet': 'Saluda a Tucky',
+	'mascot.hello': '¡Hola!',
 	'nav.compare': 'Comparar',
 	'nav.home': 'Inicio',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const es: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Paso 2 · La palabra clave',
-	'features.echo.title': 'Di «echo» y tus palabras se dan formato solas.',
-	'features.echo.desc': 'Empieza un dictado con tu palabra clave y la IA acepta instrucciones. Di «echo, dale formato de correo» y tu flujo de ideas sale como un correo limpio, con tu tono. Los formatos, la terminología y la propia palabra clave son totalmente personalizables — y el dictado simple sigue siendo instantáneo, porque la IA solo interviene cuando la llamas.',
+	'features.echo.title': 'Di «Tucky» y tus palabras se dan formato solas.',
+	'features.echo.desc': 'Empieza un dictado con tu palabra clave y la IA acepta instrucciones. Di «Tucky, dale formato de correo» y tu flujo de ideas sale como un correo limpio, con tu tono. Los formatos, la terminología y la propia palabra clave son totalmente personalizables — y el dictado simple sigue siendo instantáneo, porque la IA solo interviene cuando la llamas.',
 	'features.echo.step1.title': 'Dale una instrucción',
-	'features.echo.step1.desc': '«Echo, dale formato de correo.» «Echo, conviértelo en viñetas.»',
+	'features.echo.step1.desc': '«Tucky, dale formato de correo.» «Tucky, conviértelo en viñetas.»',
 	'features.echo.step2.title': 'Conserva tu tono',
 	'features.echo.step2.desc': 'El resultado está escrito como escribes tú, no como una plantilla.',
 	'features.echo.step3.title': 'Hazlo tuyo',
@@ -165,11 +167,11 @@ const es: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Un respiro para prepararte antes de empezar.',
 	'features.capture.slab3.eyebrow': 'Voz a texto',
 	'features.capture.slab3.title': 'Habla — y escribe. Limpio.',
-	'features.capture.slab3.desc': 'Mantén pulsado un atajo, habla, suelta — el texto pulido aparece en tu cursor en cualquier app. Di primero tu palabra clave — «echo, dale formato de correo» — y lo que digas sale con formato, en tu tono.',
+	'features.capture.slab3.desc': 'Mantén pulsado un atajo, habla, suelta — el texto pulido aparece en tu cursor en cualquier app. Di primero tu palabra clave — «Tucky, dale formato de correo» — y lo que digas sale con formato, en tu tono.',
 	'features.capture.slab3.step1.title': 'Pulsar para hablar',
 	'features.capture.slab3.step1.desc': 'Mantén pulsado un atajo, habla, suelta.',
-	'features.capture.slab3.step2.title': 'La palabra clave «echo»',
-	'features.capture.slab3.step2.desc': 'Di «echo, haz una lista con viñetas» y la IA da formato mientras hablas.',
+	'features.capture.slab3.step2.title': 'La palabra clave «Tucky»',
+	'features.capture.slab3.step2.desc': 'Di «Tucky, haz una lista con viñetas» y la IA da formato mientras hablas.',
 	'features.capture.slab3.step3.title': 'Audio limpio dentro, texto limpio fuera',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcribe localmente en 25 idiomas. Añade vocabulario personalizado y activa correcciones habladas, puntuación y limpieza de muletillas.',
 	'shot.meeting-hud.alt': 'Vista de reunión en vivo de Tucky grabando una sincronización de producto',
@@ -468,7 +470,7 @@ const es: Dictionary = {
 	'demo.echo.aria': 'Dictado inteligente convirtiendo un discurso improvisado en un correo con formato',
 	'demo.echo.title': 'Dictado inteligente',
 	'demo.echo.said.label': 'Dijiste',
-	'demo.echo.said.trigger': '«Echo,',
+	'demo.echo.said.trigger': '«Tucky,',
 	'demo.echo.said.rest': ' dale formato de correo… oye Sarah una cosa rápida, la revisión del sprint pasa al jueves a las 15:00, ¿puedes actualizar el calendario y comprobar que la build de la demo funciona?»',
 	'demo.echo.got.label': 'Obtuviste',
 	'demo.echo.got.p1': 'Hola Sarah:',
@@ -741,7 +743,7 @@ const es: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'La captura es donde empieza la historia — y empieza con tu voz. El dictado pulsando para hablar convierte el habla en texto limpio en cualquier parte del Mac, con una palabra clave que da formato a lo que dices bajo demanda: «echo, dale formato de correo». Luego se suman las reuniones: Tucky detecta cuando arranca una llamada, graba el audio del sistema y del micrófono, y ejecuta una transcripción en vivo con guía opcional durante la llamada.',
+		'La captura es donde empieza la historia — y empieza con tu voz. El dictado pulsando para hablar convierte el habla en texto limpio en cualquier parte del Mac, con una palabra clave que da formato a lo que dices bajo demanda: «Tucky, dale formato de correo». Luego se suman las reuniones: Tucky detecta cuando arranca una llamada, graba el audio del sistema y del micrófono, y ejecuta una transcripción en vivo con guía opcional durante la llamada.',
 	'features.capture.intro2': 'Personaliza atajo, micrófono, diccionario y correcciones habladas. Tu palabra de activación puede crear notas o tareas, dar formato de correo o lista y ejecutar acciones compatibles como abrir apps o sitios. Estos comandos usan el modelo de lenguaje local independiente.',
 	'features.capture.faq1.q': '¿Cómo funciona la detección automática de reuniones?',
 	'features.capture.faq1.a':

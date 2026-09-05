@@ -1,7 +1,7 @@
 const en = {
 	'awake.title': 'Keep your computer awake by voice',
 	'awake.instruction': 'Press your usual dictation hotkey and say:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky recognises the command and keeps your computer awake for the requested duration. Use it while a long-running command finishes or a queue of AI prompts works through its next steps.',
 	'demo.transcription.shortcut': 'Your hotkey',
 	'usecases.landing.card9.desc': 'Capture an idea with your trigger word, name the project, or create a task to complete later. Check the tag and mark the task done when finished.',
@@ -12,6 +12,8 @@ const en = {
 	'usecases.landing.card7.title': 'Developers and AI prompt review',
 	'usecases.additional.title': 'More ways to use your captured work',
 	// Navigation
+	'mascot.greet': 'Say hello to Tucky',
+	'mascot.hello': 'Hello, you!',
 	'nav.compare': 'Compare',
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
@@ -80,10 +82,10 @@ const en = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Step 2 · The trigger word',
-	'features.echo.title': 'Say “echo” and your words format themselves.',
-	'features.echo.desc': 'Start a dictation with your trigger word and the AI takes instructions. Say “echo, format this as an email” and your stream of thought comes out as a clean email in your tone of voice. Formats, terminology, and the trigger word itself are fully customizable — and plain dictation stays instant, because AI only steps in when you call it.',
+	'features.echo.title': 'Say “Tucky” and your words format themselves.',
+	'features.echo.desc': 'Start a dictation with your trigger word and the AI takes instructions. Say “Tucky, format this as an email” and your stream of thought comes out as a clean email in your tone of voice. Formats, terminology, and the trigger word itself are fully customizable — and plain dictation stays instant, because AI only steps in when you call it.',
 	'features.echo.step1.title': 'Give it an instruction',
-	'features.echo.step1.desc': '“Echo, format this as an email.” “Echo, turn this into bullet points.”',
+	'features.echo.step1.desc': '“Tucky, format this as an email.” “Tucky, turn this into bullet points.”',
 	'features.echo.step2.title': 'Keep your tone',
 	'features.echo.step2.desc': 'The output is written the way you write, not like a template.',
 	'features.echo.step3.title': 'Make it yours',
@@ -167,11 +169,11 @@ const en = {
 	'features.capture.slab2.step3.desc': 'A beat to get ready before it rolls.',
 	'features.capture.slab3.eyebrow': 'Voice to text',
 	'features.capture.slab3.title': 'Speak — it types. Cleanly.',
-	'features.capture.slab3.desc': 'Hold a hotkey, talk, release — polished text appears at your cursor in any app. Say your trigger word first — “echo, format this as an email” — and what you say comes out formatted, in your tone.',
+	'features.capture.slab3.desc': 'Hold a hotkey, talk, release — polished text appears at your cursor in any app. Say your trigger word first — “Tucky, format this as an email” — and what you say comes out formatted, in your tone.',
 	'features.capture.slab3.step1.title': 'Push-to-talk',
 	'features.capture.slab3.step1.desc': 'Hold a hotkey, speak, release.',
-	'features.capture.slab3.step2.title': 'The “echo” trigger word',
-	'features.capture.slab3.step2.desc': 'Say “echo, make this a bullet list” and the AI formats as you speak.',
+	'features.capture.slab3.step2.title': 'The “Tucky” trigger word',
+	'features.capture.slab3.step2.desc': 'Say “Tucky, make this a bullet list” and the AI formats as you speak.',
 	'features.capture.slab3.step3.title': 'Clean audio in, clean text out',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcribes on-device in 25 languages. Add custom vocabulary and enable spoken corrections, punctuation, and filler cleanup.',
 	'shot.meeting-hud.alt': 'Tucky live meeting view recording a product sync',
@@ -470,7 +472,7 @@ const en = {
 	'demo.echo.aria': 'Smart dictation turning rough speech into a formatted email',
 	'demo.echo.title': 'Smart dictation',
 	'demo.echo.said.label': 'You said',
-	'demo.echo.said.trigger': '“Echo,',
+	'demo.echo.said.trigger': '“Tucky,',
 	'demo.echo.said.rest': ' format this as an email… hey Sarah quick one, sprint review moved to Thursday 3pm, can you update the calendar and double-check the demo build works”',
 	'demo.echo.got.label': 'You got',
 	'demo.echo.got.p1': 'Hi Sarah,',
@@ -754,7 +756,7 @@ const en = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'Capture is where the story starts — and it starts with your voice. Push-to-talk dictation turns speech into clean text anywhere on the Mac, with a trigger word that formats what you say on command: “echo, format this as an email.” Then meetings join in: Tucky detects when a call begins, records both system and microphone audio, and runs a live transcript with optional call guidance.',
+		'Capture is where the story starts — and it starts with your voice. Push-to-talk dictation turns speech into clean text anywhere on the Mac, with a trigger word that formats what you say on command: “Tucky, format this as an email.” Then meetings join in: Tucky detects when a call begins, records both system and microphone audio, and runs a live transcript with optional call guidance.',
 	'features.capture.intro2': 'Customize the dictation shortcut, microphone, dictionary, and spoken corrections. Your trigger word can also create a note or task, format speech as an email or list, or run supported actions such as opening an app or website. These commands use the separate local language model.',
 	'features.capture.faq1.q': 'How does automatic meeting detection work?',
 	'features.capture.faq1.a':

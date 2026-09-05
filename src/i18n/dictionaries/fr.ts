@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const fr: Dictionary = {
 	'awake.title': 'Gardez votre ordinateur éveillé à la voix',
 	'awake.instruction': 'Appuyez sur votre raccourci de dictée habituel et dites :',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky reconnaît la commande et garde votre ordinateur éveillé pendant la durée demandée. Utilisez cette fonction pendant une longue commande ou le traitement d’une file de prompts IA.',
 	'demo.transcription.shortcut': 'Votre raccourci',
 	'usecases.landing.card9.desc': 'Capturez une idée avec votre mot déclencheur, nommez le projet ou créez une tâche. Vérifiez le classement et cochez la tâche une fois terminée.',
@@ -14,6 +14,8 @@ const fr: Dictionary = {
 	'usecases.landing.card7.title': 'Développeurs et analyse des prompts',
 	'usecases.additional.title': 'D’autres usages pour votre travail capturé',
 	// Navigation
+	'mascot.greet': 'Dites bonjour à Tucky',
+	'mascot.hello': 'Coucou !',
 	'nav.compare': 'Comparer',
 	'nav.home': 'Accueil',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const fr: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Étape 2 · Le mot déclencheur',
-	'features.echo.title': 'Dites « echo » et vos mots se mettent en forme tout seuls.',
-	'features.echo.desc': 'Commencez une dictée par votre mot déclencheur et l’IA prend des instructions. Dites « echo, formate ça en e-mail » et votre flux de pensée ressort en e-mail propre, dans votre ton. Les formats, la terminologie et le mot déclencheur lui-même sont entièrement personnalisables — et la dictée simple reste instantanée, car l’IA n’intervient que quand vous l’appelez.',
+	'features.echo.title': 'Dites « Tucky » et vos mots se mettent en forme tout seuls.',
+	'features.echo.desc': 'Commencez une dictée par votre mot déclencheur et l’IA prend des instructions. Dites « Tucky, formate ça en e-mail » et votre flux de pensée ressort en e-mail propre, dans votre ton. Les formats, la terminologie et le mot déclencheur lui-même sont entièrement personnalisables — et la dictée simple reste instantanée, car l’IA n’intervient que quand vous l’appelez.',
 	'features.echo.step1.title': 'Donnez une instruction',
-	'features.echo.step1.desc': '« Echo, formate ça en e-mail. » « Echo, transforme ça en liste à puces. »',
+	'features.echo.step1.desc': '« Tucky, formate ça en e-mail. » « Tucky, transforme ça en liste à puces. »',
 	'features.echo.step2.title': 'Gardez votre ton',
 	'features.echo.step2.desc': 'Le résultat est écrit comme vous écrivez, pas comme un modèle générique.',
 	'features.echo.step3.title': 'Faites-le vôtre',
@@ -165,11 +167,11 @@ const fr: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Un instant pour se préparer avant que ça tourne.',
 	'features.capture.slab3.eyebrow': 'Dictée vocale',
 	'features.capture.slab3.title': 'Parlez — ça s’écrit. Proprement.',
-	'features.capture.slab3.desc': 'Maintenez un raccourci, parlez, relâchez — un texte soigné apparaît à votre curseur dans n’importe quelle app. Dites d’abord votre mot déclencheur — « echo, formate ça en e-mail » — et ce que vous dites ressort mis en forme, dans votre ton.',
+	'features.capture.slab3.desc': 'Maintenez un raccourci, parlez, relâchez — un texte soigné apparaît à votre curseur dans n’importe quelle app. Dites d’abord votre mot déclencheur — « Tucky, formate ça en e-mail » — et ce que vous dites ressort mis en forme, dans votre ton.',
 	'features.capture.slab3.step1.title': 'Appuyer pour parler',
 	'features.capture.slab3.step1.desc': 'Maintenez un raccourci, parlez, relâchez.',
-	'features.capture.slab3.step2.title': 'Le mot déclencheur « echo »',
-	'features.capture.slab3.step2.desc': 'Dites « echo, transforme ça en liste » et l’IA met en forme pendant que vous parlez.',
+	'features.capture.slab3.step2.title': 'Le mot déclencheur « Tucky »',
+	'features.capture.slab3.step2.desc': 'Dites « Tucky, transforme ça en liste » et l’IA met en forme pendant que vous parlez.',
 	'features.capture.slab3.step3.title': 'Audio propre, texte propre',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 transcrit localement en 25 langues. Ajoutez du vocabulaire personnalisé et activez corrections vocales, ponctuation et suppression des hésitations.',
 	'shot.meeting-hud.alt': 'Vue de réunion en direct Tucky enregistrant un point produit',
@@ -468,7 +470,7 @@ const fr: Dictionary = {
 	'demo.echo.aria': 'Dictée intelligente transformant une parole brute en e-mail mis en forme',
 	'demo.echo.title': 'Dictée intelligente',
 	'demo.echo.said.label': 'Vous avez dit',
-	'demo.echo.said.trigger': '« Echo,',
+	'demo.echo.said.trigger': '« Tucky,',
 	'demo.echo.said.rest': ' formate ça en e-mail… salut Sarah petit truc, la revue de sprint passe à jeudi 15 h, tu peux mettre à jour l’agenda et revérifier que la build de démo fonctionne »',
 	'demo.echo.got.label': 'Vous avez obtenu',
 	'demo.echo.got.p1': 'Bonjour Sarah,',
@@ -742,7 +744,7 @@ const fr: Dictionary = {
 
 	// Fonctionnalités · Capture : contenu long + FAQ
 	'features.capture.intro1':
-		'La capture, c’est le début de l’histoire — et elle commence par votre voix. La dictée « appuyer pour parler » transforme la parole en texte propre partout sur le Mac, avec un mot déclencheur qui met en forme ce que vous dites sur commande : « echo, formate ça en e-mail ». Puis les réunions s’y ajoutent : Tucky détecte le début d’un appel, enregistre l’audio système et le microphone, et fait défiler une transcription en direct avec guidage d’appel en option.',
+		'La capture, c’est le début de l’histoire — et elle commence par votre voix. La dictée « appuyer pour parler » transforme la parole en texte propre partout sur le Mac, avec un mot déclencheur qui met en forme ce que vous dites sur commande : « Tucky, formate ça en e-mail ». Puis les réunions s’y ajoutent : Tucky détecte le début d’un appel, enregistre l’audio système et le microphone, et fait défiler une transcription en direct avec guidage d’appel en option.',
 	'features.capture.intro2': 'Personnalisez raccourci, microphone, dictionnaire et corrections vocales. Votre mot déclencheur peut créer une note ou tâche, formater un e-mail ou une liste, ou lancer des actions compatibles comme ouvrir une app ou un site. Ces commandes utilisent le modèle de langage local distinct.',
 	'features.capture.faq1.q': 'Comment fonctionne la détection automatique des réunions ?',
 	'features.capture.faq1.a':

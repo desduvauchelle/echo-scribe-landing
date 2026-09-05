@@ -1,3 +1,4 @@
+import { Mascot } from './Mascot'
 import Link from 'next/link'
 import type { Dictionary } from '@/i18n'
 import { cn } from '@/lib/utils'
@@ -19,7 +20,8 @@ export function WorkMemoryLoop({ dict, locale }: { dict: Dictionary; locale: str
 	return (
 		<section id="how-it-works" className="scroll-mt-20 bg-base-200 pt-23 pb-25">
 			<div className="container mx-auto max-w-[1080px] px-6">
-				<ScrollReveal y={30} className="mb-14 max-w-[680px]">
+				<div className="mb-14 grid items-center gap-6 md:grid-cols-[1fr_240px] lg:grid-cols-[1fr_280px]">
+				<ScrollReveal y={30} className="max-w-[680px]">
 					<Eyebrow className="mb-5">{dict['loop.eyebrow']}</Eyebrow>
 					<h2 className="mb-4.5 text-[clamp(30px,4.5vw,54px)] font-extrabold leading-[1.08] tracking-[-0.035em]">
 						{dict['loop.title']}
@@ -30,6 +32,8 @@ export function WorkMemoryLoop({ dict, locale }: { dict: Dictionary; locale: str
 						<span aria-hidden="true">→</span>
 					</Link>
 				</ScrollReveal>
+				<Mascot pose="collect" dict={dict} className="mx-auto max-w-[200px] md:max-w-none" />
+				</div>
 
 				<ScrollReveal y={30} stagger={0.1} className="grid grid-cols-1 border-y border-base-content/15 sm:grid-cols-2 lg:grid-cols-4">
 					{steps.map((n, i) => (

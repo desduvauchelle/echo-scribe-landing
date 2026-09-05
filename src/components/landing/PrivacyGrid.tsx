@@ -1,6 +1,7 @@
 import type { Dictionary } from '@/i18n'
 import { Eyebrow } from './Eyebrow'
 import { ScrollReveal } from './ScrollReveal'
+import { Mascot } from './Mascot'
 
 const ICONS = [
 	// Shield
@@ -31,15 +32,18 @@ export function PrivacyGrid({ dict }: { dict: Dictionary }) {
 	return (
 		<section id="privacy" className="scroll-mt-20 border-t border-base-content/10 bg-base-200 py-25">
 			<div className="container mx-auto max-w-[1080px] px-6">
-				<ScrollReveal y={30} className="mb-14 text-center">
-					<Eyebrow className="mb-5">{dict['privacy.landing.eyebrow']}</Eyebrow>
-					<h2 className="mb-4 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">
-						{dict['privacy.landing.title']}
-					</h2>
-					<p className="mx-auto max-w-[520px] text-lg leading-relaxed text-base-content/70">
-						{dict['privacy.landing.subtitle']}
-					</p>
-				</ScrollReveal>
+				<div className="mb-14 grid items-center gap-5 sm:grid-cols-[180px_1fr] lg:grid-cols-[220px_1fr]">
+					<Mascot pose="collect" entrance="left" motion="float" dict={dict} className="mx-auto max-w-36 sm:max-w-none" />
+					<ScrollReveal y={30}>
+						<Eyebrow className="mb-5">{dict['privacy.landing.eyebrow']}</Eyebrow>
+						<h2 className="mb-4 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">
+							{dict['privacy.landing.title']}
+						</h2>
+						<p className="max-w-[520px] text-lg leading-relaxed text-base-content/70">
+							{dict['privacy.landing.subtitle']}
+						</p>
+					</ScrollReveal>
+				</div>
 
 				<ScrollReveal y={40} stagger={0.1} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 					{cards.map((n, i) => (

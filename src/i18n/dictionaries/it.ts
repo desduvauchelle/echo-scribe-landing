@@ -3,7 +3,7 @@ import type { Dictionary } from './en'
 const it: Dictionary = {
 	'awake.title': 'Tieni sveglio il computer con la voce',
 	'awake.instruction': 'Premi la tua solita scorciatoia di dettatura e di’:',
-	'awake.command': 'Echo, keep my computer awake for two hours.',
+	'awake.command': 'Tucky, keep my computer awake for two hours.',
 	'awake.description': 'Tucky riconosce il comando e tiene sveglio il computer per la durata richiesta. Usalo mentre termina un comando lungo o viene elaborata una coda di prompt AI.',
 	'demo.transcription.shortcut': 'La tua scorciatoia',
 	'usecases.landing.card9.desc': 'Cattura un’idea con la parola di attivazione, indica il progetto o crea un’attività. Verifica l’etichetta e segna l’attività al termine.',
@@ -14,6 +14,8 @@ const it: Dictionary = {
 	'usecases.landing.card7.title': 'Sviluppatori e revisione dei prompt',
 	'usecases.additional.title': 'Altri usi per il lavoro acquisito',
 	// Navigation
+	'mascot.greet': 'Saluta Tucky',
+	'mascot.hello': 'Ciao!',
 	'nav.compare': 'Confronta',
 	'nav.home': 'Home',
 	'nav.blog': 'Blog',
@@ -78,10 +80,10 @@ const it: Dictionary = {
 
 	// Story slab 2: the trigger word
 	'features.echo.eyebrow': 'Passo 2 · La parola chiave',
-	'features.echo.title': 'Di’ «echo» e le tue parole si formattano da sole.',
-	'features.echo.desc': 'Inizia una dettatura con la tua parola chiave e l’IA accetta istruzioni. Di’ «echo, formatta come email» e il tuo flusso di pensiero esce come un’email pulita, nel tuo tono. Formati, terminologia e la parola chiave stessa sono del tutto personalizzabili — e la dettatura semplice resta istantanea, perché l’IA interviene solo quando la chiami.',
+	'features.echo.title': 'Di’ «Tucky» e le tue parole si formattano da sole.',
+	'features.echo.desc': 'Inizia una dettatura con la tua parola chiave e l’IA accetta istruzioni. Di’ «Tucky, formatta come email» e il tuo flusso di pensiero esce come un’email pulita, nel tuo tono. Formati, terminologia e la parola chiave stessa sono del tutto personalizzabili — e la dettatura semplice resta istantanea, perché l’IA interviene solo quando la chiami.',
 	'features.echo.step1.title': 'Dagli un’istruzione',
-	'features.echo.step1.desc': '«Echo, formatta come email.» «Echo, trasformalo in punti elenco.»',
+	'features.echo.step1.desc': '«Tucky, formatta come email.» «Tucky, trasformalo in punti elenco.»',
 	'features.echo.step2.title': 'Mantieni il tuo tono',
 	'features.echo.step2.desc': 'Il risultato è scritto come scrivi tu, non come un modello preconfezionato.',
 	'features.echo.step3.title': 'Fallo tuo',
@@ -165,11 +167,11 @@ const it: Dictionary = {
 	'features.capture.slab2.step3.desc': 'Un attimo per prepararti prima di partire.',
 	'features.capture.slab3.eyebrow': 'Voce in testo',
 	'features.capture.slab3.title': 'Parla — lui scrive. Pulito.',
-	'features.capture.slab3.desc': 'Tieni premuta una scorciatoia, parla, rilascia — il testo rifinito compare al cursore, in qualsiasi app. Di’ prima la parola chiave — «echo, formatta come email» — e quello che dici esce formattato, nel tuo tono.',
+	'features.capture.slab3.desc': 'Tieni premuta una scorciatoia, parla, rilascia — il testo rifinito compare al cursore, in qualsiasi app. Di’ prima la parola chiave — «Tucky, formatta come email» — e quello che dici esce formattato, nel tuo tono.',
 	'features.capture.slab3.step1.title': 'Premi e parla',
 	'features.capture.slab3.step1.desc': 'Tieni premuta una scorciatoia, parla, rilascia.',
-	'features.capture.slab3.step2.title': 'La parola chiave «echo»',
-	'features.capture.slab3.step2.desc': 'Di’ «echo, fanne un elenco puntato» e l’IA formatta mentre parli.',
+	'features.capture.slab3.step2.title': 'La parola chiave «Tucky»',
+	'features.capture.slab3.step2.desc': 'Di’ «Tucky, fanne un elenco puntato» e l’IA formatta mentre parli.',
 	'features.capture.slab3.step3.title': 'Audio pulito dentro, testo pulito fuori',
 	'features.capture.slab3.step3.desc': 'Parakeet V3 trascrive localmente in 25 lingue. Aggiungi vocabolario personalizzato e attiva correzioni vocali, punteggiatura e rimozione degli intercalari.',
 	'shot.meeting-hud.alt': 'Vista riunione dal vivo di Tucky durante la registrazione di un allineamento di prodotto',
@@ -468,7 +470,7 @@ const it: Dictionary = {
 	'demo.echo.aria': 'Dettatura intelligente che trasforma un parlato grezzo in un’email formattata',
 	'demo.echo.title': 'Dettatura intelligente',
 	'demo.echo.said.label': 'Hai detto',
-	'demo.echo.said.trigger': '«Echo,',
+	'demo.echo.said.trigger': '«Tucky,',
 	'demo.echo.said.rest': ' formatta come email… ciao Sarah una cosa veloce, la sprint review si sposta a giovedì alle 15, puoi aggiornare il calendario e ricontrollare che la build della demo funzioni»',
 	'demo.echo.got.label': 'Hai ottenuto',
 	'demo.echo.got.p1': 'Ciao Sarah,',
@@ -741,7 +743,7 @@ const it: Dictionary = {
 
 	// Features · Capture — long-form + FAQ
 	'features.capture.intro1':
-		'La cattura è dove inizia la storia — e inizia con la tua voce. La dettatura premi-e-parla trasforma il parlato in testo pulito ovunque sul Mac, con una parola chiave che formata su comando ciò che dici: «echo, formatta come email». Poi si aggiungono le riunioni: Tucky rileva quando una call comincia, registra l’audio di sistema e del microfono, ed esegue una trascrizione dal vivo con guida facoltativa.',
+		'La cattura è dove inizia la storia — e inizia con la tua voce. La dettatura premi-e-parla trasforma il parlato in testo pulito ovunque sul Mac, con una parola chiave che formata su comando ciò che dici: «Tucky, formatta come email». Poi si aggiungono le riunioni: Tucky rileva quando una call comincia, registra l’audio di sistema e del microfono, ed esegue una trascrizione dal vivo con guida facoltativa.',
 	'features.capture.intro2': 'Personalizza scorciatoia, microfono, dizionario e correzioni vocali. La parola di attivazione può creare note o attività, formattare email o elenchi ed eseguire azioni supportate come aprire app o siti. Questi comandi usano il modello di linguaggio locale separato.',
 	'features.capture.faq1.q': 'Come funziona il rilevamento automatico delle riunioni?',
 	'features.capture.faq1.a':
