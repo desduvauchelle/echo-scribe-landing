@@ -98,6 +98,21 @@ export default async function HomePage({
 
 			<PrivacyGrid dict={dict} />
 			<CTA dict={dict} mascot heading={dict['home.story.close.title']} />
+			<div className="bg-base-100 px-6 pb-25">
+				<div className="mx-auto max-w-[980px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
+					<iframe
+						src="https://www.youtube.com/embed/RVOeyxoYHV0?si=LLCA1b7lmMBJkK0L"
+						title="Tucky — YouTube"
+						width={560}
+						height={315}
+						loading="lazy"
+						className="block aspect-video h-auto w-full border-0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						referrerPolicy="strict-origin-when-cross-origin"
+						allowFullScreen
+					/>
+				</div>
+			</div>
 		</>
 	)
 }
