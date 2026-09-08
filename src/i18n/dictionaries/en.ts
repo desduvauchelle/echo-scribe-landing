@@ -1,4 +1,13 @@
 const en = {
+	'meeting.preview.example': 'Illustrative example',
+	'meeting.preview.after': 'After the conversation',
+	'meeting.preview.title': 'Website launch meeting',
+	'meeting.preview.decisions': 'Decision',
+	'meeting.preview.decision': 'The new website goes live on Friday.',
+	'meeting.preview.actions': 'Next steps',
+	'meeting.preview.action1': 'Sam: send the final copy.',
+	'meeting.preview.action2': 'You: review the homepage.',
+
 	'awake.title': 'Keep your computer awake by voice',
 	'awake.instruction': 'Press your usual dictation hotkey and say:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -41,6 +50,23 @@ const en = {
 	'home.meta.description': 'Free Mac app for voice to text, meeting recording, and transcription. The AI runs on your Mac, everything stays searchable, and no account is needed.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "What if I just… talked?",
+	"home.story.voice.desc": "It starts small. A prompt you can’t quite type. Press a key and say it out loud. The words appear at your cursor, cleaner than you said them. Strange at first. Then surprisingly natural.",
+	"home.story.echo.title": "Why am I still typing?",
+	"home.story.echo.desc": "Day one, talking to your laptop feels strange. By the end of the week, you’re speaking emails, code comments, and that message you’ve been putting off. Then you try: “Tucky, make this an email.” Your thoughts, with a little structure. Still in your voice.",
+	"home.story.saved.title": "Wait… this is all useful, isn’t it?",
+	"home.story.saved.desc": "Then one evening, you open the library. The thoughts you saved this week are sitting there, searchable. And you wonder: if my thoughts are worth keeping, what about my conversations?",
+	"home.story.memory.desc": "Weeks go by. Meeting notes, ideas, a walkthrough you narrated for a client. Bring them together by project, then ask: “What did we decide on pricing with Acme?” Get an answer with sources you can check.",
+	"home.story.memory.title": "What else does it know?",
+	"home.story.privacy.title": "And where does all of this live?",
+	"home.story.close.title": "Typing is overrated. Just talk.",
+
+	"home.video.title": "Watch the story · 1 min 50 sec",
+	"home.video.language": "English audio · captions available",
+	"home.video.download": "Download the video",
+
 	'hero.badge': 'Free · Private · On-device AI',
 	'hero.title.line1': 'Typing is overrated.',
 	'hero.title.line2': 'Just talk.',

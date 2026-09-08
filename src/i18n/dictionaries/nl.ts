@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const nl: Dictionary = {
+	'meeting.preview.example': 'Illustratief voorbeeld',
+	'meeting.preview.after': 'Na het gesprek',
+	'meeting.preview.title': 'Overleg over de lancering van de website',
+	'meeting.preview.decisions': 'Besluit',
+	'meeting.preview.decision': 'De nieuwe website gaat vrijdag live.',
+	'meeting.preview.actions': 'Volgende stappen',
+	'meeting.preview.action1': 'Sam: de definitieve teksten sturen.',
+	'meeting.preview.action2': 'Jij: de homepage controleren.',
+
 	'awake.title': 'Houd je computer wakker met je stem',
 	'awake.instruction': 'Druk op je gebruikelijke dicteersneltoets en zeg:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const nl: Dictionary = {
 	'home.meta.description': 'Gratis Mac-app voor spraak naar tekst, vergaderopnames en transcriptie. De AI draait op je Mac. Geen account, geen cloud.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "Wat als ik gewoon… praatte?",
+	"home.story.voice.desc": "Het begint klein. Een prompt die je niet goed kunt typen. Druk op een toets en zeg het hardop. De woorden verschijnen bij je cursor, helderder dan je ze uitsprak. Eerst vreemd. Dan verrassend natuurlijk.",
+	"home.story.echo.title": "Waarom typ ik eigenlijk nog?",
+	"home.story.echo.desc": "De eerste dag voelt praten tegen je laptop vreemd. Aan het eind van de week dicteer je e-mails, codecommentaar en dat bericht dat je steeds uitstelde. Dan probeer je: “Tucky, maak hier een e-mail van.” Je gedachten, met wat structuur. Nog steeds in jouw stem.",
+	"home.story.saved.title": "Wacht… dit is allemaal nuttig, toch?",
+	"home.story.saved.desc": "Op een avond open je de bibliotheek. De gedachten die je deze week hebt bewaard staan er allemaal, doorzoekbaar. En je vraagt je af: als mijn gedachten het bewaren waard zijn, hoe zit het dan met mijn gesprekken?",
+	"home.story.memory.desc": "Weken gaan voorbij. Gespreksnotities, ideeën, een ingesproken uitleg voor een klant. Breng ze samen per project en vraag: “Wat hebben we met Acme over de prijs afgesproken?” Je krijgt een antwoord met bronnen die je kunt controleren.",
+	"home.story.memory.title": "Wat weet het nog meer?",
+	"home.story.privacy.title": "En waar blijft dit allemaal?",
+	"home.story.close.title": "Typen wordt overschat. Praat gewoon.",
+
+	"home.video.title": "Bekijk het verhaal · 1 min 50 sec",
+	"home.video.language": "Engelse audio · ondertiteling beschikbaar",
+	"home.video.download": "Video downloaden",
+
 	'hero.badge': 'Gratis · Privé · AI op je apparaat',
 	'hero.title.line1': 'Typen wordt overschat.',
 	'hero.title.line2': 'Praat gewoon.',

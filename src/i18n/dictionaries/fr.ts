@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const fr: Dictionary = {
+	'meeting.preview.example': 'Exemple illustratif',
+	'meeting.preview.after': 'Après la conversation',
+	'meeting.preview.title': 'Réunion de lancement du site',
+	'meeting.preview.decisions': 'Décision',
+	'meeting.preview.decision': 'Le nouveau site sera mis en ligne vendredi.',
+	'meeting.preview.actions': 'Prochaines étapes',
+	'meeting.preview.action1': 'Sam : envoyer les textes définitifs.',
+	'meeting.preview.action2': 'Vous : relire la page d’accueil.',
+
 	'awake.title': 'Gardez votre ordinateur éveillé à la voix',
 	'awake.instruction': 'Appuyez sur votre raccourci de dictée habituel et dites :',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const fr: Dictionary = {
 	'home.meta.description': 'App Mac gratuite pour la dictée vocale, l’enregistrement de réunions et la transcription. L’IA tourne sur votre Mac. Aucun compte requis.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "Et si je… parlais, tout simplement ?",
+	"home.story.voice.desc": "Tout commence par un petit rien. Un prompt que vous n’arrivez pas à écrire. Appuyez sur une touche et dites-le. Les mots apparaissent à votre curseur, plus clairs qu’à l’oral. Étrange au début. Puis étonnamment naturel.",
+	"home.story.echo.title": "Pourquoi est-ce que je tape encore ?",
+	"home.story.echo.desc": "Le premier jour, parler à son ordinateur paraît étrange. À la fin de la semaine, vous dictez des e-mails, des commentaires de code et ce message que vous remettiez à plus tard. Puis vous essayez : « Tucky, transforme ceci en e-mail. » Vos idées prennent forme, toujours avec votre voix.",
+	"home.story.saved.title": "Mais… tout ça est utile, non ?",
+	"home.story.saved.desc": "Un soir, vous ouvrez la bibliothèque. Les pensées enregistrées cette semaine sont là, prêtes à être retrouvées. Et vous vous demandez : si mes idées méritent d’être gardées, pourquoi pas mes conversations ?",
+	"home.story.memory.desc": "Les semaines passent. Des notes de réunion, des idées, une démonstration commentée pour un client. Rassemblez-les par projet, puis demandez : « Qu’a-t-on décidé pour les tarifs avec Acme ? » La réponse s’accompagne de sources à vérifier.",
+	"home.story.memory.title": "Qu’est-ce qu’il sait d’autre ?",
+	"home.story.privacy.title": "Et où est-ce que tout ça reste ?",
+	"home.story.close.title": "Taper, c’est surfait. Parlez.",
+
+	"home.video.title": "Voir l’histoire · 1 min 50 s",
+	"home.video.language": "Audio en anglais · sous-titres disponibles",
+	"home.video.download": "Télécharger la vidéo",
+
 	'hero.badge': 'Gratuit · Privé · IA locale',
 	'hero.title.line1': 'Taper, c’est surfait.',
 	'hero.title.line2': 'Parlez.',

@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const it: Dictionary = {
+	'meeting.preview.example': 'Esempio illustrativo',
+	'meeting.preview.after': 'Dopo la conversazione',
+	'meeting.preview.title': 'Riunione per il lancio del sito',
+	'meeting.preview.decisions': 'Decisione',
+	'meeting.preview.decision': 'Il nuovo sito sarà online venerdì.',
+	'meeting.preview.actions': 'Prossimi passi',
+	'meeting.preview.action1': 'Sam: inviare i testi definitivi.',
+	'meeting.preview.action2': 'Tu: rivedere la pagina iniziale.',
+
 	'awake.title': 'Tieni sveglio il computer con la voce',
 	'awake.instruction': 'Premi la tua solita scorciatoia di dettatura e di’:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const it: Dictionary = {
 	'home.meta.description': 'App Mac gratuita per voce in testo, registrazione di riunioni e trascrizione. L’IA gira sul tuo Mac. Senza account e senza cloud.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "E se semplicemente… parlassi?",
+	"home.story.voice.desc": "Inizia con poco. Un prompt che non riesci a scrivere. Premi un tasto e dillo ad alta voce. Le parole appaiono al cursore, più chiare di come le hai dette. Strano all’inizio. Poi sorprendentemente naturale.",
+	"home.story.echo.title": "Perché sto ancora scrivendo?",
+	"home.story.echo.desc": "Il primo giorno, parlare al portatile sembra strano. A fine settimana detti e-mail, commenti al codice e quel messaggio che rimandavi. Poi provi: «Tucky, trasformalo in un’e-mail». I tuoi pensieri, con un po’ di struttura. Sempre con la tua voce.",
+	"home.story.saved.title": "Aspetta… è tutto utile, vero?",
+	"home.story.saved.desc": "Una sera apri la libreria. I pensieri salvati durante la settimana sono lì, ricercabili. E ti chiedi: se vale la pena conservare i miei pensieri, perché non le mie conversazioni?",
+	"home.story.memory.desc": "Passano le settimane. Appunti di riunioni, idee, una dimostrazione narrata per un cliente. Riuniscili per progetto e chiedi: «Cosa abbiamo deciso sui prezzi con Acme?». Ottieni una risposta con fonti da verificare.",
+	"home.story.memory.title": "Cos’altro sa?",
+	"home.story.privacy.title": "E dove rimane tutto questo?",
+	"home.story.close.title": "Scrivere è sopravvalutato. Parla e basta.",
+
+	"home.video.title": "Guarda la storia · 1 min 50 s",
+	"home.video.language": "Audio in inglese · sottotitoli disponibili",
+	"home.video.download": "Scarica il video",
+
 	'hero.badge': 'Gratis · Privato · IA sul dispositivo',
 	'hero.title.line1': 'Scrivere è sopravvalutato.',
 	'hero.title.line2': 'Parla e basta.',

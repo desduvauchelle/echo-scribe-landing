@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const pl: Dictionary = {
+	'meeting.preview.example': 'Przykład poglądowy',
+	'meeting.preview.after': 'Po rozmowie',
+	'meeting.preview.title': 'Spotkanie o uruchomieniu strony',
+	'meeting.preview.decisions': 'Decyzja',
+	'meeting.preview.decision': 'Nowa strona zostanie uruchomiona w piątek.',
+	'meeting.preview.actions': 'Kolejne kroki',
+	'meeting.preview.action1': 'Sam: wysłać ostateczne teksty.',
+	'meeting.preview.action2': 'Ty: sprawdzić stronę główną.',
+
 	'awake.title': 'Utrzymuj komputer w stanie aktywności głosem',
 	'awake.instruction': 'Naciśnij zwykły skrót dyktowania i powiedz:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const pl: Dictionary = {
 	'home.meta.description': 'Darmowa aplikacja na Maca: mowa na tekst, nagrywanie spotkań i transkrypcja. AI działa na Twoim Macu. Bez konta i bez chmury.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "A gdybym po prostu… mówił?",
+	"home.story.voice.desc": "Zaczyna się od drobiazgu. Promptu, którego nie potrafisz napisać. Naciśnij klawisz i powiedz go na głos. Słowa pojawią się przy kursorze, jaśniejsze niż te wypowiedziane. Najpierw dziwnie. Potem zaskakująco naturalnie.",
+	"home.story.echo.title": "Dlaczego nadal piszę?",
+	"home.story.echo.desc": "Pierwszego dnia rozmowa z laptopem wydaje się dziwna. Pod koniec tygodnia dyktujesz e-maile, komentarze do kodu i tę odkładaną wiadomość. Potem próbujesz: „Tucky, zrób z tego e-mail”. Twoje myśli, trochę uporządkowane. Nadal twoim głosem.",
+	"home.story.saved.title": "Chwila… to wszystko jest przydatne, prawda?",
+	"home.story.saved.desc": "Pewnego wieczoru otwierasz bibliotekę. Myśli zapisane w tym tygodniu są tam i można je przeszukiwać. Zastanawiasz się: skoro warto zachować moje myśli, to co z moimi rozmowami?",
+	"home.story.memory.desc": "Mijają tygodnie. Notatki ze spotkań, pomysły, nagrany komentarz do prezentacji dla klienta. Zbierz je według projektu i zapytaj: „Co ustaliliśmy z Acme w sprawie cen?”. Otrzymasz odpowiedź ze źródłami do sprawdzenia.",
+	"home.story.memory.title": "Co jeszcze wie?",
+	"home.story.privacy.title": "A gdzie to wszystko zostaje?",
+	"home.story.close.title": "Pisanie jest przereklamowane. Po prostu mów.",
+
+	"home.video.title": "Obejrzyj historię · 1 min 50 s",
+	"home.video.language": "Dźwięk po angielsku · dostępne napisy",
+	"home.video.download": "Pobierz film",
+
 	'hero.badge': 'Za darmo · Prywatnie · AI na urządzeniu',
 	'hero.title.line1': 'Pisanie jest przereklamowane.',
 	'hero.title.line2': 'Po prostu mów.',

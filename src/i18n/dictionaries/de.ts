@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const de: Dictionary = {
+	'meeting.preview.example': 'Illustratives Beispiel',
+	'meeting.preview.after': 'Nach dem Gespräch',
+	'meeting.preview.title': 'Besprechung zum Website-Start',
+	'meeting.preview.decisions': 'Entscheidung',
+	'meeting.preview.decision': 'Die neue Website geht am Freitag online.',
+	'meeting.preview.actions': 'Nächste Schritte',
+	'meeting.preview.action1': 'Sam: die finalen Texte schicken.',
+	'meeting.preview.action2': 'Du: die Startseite prüfen.',
+
 	'awake.title': 'Halte deinen Computer per Sprache wach',
 	'awake.instruction': 'Drücke dein gewohntes Diktierkürzel und sage:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const de: Dictionary = {
 	'home.meta.description': 'Kostenlose Mac-App für Sprache zu Text, Meeting-Aufnahmen und Transkription. Die KI läuft auf deinem Mac. Ohne Konto, ohne Cloud.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "Was, wenn ich einfach… spreche?",
+	"home.story.voice.desc": "Es fängt klein an. Ein Prompt, den du nicht recht formulieren kannst. Drücke eine Taste und sprich ihn aus. Die Wörter erscheinen am Cursor, klarer als gesprochen. Erst ungewohnt. Dann überraschend natürlich.",
+	"home.story.echo.title": "Warum tippe ich eigentlich noch?",
+	"home.story.echo.desc": "Am ersten Tag fühlt es sich seltsam an, mit dem Laptop zu sprechen. Am Ende der Woche diktierst du E-Mails, Code-Kommentare und die Nachricht, die du aufgeschoben hast. Dann versuchst du: „Tucky, mach daraus eine E-Mail.“ Deine Gedanken, etwas geordnet. Immer noch in deinem Ton.",
+	"home.story.saved.title": "Moment… das ist alles nützlich, oder?",
+	"home.story.saved.desc": "Eines Abends öffnest du die Bibliothek. Die Gedanken, die du diese Woche gespeichert hast, sind alle da und durchsuchbar. Und du fragst dich: Wenn meine Gedanken es wert sind, aufgehoben zu werden, was ist mit meinen Gesprächen?",
+	"home.story.memory.desc": "Wochen vergehen. Besprechungsnotizen, Ideen, eine kommentierte Demo für einen Kunden. Ordne sie nach Projekt und frage: „Was haben wir mit Acme zum Preis vereinbart?“ Du erhältst eine Antwort mit überprüfbaren Quellen.",
+	"home.story.memory.title": "Was weiß es noch?",
+	"home.story.privacy.title": "Und wo bleibt das alles?",
+	"home.story.close.title": "Tippen wird überschätzt. Sprich einfach.",
+
+	"home.video.title": "Die Geschichte ansehen · 1 Min. 50 Sek.",
+	"home.video.language": "Englischer Ton · Untertitel verfügbar",
+	"home.video.download": "Video herunterladen",
+
 	'hero.badge': 'Kostenlos · Privat · KI auf dem Gerät',
 	'hero.title.line1': 'Tippen wird überschätzt.',
 	'hero.title.line2': 'Sprich einfach.',

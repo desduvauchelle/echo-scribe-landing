@@ -3,7 +3,7 @@ import type { Dictionary } from '@/i18n'
 import { ScrollReveal } from './ScrollReveal'
 import { InstallBox } from './InstallBox'
 
-export function CTA({ dict, mascot = false }: { dict: Dictionary; mascot?: boolean }) {
+export function CTA({ dict, mascot = false, heading }: { dict: Dictionary; mascot?: boolean; heading?: string }) {
 	const meta = [dict['cta.meta.macos'], dict['cta.meta.chips'], dict['cta.meta.update'], dict['cta.meta.models']]
 
 	return (
@@ -11,7 +11,7 @@ export function CTA({ dict, mascot = false }: { dict: Dictionary; mascot?: boole
 			<div className="container mx-auto max-w-[1080px] px-6">
 				<ScrollReveal y={30}>
 					{mascot && <Mascot pose="wave" dict={dict} className="mx-auto mb-7 max-w-[190px]" />}
-					<h2 className="mb-3.5 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">{dict['cta.heading']}</h2>
+					<h2 className="mb-3.5 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">{heading ?? dict['cta.heading']}</h2>
 					<p className="mb-10 text-lg text-base-content/70">{dict['cta.subtitle']}</p>
 
 					<InstallBox dict={dict} />

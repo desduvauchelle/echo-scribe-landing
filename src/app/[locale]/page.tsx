@@ -58,11 +58,10 @@ export default async function HomePage({
 			    entity search and answer engines resolve this site to. */}
 			<JsonLd data={homeJsonLd(locale, dict)} />
 			<Hero dict={dict} locale={locale} />
-			<WorkMemoryLoop dict={dict} locale={locale} />
 			<Features dict={dict} locale={locale} />
+			<WorkMemoryLoop dict={dict} locale={locale} />
 			<UseCasesGrid dict={dict} locale={locale} />
 			<KeepAwake dict={dict} />
-			<PrivacyGrid dict={dict} />
 
 			<section className="py-20 bg-base-100 border-t border-base-content/10">
 				<div className="container mx-auto px-4">
@@ -97,7 +96,8 @@ export default async function HomePage({
 				</div>
 			</section>
 
-			<CTA dict={dict} mascot />
+			<PrivacyGrid dict={dict} />
+			<CTA dict={dict} mascot heading={dict['home.story.close.title']} />
 		</>
 	)
 }

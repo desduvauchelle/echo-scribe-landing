@@ -37,7 +37,7 @@ export function PrivacyGrid({ dict }: { dict: Dictionary }) {
 					<ScrollReveal y={30}>
 						<Eyebrow className="mb-5">{dict['privacy.landing.eyebrow']}</Eyebrow>
 						<h2 className="mb-4 text-[clamp(28px,4vw,46px)] font-extrabold tracking-[-0.03em]">
-							{dict['privacy.landing.title']}
+							{dict['home.story.privacy.title']}
 						</h2>
 						<p className="max-w-[520px] text-lg leading-relaxed text-base-content/70">
 							{dict['privacy.landing.subtitle']}

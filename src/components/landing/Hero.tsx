@@ -1,3 +1,4 @@
+import { InquiryVideo } from './InquiryVideo'
 import { Mascot } from './Mascot'
 import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
@@ -55,7 +56,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 								<DownloadIcon />
 								{dict['hero.cta.primary']}
 							</TrackedLink>
-							<a href="#how-it-works" className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-neutral">
+							<a href="#voice" className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-neutral">
 								{dict['hero.cta.secondary']}
 								<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
 									<polyline points="9 18 15 12 9 6" />
@@ -92,18 +93,11 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 					<Mascot pose="listen" interactive dict={dict} className="order-first mx-auto max-w-[180px] sm:max-w-[260px] lg:order-last lg:max-w-none" />
 					</div>
 
-					<div className="mx-auto mt-16 max-w-[980px] overflow-hidden rounded-2xl border border-base-content/15 bg-black shadow-[0_24px_64px_rgba(18,59,45,0.16)]">
-						<iframe
-							src="https://www.youtube.com/embed/RVOeyxoYHV0?si=LLCA1b7lmMBJkK0L"
-							title="Tucky — YouTube"
-							width={560}
-							height={315}
-							className="block aspect-video h-auto w-full border-0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							referrerPolicy="strict-origin-when-cross-origin"
-							allowFullScreen
-						/>
-					</div>
+					<InquiryVideo labels={{
+						title: dict['home.video.title'],
+						language: dict['home.video.language'],
+						download: dict['home.video.download'],
+					}} />
 
 					<div className="pt-10" aria-hidden="true">
 						<div className="flex h-11 items-end justify-center gap-[5px]">

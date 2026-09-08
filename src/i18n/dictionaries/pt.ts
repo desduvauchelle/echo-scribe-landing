@@ -1,6 +1,15 @@
 import type { Dictionary } from './en'
 
 const pt: Dictionary = {
+	'meeting.preview.example': 'Exemplo ilustrativo',
+	'meeting.preview.after': 'Depois da conversa',
+	'meeting.preview.title': 'Reunião de lançamento do site',
+	'meeting.preview.decisions': 'Decisão',
+	'meeting.preview.decision': 'O novo site será publicado na sexta-feira.',
+	'meeting.preview.actions': 'Próximos passos',
+	'meeting.preview.action1': 'Sam: enviar os textos finais.',
+	'meeting.preview.action2': 'Você: revisar a página inicial.',
+
 	'awake.title': 'Mantenha o computador ativo com a voz',
 	'awake.instruction': 'Prima o atalho de ditado habitual e diga:',
 	'awake.command': 'Tucky, keep my computer awake for two hours.',
@@ -39,6 +48,23 @@ const pt: Dictionary = {
 	'home.meta.description': 'App gratuito para Mac de voz para texto, gravação de reuniões e transcrição. A IA roda no seu Mac. Sem conta e sem nuvem.',
 
 	// Hero
+
+	// Homepage story: from the first dictation to a local work memory.
+	"home.story.voice.title": "E se eu simplesmente… falasse?",
+	"home.story.voice.desc": "Começa com pouco. Um prompt que não consegues escrever. Prime uma tecla e diz em voz alta. As palavras aparecem junto ao cursor, mais claras do que as disseste. Estranho ao início. Depois, surpreendentemente natural.",
+	"home.story.echo.title": "Porque continuo a escrever?",
+	"home.story.echo.desc": "No primeiro dia, falar com o portátil parece estranho. No fim da semana, ditas e-mails, comentários de código e aquela mensagem que andavas a adiar. Depois experimentas: «Tucky, transforma isto num e-mail». As tuas ideias, com alguma estrutura. Ainda com a tua voz.",
+	"home.story.saved.title": "Espera… isto é tudo útil, não é?",
+	"home.story.saved.desc": "Uma noite, abres a biblioteca. Os pensamentos que guardaste esta semana estão lá, pesquisáveis. E perguntas-te: se vale a pena guardar os meus pensamentos, e as minhas conversas?",
+	"home.story.memory.desc": "Passam semanas. Notas de reuniões, ideias, uma demonstração narrada para um cliente. Junta tudo por projeto e pergunta: «O que decidimos sobre os preços com a Acme?». Recebe uma resposta com fontes que podes verificar.",
+	"home.story.memory.title": "O que mais sabe?",
+	"home.story.privacy.title": "E onde fica tudo isto?",
+	"home.story.close.title": "Escrever está sobrevalorizado. Basta falar.",
+
+	"home.video.title": "Ver a história · 1 min 50 s",
+	"home.video.language": "Áudio em inglês · legendas disponíveis",
+	"home.video.download": "Descarregar o vídeo",
+
 	'hero.badge': 'Grátis · Privado · IA no seu dispositivo',
 	'hero.title.line1': 'Digitar é superestimado.',
 	'hero.title.line2': 'É só falar.',
