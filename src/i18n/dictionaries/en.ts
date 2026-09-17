@@ -598,6 +598,14 @@ const en = {
 	'blog.post.not.found': 'Post Not Found',
 	'blog.post.not.found.description': "The post you're looking for doesn't exist.",
 	'blog.related.posts': 'Related Posts',
+
+	// Topic hubs (/blog/topic/<slug>). `blog.topic.title` is the hub's H1 AND
+	// its <title>, so it must name the topic — `buildPageMetadata` appends the
+	// brand. {topic} and {count} are filled in by the page.
+	'blog.topics.label': 'Browse by topic',
+	'blog.filed.under': 'Filed under',
+	'blog.topic.title': '{topic}',
+	'blog.topic.subtitle': '{count} articles about {topic}',
 	'blog.load.error': 'Failed to load posts: {error}',
 	'blog.index.heading': 'Every post',
 	'blog.index.description':

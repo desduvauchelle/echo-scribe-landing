@@ -106,6 +106,17 @@ interface AuthorSitemapEntry {
 }
 
 /**
+ * A topic hub (`/blog/topic/<slug>`), derived by the SDK from the keywords two
+ * or more published posts share. There is nothing to curate and no `updatedAt`
+ * — a hub changes whenever any of its posts does, so it carries a
+ * `changeFrequency` and no `<lastmod>` rather than an invented one.
+ */
+interface TopicSitemapEntry {
+	slug: string
+	postCount: number
+}
+
+/**
  * Absolute URL for a locale-agnostic path. THE single source of truth for every
  * absolute URL the site emits (canonical, OG, hreflang, sitemap, RSS).
  *
@@ -184,6 +195,21 @@ async function fetchAuthors(): Promise<AuthorSitemapEntry[]> {
 		)
 		if (!res.ok) return []
 		return (await res.json()) as AuthorSitemapEntry[]
+	} catch {
+		return []
+	}
+}
+
+/** Topic hubs for one locale, from the SDK's `blog-topics` content type. */
+async function fetchTopics(locale: string): Promise<TopicSitemapEntry[]> {
+	try {
+		const res = await fetch(
+			`${SITE_URL}/api/rs/content?type=blog-topics&locale=${encodeURIComponent(locale)}`,
+			{ next: { revalidate: 3600 } },
+		)
+		if (!res.ok) return []
+		const topics = (await res.json()) as TopicSitemapEntry[]
+		return Array.isArray(topics) ? topics : []
 	} catch {
 		return []
 	}
@@ -283,6 +309,34 @@ export async function buildAuthorEntries(): Promise<SitemapEntry[]> {
 			priority: 0.6,
 			alternates: buildAlternates(path),
 		})
+	}
+	return entries
+}
+
+/**
+ * The topic hubs, one entry per hub per locale.
+ *
+ * A hub is the pillar page for a cluster: it links to every post that shares
+ * the keyword and every one of those posts links back up to it, so a post that
+ * nothing else happens to resemble still has an inbound link from a
+ * server-rendered anchor. Priority sits between the posts (0.8) and the author
+ * pages (0.6) — a page that leads to every post on a subject is worth more to a
+ * crawler than an author page and less than the posts themselves.
+ */
+export async function buildTopicEntries(): Promise<SitemapEntry[]> {
+	const perLocale = await Promise.all(
+		supportedLocales.map(async (locale) => ({ locale, topics: await fetchTopics(locale) })),
+	)
+	const entries: SitemapEntry[] = []
+	for (const { locale, topics } of perLocale) {
+		for (const topic of topics) {
+			if (typeof topic.slug !== 'string' || topic.slug.length === 0) continue
+			entries.push({
+				url: buildUrl(`/blog/topic/${encodeURIComponent(topic.slug)}`, locale),
+				changeFrequency: 'weekly',
+				priority: 0.7,
+			})
+		}
 	}
 	return entries
 }

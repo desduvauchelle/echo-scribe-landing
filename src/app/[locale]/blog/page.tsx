@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { getBlogPosts, getBlogAuthors } from '@growth-engine/sdk-server'
-import { BlogList } from '@growth-engine/sdk-client/components'
+import { getBlogPosts, getBlogAuthors, getBlogTopics } from '@growth-engine/sdk-server'
+import { BlogList, TopicChips } from '@growth-engine/sdk-client/components'
 import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { localePrefix } from '@/lib/i18n-utils'
@@ -36,9 +36,10 @@ export default async function BlogPage({
 	const { locale } = await params
 	const dict = await getDictionary(locale)
 
-	const [posts, authors] = await Promise.all([
+	const [posts, authors, topics] = await Promise.all([
 		safeQuery([], () => getBlogPosts(getDb(), { locale, limit: 0 })),
 		safeQuery([], () => getBlogAuthors(getDb())),
+		safeQuery([], () => getBlogTopics(getDb(), locale)),
 	])
 
 	return (
@@ -61,6 +62,14 @@ export default async function BlogPage({
 				authors={authors}
 				locale={locale}
 				label={dict['blog.filter.by.author']}
+			/>
+
+			{/* The only inbound links the topic hubs get from outside the blog. */}
+			<TopicChips
+				topics={topics}
+				locale={locale}
+				localePrefix={localePrefix(locale)}
+				label={dict['blog.topics.label']}
 			/>
 
 			<BlogList

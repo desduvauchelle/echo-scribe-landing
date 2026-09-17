@@ -1,159 +1,73 @@
 /**
- * Which posts does a blog post link out to?
+ * The coverage guarantee under the related-articles block.
  *
- * The SDK's `RelatedPosts` does `posts.filter(p => p.slug !== currentSlug).slice(0, 3)`
- * — literally the same first three posts at the bottom of every post in the
- * blog. Measured on this site at 31 posts: three posts collected 30 inbound
- * links each and the other 26 got zero, so most of the blog was reachable only
- * through hand-written "Related reading" links in the post bodies — two to
- * three clicks deep with a single inbound link each. A crawl flagged nine of
- * them as orphan pages (`orphan_page`), and one post really was orphaned.
+ * Relevance ranking is the SDK's job now: `getRelatedPosts()` from
+ * `@growth-engine/sdk-server` scores keyword and title overlap, fills any
+ * shortfall with the newest posts, and returns 3–5 siblings. That ranking is
+ * also what the seo-improvement loop re-runs, so the links it counts are links
+ * that are really on the page — which is why nothing here re-ranks.
  *
- * So the selection here has two jobs, and the first one is not editorial:
+ * What the ranking does NOT promise is an INBOUND link. It answers "what should
+ * this post link to", never "does anything link to that post", and the two
+ * come apart: a post nothing else resembles, and too old to win a newest-first
+ * fallback slot, can be linked from nowhere. Measured on this blog at 31 posts
+ * under the old SDK, three posts held 90 of 93 links and a crawl reported nine
+ * `orphan_page` findings.
  *
- *   1. **Coverage.** One slot is always the post's successor in canonical
- *      order, wrapping at the end. That single rule threads a cycle through
- *      EVERY post, so every post has at least one inbound link regardless of
- *      what its content looks like — and still does when post 32 is published.
- *      Orphans stop being something anyone has to remember to prevent.
- *   2. **Relevance.** The remaining slots go to the highest keyword/title
- *      overlap, so the links are also worth clicking.
+ * One rule fixes that for good: one slot always goes to the post's SUCCESSOR in
+ * canonical order, wrapping at the end. That threads a cycle through every
+ * post, so every post has at least one inbound link regardless of its content —
+ * and still does when the next post is published. Orphans stop being something
+ * anyone has to remember to prevent.
  *
- * Ordering is deterministic: same posts in, same links out. A link graph that
- * reshuffles on every deploy is not a signal we want to send a crawler.
+ * The topic hubs (`/blog/topic/<slug>`) are the other half: they link a post up
+ * to its cluster. The cycle is what covers a post that belongs to no cluster.
  */
 
 /** The fields this needs off a post. `BlogPost` satisfies it structurally. */
 export interface RelatablePost {
 	slug: string
-	title: string
-	/**
-	 * Brain stores this as a JSON-encoded string array, but it is `null` on
-	 * older posts and has arrived as a bare comma-separated string. Parsed
-	 * defensively — a post with unreadable keywords still ranks on its title.
-	 */
-	keywords?: unknown
 }
 
-/** How many of the slots the coverage cycle claims. The rest rank on overlap. */
+/** How many of the slots the coverage cycle claims. The rest stay the SDK's. */
 const CYCLE_SLOTS = 1
 
-const KEYWORD_WEIGHT = 3
-const TITLE_WEIGHT = 1
-
 /**
- * Tokens too common in this blog's titles and keyword sets to carry signal.
- * Deliberately short: product words that look generic in isolation — `mac`,
- * `local`, `offline`, `private`, `voice` — are exactly the axes posts here
- * differ on, so they stay in.
- */
-const STOPWORDS = new Set([
-	'the', 'and', 'for', 'you', 'your', 'with', 'without', 'from', 'that',
-	'this', 'what', 'when', 'why', 'how', 'not', 'but', 'are', 'was', 'can',
-	'get', 'got', 'out', 'off', 'into', 'onto', 'over', 'than', 'then', 'all',
-	'any', 'own', 'its', 'has', 'have', 'they', 'them', 'their', 'about',
-])
-
-const MIN_TOKEN_LENGTH = 3
-
-interface Profile {
-	keywords: Set<string>
-	title: Set<string>
-}
-
-const EMPTY_PROFILE: Profile = { keywords: new Set(), title: new Set() }
-
-export function tokenize(text: string): Set<string> {
-	const tokens = text
-		.toLowerCase()
-		.split(/[^a-z0-9]+/)
-		.filter((t) => t.length >= MIN_TOKEN_LENGTH && !STOPWORDS.has(t))
-	return new Set(tokens)
-}
-
-export function parseKeywords(raw: unknown): string[] {
-	if (Array.isArray(raw)) return raw.filter((k): k is string => typeof k === 'string')
-	if (typeof raw !== 'string') return []
-
-	const trimmed = raw.trim()
-	if (!trimmed) return []
-
-	// A leading `[` means this was meant to be the JSON array. If it does not
-	// parse, the value is unreadable — say so rather than comma-splitting the
-	// broken JSON and scoring `["unterminated` as one of the post's keywords.
-	if (trimmed.startsWith('[')) {
-		try {
-			const parsed: unknown = JSON.parse(trimmed)
-			return Array.isArray(parsed)
-				? parsed.filter((k): k is string => typeof k === 'string')
-				: []
-		} catch {
-			return []
-		}
-	}
-
-	return trimmed
-		.split(',')
-		.map((k) => k.trim())
-		.filter(Boolean)
-}
-
-function profile(post: RelatablePost): Profile {
-	return {
-		keywords: tokenize(parseKeywords(post.keywords).join(' ')),
-		title: tokenize(post.title),
-	}
-}
-
-function overlap(a: Set<string>, b: Set<string>): number {
-	let shared = 0
-	for (const token of a) if (b.has(token)) shared++
-	return shared
-}
-
-function similarity(a: Profile, b: Profile): number {
-	return (
-		overlap(a.keywords, b.keywords) * KEYWORD_WEIGHT +
-		overlap(a.title, b.title) * TITLE_WEIGHT
-	)
-}
-
-/**
- * Pick the posts to link from `currentSlug`, most relevant first with the
- * coverage-cycle post last.
+ * The post's successor in canonical order, wrapping at the end.
  *
- * `posts` must be the full post list in the SAME order on every page that
- * calls this (both callers pass `getBlogPosts(db, { locale, limit: 0 })`) —
- * the cycle is only a cycle if every post agrees on who its successor is.
+ * Null when the post is not in the list (a preview, or a locale mismatch):
+ * there is no cycle to join, so there is no slot to take from relevance.
+ *
+ * `posts` must be the full post list in the SAME order everywhere this is
+ * called — the cycle is only a cycle if every post agrees on its successor.
  */
-export function selectRelatedPosts<T extends RelatablePost>(
+export function coveragePost<T extends RelatablePost>(
 	posts: T[],
 	currentSlug: string,
-	count = 3,
-): T[] {
-	if (count <= 0) return []
-
-	const others = posts.filter((p) => p.slug !== currentSlug)
-	if (others.length <= count) return others
-
+): T | null {
 	const index = posts.findIndex((p) => p.slug === currentSlug)
+	if (index === -1) return null
+	const successor = posts[(index + 1) % posts.length] ?? null
+	return successor && successor.slug !== currentSlug ? successor : null
+}
 
-	// The coverage guarantee. `index === -1` means the current post is not in
-	// the list (a preview, or a locale mismatch) — there is no cycle to join,
-	// so give the slot back to relevance rather than linking something random.
-	const successor = index === -1 ? null : (posts[(index + 1) % posts.length] ?? null)
-	const cycle = successor && successor.slug !== currentSlug ? successor : null
-
-	const current = index === -1 ? EMPTY_PROFILE : profile(posts[index]!)
-	const relevantSlots = cycle ? count - CYCLE_SLOTS : count
-
-	const relevant = others
-		.filter((p) => p.slug !== cycle?.slug)
-		.map((post, order) => ({ post, order, score: similarity(current, profile(post)) }))
-		// Ties break on canonical order, so the output is stable between builds.
-		.sort((a, b) => b.score - a.score || a.order - b.order)
-		.slice(0, relevantSlots)
-		.map((scored) => scored.post)
-
-	return cycle ? [...relevant, cycle] : relevant
+/**
+ * The related-articles list as it is actually rendered: the SDK's ranking, plus
+ * the coverage-cycle post when the ranking missed it.
+ *
+ * The cycle post REPLACES the weakest ranked slot rather than being added on
+ * top, so the block keeps the 3–5 links the SDK's contract describes. Ordering
+ * is deterministic: same posts in, same links out — a link graph that reshuffles
+ * on every deploy is not a signal worth sending a crawler.
+ */
+export function withCoveragePost<T extends RelatablePost>(
+	ranked: T[],
+	posts: T[],
+	currentSlug: string,
+	max = 5,
+): T[] {
+	if (max <= 0) return []
+	const cycle = coveragePost(posts, currentSlug)
+	if (!cycle || ranked.some((p) => p.slug === cycle.slug)) return ranked.slice(0, max)
+	return [...ranked.slice(0, Math.max(0, max - CYCLE_SLOTS)), cycle]
 }

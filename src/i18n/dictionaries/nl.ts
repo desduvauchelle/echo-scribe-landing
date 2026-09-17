@@ -596,6 +596,14 @@ const nl: Dictionary = {
 	'blog.post.not.found': 'Artikel niet gevonden',
 	'blog.post.not.found.description': 'Het artikel dat je zoekt bestaat niet.',
 	'blog.related.posts': 'Gerelateerde artikelen',
+
+	// Topic hubs (/blog/topic/<slug>). `blog.topic.title` is the hub's H1 AND
+	// its <title>, so it must name the topic — `buildPageMetadata` appends the
+	// brand. {topic} and {count} are filled in by the page.
+	'blog.topics.label': 'Bladeren op onderwerp',
+	'blog.filed.under': 'Gearchiveerd onder',
+	'blog.topic.title': '{topic}',
+	'blog.topic.subtitle': '{count} artikelen over {topic}',
 	'blog.load.error': 'Artikelen laden mislukt: {error}',
 	'blog.index.heading': 'Alle artikelen',
 	'blog.index.description':

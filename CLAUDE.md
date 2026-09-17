@@ -14,7 +14,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `pnpm build` | Production build |
 | `pnpm lint` | ESLint |
 | `pnpm typecheck` | `tsc --noEmit` |
-| `pnpm pull-forms` | Generate form Zod schemas into `src/generated/forms.ts` |
+| `pnpm pull-forms` | Generate form Zod schemas into `src/generated/forms.ts`. **Broken on SDK 0.1.100** — the package's `bin` points at `dist/pull-forms.js`, which the GitHub release tarball does not have (the file sits at the package root). Nothing here depends on it; run the generator from the SDK directly, or fix it upstream |
 
 ## Tech Stack
 
@@ -55,7 +55,9 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/app/[locale]/cookies/page.tsx` | Cookie policy |
 | `src/components/landing/` | Hero, Features, CTA (with scroll reveal animations) |
 | `src/components/blog/` | RelatedPosts (local — replaces the SDK's), AllPostsIndex, AuthorByline, AuthorCard, AuthorChips. BlogList/BlogCard/BlogContent/BlogSearch come from the SDK |
-| `src/lib/related-posts.ts` | Which posts a post links out to — relevance plus a coverage cycle that prevents orphan pages |
+| `src/app/[locale]/blog/topic/[slug]/page.tsx` | Topic hub (pillar) page — every post sharing a keyword, 404 for a non-hub slug |
+| `src/lib/related-posts.ts` | The coverage cycle that keeps any post from becoming an orphan. Relevance ranking is the SDK's `getRelatedPosts` |
+| `src/lib/post-keywords.ts` | `parseKeywords()` — Brain stores `keywords` as a JSON string; SDK 0.1.100's JSON-LD calls `.join()` on it |
 | `src/components/layout/` | Header, Footer, ThemeToggle, LanguageSwitcher |
 | `src/components/landing/InstallBox.tsx` | The curl install command + copy button. Fires `install_copy` — the site's primary conversion |
 | `src/components/analytics/GoogleAnalytics.tsx` | GA4 script loader + `trackEvent()` helper |
@@ -72,7 +74,7 @@ This is a Next.js 15 client site built on the Growth Engine platform. It connect
 | `src/generated/forms.ts` | Auto-generated form Zod schemas (via `pnpm pull-forms`) |
 | `src/app/globals.css` | Tailwind + DaisyUI + typography plugin imports |
 | `src/app/sitemap.xml/route.ts` | Sitemap index — points at `/sitemap/{id}.xml` shards |
-| `src/app/sitemap/[file]/route.ts` | Sitemap shards: id 0 = static pages, 1..N = blog batches, N+1 = authors |
+| `src/app/sitemap/[file]/route.ts` | Sitemap shards: id 0 = static pages, 1..N = blog batches, N+1 = authors, N+2 = topic hubs |
 | `src/components/product/hub-links.unit.test.ts` | Fails the build if `/features` or `/use-cases` stops linking to a subpage, reuses one generic anchor label, or lets a hub slab's `desc` fall back to the subpage `subtitle` |
 | `src/lib/product-page-meta-title.unit.test.ts` | Fails the build if a `/features` or `/use-cases` page puts its H1 slogan in `<title>` instead of a `*.meta.title` key |
 | `src/lib/sitemap-shared.ts` | Sitemap builders, hreflang grouping, XML serializers (manual route handlers — do NOT add `src/app/sitemap.ts`; Next 16 + `[locale]` segment makes the metadata convention unreliable) |
@@ -211,12 +213,24 @@ Run `pnpm pull-forms` to generate typed Zod schemas in `src/generated/forms.ts` 
 
 ### Internal linking (do not regress this)
 
-Two SDK components quietly starve the blog of internal links, and both are worked around rather than used as shipped:
+**Structural internal linking, ported from the create-client-app template on 2026-09-17 with SDK 0.1.100.** Every post now carries 3–5 crawlable links to siblings plus links up to its topic hubs, all server-rendered anchors computed by the SDK from stored keywords — nothing to curate. Measured locally across 42 posts after the port: **every post has at least 3 inbound links (min 3, max 22), zero below the floor**, counting only post→post and hub→post anchors.
 
-- **`RelatedPosts` from the SDK links the same three posts from every post** — it is `posts.filter(p => p.slug !== currentSlug).slice(0, 3)`. Measured at 31 posts: three posts held 90 of the 93 links and the other 26 held none, so a crawl reported nine posts as orphans (`orphan_page`) and one genuinely was. The local replacement reserves one of the three slots for the post's **successor in canonical order**, which threads a cycle through every post and makes an orphan structurally impossible; the other two rank on keyword/title overlap. Logic and tests: [src/lib/related-posts.ts](src/lib/related-posts.ts).
-- **`BlogList` paginates with `<button onClick={setPage}>`, not links.** There is no page-2 URL — `/blog?page=2` serves the same nine posts — so a crawler reading `/blog` sees nine of 31. `AllPostsIndex` below the grid is what makes the rest reachable.
+The four moving parts, all required together:
 
-If you replace either component, re-check that every published post still has an inbound link from a server-rendered `<a>`. The unit tests cover the selection rule, not the wiring.
+- **`<RelatedArticles>`** on `/blog/{slug}`, fed by `getRelatedPosts(db, post, { locale })`. Replaces the local `RelatedPosts` component (deleted): the SDK now ranks keyword/title overlap per post rather than slicing the same three posts, and — the reason not to re-rank here — it is the SAME ranking the seo-improvement loop re-runs, so the links it counts are the links really on the page.
+- **`<TopicChips>`** on `/blog/{slug}` ("Filed under") and on `/blog` ("Browse by topic"), from `getBlogTopicsForPost` / `getBlogTopics`.
+- **`/blog/topic/[slug]`** — the hub (pillar) pages. A hub appears automatically once two published posts share a keyword, lists all of them, and 404s for any slug that is not a hub. Listed in the sitemap by `buildTopicEntries` (shard `blogSitemapCount + 2`).
+- **`structuralLinks: true`** in [src/app/api/rs/[...route]/route.ts](src/app/api/rs/[...route]/route.ts). Brain gates orphan detection on this flag, NOT on the SDK version, because bumping the dependency ports none of the pages above. `/api/rs/sdk-status` reports it. **If you remove any of the three pieces above, set this back to `false` in the same commit** — a wrong yes hides every orphan on the blog.
+
+**The coverage cycle survived the port, in [src/lib/related-posts.ts](src/lib/related-posts.ts).** `getRelatedPosts` answers "what should this post link to", never "does anything link to that post", and those come apart: a post nothing resembles, too old to win a newest-first fallback slot, can be linked from nowhere. That is the failure measured here at 31 posts under the old SDK (three posts held 90 of 93 links; a crawl reported nine `orphan_page` findings). `withCoveragePost()` gives one of the 3–5 slots to the post's **successor in canonical order**, threading a cycle through every post so an orphan is structurally impossible — including a post that belongs to no topic hub. It replaces the weakest ranked slot, never adds a sixth, so the rendered set stays within the SDK's contract.
+
+Still true, and still worked around:
+
+- **`BlogList` paginates with `<button onClick={setPage}>`, not links.** There is no page-2 URL — `/blog?page=2` serves the same nine posts — so a crawler reading `/blog` sees nine of 42. `AllPostsIndex` below the grid is what makes the rest reachable. The topic hub page sets `postsPerPage` to its whole post count for the same reason: a pillar page that paginates hides the links it exists to hand out.
+
+If you replace any of these, re-check that every published post still has an inbound link from a server-rendered `<a>` — the unit tests cover the selection rules, not the wiring.
+
+**SDK 0.1.100 landmine — `post.keywords` is a STRING.** `getBlogPost()` returns the raw database row, and Brain stores `keywords` as a JSON-encoded array *string*. SDK 0.1.100 added `keywords` to the `BlogPosting` JSON-LD that `BlogContent` emits and calls `.join(', ')` on whatever it gets, so every post page threw during render and Next served its error shell: HTTP 200, `<meta name="robots" content="noindex">`, no article, no links. The post page normalises the field with `parseKeywords()` from [src/lib/post-keywords.ts](src/lib/post-keywords.ts) before handing the post to `BlogContent`. Keep that call. Anything else passing a raw post into an SDK component that reads `keywords` needs the same treatment.
 
 ## Authors
 
