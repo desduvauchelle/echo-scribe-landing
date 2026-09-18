@@ -366,6 +366,118 @@ describe('sitemap-shared', () => {
 		})
 	})
 
+	// ─── buildTopicEntries ───────────────────────────────────────────────
+
+	describe('buildTopicEntries', () => {
+		it('returns one entry per topic hub', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () =>
+						Promise.resolve([
+							{ slug: 'local-transcription', postCount: 6 },
+							{ slug: 'meeting-notes', postCount: 3 },
+						]),
+				}),
+			)
+			const { buildTopicEntries } = await load()
+			const urls = (await buildTopicEntries()).map((e) => e.url)
+			expect(urls).toContain('https://example.com/blog/topic/local-transcription')
+			expect(urls).toContain('https://example.com/blog/topic/meeting-notes')
+		})
+
+		it('uses 0.7 priority — above authors, below the posts themselves', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () => Promise.resolve([{ slug: 'a', postCount: 2 }]),
+				}),
+			)
+			const { buildTopicEntries } = await load()
+			const result = await buildTopicEntries()
+			expect(result[0]?.priority).toBe(0.7)
+			expect(result[0]?.changeFrequency).toBe('weekly')
+		})
+
+		it('emits no <lastmod> — a hub has no date of its own to report', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () => Promise.resolve([{ slug: 'a', postCount: 2 }]),
+				}),
+			)
+			const { buildTopicEntries } = await load()
+			expect((await buildTopicEntries())[0]?.lastModified).toBeUndefined()
+		})
+
+		it('prefixes secondary locales and leaves the default locale bare', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () => Promise.resolve([{ slug: 'a', postCount: 2 }]),
+				}),
+			)
+			const { buildTopicEntries } = await load({
+				defaultLocale: 'en',
+				supportedLocales: ['en', 'fr'],
+				isMultiLang: true,
+			})
+			const urls = (await buildTopicEntries()).map((e) => e.url)
+			expect(urls).toContain('https://example.com/blog/topic/a')
+			expect(urls).toContain('https://example.com/fr/blog/topic/a')
+		})
+
+		it('skips topics with a missing or empty slug', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () =>
+						Promise.resolve([
+							{ slug: '', postCount: 2 },
+							{ postCount: 2 },
+							{ slug: 'real', postCount: 2 },
+						]),
+				}),
+			)
+			const { buildTopicEntries } = await load()
+			const result = await buildTopicEntries()
+			expect(result).toHaveLength(1)
+			expect(result[0]?.url).toBe('https://example.com/blog/topic/real')
+		})
+
+		it('percent-encodes a slug so it cannot break the URL', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({
+					ok: true,
+					json: () => Promise.resolve([{ slug: 'a b', postCount: 2 }]),
+				}),
+			)
+			const { buildTopicEntries } = await load()
+			expect((await buildTopicEntries())[0]?.url).toBe('https://example.com/blog/topic/a%20b')
+		})
+
+		it('returns empty array when fetch fails — no hubs, not a broken sitemap', async () => {
+			vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('network')))
+			const { buildTopicEntries } = await load()
+			expect(await buildTopicEntries()).toEqual([])
+		})
+
+		it('returns empty array when the endpoint does not return a list', async () => {
+			vi.stubGlobal(
+				'fetch',
+				vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve({ error: 'nope' }) }),
+			)
+			const { buildTopicEntries } = await load()
+			expect(await buildTopicEntries()).toEqual([])
+		})
+	})
+
 	// ─── renderSitemapXml ────────────────────────────────────────────────
 
 	describe('renderSitemapXml', () => {

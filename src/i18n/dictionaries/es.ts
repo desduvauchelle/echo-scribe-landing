@@ -596,6 +596,14 @@ const es: Dictionary = {
 	'blog.post.not.found': 'Publicación no encontrada',
 	'blog.post.not.found.description': 'La publicación que buscas no existe.',
 	'blog.related.posts': 'Publicaciones relacionadas',
+
+	// Topic hubs (/blog/topic/<slug>). `blog.topic.title` is the hub's H1 AND
+	// its <title>, so it must name the topic — `buildPageMetadata` appends the
+	// brand. {topic} and {count} are filled in by the page.
+	'blog.topics.label': 'Explorar por tema',
+	'blog.filed.under': 'Archivado en',
+	'blog.topic.title': '{topic}',
+	'blog.topic.subtitle': '{count} artículos sobre {topic}',
 	'blog.load.error': 'No se pudieron cargar las publicaciones: {error}',
 	'blog.index.heading': 'Todas las publicaciones',
 	'blog.index.description':

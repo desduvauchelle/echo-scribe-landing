@@ -11,13 +11,15 @@ export async function GET() {
 	const total = await fetchBlogCount()
 	const blogSitemapCount = getBlogSitemapCount(total)
 
-	// id 0 = static pages, 1..blogSitemapCount = blog batches, blogSitemapCount+1 = authors
+	// id 0 = static pages, 1..blogSitemapCount = blog batches,
+	// blogSitemapCount+1 = authors, blogSitemapCount+2 = topic hubs
 	const urls: string[] = []
 	urls.push(`${SITE_URL}/sitemap/0.xml`)
 	for (let i = 1; i <= blogSitemapCount; i++) {
 		urls.push(`${SITE_URL}/sitemap/${i}.xml`)
 	}
 	urls.push(`${SITE_URL}/sitemap/${blogSitemapCount + 1}.xml`)
+	urls.push(`${SITE_URL}/sitemap/${blogSitemapCount + 2}.xml`)
 
 	const xml = renderSitemapIndex(urls)
 	return new Response(xml, {

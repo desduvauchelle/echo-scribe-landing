@@ -38,33 +38,38 @@ describe('GET /sitemap.xml (index)', () => {
 		expect(text).toContain('</sitemapindex>')
 	})
 
-	it('emits static + one blog batch + authors sitemap for small post counts', async () => {
+	it('emits static + one blog batch + authors + topics for small post counts', async () => {
 		const { GET } = await loadRoute({ count: 5 })
 		const res = await GET()
 		const text = await res.text()
 		expect(text).toContain('https://example.com/sitemap/0.xml')
 		expect(text).toContain('https://example.com/sitemap/1.xml')
 		expect(text).toContain('https://example.com/sitemap/2.xml')
+		// The topic hubs shard. It is listed unconditionally: a blog with no
+		// shared keywords yet simply serves an empty urlset there, and the shard
+		// starts carrying hubs the day two posts share a keyword — no deploy.
+		expect(text).toContain('https://example.com/sitemap/3.xml')
 		const matches = text.match(/<sitemap>/g)
-		expect(matches).toHaveLength(3)
+		expect(matches).toHaveLength(4)
 	})
 
-	it('emits multiple blog batches plus authors when count exceeds batch size', async () => {
+	it('emits multiple blog batches plus authors and topics when count exceeds batch size', async () => {
 		const { GET } = await loadRoute({ count: 2500 })
 		const res = await GET()
 		const text = await res.text()
-		// 1 static + 3 blog batches + 1 authors = 5
+		// 1 static + 3 blog batches + 1 authors + 1 topics = 6
 		const matches = text.match(/<sitemap>/g)
-		expect(matches).toHaveLength(5)
+		expect(matches).toHaveLength(6)
 		expect(text).toContain('https://example.com/sitemap/4.xml')
+		expect(text).toContain('https://example.com/sitemap/5.xml')
 	})
 
-	it('still emits static + 1 blog + authors when fetchBlogCount returns 0', async () => {
+	it('still emits static + 1 blog + authors + topics when fetchBlogCount returns 0', async () => {
 		// fetchBlogCount swallows errors and returns 0, so test the 0 path
 		const { GET } = await loadRoute({ count: 0 })
 		const res = await GET()
 		const text = await res.text()
 		const matches = text.match(/<sitemap>/g)
-		expect(matches).toHaveLength(3)
+		expect(matches).toHaveLength(4)
 	})
 })
