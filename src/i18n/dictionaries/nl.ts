@@ -602,6 +602,10 @@ const nl: Dictionary = {
 	// brand. {topic} and {count} are filled in by the page.
 	'blog.topics.label': 'Bladeren op onderwerp',
 	'blog.filed.under': 'Gearchiveerd onder',
+	'blog.cta.eyebrow': 'Probeer Tucky',
+	'blog.cta.heading': 'Zeg het één keer. Tucky onthoudt de rest.',
+	'blog.cta.subtitle': 'Gratis, privé en op je apparaat — geen account nodig. Plak deze regel in Terminal om Tucky op je Mac te installeren.',
+	'blog.cta.home': 'Zo werkt Tucky',
 	'blog.topic.title': '{topic}',
 	'blog.topic.subtitle': '{count} artikelen over {topic}',
 	'blog.load.error': 'Artikelen laden mislukt: {error}',

@@ -209,6 +209,7 @@ Run `pnpm pull-forms` to generate typed Zod schemas in `src/generated/forms.ts` 
 - `BlogContent` renders HTML via `dangerouslySetInnerHTML` with `prose prose-lg` classes
 - `RelatedPosts` — the LOCAL one ([src/components/blog/RelatedPosts.tsx](src/components/blog/RelatedPosts.tsx)), not the SDK's. See "Internal linking" below before switching back.
 - `AllPostsIndex` renders every post as a plain link under the `/blog` grid — the crawlable half of the index
+- `BlogPostCTA` ([src/components/blog/BlogPostCTA.tsx](src/components/blog/BlogPostCTA.tsx)) closes every post: install command (`install_copy`, `location: 'blog_post'`) + links to `/`, `/features`, `/use-cases`. It replaces the SDK `RelatedArticles` `cta` slot, which would point at the retired contact form
 - Blog detail page uses `useParams()` to get `slug` and `locale`
 
 ### Internal linking (do not regress this)

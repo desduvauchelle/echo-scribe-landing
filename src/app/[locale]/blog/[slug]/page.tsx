@@ -16,6 +16,7 @@ import { formatDate, localePrefix, localizedPath } from '@/lib/i18n-utils'
 import { buildUrl } from '@/lib/sitemap-shared'
 import { buildPageMetadata } from '@/lib/seo'
 import { AuthorByline } from '@/components/blog/AuthorByline'
+import { BlogPostCTA } from '@/components/blog/BlogPostCTA'
 import { withCoveragePost } from '@/lib/related-posts'
 import { parseKeywords } from '@/lib/post-keywords'
 
@@ -118,11 +119,14 @@ export default async function BlogPostPage({
 					showCounts={false}
 					className="mt-10"
 				/>
+
+				<BlogPostCTA dict={dict} locale={locale} />
 			</article>
 
 			<div className="max-w-5xl mx-auto">
 				{/*
-				 * No `cta` on purpose. `getBookingCallToAction()` would resolve to
+				 * No `cta` on purpose — the install CTA is `<BlogPostCTA>` above.
+				 * `getBookingCallToAction()` would resolve to
 				 * the retired `contact-form` (0 submissions in 44 sessions, and
 				 * `noindex` since), and Tucky is a free one-line install with
 				 * nothing to ask us for first — see "Adoption path" in CLAUDE.md.

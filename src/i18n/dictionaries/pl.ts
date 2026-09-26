@@ -602,6 +602,10 @@ const pl: Dictionary = {
 	// brand. {topic} and {count} are filled in by the page.
 	'blog.topics.label': 'Przeglądaj według tematu',
 	'blog.filed.under': 'W kategorii',
+	'blog.cta.eyebrow': 'Wypróbuj Tucky',
+	'blog.cta.heading': 'Powiedz raz. Tucky zapamięta resztę.',
+	'blog.cta.subtitle': 'Darmowy, prywatny i działający na urządzeniu — bez konta. Wklej tę linię w Terminalu, aby zainstalować Tucky na Macu.',
+	'blog.cta.home': 'Zobacz, jak działa Tucky',
 	'blog.topic.title': '{topic}',
 	'blog.topic.subtitle': 'Artykuły o temacie {topic}: {count}',
 	'blog.load.error': 'Nie udało się wczytać wpisów: {error}',

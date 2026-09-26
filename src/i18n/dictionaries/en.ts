@@ -604,6 +604,10 @@ const en = {
 	// brand. {topic} and {count} are filled in by the page.
 	'blog.topics.label': 'Browse by topic',
 	'blog.filed.under': 'Filed under',
+	'blog.cta.eyebrow': 'Try Tucky',
+	'blog.cta.heading': 'Say it once. Tucky remembers the rest.',
+	'blog.cta.subtitle': 'Free, private, and on-device — no account needed. Paste this line into Terminal to install Tucky on your Mac.',
+	'blog.cta.home': 'See how Tucky works',
 	'blog.topic.title': '{topic}',
 	'blog.topic.subtitle': '{count} articles about {topic}',
 	'blog.load.error': 'Failed to load posts: {error}',

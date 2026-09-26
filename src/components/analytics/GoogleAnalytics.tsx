@@ -19,7 +19,7 @@ type EventName =
 	| (string & {})
 
 /** Where on the page the event fired — reported as the `location` param. */
-export type EventLocation = 'header' | 'hero' | 'cta_section' | 'product_hero' | 'loops_hero' | 'contact_page'
+export type EventLocation = 'header' | 'hero' | 'cta_section' | 'product_hero' | 'loops_hero' | 'contact_page' | 'blog_post'
 
 export function trackEvent(name: EventName, params?: Record<string, string>) {
 	if (typeof window !== 'undefined' && 'gtag' in window) {
