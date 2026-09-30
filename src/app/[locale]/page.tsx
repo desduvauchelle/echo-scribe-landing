@@ -2,7 +2,7 @@ import { KeepAwake } from '@/components/landing/KeepAwake'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getBlogPosts } from '@growth-engine/sdk-server'
-import { BlogCard } from '@growth-engine/sdk-client/components'
+import { HomeBlogCard } from '@/components/blog/HomeBlogCard'
 import { getDictionary } from '@/i18n'
 import { getDb, safeQuery } from '@/lib/db'
 import { localePrefix, localizedPath } from '@/lib/i18n-utils'
@@ -79,7 +79,7 @@ export default async function HomePage({
 					) : (
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							{posts.map((post) => (
-								<BlogCard
+								<HomeBlogCard
 									key={post.id}
 									slug={post.slug}
 									title={post.title}

@@ -15,7 +15,9 @@
 .arrived.float .sheet { animation: float 3.6s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; }
 .arrived.nod .sheet { animation: nod 4.4s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; transform-origin: 50% 75%; }
 .arrived.sway .sheet { animation: sway 4.8s ease-in-out calc(var(--mascot-delay, 0ms) + 700ms) infinite; transform-origin: 50% 80%; }
-.greet { animation: greeting 700ms ease-in-out both; }
+/* The hero is visible in the initial HTML, without a hydration-gated entrance. */
+.art.immediate { opacity: 1; animation-name: none; }
+.art.greet { animation: greeting 700ms ease-in-out both; }
 .hint { position: absolute; bottom: 2%; left: 50%; transform: translateX(-50%) rotate(-3deg); width: max-content; max-width: 90%; border: 1px solid #123b2d30; border-radius: 9px; padding: .5rem .7rem; background: #fffdf7; color: #123b2d; font-size: 12px; font-weight: 600; box-shadow: 2px 4px 0 #c7893c25; }
 @keyframes arrive-up { from { opacity: 0; transform: translateY(22px) rotate(-4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
 @keyframes arrive-left { from { opacity: 0; transform: translateX(-28px) rotate(-5deg); } to { opacity: 1; transform: translateX(0) rotate(0); } }

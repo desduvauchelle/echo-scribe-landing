@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
 	// what `<link rel="canonical">` emits for the site root — see the `buildUrl`
 	// docblock in src/lib/sitemap-shared.ts.
 	trailingSlash: false,
+	images: {
+		remotePatterns: [{
+			protocol: 'https',
+			hostname: 'storage.googleapis.com',
+			pathname: '/rs-bucket-prod/tenants/echo-scribe-ai-juicing/public/**',
+		}],
+	},
 	serverExternalPackages: [
 		'@growth-engine/sdk-server',
 		'@libsql/client',

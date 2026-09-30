@@ -2,7 +2,6 @@ import { InquiryVideo } from './InquiryVideo'
 import { Mascot } from './Mascot'
 import type { Dictionary } from '@/i18n'
 import { localizedPath } from '@/lib/i18n-utils'
-import { ScrollReveal } from './ScrollReveal'
 import { TrackedLink } from '@/components/analytics/TrackedLink'
 
 const DownloadIcon = ({ size = 17 }: { size?: number }) => (
@@ -26,7 +25,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 				<div className="container relative mx-auto max-w-[1200px] px-6">
 					<div className="grid items-center gap-7 lg:grid-cols-[1.3fr_1fr] lg:gap-12">
 					<div>
-					<ScrollReveal y={20} duration={0.7} start="top 95%">
+					<div>
 						<div className="mb-7 inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-primary">
 
 							{dict['hero.badge']}
@@ -43,9 +42,9 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 						<p className="mb-8 max-w-[600px] text-[clamp(17px,2.2vw,21px)] leading-[1.65] text-base-content/70">
 							{dict['hero.subtitle']}
 						</p>
-					</ScrollReveal>
+					</div>
 
-					<ScrollReveal y={20} delay={0.15} start="top 95%">
+					<div>
 						<div className="mb-7 flex flex-wrap items-center gap-3.5">
 							<TrackedLink
 								href={`${home}#install`}
@@ -87,7 +86,7 @@ export function Hero({ dict, locale }: { dict: Dictionary; locale: string }) {
 								{dict['hero.meta.capture']}
 							</span>
 						</div>
-					</ScrollReveal>
+					</div>
 
 					</div>
 					<Mascot pose="listen" interactive dict={dict} className="order-first mx-auto max-w-[180px] sm:max-w-[260px] lg:order-last lg:max-w-none" />

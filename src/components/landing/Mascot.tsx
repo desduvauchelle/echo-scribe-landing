@@ -44,12 +44,13 @@ export function Mascot({ pose, className, interactive = false, dict, entrance = 
 			styles[`from-${entrance}`],
 			styles[motion],
 			arrived && styles.arrived,
+			interactive && styles.immediate,
 			greeting > 0 && styles.greet,
 		)}
 		style={{ '--mascot-delay': `${delay}ms` } as CSSProperties}
 		aria-hidden="true"
 	>
-		<Image src="/mascot/tucky-poses.png" alt="" width={1920} height={819} sizes={interactive ? '(min-width: 1024px) 1500px, 780px' : '840px'} priority={interactive} className={styles.sheet} />
+		<Image src="/mascot/tucky-poses.png" alt="" width={1920} height={819} sizes={interactive ? '(min-width: 1200px) 1440px, (min-width: 1024px) 1200px, (min-width: 640px) 780px, 540px' : '840px'} priority={interactive} className={styles.sheet} />
 	</span>
 
 	return <div ref={ref} className={cn(styles.mascot, className)}>
